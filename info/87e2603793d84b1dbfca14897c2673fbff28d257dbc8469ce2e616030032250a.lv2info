@@ -1,0 +1,75 @@
+http://guitarix.sourceforge.net/plugins/gx_expander#_expander
+
+	Name:              GxExpander
+	Class:             Expander Plugin
+	Author:            Guitarix team
+	Author Email:      mailto:brummer@web.de
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/gx_expander.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/gx_expander.lv2/gx_expander.so
+	UIs:
+		http://guitarix.sourceforge.net/plugins/gx_expander#gui
+			Class:  http://lv2plug.in/ns/extensions/ui#X11UI
+			Binary: file:///run/current-system/sw/lib/lv2/gx_expander.lv2/gx_expander_gui.so
+			Bundle: file:///run/current-system/sw/lib/lv2/gx_expander.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/gx_expander.lv2/gx_expander.ttl
+	                   file:///run/current-system/sw/lib/lv2/gx_expander.lv2/manifest.ttl
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      RATIO
+		Name:        RATIO
+		Minimum:     1.000000
+		Maximum:     20.000000
+		Default:     2.000000
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      KNEE
+		Name:        KNEE
+		Minimum:     0.000000
+		Maximum:     20.000000
+		Default:     3.000000
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      THRESHOLD
+		Name:        THRESHOLD
+		Minimum:     -96.000000
+		Maximum:     10.000000
+		Default:     -40.000000
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      RELEASE
+		Name:        RELEASE
+		Minimum:     0.000000
+		Maximum:     10.000000
+		Default:     0.100000
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      ATTACK
+		Name:        ATTACK
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.001000
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out
+		Name:        Out
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in
+		Name:        In

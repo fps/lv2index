@@ -1,0 +1,860 @@
+http://github.com/blablack/ams-lv2/seq_24
+
+	Name:              AMS Sequencer - 24 Steps
+	Class:             Utility Plugin
+	Author:            Aurelien Leblond
+	Author Email:      mailto:blablack@gmail.com
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/ams.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/ams.lv2/seq_24.so
+	UIs:
+		http://github.com/blablack/ams-lv2/seq_24/gui
+			Class:  http://lv2plug.in/ns/extensions/ui#GtkUI
+			Binary: file:///run/current-system/sw/lib/lv2/ams.lv2/seq_24_gui.so
+			Bundle: file:///run/current-system/sw/lib/lv2/ams.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/ams.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/ams.lv2/seq_24.ttl
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#CVPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in_trigger
+		Name:        Trigger
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#CVPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      gate
+		Name:        Gate
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#CVPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      freq
+		Name:        Freq
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#CVPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      velocity
+		Name:        Velocity
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#CVPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out_trigger
+		Name:        Trigger
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      pitchOffset
+		Name:        Pitch Offset
+		Group:       http://github.com/blablack/ams-lv2/seq_24#main_controls
+		Minimum:     0.000000
+		Maximum:     63.000000
+		Default:     32.000000
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      bpm
+		Name:        BPM
+		Group:       http://github.com/blablack/ams-lv2/seq_24#main_controls
+		Minimum:     3.000000
+		Maximum:     300.000000
+		Default:     120.000000
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1 = "3/4"
+			2 = "1/2"
+			3 = "1/4"
+			0 = "1"
+
+		Symbol:      gateTime
+		Name:        Gate Time
+		Group:       http://github.com/blablack/ams-lv2/seq_24#main_controls
+		Minimum:     0.000000
+		Maximum:     3.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      pitch1
+		Name:        Pitch 1
+		Group:       http://github.com/blablack/ams-lv2/seq_24#pitch_controls
+		Minimum:     0.000000
+		Maximum:     64.000000
+		Default:     31.000000
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      pitch2
+		Name:        Pitch 2
+		Group:       http://github.com/blablack/ams-lv2/seq_24#pitch_controls
+		Minimum:     0.000000
+		Maximum:     64.000000
+		Default:     31.000000
+
+	Port 10:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      pitch3
+		Name:        Pitch 3
+		Group:       http://github.com/blablack/ams-lv2/seq_24#pitch_controls
+		Minimum:     0.000000
+		Maximum:     64.000000
+		Default:     31.000000
+
+	Port 11:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      pitch4
+		Name:        Pitch 4
+		Group:       http://github.com/blablack/ams-lv2/seq_24#pitch_controls
+		Minimum:     0.000000
+		Maximum:     64.000000
+		Default:     31.000000
+
+	Port 12:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      pitch5
+		Name:        Pitch 5
+		Group:       http://github.com/blablack/ams-lv2/seq_24#pitch_controls
+		Minimum:     0.000000
+		Maximum:     64.000000
+		Default:     31.000000
+
+	Port 13:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      pitch6
+		Name:        Pitch 6
+		Group:       http://github.com/blablack/ams-lv2/seq_24#pitch_controls
+		Minimum:     0.000000
+		Maximum:     64.000000
+		Default:     31.000000
+
+	Port 14:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      pitch7
+		Name:        Pitch 7
+		Group:       http://github.com/blablack/ams-lv2/seq_24#pitch_controls
+		Minimum:     0.000000
+		Maximum:     64.000000
+		Default:     31.000000
+
+	Port 15:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      pitch8
+		Name:        Pitch 8
+		Group:       http://github.com/blablack/ams-lv2/seq_24#pitch_controls
+		Minimum:     0.000000
+		Maximum:     64.000000
+		Default:     31.000000
+
+	Port 16:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      pitch9
+		Name:        Pitch 9
+		Group:       http://github.com/blablack/ams-lv2/seq_24#pitch_controls
+		Minimum:     0.000000
+		Maximum:     64.000000
+		Default:     31.000000
+
+	Port 17:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      pitch10
+		Name:        Pitch 10
+		Group:       http://github.com/blablack/ams-lv2/seq_24#pitch_controls
+		Minimum:     0.000000
+		Maximum:     64.000000
+		Default:     31.000000
+
+	Port 18:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      pitch11
+		Name:        Pitch 11
+		Group:       http://github.com/blablack/ams-lv2/seq_24#pitch_controls
+		Minimum:     0.000000
+		Maximum:     64.000000
+		Default:     31.000000
+
+	Port 19:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      pitch12
+		Name:        Pitch 12
+		Group:       http://github.com/blablack/ams-lv2/seq_24#pitch_controls
+		Minimum:     0.000000
+		Maximum:     64.000000
+		Default:     31.000000
+
+	Port 20:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      pitch13
+		Name:        Pitch 13
+		Group:       http://github.com/blablack/ams-lv2/seq_24#pitch_controls
+		Minimum:     0.000000
+		Maximum:     64.000000
+		Default:     31.000000
+
+	Port 21:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      pitch14
+		Name:        Pitch 14
+		Group:       http://github.com/blablack/ams-lv2/seq_24#pitch_controls
+		Minimum:     0.000000
+		Maximum:     64.000000
+		Default:     31.000000
+
+	Port 22:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      pitch15
+		Name:        Pitch 15
+		Group:       http://github.com/blablack/ams-lv2/seq_24#pitch_controls
+		Minimum:     0.000000
+		Maximum:     64.000000
+		Default:     31.000000
+
+	Port 23:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      pitch16
+		Name:        Pitch 16
+		Group:       http://github.com/blablack/ams-lv2/seq_24#pitch_controls
+		Minimum:     0.000000
+		Maximum:     64.000000
+		Default:     31.000000
+
+	Port 24:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      pitch17
+		Name:        Pitch 17
+		Group:       http://github.com/blablack/ams-lv2/seq_24#pitch_controls
+		Minimum:     0.000000
+		Maximum:     64.000000
+		Default:     31.000000
+
+	Port 25:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      pitch18
+		Name:        Pitch 18
+		Group:       http://github.com/blablack/ams-lv2/seq_24#pitch_controls
+		Minimum:     0.000000
+		Maximum:     64.000000
+		Default:     31.000000
+
+	Port 26:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      pitch19
+		Name:        Pitch 19
+		Group:       http://github.com/blablack/ams-lv2/seq_24#pitch_controls
+		Minimum:     0.000000
+		Maximum:     64.000000
+		Default:     31.000000
+
+	Port 27:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      pitch20
+		Name:        Pitch 20
+		Group:       http://github.com/blablack/ams-lv2/seq_24#pitch_controls
+		Minimum:     0.000000
+		Maximum:     64.000000
+		Default:     31.000000
+
+	Port 28:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      pitch21
+		Name:        Pitch 21
+		Group:       http://github.com/blablack/ams-lv2/seq_24#pitch_controls
+		Minimum:     0.000000
+		Maximum:     64.000000
+		Default:     31.000000
+
+	Port 29:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      pitch22
+		Name:        Pitch 22
+		Group:       http://github.com/blablack/ams-lv2/seq_24#pitch_controls
+		Minimum:     0.000000
+		Maximum:     64.000000
+		Default:     31.000000
+
+	Port 30:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      pitch23
+		Name:        Pitch 23
+		Group:       http://github.com/blablack/ams-lv2/seq_24#pitch_controls
+		Minimum:     0.000000
+		Maximum:     64.000000
+		Default:     31.000000
+
+	Port 31:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      pitch24
+		Name:        Pitch 24
+		Group:       http://github.com/blablack/ams-lv2/seq_24#pitch_controls
+		Minimum:     0.000000
+		Maximum:     64.000000
+		Default:     31.000000
+
+	Port 32:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gate1
+		Name:        Gate 1
+		Group:       http://github.com/blablack/ams-lv2/seq_24#gate_controls
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 33:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gate2
+		Name:        Gate 2
+		Group:       http://github.com/blablack/ams-lv2/seq_24#gate_controls
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 34:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gate3
+		Name:        Gate 3
+		Group:       http://github.com/blablack/ams-lv2/seq_24#gate_controls
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 35:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gate4
+		Name:        Gate 4
+		Group:       http://github.com/blablack/ams-lv2/seq_24#gate_controls
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 36:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gate5
+		Name:        Gate 5
+		Group:       http://github.com/blablack/ams-lv2/seq_24#gate_controls
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 37:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gate6
+		Name:        Gate 6
+		Group:       http://github.com/blablack/ams-lv2/seq_24#gate_controls
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 38:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gate7
+		Name:        Gate 7
+		Group:       http://github.com/blablack/ams-lv2/seq_24#gate_controls
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 39:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gate8
+		Name:        Gate 8
+		Group:       http://github.com/blablack/ams-lv2/seq_24#gate_controls
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 40:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gate9
+		Name:        Gate 9
+		Group:       http://github.com/blablack/ams-lv2/seq_24#gate_controls
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 41:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gate10
+		Name:        Gate 10
+		Group:       http://github.com/blablack/ams-lv2/seq_24#gate_controls
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 42:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gate11
+		Name:        Gate 11
+		Group:       http://github.com/blablack/ams-lv2/seq_24#gate_controls
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 43:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gate12
+		Name:        Gate 12
+		Group:       http://github.com/blablack/ams-lv2/seq_24#gate_controls
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 44:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gate13
+		Name:        Gate 13
+		Group:       http://github.com/blablack/ams-lv2/seq_24#gate_controls
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 45:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gate14
+		Name:        Gate 14
+		Group:       http://github.com/blablack/ams-lv2/seq_24#gate_controls
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 46:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gate15
+		Name:        Gate 15
+		Group:       http://github.com/blablack/ams-lv2/seq_24#gate_controls
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 47:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gate16
+		Name:        Gate 16
+		Group:       http://github.com/blablack/ams-lv2/seq_24#gate_controls
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 48:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gate17
+		Name:        Gate 17
+		Group:       http://github.com/blablack/ams-lv2/seq_24#gate_controls
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 49:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gate18
+		Name:        Gate 18
+		Group:       http://github.com/blablack/ams-lv2/seq_24#gate_controls
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 50:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gate19
+		Name:        Gate 19
+		Group:       http://github.com/blablack/ams-lv2/seq_24#gate_controls
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 51:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gate20
+		Name:        Gate 20
+		Group:       http://github.com/blablack/ams-lv2/seq_24#gate_controls
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 52:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gate21
+		Name:        Gate 21
+		Group:       http://github.com/blablack/ams-lv2/seq_24#gate_controls
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 53:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gate22
+		Name:        Gate 22
+		Group:       http://github.com/blablack/ams-lv2/seq_24#gate_controls
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 54:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gate23
+		Name:        Gate 23
+		Group:       http://github.com/blablack/ams-lv2/seq_24#gate_controls
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 55:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gate24
+		Name:        Gate 24
+		Group:       http://github.com/blablack/ams-lv2/seq_24#gate_controls
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 56:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      velocity1
+		Name:        Velocity 1
+		Group:       http://github.com/blablack/ams-lv2/seq_24#velocity_controls
+		Minimum:     0.000000
+		Maximum:     127.000000
+		Default:     63.000000
+
+	Port 57:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      velocity2
+		Name:        Velocity 2
+		Group:       http://github.com/blablack/ams-lv2/seq_24#velocity_controls
+		Minimum:     0.000000
+		Maximum:     127.000000
+		Default:     63.000000
+
+	Port 58:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      velocity3
+		Name:        Velocity 3
+		Group:       http://github.com/blablack/ams-lv2/seq_24#velocity_controls
+		Minimum:     0.000000
+		Maximum:     127.000000
+		Default:     63.000000
+
+	Port 59:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      velocity4
+		Name:        Velocity 4
+		Group:       http://github.com/blablack/ams-lv2/seq_24#velocity_controls
+		Minimum:     0.000000
+		Maximum:     127.000000
+		Default:     63.000000
+
+	Port 60:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      velocity5
+		Name:        Velocity 5
+		Group:       http://github.com/blablack/ams-lv2/seq_24#velocity_controls
+		Minimum:     0.000000
+		Maximum:     127.000000
+		Default:     63.000000
+
+	Port 61:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      velocity6
+		Name:        Velocity 6
+		Group:       http://github.com/blablack/ams-lv2/seq_24#velocity_controls
+		Minimum:     0.000000
+		Maximum:     127.000000
+		Default:     63.000000
+
+	Port 62:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      velocity7
+		Name:        Velocity 7
+		Group:       http://github.com/blablack/ams-lv2/seq_24#velocity_controls
+		Minimum:     0.000000
+		Maximum:     127.000000
+		Default:     63.000000
+
+	Port 63:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      velocity8
+		Name:        Velocity 8
+		Group:       http://github.com/blablack/ams-lv2/seq_24#velocity_controls
+		Minimum:     0.000000
+		Maximum:     127.000000
+		Default:     63.000000
+
+	Port 64:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      velocity9
+		Name:        Velocity 9
+		Group:       http://github.com/blablack/ams-lv2/seq_24#velocity_controls
+		Minimum:     0.000000
+		Maximum:     127.000000
+		Default:     63.000000
+
+	Port 65:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      velocity10
+		Name:        Velocity 10
+		Group:       http://github.com/blablack/ams-lv2/seq_24#velocity_controls
+		Minimum:     0.000000
+		Maximum:     127.000000
+		Default:     63.000000
+
+	Port 66:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      velocity11
+		Name:        Velocity 11
+		Group:       http://github.com/blablack/ams-lv2/seq_24#velocity_controls
+		Minimum:     0.000000
+		Maximum:     127.000000
+		Default:     63.000000
+
+	Port 67:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      velocity12
+		Name:        Velocity 12
+		Group:       http://github.com/blablack/ams-lv2/seq_24#velocity_controls
+		Minimum:     0.000000
+		Maximum:     127.000000
+		Default:     63.000000
+
+	Port 68:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      velocity13
+		Name:        Velocity 13
+		Group:       http://github.com/blablack/ams-lv2/seq_24#velocity_controls
+		Minimum:     0.000000
+		Maximum:     127.000000
+		Default:     63.000000
+
+	Port 69:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      velocity14
+		Name:        Velocity 14
+		Group:       http://github.com/blablack/ams-lv2/seq_24#velocity_controls
+		Minimum:     0.000000
+		Maximum:     127.000000
+		Default:     63.000000
+
+	Port 70:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      velocity15
+		Name:        Velocity 15
+		Group:       http://github.com/blablack/ams-lv2/seq_24#velocity_controls
+		Minimum:     0.000000
+		Maximum:     127.000000
+		Default:     63.000000
+
+	Port 71:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      velocity16
+		Name:        Velocity 16
+		Group:       http://github.com/blablack/ams-lv2/seq_24#velocity_controls
+		Minimum:     0.000000
+		Maximum:     127.000000
+		Default:     63.000000
+
+	Port 72:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      velocity17
+		Name:        Velocity 17
+		Group:       http://github.com/blablack/ams-lv2/seq_24#velocity_controls
+		Minimum:     0.000000
+		Maximum:     127.000000
+		Default:     63.000000
+
+	Port 73:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      velocity18
+		Name:        Velocity 18
+		Group:       http://github.com/blablack/ams-lv2/seq_24#velocity_controls
+		Minimum:     0.000000
+		Maximum:     127.000000
+		Default:     63.000000
+
+	Port 74:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      velocity19
+		Name:        Velocity 19
+		Group:       http://github.com/blablack/ams-lv2/seq_24#velocity_controls
+		Minimum:     0.000000
+		Maximum:     127.000000
+		Default:     63.000000
+
+	Port 75:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      velocity20
+		Name:        Velocity 20
+		Group:       http://github.com/blablack/ams-lv2/seq_24#velocity_controls
+		Minimum:     0.000000
+		Maximum:     127.000000
+		Default:     63.000000
+
+	Port 76:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      velocity21
+		Name:        Velocity 21
+		Group:       http://github.com/blablack/ams-lv2/seq_24#velocity_controls
+		Minimum:     0.000000
+		Maximum:     127.000000
+		Default:     63.000000
+
+	Port 77:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      velocity22
+		Name:        Velocity 22
+		Group:       http://github.com/blablack/ams-lv2/seq_24#velocity_controls
+		Minimum:     0.000000
+		Maximum:     127.000000
+		Default:     63.000000
+
+	Port 78:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      velocity23
+		Name:        Velocity 23
+		Group:       http://github.com/blablack/ams-lv2/seq_24#velocity_controls
+		Minimum:     0.000000
+		Maximum:     127.000000
+		Default:     63.000000
+
+	Port 79:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      velocity24
+		Name:        Velocity 24
+		Group:       http://github.com/blablack/ams-lv2/seq_24#velocity_controls
+		Minimum:     0.000000
+		Maximum:     127.000000
+		Default:     63.000000

@@ -1,0 +1,62 @@
+http://moddevices.com/plugins/mod-devel/BandPassFilter
+
+	Name:              BandPassFilter
+	Class:             Filter Plugin
+	Author:            MOD Team
+	Author Email:      mailto:devel@moddevices.com
+	Author Homepage:   http://moddevices.com
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/mod-bpf.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/mod-bpf.lv2/mod-bpf.so
+	Data URIs:         file:///run/current-system/sw/lib/lv2/mod-bpf.lv2/BandPassFilter.ttl
+	                   file:///run/current-system/sw/lib/lv2/mod-bpf.lv2/manifest.ttl
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      In
+		Name:        In
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      Out
+		Name:        Out
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      Freq
+		Name:        Freq
+		Minimum:     200.000000
+		Maximum:     2000.000000
+		Default:     600.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      Q
+		Name:        Q
+		Minimum:     0.707000
+		Maximum:     5.000000
+		Default:     0.707000
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			2 = "3"
+			1 = "2"
+			0 = "1"
+
+		Symbol:      Order
+		Name:        Order
+		Minimum:     0.000000
+		Maximum:     2.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+

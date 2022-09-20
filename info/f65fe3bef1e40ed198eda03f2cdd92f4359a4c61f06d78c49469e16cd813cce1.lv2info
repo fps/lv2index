@@ -1,0 +1,233 @@
+http://rakarrack.sourceforge.net/effects.html#delm
+
+	Name:              rkr Musical Delay
+	Class:             Delay Plugin
+	Author:            Rakarrack Team
+	Author Email:      mailto:ssjackson71@gmail.com
+	Author Homepage:   http://rakarrack.sourceforge.net
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/rkr.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/rkr.lv2/rkrlv2.so
+	Data URIs:         file:///run/current-system/sw/lib/lv2/rkr.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/rkr.lv2/mdel.ttl
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	                   http://lv2plug.in/ns/ext/buf-size#boundedBlockLength
+	                   http://lv2plug.in/ns/ext/urid#map
+	Presets: 
+	         Echo 2
+	         Echo 1
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#AudioPort
+		Symbol:      INPUT_L
+		Name:        Audio In L
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      INPUT_R
+		Name:        Audio In R
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      OUTPUT_L
+		Name:        Audio Out L
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      OUTPUT_R
+		Name:        Audio Out R
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      BYPASS
+		Name:        Bypass
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      WETDRY
+		Name:        Wet/Dry
+		Minimum:     0.000000
+		Maximum:     127.000000
+		Default:     64.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      PAN1
+		Name:        Panning
+		Group:       http://rakarrack.sourceforge.net/effects.html#delm:group:del1
+		Minimum:     -64.000000
+		Maximum:     63.000000
+		Default:     -64.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			3 = "1/3"
+			2 = "1/2"
+			4 = "1/4"
+			5 = "1/5"
+			6 = "1/6"
+			1 = "1"
+
+		Symbol:      DEL1
+		Name:        Delay
+		Group:       http://rakarrack.sourceforge.net/effects.html#delm:group:del1
+		Minimum:     1.000000
+		Maximum:     6.000000
+		Default:     2.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			6 = "1/6"
+			2 = "1/2"
+			1 = "1"
+			5 = "1/5"
+			4 = "1/4"
+			3 = "1/3"
+			7 = "0"
+
+		Symbol:      OFFS
+		Name:        Delay Offset
+		Minimum:     1.000000
+		Maximum:     7.000000
+		Default:     7.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      LRCr
+		Name:        Left/Right Crossover
+		Minimum:     0.000000
+		Maximum:     127.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 10:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      FB1
+		Name:        Feedback
+		Group:       http://rakarrack.sourceforge.net/effects.html#delm:group:del1
+		Minimum:     0.000000
+		Maximum:     127.000000
+		Default:     59.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 11:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      DAMP
+		Name:        Damping
+		Minimum:     0.000000
+		Maximum:     127.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 12:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      PAN2
+		Name:        Panning
+		Group:       http://rakarrack.sourceforge.net/effects.html#delm:group:del2
+		Minimum:     -64.000000
+		Maximum:     63.000000
+		Default:     63.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 13:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			6 = "1/6"
+			1 = "1"
+			5 = "1/5"
+			2 = "1/2"
+			4 = "1/4"
+			3 = "1/3"
+
+		Symbol:      DEL2
+		Name:        Delay
+		Group:       http://rakarrack.sourceforge.net/effects.html#delm:group:del2
+		Minimum:     1.000000
+		Maximum:     6.000000
+		Default:     4.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 14:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      FB2
+		Name:        Feedback
+		Group:       http://rakarrack.sourceforge.net/effects.html#delm:group:del2
+		Minimum:     0.000000
+		Maximum:     127.000000
+		Default:     59.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 15:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      TEMPO
+		Name:        Tempo
+		Minimum:     10.000000
+		Maximum:     480.000000
+		Default:     106.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 16:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      GAIN1
+		Name:        Gain
+		Group:       http://rakarrack.sourceforge.net/effects.html#delm:group:del1
+		Minimum:     0.000000
+		Maximum:     127.000000
+		Default:     75.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 17:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      GAIN2
+		Name:        Gain
+		Group:       http://rakarrack.sourceforge.net/effects.html#delm:group:del2
+		Minimum:     0.000000
+		Maximum:     127.000000
+		Default:     75.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+

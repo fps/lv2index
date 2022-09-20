@@ -1,0 +1,376 @@
+http://calf.sourceforge.net/plugins/Analyzer
+
+	Name:              Calf Analyzer
+	Class:             Analyser Plugin
+	Author:            Calf Studio Gear
+	Author Email:      mailto:info@calf-studio-gear.org
+	Author Homepage:   http://calf-studio-gear.org/
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/calf.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/calf.lv2/calf.so
+	UIs:
+		http://calf.sourceforge.net/plugins/gui/gtk2-gui-req
+			Class:  http://lv2plug.in/ns/extensions/ui#GtkUI
+			Binary: file:///run/current-system/sw/lib/lv2/calf.lv2/calflv2gui.so
+			Bundle: file:///run/current-system/sw/lib/lv2/calf.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/calf.lv2/Analyzer.ttl
+	                   file:///run/current-system/sw/lib/lv2/calf.lv2/manifest.ttl
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	                   http://lv2plug.in/ns/ext/port-props#supportsStrictBounds
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in_l
+		Name:        In L
+		Group:       http://calf.sourceforge.net/plugins/Analyzer#in
+		Designation: http://lv2plug.in/ns/ext/port-groups#left
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in_r
+		Name:        In R
+		Group:       http://calf.sourceforge.net/plugins/Analyzer#in
+		Designation: http://lv2plug.in/ns/ext/port-groups#right
+		Properties:  http://lv2plug.in/ns/lv2core#connectionOptional
+
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out_l
+		Name:        Out L
+		Group:       http://calf.sourceforge.net/plugins/Analyzer#out
+		Designation: http://lv2plug.in/ns/ext/port-groups#left
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out_r
+		Name:        Out R
+		Group:       http://calf.sourceforge.net/plugins/Analyzer#out
+		Designation: http://lv2plug.in/ns/ext/port-groups#right
+		Properties:  http://lv2plug.in/ns/lv2core#connectionOptional
+
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      meter_L
+		Name:        Level L
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#connectionOptional
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      meter_R
+		Name:        Level R
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/lv2core#connectionOptional
+
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      clip_L
+		Name:        Clip L
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/lv2core#connectionOptional
+
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      clip_R
+		Name:        Clip R
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#connectionOptional
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      analyzer_level
+		Name:        Analyzer Level
+		Minimum:     0.500000
+		Maximum:     2.000000
+		Default:     1.250000
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1 = "Analyzer Left"
+			0 = "Analyzer Average"
+			2 = "Analyzer Right"
+			3 = "Analyzer Stereo"
+			4 = "Stereo Image"
+			5 = "Stereo Difference"
+			6 = "Spectralizer Average"
+			7 = "Spectralizer Left"
+			8 = "Spectralizer Right"
+			9 = "Spectralizer Colored Stereo"
+			10 = "Spectralizer Parallel Stereo"
+
+		Symbol:      analyzer_mode
+		Name:        Analyzer Mode
+		Minimum:     0.000000
+		Maximum:     10.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 10:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1 = "Linear"
+			0 = "Logarithmic"
+
+		Symbol:      analyzer_scale
+		Name:        Analyzer Scale
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 11:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1 = "Average"
+			0 = "Normalized"
+			3 = "Denoised Peaks"
+			2 = "Additive"
+
+		Symbol:      analyzer_post
+		Name:        Analyzer Post FFT
+		Minimum:     0.000000
+		Maximum:     3.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 12:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0 = "Bars"
+			1 = "Lines"
+
+		Symbol:      analyzer_view
+		Name:        Analyzer View
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 13:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1 = "Falling"
+			2 = "Transition"
+			0 = "Off"
+
+		Symbol:      analyzer_smoothing
+		Name:        Analyzer Smoothing
+		Minimum:     0.000000
+		Maximum:     2.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 14:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1 = "Hamming"
+			9 = "Bartlett"
+			2 = "von Hann"
+			7 = "Lanczos"
+			10 = "Triangular"
+			8 = "Gauß"
+			3 = "Blackman"
+			4 = "Blackman-Harris"
+			5 = "Blackman-Nuttall"
+			0 = "Rectangular"
+			6 = "Sine"
+			11 = "Bartlett-Hann"
+
+		Symbol:      analyzer_windowing
+		Name:        Analyzer Windowing
+		Minimum:     0.000000
+		Maximum:     11.000000
+		Default:     2.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 15:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      analyzer_accuracy
+		Name:        Analyzer Accuracy
+		Minimum:     2.000000
+		Maximum:     8.000000
+		Default:     7.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 16:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      analyzer_speed
+		Name:        Analyzer Speed
+		Minimum:     1.000000
+		Maximum:     15.000000
+		Default:     15.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 17:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      analyzer_display
+		Name:        Analyzer Display
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 18:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      analyzer_hold
+		Name:        Analyzer Hold
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 19:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      analyzer_freeze
+		Name:        Analyzer Freeze
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 20:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			4 = "Lines (High CPU)"
+			0 = "Small Dots"
+			1 = "Medium Dots"
+			3 = "Fields"
+			2 = "Big Dots"
+
+		Symbol:      gonio_mode
+		Name:        Gonio Mode
+		Minimum:     0.000000
+		Maximum:     4.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 21:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gonio_use_fade
+		Name:        Gonio Fade Active
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 22:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gonio_fade
+		Name:        Gonio Fade
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 23:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gonio_accuracy
+		Name:        Gonio Accuracy
+		Minimum:     1.000000
+		Maximum:     5.000000
+		Default:     4.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 24:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gonio_display
+		Name:        Gonio Display
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 25:
+		Type:        http://lv2plug.in/ns/ext/atom#AtomPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      events_in
+		Name:        Events
+		Properties:  http://lv2plug.in/ns/lv2core#connectionOptional
+
+
+	Port 26:
+		Type:        http://lv2plug.in/ns/ext/atom#AtomPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      events_out
+		Name:        Events
+		Properties:  http://lv2plug.in/ns/lv2core#connectionOptional
+

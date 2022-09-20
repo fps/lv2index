@@ -1,0 +1,86 @@
+http://kxstudio.sf.net/carla/plugins/lfo
+
+	Name:              LFO
+	Class:             Utility Plugin
+	Author:            Filipe Coelho
+	Author Email:      mailto:falktx@falktx.com
+	Author Homepage:   https://falktx.com/
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/carla.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/carla.lv2/carla.so
+	Data URIs:         file:///run/current-system/sw/lib/lv2/carla.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/carla.lv2/lfo.ttl
+	Required Features: http://lv2plug.in/ns/ext/urid#map
+	                   http://lv2plug.in/ns/ext/buf-size#boundedBlockLength
+	                   http://lv2plug.in/ns/ext/options#options
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Extension Data:    http://lv2plug.in/ns/ext/options#interface
+	                   http://kxstudio.sf.net/ns/lv2ext/programs#Interface
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lv2_freewheel
+		Name:        Freewheel
+		Designation: http://lv2plug.in/ns/lv2core#freeWheeling
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+		             http://lv2plug.in/ns/ext/port-props#notOnGUI
+
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			2.000000 = "Sawtooth"
+			1.000000 = "Triangle"
+			3.000000 = "Sawtooth (inverted)"
+			4.000000 = "Sine (TODO)"
+			5.000000 = "Square"
+
+		Symbol:      mode
+		Name:        Mode
+		Minimum:     1.000000
+		Maximum:     5.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      speed
+		Name:        Speed
+		Minimum:     0.010000
+		Maximum:     2048.000000
+		Default:     1.000000
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      multiplier
+		Name:        Multiplier
+		Minimum:     0.010000
+		Maximum:     2.000000
+		Default:     1.000000
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      start_value
+		Name:        Start value
+		Minimum:     -1.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      lfo_out
+		Name:        LFO Out
+		Minimum:     0.000000
+		Maximum:     1.000000

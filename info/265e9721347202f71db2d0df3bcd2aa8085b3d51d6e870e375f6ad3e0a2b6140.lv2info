@@ -1,0 +1,161 @@
+http://gareus.org/oss/lv2/balance
+
+	Name:              Stereo Balance Control
+	Class:             Spatial Plugin
+	Author:            Robin Gareus
+	Author Email:      mailto:robin@gareus.org
+	Author Homepage:   http://gareus.org/
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/balance.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/balance.lv2/balance.so
+	UIs:
+		http://gareus.org/oss/lv2/balance#ui
+			Class:  http://lv2plug.in/ns/extensions/ui#X11UI
+			Binary: file:///run/current-system/sw/lib/lv2/balance.lv2/balanceUI.so
+			Bundle: file:///run/current-system/sw/lib/lv2/balance.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/balance.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/balance.lv2/balance.ttl
+	Required Features: http://lv2plug.in/ns/ext/urid#map
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Extension Data:    http://lv2plug.in/ns/ext/state#interface
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      trim
+		Name:        Trim/Gain [dB]
+		Minimum:     -20.000000
+		Maximum:     20.000000
+		Default:     0.000000
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      phaseL
+		Name:        Phase Invert Left
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      phaseR
+		Name:        Phase Invert Right
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      balance
+		Name:        Balance L/R
+		Minimum:     -1.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0 = "Balance"
+			1 = "Unity Gain - Equal Amplitude"
+			2 = "Seesaw - Equal Power"
+
+		Symbol:      unitygain
+		Name:        Gain Mode
+		Minimum:     0.000000
+		Maximum:     2.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      delayLeft
+		Name:        Delay Left [samples]
+		Minimum:     0.000000
+		Maximum:     2000.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      delayRight
+		Name:        Delay Right [samples]
+		Minimum:     0.000000
+		Maximum:     2000.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			2 = "R->R, R->L (Right Channel Mono)"
+			1 = "L->L, L->R (Left Channel Mono)"
+			0 = "L->L, R->R (Straight)"
+			3 = "L->R, R->L (Swap Channels)"
+			4 = "Downmix to Mono"
+
+		Symbol:      monoswap
+		Name:        Channel Assignment
+		Minimum:     0.000000
+		Maximum:     4.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in_left
+		Name:        In Left
+		Designation: http://lv2plug.in/ns/ext/port-groups#left
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in_right
+		Name:        In Right
+		Designation: http://lv2plug.in/ns/ext/port-groups#right
+
+	Port 10:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out_left
+		Name:        Out Left
+		Designation: http://lv2plug.in/ns/ext/port-groups#left
+
+	Port 11:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out_right
+		Name:        Out Right
+		Designation: http://lv2plug.in/ns/ext/port-groups#right
+
+	Port 12:
+		Type:        http://lv2plug.in/ns/ext/atom#AtomPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      control
+		Name:        UI to plugin communication
+		Designation: http://lv2plug.in/ns/lv2core#control
+
+	Port 13:
+		Type:        http://lv2plug.in/ns/ext/atom#AtomPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      notify
+		Name:        plugin to UI communication
+		Designation: http://lv2plug.in/ns/lv2core#control

@@ -1,0 +1,31 @@
+http://lv2plug.in/plugins/eg-midigate
+
+	Name:              Example MIDI Gate
+	Class:             Plugin
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/eg-midigate.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/eg-midigate.lv2/midigate.so
+	Data URIs:         file:///run/current-system/sw/lib/lv2/eg-midigate.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/eg-midigate.lv2/midigate.ttl
+	Required Features: http://lv2plug.in/ns/ext/urid#map
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/ext/atom#AtomPort
+		Symbol:      control
+		Name:        Control
+		Designation: http://lv2plug.in/ns/lv2core#control
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in
+		Name:        In
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out
+		Name:        Out

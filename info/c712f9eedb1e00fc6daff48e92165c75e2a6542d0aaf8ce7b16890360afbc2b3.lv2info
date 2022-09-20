@@ -1,0 +1,140 @@
+https://faustlv2.bitbucket.io/kpp_tubeamp
+
+	Name:              kpp_tubeAmp
+	Class:             Filter Plugin
+	Author:            Oleg Kapitonov
+	Author Email:      mailto:kapitonov1987@gmail.com
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/kpp_tubeamp.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/kpp_tubeamp.lv2/kpp_tubeamp.so
+	UIs:
+		https://faustlv2.bitbucket.io/kpp_tubeampui
+			Class:  http://lv2plug.in/ns/extensions/ui#X11UI
+			Binary: file:///run/current-system/sw/lib/lv2/kpp_tubeamp.lv2/kpp_tubeampui.so
+			Bundle: file:///run/current-system/sw/lib/lv2/kpp_tubeamp.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/kpp_tubeamp.lv2/kpp_tubeamp.ttl
+	                   file:///run/current-system/sw/lib/lv2/kpp_tubeamp.lv2/manifest.ttl
+	Required Features: http://lv2plug.in/ns/ext/urid#map
+	                   http://lv2plug.in/ns/ext/state#loadDefaultState
+	                   http://lv2plug.in/ns/ext/worker#schedule
+	Optional Features: http://lv2plug.in/ns/ext/state#threadSafeRestore
+	                   http://lv2plug.in/ns/lv2core#hardRtCapable
+	                   http://lv2plug.in/ns/ext/port-props#supportsStrictBounds
+	Extension Data:    http://lv2plug.in/ns/ext/worker#interface
+	                   http://lv2plug.in/ns/ext/state#interface
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      Bass_0
+		Name:        Bass
+		Minimum:     -10.000000
+		Maximum:     10.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      Middle_1
+		Name:        Middle
+		Minimum:     -10.000000
+		Maximum:     10.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      Treble_2
+		Name:        Treble
+		Minimum:     -10.000000
+		Maximum:     10.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      drive_3
+		Name:        drive
+		Minimum:     0.000000
+		Maximum:     100.000000
+		Default:     100.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      mastergain_4
+		Name:        mastergain
+		Minimum:     0.000000
+		Maximum:     100.000000
+		Default:     50.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      volume_5
+		Name:        volume
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      cabinet_6
+		Name:        cabinet
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in0
+		Name:        in0
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in1
+		Name:        in1
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out0
+		Name:        out0
+
+	Port 10:
+		Type:        http://lv2plug.in/ns/lv2core#OutputPort
+		             http://lv2plug.in/ns/lv2core#AudioPort
+		Symbol:      out1
+		Name:        out1
+
+	Port 11:
+		Type:        http://lv2plug.in/ns/ext/atom#AtomPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      control
+		Name:        Control
+		Designation: http://lv2plug.in/ns/lv2core#control
+
+	Port 12:
+		Type:        http://lv2plug.in/ns/ext/atom#AtomPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      notify
+		Name:        Notify
+		Designation: http://lv2plug.in/ns/lv2core#control

@@ -1,0 +1,43 @@
+http://plugin.org.uk/swh-plugins/fadDelay
+
+	Name:              Fractionally Addressed Delay Line
+	Class:             Delay Plugin
+	Author:            Steve Harris
+	Author Email:      mailto:steve@plugin.org.uk
+	Author Homepage:   http://plugin.org.uk/
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/fad_delay-swh.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/fad_delay-swh.lv2/plugin-Linux.so
+	Data URIs:         file:///run/current-system/sw/lib/lv2/fad_delay-swh.lv2/plugin.ttl
+	                   file:///run/current-system/sw/lib/lv2/fad_delay-swh.lv2/manifest.ttl
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      delay
+		Name:        Delay (seconds)
+		Minimum:     0.100000
+		Maximum:     10.000000
+		Default:     1.000000
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      fb_db
+		Name:        Feedback (dB)
+		Minimum:     -70.000000
+		Maximum:     0.000000
+		Default:     0.000000
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      input
+		Name:        Input
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      output
+		Name:        Output

@@ -1,0 +1,80 @@
+http://plugin.org.uk/swh-plugins/fastLookaheadLimiter
+
+	Name:              Fast Lookahead limiter
+	Class:             Limiter Plugin
+	Author:            Steve Harris
+	Author Email:      mailto:steve@plugin.org.uk
+	Author Homepage:   http://plugin.org.uk/
+	Has latency:       yes, reported by port 8
+	Bundle:            file:///run/current-system/sw/lib/lv2/fast_lookahead_limiter-swh.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/fast_lookahead_limiter-swh.lv2/plugin-Linux.so
+	Data URIs:         file:///run/current-system/sw/lib/lv2/fast_lookahead_limiter-swh.lv2/plugin.ttl
+	                   file:///run/current-system/sw/lib/lv2/fast_lookahead_limiter-swh.lv2/manifest.ttl
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      ingain
+		Name:        Input gain (dB)
+		Minimum:     -20.000000
+		Maximum:     20.000000
+		Default:     0.000000
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      limit
+		Name:        Limit (dB)
+		Minimum:     -20.000000
+		Maximum:     0.000000
+		Default:     0.000000
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      release
+		Name:        Release time (s)
+		Minimum:     0.010000
+		Maximum:     2.000000
+		Default:     0.507500
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      attenuation
+		Name:        Attenuation (dB)
+		Minimum:     0.000000
+		Maximum:     70.000000
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in_1
+		Name:        Input 1
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in_2
+		Name:        Input 2
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out_1
+		Name:        Output 1
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out_2
+		Name:        Output 2
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      latency
+		Name:        latency
+		Properties:  http://lv2plug.in/ns/lv2core#reportsLatency
+

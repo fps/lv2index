@@ -1,0 +1,50 @@
+http://gareus.org/oss/lv2/nodelay#micro
+
+	Name:              Micro Delay Line
+	Class:             Utility Plugin
+	Author:            Robin Gareus
+	Author Email:      mailto:robin@gareus.org
+	Author Homepage:   http://gareus.org/
+	Has latency:       yes, reported by port 1
+	Bundle:            file:///run/current-system/sw/lib/lv2/nodelay.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/nodelay.lv2/nodelay.so
+	Data URIs:         file:///run/current-system/sw/lib/lv2/nodelay.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/nodelay.lv2/nodelay.ttl
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	                   http://lv2plug.in/ns/ext/buf-size#coarseBlockLength
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      delay
+		Name:        Delay Time
+		Minimum:     -9600.000000
+		Maximum:     9600.000000
+		Default:     0.000000
+		Properties:  http://ardour.org/lv2/ext#inlineMixerControl
+		             http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      latency
+		Name:        latency
+		Minimum:     0.000000
+		Maximum:     9600.000000
+		Properties:  http://lv2plug.in/ns/lv2core#reportsLatency
+		             http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in
+		Name:        In
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out
+		Name:        Out

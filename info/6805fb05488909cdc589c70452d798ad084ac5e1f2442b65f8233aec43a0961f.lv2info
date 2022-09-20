@@ -1,0 +1,48 @@
+http://guitarix.sourceforge.net/plugins/gx_mole_#_mole_
+
+	Name:              GxMole
+	Class:             Filter Plugin
+	Author:            Guitarix team
+	Author Email:      mailto:guitarix-developer@lists.sourceforge.net
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/gx_mole.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/gx_mole.lv2/gx_mole.so
+	UIs:
+		http://guitarix.sourceforge.net/plugins/gx_mole_gui#_mole_
+			Class:  http://lv2plug.in/ns/extensions/ui#X11UI
+			Binary: file:///run/current-system/sw/lib/lv2/gx_mole.lv2/gx_mole_gui.so
+			Bundle: file:///run/current-system/sw/lib/lv2/gx_mole.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/gx_mole.lv2/gx_mole.ttl
+	                   file:///run/current-system/sw/lib/lv2/gx_mole.lv2/manifest.ttl
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out
+		Name:        Out
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in
+		Name:        In
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      BOOST
+		Name:        BOOST
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      WET_DRY
+		Name:        WET_DRY
+		Minimum:     0.000000
+		Maximum:     100.000000
+		Default:     100.000000

@@ -1,0 +1,48 @@
+http://guitarix.sourceforge.net/plugins/gx_w20#w20
+
+	Name:              Gx w20
+	Class:             Simulator Plugin
+	Author:            Guitarix team
+	Author Email:      mailto:brummer@web.de
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/gx_w20.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/gx_w20.lv2/gx_w20.so
+	UIs:
+		http://guitarix.sourceforge.net/plugins/gx_w20#gui
+			Class:  http://lv2plug.in/ns/extensions/ui#X11UI
+			Binary: file:///run/current-system/sw/lib/lv2/gx_w20.lv2/gx_w20_gui.so
+			Bundle: file:///run/current-system/sw/lib/lv2/gx_w20.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/gx_w20.lv2/gx_w20.ttl
+	                   file:///run/current-system/sw/lib/lv2/gx_w20.lv2/manifest.ttl
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gain
+		Name:        Gain
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      level
+		Name:        Level
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out
+		Name:        Out
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in
+		Name:        In

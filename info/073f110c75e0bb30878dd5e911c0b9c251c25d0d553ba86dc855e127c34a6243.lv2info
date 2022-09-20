@@ -1,0 +1,28 @@
+http://lv2plug.in/plugins/eg-params
+
+	Name:              Example Parameters
+	Class:             Utility Plugin
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/eg-params.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/eg-params.lv2/params.so
+	Data URIs:         file:///run/current-system/sw/lib/lv2/eg-params.lv2/params.ttl
+	                   file:///run/current-system/sw/lib/lv2/eg-params.lv2/manifest.ttl
+	Required Features: http://lv2plug.in/ns/ext/urid#map
+	Optional Features: http://lv2plug.in/ns/ext/state#loadDefaultState
+	                   http://lv2plug.in/ns/lv2core#hardRTCapable
+	Extension Data:    http://lv2plug.in/ns/ext/state#interface
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/ext/atom#AtomPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in
+		Name:        In
+		Designation: http://lv2plug.in/ns/lv2core#control
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#OutputPort
+		             http://lv2plug.in/ns/ext/atom#AtomPort
+		Symbol:      out
+		Name:        Out
+		Designation: http://lv2plug.in/ns/lv2core#control

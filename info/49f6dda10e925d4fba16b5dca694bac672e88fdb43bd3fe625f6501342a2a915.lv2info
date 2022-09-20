@@ -1,0 +1,53 @@
+http://moddevices.com/plugins/mod-devel/HighPassFilter
+
+	Name:              HighPassFilter
+	Class:             Filter Plugin
+	Author:            MOD Team
+	Author Email:      mailto:devel@moddevices.com
+	Author Homepage:   http://moddevices.com
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/mod-hpf.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/mod-hpf.lv2/mod-hpf.so
+	Data URIs:         file:///run/current-system/sw/lib/lv2/mod-hpf.lv2/HighPassFilter.ttl
+	                   file:///run/current-system/sw/lib/lv2/mod-hpf.lv2/manifest.ttl
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      In
+		Name:        In
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      Out1
+		Name:        Out 1
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      Freq
+		Name:        Freq
+		Minimum:     20.000000
+		Maximum:     20000.000000
+		Default:     600.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0 = "1"
+			1 = "2"
+			2 = "3"
+
+		Symbol:      Order
+		Name:        Order
+		Minimum:     0.000000
+		Maximum:     2.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+

@@ -1,0 +1,228 @@
+http://guitarix.sourceforge.net/plugins/gx_graphiceq_#_graphiceq_
+
+	Name:              GxGraphicEQ
+	Class:             Equaliser Plugin
+	Author:            Guitarix team
+	Author Email:      mailto:brummer@web.de
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/gx_graphiceq.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/gx_graphiceq.lv2/gx_graphiceq.so
+	UIs:
+		http://guitarix.sourceforge.net/plugins/gx_graphiceq_#gui
+			Class:  http://lv2plug.in/ns/extensions/ui#X11UI
+			Binary: file:///run/current-system/sw/lib/lv2/gx_graphiceq.lv2/gx_graphiceq_gui.so
+			Bundle: file:///run/current-system/sw/lib/lv2/gx_graphiceq.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/gx_graphiceq.lv2/gx_graphiceq.ttl
+	                   file:///run/current-system/sw/lib/lv2/gx_graphiceq.lv2/manifest.ttl
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      G1
+		Name:        G1
+		Minimum:     -30.000000
+		Maximum:     20.000000
+		Default:     0.000000
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      G2
+		Name:        G2
+		Minimum:     -30.000000
+		Maximum:     20.000000
+		Default:     0.000000
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      G3
+		Name:        G3
+		Minimum:     -30.000000
+		Maximum:     20.000000
+		Default:     0.000000
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      G4
+		Name:        G4
+		Minimum:     -30.000000
+		Maximum:     20.000000
+		Default:     0.000000
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      G5
+		Name:        G5
+		Minimum:     -30.000000
+		Maximum:     20.000000
+		Default:     0.000000
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      G6
+		Name:        G6
+		Minimum:     -30.000000
+		Maximum:     20.000000
+		Default:     0.000000
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      G7
+		Name:        G7
+		Minimum:     -30.000000
+		Maximum:     20.000000
+		Default:     0.000000
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      G8
+		Name:        G8
+		Minimum:     -30.000000
+		Maximum:     20.000000
+		Default:     0.000000
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      G9
+		Name:        G9
+		Minimum:     -30.000000
+		Maximum:     20.000000
+		Default:     0.000000
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      G10
+		Name:        G10
+		Minimum:     -30.000000
+		Maximum:     20.000000
+		Default:     0.000000
+
+	Port 10:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      G11
+		Name:        G11
+		Minimum:     -30.000000
+		Maximum:     20.000000
+		Default:     0.000000
+
+	Port 11:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      V1
+		Name:        V1
+		Minimum:     -70.000000
+		Maximum:     4.000000
+		Default:     0.000000
+
+	Port 12:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      V2
+		Name:        V2
+		Minimum:     -70.000000
+		Maximum:     4.000000
+		Default:     0.000000
+
+	Port 13:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      V3
+		Name:        V3
+		Minimum:     -70.000000
+		Maximum:     4.000000
+		Default:     0.000000
+
+	Port 14:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      V4
+		Name:        V4
+		Minimum:     -70.000000
+		Maximum:     4.000000
+		Default:     0.000000
+
+	Port 15:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      V5
+		Name:        V5
+		Minimum:     -70.000000
+		Maximum:     4.000000
+		Default:     0.000000
+
+	Port 16:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      V6
+		Name:        V6
+		Minimum:     -70.000000
+		Maximum:     4.000000
+		Default:     0.000000
+
+	Port 17:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      V7
+		Name:        V7
+		Minimum:     -70.000000
+		Maximum:     4.000000
+		Default:     0.000000
+
+	Port 18:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      V8
+		Name:        V8
+		Minimum:     -70.000000
+		Maximum:     4.000000
+		Default:     0.000000
+
+	Port 19:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      V9
+		Name:        V9
+		Minimum:     -70.000000
+		Maximum:     4.000000
+		Default:     0.000000
+
+	Port 20:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      V10
+		Name:        V10
+		Minimum:     -70.000000
+		Maximum:     4.000000
+		Default:     0.000000
+
+	Port 21:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      V11
+		Name:        V11
+		Minimum:     -70.000000
+		Maximum:     4.000000
+		Default:     0.000000
+
+	Port 22:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out
+		Name:        Out
+
+	Port 23:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in
+		Name:        In

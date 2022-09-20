@@ -1,0 +1,317 @@
+http://ssj71.github.io/infamousPlugins/plugs.html#casynth
+
+	Name:              the infamous cellular automaton synth
+	Class:             Instrument Plugin
+	Author:            Spencer Jackson
+	Author Email:      mailto:ssjackson71@gmail.com
+	Author Homepage:   http://ssj71.github.io/infamousPlugins
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/casynth.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/casynth.lv2/casynth.so
+	UIs:
+		http://ssj71.github.io/infamousPlugins/plugs.html#casynth_ui
+			Class:  http://lv2plug.in/ns/extensions/ui#X11UI
+			Binary: file:///run/current-system/sw/lib/lv2/casynth.lv2/casynth_ui.so
+			Bundle: file:///run/current-system/sw/lib/lv2/casynth.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/casynth.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/casynth.lv2/casynth.ttl
+	Required Features: http://lv2plug.in/ns/ext/urid#map
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+	         06 Downer
+	         07 Growe
+	         08 HapE
+	         09 Jangley
+	         10 Phazour
+	         11 Phoney
+	         14 Soothe
+	         03 Rule30
+	         04 Rule110
+	         05 Chimin
+	         12 Roar
+	         15 ClarkKentSaw
+	         01 RawSaw
+	         00 Dfault
+	         02 RawSqr
+	         13 Shiny
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/ext/atom#AtomPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      MIDI_IN
+		Name:        MIDI In
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      OUTPUT
+		Name:        Audio Out
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      CHANNEL
+		Name:        MIDI Channel
+		Minimum:     0.000000
+		Maximum:     16.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      MASTER_GAIN
+		Name:        Master Gain
+		Minimum:     0.001000
+		Maximum:     2.000000
+		Default:     1.000000
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      RULE
+		Name:        Cell Automaton Rule
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#casynth:group:auto
+		Minimum:     0.000000
+		Maximum:     255.000000
+		Default:     30.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      CELL_LIFE
+		Name:        Cell Lifetime
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#casynth:group:auto
+		Designation: http://lv2plug.in/ns/ext/time#beat
+		Minimum:     0.001000
+		Maximum:     10.000000
+		Default:     0.250000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      INIT_CELLS
+		Name:        Initial Condition
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#casynth:group:auto
+		Minimum:     0.000000
+		Maximum:     65535.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      NHARMONICS
+		Name:        Harmonics
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#casynth:group:auto
+		Minimum:     0.000000
+		Maximum:     16.000000
+		Default:     12.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Scale Points:
+			1 = "Saw"
+			0 = "Sinc"
+			2 = "Square"
+			3 = "Triangle"
+
+		Symbol:      HARM_MODE
+		Name:        Harmonic Gain Mode
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#casynth:group:auto
+		Minimum:     0.000000
+		Maximum:     3.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      HARM_WIDTH
+		Name:        Harmonic Width
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#casynth:group:auto
+		Minimum:     0.000000
+		Maximum:     50.000000
+		Default:     0.000000
+
+	Port 10:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			2 = "Square"
+			3 = "Triangle"
+			1 = "Saw"
+			0 = "Sine"
+			4 = "White Noise"
+			5 = "Random"
+
+		Symbol:      WAVE
+		Name:        Waveform
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#casynth:group:auto
+		Minimum:     0.000000
+		Maximum:     5.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 11:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      ENV_A
+		Name:        Attack
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#casynth:group:env
+		Minimum:     0.001000
+		Maximum:     15.000000
+		Default:     0.100000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 12:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      ENV_D
+		Name:        Decay
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#casynth:group:env
+		Minimum:     0.001000
+		Maximum:     15.000000
+		Default:     0.100000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 13:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      ENV_B
+		Name:        Break Point
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#casynth:group:env
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 14:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      ENV_SWL
+		Name:        Swell
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#casynth:group:env
+		Minimum:     0.001000
+		Maximum:     15.000000
+		Default:     3.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 15:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      ENV_SUS
+		Name:        Sustain
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#casynth:group:env
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.750000
+
+	Port 16:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      ENV_R
+		Name:        Release
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#casynth:group:env
+		Minimum:     0.001000
+		Maximum:     15.000000
+		Default:     0.100000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 17:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			4 = "White Noise"
+			1 = "Saw"
+			5 = "Random"
+			0 = "Sine"
+			3 = "Triangle"
+			2 = "Square"
+
+		Symbol:      AMOD_WAV
+		Name:        AM Waveform
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#casynth:group:mod
+		Minimum:     0.000000
+		Maximum:     5.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 18:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      AMOD_FREQ
+		Name:        AM Frequency
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#casynth:group:mod
+		Minimum:     0.000000
+		Maximum:     110.000000
+		Default:     0.000000
+
+	Port 19:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      AMOD_GAIN
+		Name:        AM Gain
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#casynth:group:mod
+		Minimum:     -1.000000
+		Maximum:     1.000000
+		Default:     0.100000
+
+	Port 20:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			5 = "Random"
+			1 = "Saw"
+			4 = "White Noise"
+			3 = "Triangle"
+			2 = "Square"
+			0 = "Sine"
+
+		Symbol:      FMOD_WAV
+		Name:        FM Waveform
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#casynth:group:mod
+		Minimum:     0.000000
+		Maximum:     5.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 21:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      FMOD_FREQ
+		Name:        FM Frequency
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#casynth:group:mod
+		Minimum:     0.000000
+		Maximum:     110.000000
+		Default:     0.000000
+
+	Port 22:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      FMOD_GAIN
+		Name:        FM Gain
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#casynth:group:mod
+		Minimum:     -4.000000
+		Maximum:     4.000000
+		Default:     0.100000

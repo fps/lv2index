@@ -1,0 +1,150 @@
+http://guitarix.sourceforge.net/plugins/gx_shimmizita_#_shimmizita_
+
+	Name:              Gxshimmizita
+	Class:             Reverb Plugin
+	Author:            Guitarix team
+	Author Email:      mailto:guitarix-developer@lists.sourceforge.net
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/gx_shimmizita.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/gx_shimmizita.lv2/gx_shimmizita.so
+	UIs:
+		http://guitarix.sourceforge.net/plugins/gx_shimmizita_#gui
+			Class:  http://lv2plug.in/ns/extensions/ui#X11UI
+			Binary: file:///run/current-system/sw/lib/lv2/gx_shimmizita.lv2/gx_shimmizita_gui.so
+			Bundle: file:///run/current-system/sw/lib/lv2/gx_shimmizita.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/gx_shimmizita.lv2/gx_shimmizita.ttl
+	                   file:///run/current-system/sw/lib/lv2/gx_shimmizita.lv2/manifest.ttl
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out
+		Name:        Out
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in
+		Name:        In
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out1
+		Name:        Out1
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in1
+		Name:        In1
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      CONTROL
+		Name:        CONTROL
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      DEPTH
+		Name:        DEPTH
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      DRYWET
+		Name:        DRYWET
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      ENVELOPE
+		Name:        ENVELOPE
+		Minimum:     0.100000
+		Maximum:     3.000000
+		Default:     1.000000
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      F1
+		Name:        F1
+		Minimum:     50.000000
+		Maximum:     1000.000000
+		Default:     200.000000
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      F2
+		Name:        F2
+		Minimum:     1500.000000
+		Maximum:     23520.000000
+		Default:     6000.000000
+
+	Port 10:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      MODE
+		Name:        MODE
+		Minimum:     -3.000000
+		Maximum:     3.000000
+		Default:     0.000000
+
+	Port 11:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      PSDRYWET
+		Name:        PSDRYWET
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 12:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      SHIFT
+		Name:        SHIFT
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 13:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      SPEED
+		Name:        SPEED
+		Minimum:     0.100000
+		Maximum:     10.000000
+		Default:     0.100000
+
+	Port 14:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      T60DS
+		Name:        T60DS
+		Minimum:     1.000000
+		Maximum:     8.000000
+		Default:     3.000000
+
+	Port 15:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      T60M
+		Name:        T60M
+		Minimum:     1.000000
+		Maximum:     8.000000
+		Default:     2.000000

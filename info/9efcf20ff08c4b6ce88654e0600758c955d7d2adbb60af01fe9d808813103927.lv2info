@@ -1,0 +1,128 @@
+urn:zamaudio:ZamDelay
+
+	Name:              ZamDelay
+	Class:             Delay Plugin
+	Author:            Damien Zammit
+	Author Homepage:   http://www.zamaudio.com
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/ZamDelay.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/ZamDelay.lv2/ZamDelay_dsp.so
+	UIs:
+		urn:zamaudio:ZamDelay#UI
+			Class:  http://lv2plug.in/ns/extensions/ui#X11UI
+			Binary: file:///run/current-system/sw/lib/lv2/ZamDelay.lv2/ZamDelay_ui.so
+			Bundle: file:///run/current-system/sw/lib/lv2/ZamDelay.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/ZamDelay.lv2/ZamDelay_dsp.ttl
+	                   file:///run/current-system/sw/lib/lv2/ZamDelay.lv2/manifest.ttl
+	Required Features: http://lv2plug.in/ns/ext/urid#map
+	                   http://lv2plug.in/ns/ext/options#options
+	Optional Features: http://lv2plug.in/ns/ext/buf-size#boundedBlockLength
+	                   http://lv2plug.in/ns/lv2core#hardRTCapable
+	Extension Data:    http://lv2plug.in/ns/ext/options#interface
+	                   http://kxstudio.sf.net/ns/lv2ext/programs#Interface
+	Presets: 
+	         Zero
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lv2_audio_in_1
+		Name:        Audio Input 1
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      lv2_audio_out_1
+		Name:        Audio Output 1
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/ext/atom#AtomPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lv2_events_in
+		Name:        Events Input
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      inv
+		Name:        Invert
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      time
+		Name:        Time
+		Minimum:     1.000000
+		Maximum:     8000.000000
+		Default:     160.000000
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      sync
+		Name:        Sync BPM
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lpf
+		Name:        LPF
+		Minimum:     20.000000
+		Maximum:     20000.000000
+		Default:     6000.000000
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      div
+		Name:        Divisor
+		Minimum:     1.000000
+		Maximum:     5.000000
+		Default:     3.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gain
+		Name:        Output Gain
+		Minimum:     -60.000000
+		Maximum:     0.000000
+		Default:     0.000000
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      drywet
+		Name:        Dry/Wet
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 10:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      feedb
+		Name:        Feedback
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 11:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      delaytime
+		Name:        Delaytime
+		Minimum:     1.000000
+		Maximum:     8000.000000

@@ -1,3 +1,3 @@
-generate_infos.sh
-generate_index.sh
+./generate_infos.sh
+./generate_index.sh
 

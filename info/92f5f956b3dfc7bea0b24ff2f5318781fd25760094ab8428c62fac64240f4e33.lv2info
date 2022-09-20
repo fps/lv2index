@@ -1,0 +1,37 @@
+https://hannesbraun.net/ns/lv2/airwindows/ultrasoniclite
+
+	Name:              UltrasonicLite
+	Class:             Lowpass Filter Plugin
+	Author:            Hannes Braun
+	Author Homepage:   https://hannesbraun.net/
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/Airwindows.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/Airwindows.lv2/UltrasonicLite.so
+	Data URIs:         file:///run/current-system/sw/lib/lv2/Airwindows.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/Airwindows.lv2/UltrasonicLite.ttl
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      inL
+		Name:        In L
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      inR
+		Name:        In R
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      outL
+		Name:        Out L
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      outR
+		Name:        Out R

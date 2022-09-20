@@ -1,0 +1,50 @@
+http://gareus.org/oss/lv2/controlfilter#linearscale
+
+	Name:              Control Linear Scale
+	Class:             Utility Plugin
+	Author:            Robin Gareus
+	Author Email:      mailto:robin@gareus.org
+	Author Homepage:   http://gareus.org/
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/controlfilter.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/controlfilter.lv2/controlfilter.so
+	Data URIs:         file:///run/current-system/sw/lib/lv2/controlfilter.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/controlfilter.lv2/controlfilter.ttl
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+	         out = 1 - in
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      in
+		Name:        Control Input
+		Minimum:     -1.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out
+		Name:        Control Output
+		Minimum:     -1.000000
+		Maximum:     1.000000
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      mult
+		Name:        Multiplier
+		Minimum:     -10.000000
+		Maximum:     10.000000
+		Default:     1.000000
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      add
+		Name:        Offset
+		Minimum:     -10.000000
+		Maximum:     10.000000
+		Default:     0.000000

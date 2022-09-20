@@ -1,0 +1,101 @@
+http://gareus.org/oss/lv2/meters#stereoscope
+
+	Name:              Stereo/Frequency Scope
+	Class:             Analyser Plugin
+	Author:            Robin Gareus
+	Author Email:      mailto:robin@gareus.org
+	Author Homepage:   http://gareus.org/
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/meters.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/meters.lv2/meters.so
+	UIs:
+		http://gareus.org/oss/lv2/meters#stereoscopeui_gl
+			Class:  http://kxstudio.sf.net/ns/lv2ext/external-ui#Widget
+			Binary: file:///run/current-system/sw/lib/lv2/meters.lv2/meters_glui.so
+			Bundle: file:///run/current-system/sw/lib/lv2/meters.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/meters.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/meters.lv2/meters.ttl
+	Required Features: http://lv2plug.in/ns/ext/urid#map
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/ext/atom#AtomPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      control
+		Name:        Control
+		Designation: http://lv2plug.in/ns/lv2core#control
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#OutputPort
+		             http://lv2plug.in/ns/ext/atom#AtomPort
+		Symbol:      notify
+		Name:        Notify
+		Designation: http://lv2plug.in/ns/lv2core#control
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in1
+		Name:        InL
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#OutputPort
+		             http://lv2plug.in/ns/lv2core#AudioPort
+		Symbol:      out1
+		Name:        OutL
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in2
+		Name:        InR
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out2
+		Name:        OutR
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			256 = "256"
+			1024 = "1024"
+			2048 = "2048"
+			4096 = "4096"
+			8192 = "8192"
+			12288 = "12288"
+			16384 = "16384"
+			512 = "512"
+
+		Symbol:      fftsize
+		Name:        FFT Size
+		Minimum:     128.000000
+		Maximum:     16384.000000
+		Default:     2048.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      band
+		Name:        N/Octave Bands
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+		             http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      persistence
+		Name:        Screen Persistence
+		Minimum:     0.000000
+		Maximum:     100.000000
+		Default:     50.000000

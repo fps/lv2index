@@ -1,0 +1,60 @@
+http://gareus.org/oss/lv2/convoLV2#Mono
+
+	Name:              LV2 Convolution Mono
+	Class:             Plugin
+	Author:            Robin Gareus
+	Author Email:      mailto:robin@gareus.org
+	Author Homepage:   http://gareus.org/
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/convo.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/convo.lv2/convoLV2.so
+	Data URIs:         file:///run/current-system/sw/lib/lv2/convo.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/convo.lv2/convoLV2.ttl
+	Required Features: http://lv2plug.in/ns/ext/worker#schedule
+	                   http://lv2plug.in/ns/ext/urid#map
+	                   http://lv2plug.in/ns/ext/buf-size#boundedBlockLength
+	                   http://lv2plug.in/ns/ext/options#options
+	Optional Features: http://lv2plug.in/ns/ext/state#freePath
+	                   http://lv2plug.in/ns/ext/state#threadSafeRestore
+	                   http://lv2plug.in/ns/lv2core#hardRTCapable
+	                   http://lv2plug.in/ns/ext/log#log
+	                   http://lv2plug.in/ns/ext/state#mapPath
+	                   http://lv2plug.in/ns/ext/buf-size#coarseBlockLength
+	Extension Data:    http://lv2plug.in/ns/ext/state#interface
+	                   http://lv2plug.in/ns/ext/worker#interface
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/ext/atom#AtomPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      control
+		Name:        Control
+		Designation: http://lv2plug.in/ns/lv2core#control
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/ext/atom#AtomPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      notify
+		Name:        Notify
+		Designation: http://lv2plug.in/ns/lv2core#control
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gain
+		Name:        Output Gain
+		Minimum:     -24.000000
+		Maximum:     24.000000
+		Default:     0.000000
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out
+		Name:        Out
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in
+		Name:        In

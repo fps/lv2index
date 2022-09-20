@@ -1,0 +1,103 @@
+http://moddevices.com/plugins/mod-devel/CrossOver3
+
+	Name:              CrossOver 3
+	Class:             Filter Plugin
+	Author:            MOD Team
+	Author Email:      mailto:devel@moddevices.com
+	Author Homepage:   http://moddevices.com
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/mod-crossover3.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/mod-crossover3.lv2/mod-crossover3.so
+	Data URIs:         file:///run/current-system/sw/lib/lv2/mod-crossover3.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/mod-crossover3.lv2/CrossOver3.ttl
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      In
+		Name:        In
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      Out1
+		Name:        Out 1
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      Out2
+		Name:        Out 2
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      Out3
+		Name:        Out 3
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      Freq_1
+		Name:        Freq 1
+		Minimum:     20.000000
+		Maximum:     20000.000000
+		Default:     100.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      Freq_2
+		Name:        Freq 2
+		Minimum:     20.000000
+		Maximum:     20000.000000
+		Default:     1000.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      Gain_1
+		Name:        Gain 1
+		Minimum:     -40.000000
+		Maximum:     40.000000
+		Default:     3.000000
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      Gain_2
+		Name:        Gain 2
+		Minimum:     -40.000000
+		Maximum:     40.000000
+		Default:     3.000000
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      Gain_3
+		Name:        Gain 3
+		Minimum:     -40.000000
+		Maximum:     40.000000
+		Default:     3.000000
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0 = "1"
+			1 = "2"
+			2 = "3"
+
+		Symbol:      Order
+		Name:        Order
+		Minimum:     0.000000
+		Maximum:     2.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+

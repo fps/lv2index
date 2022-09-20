@@ -1,0 +1,65 @@
+http://gareus.org/oss/lv2/stereoroute
+
+	Name:              Stereo Routing
+	Class:             Mixer Plugin
+	Author:            Robin Gareus
+	Author Email:      mailto:robin@gareus.org
+	Author Homepage:   http://gareus.org/
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/stereoroute.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/stereoroute.lv2/stereoroute.so
+	Data URIs:         file:///run/current-system/sw/lib/lv2/stereoroute.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/stereoroute.lv2/stereoroute.ttl
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0 = "Downmix to Mono -3dB (Equal Power)"
+			8 = "M/S: (L+R), (L-R) (from Mid/Side)"
+			1 = "Downmix to Mono -6dB (Equal Amplitude)"
+			2 = "Downmix to Mono -0dB (Sum Channels)"
+			3 = "Route Left Only: L->L, L->R"
+			4 = "Route Right Only: R->R, R->L"
+			5 = "Swap Channels: L->R, R->L"
+			6 = "No-OP: L->L, R->R (Straight Bypass)"
+			7 = "M/S: (L+R)/2, (L-R)/2 (to Mid/Side)"
+
+		Symbol:      routing
+		Name:        Channel Assignment
+		Minimum:     0.000000
+		Maximum:     8.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in_left
+		Name:        In Left
+		Designation: http://lv2plug.in/ns/ext/port-groups#left
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#AudioPort
+		Symbol:      in_right
+		Name:        In Right
+		Designation: http://lv2plug.in/ns/ext/port-groups#right
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out_left
+		Name:        Out Left
+		Designation: http://lv2plug.in/ns/ext/port-groups#left
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out_right
+		Name:        Out Right
+		Designation: http://lv2plug.in/ns/ext/port-groups#right

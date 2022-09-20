@@ -1,0 +1,79 @@
+http://ssj71.github.io/infamousPlugins/plugs.html#powerup
+
+	Name:              the infamous power up
+	Class:             Modulator Plugin
+	Author:            Spencer Jackson
+	Author Email:      mailto:ssjackson71@gmail.com
+	Author Homepage:   http://ssj71.github.io/infamousPlugins
+	Has latency:       yes, reported by port 5
+	Bundle:            file:///run/current-system/sw/lib/lv2/powerup.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/powerup.lv2/powerup.so
+	UIs:
+		http://ssj71.github.io/infamousPlugins/plugs.html#powerup_ui
+			Class:  http://lv2plug.in/ns/extensions/ui#X11UI
+			Binary: file:///run/current-system/sw/lib/lv2/powerup.lv2/powerup_ui.so
+			Bundle: file:///run/current-system/sw/lib/lv2/powerup.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/powerup.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/powerup.lv2/powerup.ttl
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      INPUT
+		Name:        Audio In
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      OUTPUT
+		Name:        Audio Out
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      FIRE_IT_UP
+		Name:        Fire it Up!
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enabled
+		             http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      TIME
+		Name:        Startup Time
+		Minimum:     0.010000
+		Maximum:     10.000000
+		Default:     0.500000
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0.0 = "Linear"
+			-10.0 = "Concave"
+			10.0 = "Convex"
+
+		Symbol:      CURVE
+		Name:        Startup Curve
+		Minimum:     -10.000000
+		Maximum:     10.000000
+		Default:     0.000000
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      LATENCY
+		Name:        Latency
+		Minimum:     0.000000
+		Maximum:     2000000.000000
+		Properties:  http://lv2plug.in/ns/lv2core#reportsLatency
+		             http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/ext/port-props#notOnGUI
+

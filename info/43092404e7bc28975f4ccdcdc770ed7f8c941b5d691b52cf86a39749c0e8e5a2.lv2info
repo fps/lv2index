@@ -1,0 +1,202 @@
+http://guitarix.sourceforge.net/plugins/gx_digital_delay_st_#_digital_delay_st_
+
+	Name:              Gxdigital_delay_st
+	Class:             Delay Plugin
+	Author:            Guitarix team
+	Author Email:      mailto:guitarix-developer@lists.sourceforge.net
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/gx_digital_delay_st.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/gx_digital_delay_st.lv2/gx_digital_delay_st.so
+	UIs:
+		http://guitarix.sourceforge.net/plugins/gx_digital_delay_st_#gui
+			Class:  http://lv2plug.in/ns/extensions/ui#X11UI
+			Binary: file:///run/current-system/sw/lib/lv2/gx_digital_delay_st.lv2/gx_digital_delay_st_gui.so
+			Bundle: file:///run/current-system/sw/lib/lv2/gx_digital_delay_st.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/gx_digital_delay_st.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/gx_digital_delay_st.lv2/gx_digital_delay_st.ttl
+	Required Features: http://lv2plug.in/ns/ext/urid#map
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out
+		Name:        Out
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in
+		Name:        In
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out1
+		Name:        Out1
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in1
+		Name:        In1
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      BPM
+		Name:        BPM
+		Minimum:     24.000000
+		Maximum:     360.000000
+		Default:     120.000000
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      FEEDBACK
+		Name:        FEEDBACK
+		Minimum:     1.000000
+		Maximum:     100.000000
+		Default:     50.000000
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      GAIN
+		Name:        GAIN
+		Minimum:     0.000000
+		Maximum:     120.000000
+		Default:     100.000000
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      HIGHPASS
+		Name:        HIGHPASS
+		Minimum:     20.000000
+		Maximum:     20000.000000
+		Default:     120.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      HOWPASS
+		Name:        HOWPASS
+		Minimum:     20.000000
+		Maximum:     20000.000000
+		Default:     12000.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      LEVEL
+		Name:        LEVEL
+		Minimum:     1.000000
+		Maximum:     100.000000
+		Default:     50.000000
+
+	Port 10:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0 = "plain"
+			1 = "presence"
+			2 = "tape"
+			3 = "tape2"
+
+		Symbol:      MODE
+		Name:        MODE
+		Minimum:     0.000000
+		Maximum:     3.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 11:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			2 = "1/2notetriplets"
+			3 = "Dotted1/4note"
+			1 = "1/2note"
+			0 = "Dotted1/2note"
+			4 = "1/4note"
+			5 = "1/4notetriplets"
+			6 = "Dotted1/8note"
+			7 = "1/8note"
+			8 = "1/8notetriplets"
+			9 = "Dotted1/16note"
+			10 = "1/16note"
+			11 = "1/16notetriplets"
+			12 = "Dotted1/32note"
+			13 = "1/32note"
+			14 = "1/32notetriplets"
+			15 = "Dotted1/64note"
+			16 = "1/64note"
+			17 = "1/64notetriplets"
+
+		Symbol:      NOTES
+		Name:        NOTES
+		Minimum:     0.000000
+		Maximum:     17.000000
+		Default:     4.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 12:
+		Type:        http://lv2plug.in/ns/ext/atom#AtomPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      DD_CONTROL
+		Name:        DD_CONTROL
+
+	Port 13:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      DD_NOTIFY
+		Name:        DD_NOTIFY
+		Minimum:     24.000000
+		Maximum:     360.000000
+		Default:     120.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 14:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      SYNC
+		Name:        SYNC
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 15:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      HOSTBPM
+		Name:        HOSTBPM
+		Designation: http://lv2plug.in/ns/ext/time#beatsPerMinute
+		Minimum:     24.000000
+		Maximum:     360.000000
+		Default:     120.000000
+
+	Port 16:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      BYPASS
+		Name:        BYPASS
+		Designation: http://lv2plug.in/ns/lv2core#enabled
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+

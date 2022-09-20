@@ -1,0 +1,115 @@
+http://plugin.org.uk/swh-plugins/tapeDelay
+
+	Name:              Tape Delay Simulation
+	Class:             Delay Plugin
+	Author:            Steve Harris
+	Author Email:      mailto:steve@plugin.org.uk
+	Author Homepage:   http://plugin.org.uk/
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/tape_delay-swh.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/tape_delay-swh.lv2/plugin-Linux.so
+	Data URIs:         file:///run/current-system/sw/lib/lv2/tape_delay-swh.lv2/plugin.ttl
+	                   file:///run/current-system/sw/lib/lv2/tape_delay-swh.lv2/manifest.ttl
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      speed
+		Name:        Tape speed (inches/sec, 1=normal)
+		Minimum:     0.000000
+		Maximum:     10.000000
+		Default:     1.000000
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      da_db
+		Name:        Dry level (dB)
+		Minimum:     -90.000000
+		Maximum:     0.000000
+		Default:     -90.000000
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      t1d
+		Name:        Tap 1 distance (inches)
+		Minimum:     0.000000
+		Maximum:     4.000000
+		Default:     0.000000
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      t1a_db
+		Name:        Tap 1 level (dB)
+		Minimum:     -90.000000
+		Maximum:     0.000000
+		Default:     0.000000
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      t2d
+		Name:        Tap 2 distance (inches)
+		Minimum:     0.000000
+		Maximum:     4.000000
+		Default:     1.000000
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      t2a_db
+		Name:        Tap 2 level (dB)
+		Minimum:     -90.000000
+		Maximum:     0.000000
+		Default:     -90.000000
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      t3d
+		Name:        Tap 3 distance (inches)
+		Minimum:     0.000000
+		Maximum:     4.000000
+		Default:     2.000000
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      t3a_db
+		Name:        Tap 3 level (dB)
+		Minimum:     -90.000000
+		Maximum:     0.000000
+		Default:     -90.000000
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      t4d
+		Name:        Tap 4 distance (inches)
+		Minimum:     0.000000
+		Maximum:     4.000000
+		Default:     3.000000
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      t4a_db
+		Name:        Tap 4 level (dB)
+		Minimum:     -90.000000
+		Maximum:     0.000000
+		Default:     -90.000000
+
+	Port 10:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      input
+		Name:        Input
+
+	Port 11:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      output
+		Name:        Output

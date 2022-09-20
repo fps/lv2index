@@ -1,0 +1,177 @@
+http://jpcima.sdf1.org/lv2/fverb-r1
+
+	Name:              fverb
+	Class:             Reverb Plugin
+	Author:            Jean Pierre Cimalando
+	Author Homepage:   http://jpcima.sdf1.org/lv2/fverb
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/fverb.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/fverb.lv2/fverb_dsp.so
+	Data URIs:         file:///run/current-system/sw/lib/lv2/fverb.lv2/fverb_dsp.ttl
+	                   file:///run/current-system/sw/lib/lv2/fverb.lv2/manifest.ttl
+	Required Features: http://lv2plug.in/ns/ext/options#options
+	                   http://lv2plug.in/ns/ext/urid#map
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	                   http://lv2plug.in/ns/ext/buf-size#boundedBlockLength
+	Extension Data:    http://lv2plug.in/ns/ext/options#interface
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lv2_audio_in_1
+		Name:        Audio Input 1
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lv2_audio_in_2
+		Name:        Audio Input 2
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      lv2_audio_out_1
+		Name:        Audio Output 1
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      lv2_audio_out_2
+		Name:        Audio Output 2
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lv2_enabled
+		Name:        Enabled
+		Designation: http://lv2plug.in/ns/lv2core#enabled
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      predelay
+		Name:        Predelay
+		Minimum:     0.000000
+		Maximum:     300.000000
+		Default:     0.000000
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      input
+		Name:        Input amount
+		Minimum:     0.000000
+		Maximum:     100.000000
+		Default:     100.000000
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      input_lowpass
+		Name:        Input low-pass cutoff
+		Minimum:     1.000000
+		Maximum:     20000.000000
+		Default:     10000.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      input_highpass
+		Name:        Input high-pass cutoff
+		Minimum:     1.000000
+		Maximum:     1000.000000
+		Default:     100.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      input_diffusion_1
+		Name:        Input diffusion 1
+		Minimum:     0.000000
+		Maximum:     100.000000
+		Default:     75.000000
+
+	Port 10:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      input_diffusion_2
+		Name:        Input diffusion 2
+		Minimum:     0.000000
+		Maximum:     100.000000
+		Default:     62.500000
+
+	Port 11:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      tail_density
+		Name:        Tail density
+		Minimum:     0.000000
+		Maximum:     100.000000
+		Default:     70.000000
+
+	Port 12:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      decay
+		Name:        Decay
+		Minimum:     0.000000
+		Maximum:     100.000000
+		Default:     50.000000
+
+	Port 13:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      damping
+		Name:        Damping
+		Minimum:     10.000000
+		Maximum:     20000.000000
+		Default:     5500.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 14:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      mod_frequency
+		Name:        Modulator frequency
+		Minimum:     0.010000
+		Maximum:     4.000000
+		Default:     1.000000
+
+	Port 15:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      mod_depth
+		Name:        Modulator depth
+		Minimum:     0.000000
+		Maximum:     10.000000
+		Default:     0.500000
+
+	Port 16:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      dry
+		Name:        Dry
+		Minimum:     0.000000
+		Maximum:     100.000000
+		Default:     100.000000
+
+	Port 17:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      wet
+		Name:        Wet
+		Minimum:     0.000000
+		Maximum:     100.000000
+		Default:     50.000000

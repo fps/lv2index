@@ -1,0 +1,112 @@
+http://ssj71.github.io/infamousPlugins/plugs.html#mindi
+
+	Name:              the infamous mindi
+	Class:             Generator Plugin
+	Author:            Spencer Jackson
+	Author Email:      mailto:ssjackson71@gmail.com
+	Author Homepage:   http://ssj71.github.io/infamousPlugins
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/mindi.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/mindi.lv2/mindi.so
+	Data URIs:         file:///run/current-system/sw/lib/lv2/mindi.lv2/mindi.ttl
+	                   file:///run/current-system/sw/lib/lv2/mindi.lv2/manifest.ttl
+	Required Features: http://lv2plug.in/ns/ext/urid#map
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/ext/atom#AtomPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      MIDI_OUT
+		Name:        MIDI Out
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      ENABLE
+		Name:        Enable
+		Designation: http://lv2plug.in/ns/lv2core#enabled
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			12 = "Program Change"
+			13 = "Chan Pressure"
+			14 = "Pitchbend"
+			8 = "Note Off"
+			9 = "Note On"
+			10 = "Poly Pressure"
+			11 = "Control Change"
+
+		Symbol:      MSGTYPE
+		Name:        Message Type
+		Minimum:     8.000000
+		Maximum:     15.000000
+		Default:     11.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      CHAN
+		Name:        Channel
+		Minimum:     0.000000
+		Maximum:     15.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      DATA1
+		Name:        Note/CC/PG Number
+		Minimum:     0.000000
+		Maximum:     127.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      DATA2
+		Name:        Value
+		Minimum:     0.000000
+		Maximum:     127.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0.0 = "Off"
+
+		Symbol:      DELAY
+		Name:        1st Msg Repeat Delay Time
+		Minimum:     0.000000
+		Maximum:     2000.000000
+		Default:     0.000000
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      AUTOFF
+		Name:        Auto Note-Off
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+		             http://lv2plug.in/ns/lv2core#integer
+

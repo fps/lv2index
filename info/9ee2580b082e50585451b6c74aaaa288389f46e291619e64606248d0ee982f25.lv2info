@@ -1,0 +1,101 @@
+http://gareus.org/oss/lv2/spectra#Mono
+
+	Name:              Spectr
+	Class:             Analyser Plugin
+	Author:            Robin Gareus
+	Author Email:      mailto:robin@gareus.org
+	Author Homepage:   http://gareus.org/
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/spectra.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/spectra.lv2/spectra.so
+	UIs:
+		http://gareus.org/oss/lv2/spectra#ui_gl
+			Class:  http://lv2plug.in/ns/extensions/ui#X11UI
+			Binary: file:///run/current-system/sw/lib/lv2/spectra.lv2/spectraUI_gl.so
+			Bundle: file:///run/current-system/sw/lib/lv2/spectra.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/spectra.lv2/spectra.ttl
+	                   file:///run/current-system/sw/lib/lv2/spectra.lv2/manifest.ttl
+	Required Features: http://lv2plug.in/ns/ext/urid#map
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/ext/atom#AtomPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      control
+		Name:        Control
+		Designation: http://lv2plug.in/ns/lv2core#control
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/ext/atom#AtomPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      notify
+		Name:        Notify
+		Designation: http://lv2plug.in/ns/lv2core#control
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1024 = "1024"
+			4096 = "4096"
+			8192 = "8192"
+			16384 = "16384"
+			2048 = "2048"
+
+		Symbol:      fftsize
+		Name:        FFT Size
+		Minimum:     1024.000000
+		Maximum:     16384.000000
+		Default:     4096.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1 = "On (Pink)"
+			0 = "Off (White)"
+
+		Symbol:      color
+		Name:        1/f scale
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+		             http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			2 = "Nuttall"
+			4 = "Blackman–Harris"
+			0 = "Hann"
+			1 = "Hamming"
+			3 = "Blackman–Nuttall"
+			5 = "Flat top"
+
+		Symbol:      window
+		Name:        Window Function
+		Minimum:     0.000000
+		Maximum:     5.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#AudioPort
+		Symbol:      in
+		Name:        In
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out
+		Name:        Out

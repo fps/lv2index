@@ -1,0 +1,410 @@
+http://calf.sourceforge.net/plugins/VintageDelay
+
+	Name:              Calf Vintage Delay
+	Class:             Delay Plugin
+	Author:            Calf Studio Gear
+	Author Email:      mailto:info@calf-studio-gear.org
+	Author Homepage:   http://calf-studio-gear.org/
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/calf.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/calf.lv2/calf.so
+	UIs:
+		http://calf.sourceforge.net/plugins/gui/gtk2-gui
+			Class:  http://lv2plug.in/ns/extensions/ui#GtkUI
+			Binary: file:///run/current-system/sw/lib/lv2/calf.lv2/calflv2gui.so
+			Bundle: file:///run/current-system/sw/lib/lv2/calf.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/calf.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/calf.lv2/VintageDelay.ttl
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	                   http://lv2plug.in/ns/ext/port-props#supportsStrictBounds
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in_l
+		Name:        In L
+		Group:       http://calf.sourceforge.net/plugins/VintageDelay#in
+		Designation: http://lv2plug.in/ns/ext/port-groups#left
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in_r
+		Name:        In R
+		Group:       http://calf.sourceforge.net/plugins/VintageDelay#in
+		Designation: http://lv2plug.in/ns/ext/port-groups#right
+		Properties:  http://lv2plug.in/ns/lv2core#connectionOptional
+
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out_l
+		Name:        Out L
+		Group:       http://calf.sourceforge.net/plugins/VintageDelay#out
+		Designation: http://lv2plug.in/ns/ext/port-groups#left
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out_r
+		Name:        Out R
+		Group:       http://calf.sourceforge.net/plugins/VintageDelay#out
+		Designation: http://lv2plug.in/ns/ext/port-groups#right
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      on
+		Name:        Active
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      level_in
+		Name:        Input Gain
+		Minimum:     0.015625
+		Maximum:     64.000000
+		Default:     1.000000
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      level_out
+		Name:        Output Gain
+		Minimum:     0.015625
+		Maximum:     64.000000
+		Default:     1.000000
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      meter_inL
+		Name:        Meter-InL
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/lv2core#connectionOptional
+
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      meter_inR
+		Name:        Meter-InR
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#connectionOptional
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      meter_outL
+		Name:        Meter-OutL
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#connectionOptional
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 10:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      meter_outR
+		Name:        Meter-OutR
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/lv2core#connectionOptional
+
+
+	Port 11:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      clip_inL
+		Name:        0dB-InL
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/lv2core#connectionOptional
+
+
+	Port 12:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      clip_inR
+		Name:        0dB-InR
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#connectionOptional
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 13:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      clip_outL
+		Name:        0dB-OutL
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#connectionOptional
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 14:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      clip_outR
+		Name:        0dB-OutR
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/lv2core#connectionOptional
+
+
+	Port 15:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      subdiv
+		Name:        Subdivide
+		Minimum:     1.000000
+		Maximum:     16.000000
+		Default:     4.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 16:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      time_l
+		Name:        Time L
+		Minimum:     1.000000
+		Maximum:     16.000000
+		Default:     3.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 17:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      time_r
+		Name:        Time R
+		Minimum:     1.000000
+		Maximum:     16.000000
+		Default:     5.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 18:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      feedback
+		Name:        Feedback
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 19:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      amount
+		Name:        Wet
+		Minimum:     0.000000
+		Maximum:     4.000000
+		Default:     0.250000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 20:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0 = "Stereo"
+			1 = "Ping-Pong"
+			2 = "L then R"
+			3 = "R then L"
+
+		Symbol:      mix_mode
+		Name:        Mix mode
+		Minimum:     0.000000
+		Maximum:     3.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 21:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			2 = "Old Tape"
+			1 = "Tape"
+			0 = "Plain"
+
+		Symbol:      medium
+		Name:        Medium
+		Minimum:     0.000000
+		Maximum:     2.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 22:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      dry
+		Name:        Dry
+		Minimum:     0.000000
+		Maximum:     4.000000
+		Default:     1.000000
+
+	Port 23:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      width
+		Name:        Stereo Width
+		Minimum:     -1.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 24:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1 = "Pattern"
+			0 = "Repeating"
+
+		Symbol:      fragmentation
+		Name:        Fragmentation
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 25:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      pbeats
+		Name:        Pattern Beats
+		Minimum:     1.000000
+		Maximum:     8.000000
+		Default:     4.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 26:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      pfrag
+		Name:        Pattern Fragmentation
+		Minimum:     1.000000
+		Maximum:     8.000000
+		Default:     4.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 27:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1 = "ms"
+			2 = "Hz"
+			0 = "BPM"
+			3 = "Sync"
+
+		Symbol:      timing
+		Name:        Timing
+		Minimum:     0.000000
+		Maximum:     3.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 28:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      bpm
+		Name:        BPM
+		Minimum:     30.000000
+		Maximum:     300.000000
+		Default:     120.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 29:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      ms
+		Name:        ms
+		Minimum:     10.000000
+		Maximum:     2000.000000
+		Default:     500.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 30:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      hz
+		Name:        Frequency
+		Minimum:     0.010000
+		Maximum:     100.000000
+		Default:     2.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 31:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      bpm_host
+		Name:        Host BPM
+		Designation: http://lv2plug.in/ns/ext/time#beatsPerMinute
+		Minimum:     1.000000
+		Maximum:     300.000000
+		Default:     120.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 32:
+		Type:        http://lv2plug.in/ns/ext/atom#AtomPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      events_in
+		Name:        Events
+		Properties:  http://lv2plug.in/ns/lv2core#connectionOptional
+
+
+	Port 33:
+		Type:        http://lv2plug.in/ns/ext/atom#AtomPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      events_out
+		Name:        Events
+		Properties:  http://lv2plug.in/ns/lv2core#connectionOptional
+

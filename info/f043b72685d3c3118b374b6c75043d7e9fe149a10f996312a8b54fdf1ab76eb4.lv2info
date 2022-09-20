@@ -1,0 +1,77 @@
+http://guitarix.sourceforge.net/plugins/gxtubedelay#tubedelay
+
+	Name:              GxTubeDelay
+	Class:             Delay Plugin
+	Author:            Hermann Meyer
+	Author Email:      mailto:brummer@web.de
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/gxtubedelay.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/gxtubedelay.lv2/gxtubedelay.so
+	UIs:
+		http://guitarix.sourceforge.net/plugins/gxtubedelay#gui
+			Class:  http://lv2plug.in/ns/extensions/ui#X11UI
+			Binary: file:///run/current-system/sw/lib/lv2/gxtubedelay.lv2/gxtubedelay_gui.so
+			Bundle: file:///run/current-system/sw/lib/lv2/gxtubedelay.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/gxtubedelay.lv2/gxtubedelay.ttl
+	                   file:///run/current-system/sw/lib/lv2/gxtubedelay.lv2/manifest.ttl
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      drive
+		Name:        Drive
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      delay
+		Name:        Delay
+		Minimum:     1.000000
+		Maximum:     2500.000000
+		Default:     160.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      feedback
+		Name:        Feedback
+		Minimum:     0.010000
+		Maximum:     0.700000
+		Default:     0.350000
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      level
+		Name:        Level
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      output
+		Name:        Output
+		Minimum:     -20.000000
+		Maximum:     20.000000
+		Default:     0.000000
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out
+		Name:        Out
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in
+		Name:        in

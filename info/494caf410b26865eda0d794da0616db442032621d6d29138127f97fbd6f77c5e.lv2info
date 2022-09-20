@@ -1,0 +1,665 @@
+http://ssj71.github.io/infamousPlugins/plugs.html#lushlife
+
+	Name:              the infamous lush life
+	Class:             Modulator Plugin
+	Author:            Spencer Jackson
+	Author Email:      mailto:ssjackson71@gmail.com
+	Author Homepage:   http://ssj71.github.io/infamousPlugins
+	Has latency:       yes, reported by port 3
+	Bundle:            file:///run/current-system/sw/lib/lv2/lushlife.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/lushlife.lv2/lushlife.so
+	UIs:
+		http://ssj71.github.io/infamousPlugins/plugs.html#lushlife_ui
+			Class:  http://lv2plug.in/ns/extensions/ui#X11UI
+			Binary: file:///run/current-system/sw/lib/lv2/lushlife.lv2/lushlife_ui.so
+			Bundle: file:///run/current-system/sw/lib/lv2/lushlife.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/lushlife.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/lushlife.lv2/lushlife.ttl
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+	         00 Dfault
+	         02 Ping Pong Pitch
+	         01 Stereo
+	         03 Tight Choir
+	         04 Lush
+	         05 Thick as a Brick
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      INPUT
+		Name:        Audio In
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      OUTPUTL
+		Name:        Audio Out Left
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      OUTPUTR
+		Name:        Audio Out Right
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      LATENCY
+		Name:        Latency
+		Minimum:     0.000000
+		Maximum:     100000.000000
+		Properties:  http://lv2plug.in/ns/lv2core#reportsLatency
+		             http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/ext/port-props#notOnGUI
+
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      MASTERGAIN
+		Name:        Master Gain
+		Minimum:     0.000000
+		Maximum:     2.000000
+		Default:     1.000000
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      DRYGAIN
+		Name:        Dry Gain
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      DRYPAN
+		Name:        Dry Pan
+		Minimum:     -1.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0.0 = "Noise"
+			1.0 = "Sine"
+
+		Symbol:      LFOSHAPE
+		Name:        LFO Shape
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.700000
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      LFOSYNC
+		Name:        Sync LFOs
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      ACTIVE0
+		Name:        Active 0
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#lushlife:groups:woosh0
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+		             http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 10:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      DETUNE0
+		Name:        Detune 0
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#lushlife:groups:woosh0
+		Minimum:     -24.000000
+		Maximum:     24.000000
+		Default:     0.001000
+
+	Port 11:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      DTLFOAMT0
+		Name:        Detune LFO Amount
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#lushlife:groups:woosh0
+		Minimum:     0.000000
+		Maximum:     12.000000
+		Default:     0.050000
+
+	Port 12:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      DTLFOFREQ0
+		Name:        Detune LFO Frequency
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#lushlife:groups:woosh0
+		Minimum:     0.000000
+		Maximum:     30.000000
+		Default:     0.300000
+
+	Port 13:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      DELAY0
+		Name:        Delay 0
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#lushlife:groups:woosh0
+		Minimum:     0.000000
+		Maximum:     300.000000
+		Default:     10.000000
+
+	Port 14:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      DLLFOAMT0
+		Name:        Delay LFO Amount
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#lushlife:groups:woosh0
+		Minimum:     0.000000
+		Maximum:     75.000000
+		Default:     10.000000
+
+	Port 15:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      DLLFOFREQ0
+		Name:        Delay LFO Frequency
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#lushlife:groups:woosh0
+		Minimum:     0.000000
+		Maximum:     2.000000
+		Default:     0.600000
+
+	Port 16:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      GAIN0
+		Name:        Gain 0
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#lushlife:groups:woosh0
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 17:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      PAN0
+		Name:        Pan 0
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#lushlife:groups:woosh0
+		Minimum:     -1.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 18:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      ACTIVE1
+		Name:        Active 1
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#lushlife:groups:woosh1
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 19:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      DETUNE1
+		Name:        Detune 1
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#lushlife:groups:woosh1
+		Minimum:     -24.000000
+		Maximum:     24.000000
+		Default:     -0.100000
+
+	Port 20:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      DTLFOAMT1
+		Name:        Detune LFO Amount
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#lushlife:groups:woosh1
+		Minimum:     0.000000
+		Maximum:     12.000000
+		Default:     0.100000
+
+	Port 21:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      DTLFOFREQ1
+		Name:        Detune LFO Frequency
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#lushlife:groups:woosh1
+		Minimum:     0.000000
+		Maximum:     30.000000
+		Default:     0.550000
+
+	Port 22:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      DELAY1
+		Name:        Delay 1
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#lushlife:groups:woosh1
+		Minimum:     0.000000
+		Maximum:     300.000000
+		Default:     70.000000
+
+	Port 23:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      DLLFOAMT1
+		Name:        Delay LFO Amount
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#lushlife:groups:woosh1
+		Minimum:     0.000000
+		Maximum:     75.000000
+		Default:     1.000000
+
+	Port 24:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      DLLFOFREQ1
+		Name:        Delay LFO Frequency
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#lushlife:groups:woosh1
+		Minimum:     0.000000
+		Maximum:     2.000000
+		Default:     0.000000
+
+	Port 25:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      GAIN1
+		Name:        Gain 1
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#lushlife:groups:woosh1
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.800000
+
+	Port 26:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      PAN1
+		Name:        Pan 1
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#lushlife:groups:woosh1
+		Minimum:     -1.000000
+		Maximum:     1.000000
+		Default:     -0.500000
+
+	Port 27:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      ACTIVE2
+		Name:        Active 2
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#lushlife:groups:woosh2
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+		             http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 28:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      DETUNE2
+		Name:        Detune 2
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#lushlife:groups:woosh2
+		Minimum:     -24.000000
+		Maximum:     24.000000
+		Default:     0.200000
+
+	Port 29:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      DTLFOAMT2
+		Name:        Detune LFO Amount
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#lushlife:groups:woosh2
+		Minimum:     0.000000
+		Maximum:     12.000000
+		Default:     0.100000
+
+	Port 30:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      DTLFOFREQ2
+		Name:        Detune LFO Frequency
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#lushlife:groups:woosh2
+		Minimum:     0.000000
+		Maximum:     30.000000
+		Default:     0.000000
+
+	Port 31:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      DELAY2
+		Name:        Delay 2
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#lushlife:groups:woosh2
+		Minimum:     0.000000
+		Maximum:     300.000000
+		Default:     110.000000
+
+	Port 32:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      DLLFOAMT2
+		Name:        Delay LFO Amount
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#lushlife:groups:woosh2
+		Minimum:     0.000000
+		Maximum:     75.000000
+		Default:     1.000000
+
+	Port 33:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      DLLFOFREQ2
+		Name:        Delay LFO Frequency
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#lushlife:groups:woosh2
+		Minimum:     0.000000
+		Maximum:     2.000000
+		Default:     0.000000
+
+	Port 34:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      GAIN2
+		Name:        Gain 2
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#lushlife:groups:woosh2
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.400000
+
+	Port 35:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      PAN2
+		Name:        Pan 2
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#lushlife:groups:woosh2
+		Minimum:     -1.000000
+		Maximum:     1.000000
+		Default:     0.900000
+
+	Port 36:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      ACTIVE3
+		Name:        Active 3
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#lushlife:groups:woosh3
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 37:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      DETUNE3
+		Name:        Detune 3
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#lushlife:groups:woosh3
+		Minimum:     -24.000000
+		Maximum:     24.000000
+		Default:     -0.200000
+
+	Port 38:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      DTLFOAMT3
+		Name:        Detune LFO Amount
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#lushlife:groups:woosh3
+		Minimum:     0.000000
+		Maximum:     12.000000
+		Default:     0.100000
+
+	Port 39:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      DTLFOFREQ3
+		Name:        Detune LFO Frequency
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#lushlife:groups:woosh3
+		Minimum:     0.000000
+		Maximum:     30.000000
+		Default:     0.000000
+
+	Port 40:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      DELAY3
+		Name:        Delay 3
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#lushlife:groups:woosh3
+		Minimum:     0.000000
+		Maximum:     300.000000
+		Default:     120.000000
+
+	Port 41:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      DLLFOAMT3
+		Name:        Delay LFO Amount
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#lushlife:groups:woosh3
+		Minimum:     0.000000
+		Maximum:     75.000000
+		Default:     1.000000
+
+	Port 42:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      DLLFOFREQ3
+		Name:        Delay LFO Frequency
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#lushlife:groups:woosh3
+		Minimum:     0.000000
+		Maximum:     2.000000
+		Default:     0.000000
+
+	Port 43:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      GAIN3
+		Name:        Gain 3
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#lushlife:groups:woosh3
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.400000
+
+	Port 44:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      PAN3
+		Name:        Pan 3
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#lushlife:groups:woosh3
+		Minimum:     -1.000000
+		Maximum:     1.000000
+		Default:     -0.900000
+
+	Port 45:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      ACTIVE4
+		Name:        Active 4
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#lushlife:groups:woosh4
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+		             http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 46:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      DETUNE4
+		Name:        Detune 4
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#lushlife:groups:woosh4
+		Minimum:     -24.000000
+		Maximum:     24.000000
+		Default:     0.050000
+
+	Port 47:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      DTLFOAMT4
+		Name:        Detune LFO Amount
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#lushlife:groups:woosh4
+		Minimum:     0.000000
+		Maximum:     12.000000
+		Default:     0.100000
+
+	Port 48:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      DTLFOFREQ4
+		Name:        Detune LFO Frequency
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#lushlife:groups:woosh4
+		Minimum:     0.000000
+		Maximum:     30.000000
+		Default:     0.000000
+
+	Port 49:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      DELAY4
+		Name:        Delay 4
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#lushlife:groups:woosh4
+		Minimum:     0.000000
+		Maximum:     300.000000
+		Default:     40.000000
+
+	Port 50:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      DLLFOAMT4
+		Name:        Delay LFO Amount
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#lushlife:groups:woosh4
+		Minimum:     0.000000
+		Maximum:     75.000000
+		Default:     1.000000
+
+	Port 51:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      DLLFOFREQ4
+		Name:        Delay LFO Frequency
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#lushlife:groups:woosh4
+		Minimum:     0.000000
+		Maximum:     2.000000
+		Default:     0.000000
+
+	Port 52:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      GAIN4
+		Name:        Gain 4
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#lushlife:groups:woosh4
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.300000
+
+	Port 53:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      PAN4
+		Name:        Pan 4
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#lushlife:groups:woosh4
+		Minimum:     -1.000000
+		Maximum:     1.000000
+		Default:     0.200000
+
+	Port 54:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      ACTIVE5
+		Name:        Active 5
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#lushlife:groups:woosh5
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 55:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      DETUNE5
+		Name:        Detune 5
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#lushlife:groups:woosh5
+		Minimum:     -24.000000
+		Maximum:     24.000000
+		Default:     -0.050000
+
+	Port 56:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      DTLFOAMT5
+		Name:        Detune LFO Amount
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#lushlife:groups:woosh5
+		Minimum:     0.000000
+		Maximum:     12.000000
+		Default:     0.100000
+
+	Port 57:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      DTLFOFREQ5
+		Name:        Detune LFO Frequency
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#lushlife:groups:woosh5
+		Minimum:     0.000000
+		Maximum:     30.000000
+		Default:     0.000000
+
+	Port 58:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      DELAY5
+		Name:        Delay 5
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#lushlife:groups:woosh5
+		Minimum:     0.000000
+		Maximum:     300.000000
+		Default:     30.000000
+
+	Port 59:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      DLLFOAMT5
+		Name:        Delay LFO Amount
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#lushlife:groups:woosh5
+		Minimum:     0.000000
+		Maximum:     75.000000
+		Default:     1.000000
+
+	Port 60:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      DLLFOFREQ5
+		Name:        Delay LFO Frequency
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#lushlife:groups:woosh5
+		Minimum:     0.000000
+		Maximum:     2.000000
+		Default:     0.000000
+
+	Port 61:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      GAIN5
+		Name:        Gain 5
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#lushlife:groups:woosh5
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.300000
+
+	Port 62:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      PAN5
+		Name:        Pan 5
+		Group:       http://ssj71.github.io/infamousPlugins/plugs.html#lushlife:groups:woosh5
+		Minimum:     -1.000000
+		Maximum:     1.000000
+		Default:     -0.200000

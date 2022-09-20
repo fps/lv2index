@@ -1,0 +1,1075 @@
+http://gareus.org/oss/lv2/matrixmixer#i8o8
+
+	Name:              Matrix Mixer 8x8
+	Class:             Utility Plugin
+	Author:            Robin Gareus
+	Author Email:      mailto:robin@gareus.org
+	Author Homepage:   http://gareus.org/
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/matrixmixer.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/matrixmixer.lv2/matrixmixer.so
+	UIs:
+		http://gareus.org/oss/lv2/matrixmixer#i8o8ui_gl
+			Class:  http://lv2plug.in/ns/extensions/ui#X11UI
+			Binary: file:///run/current-system/sw/lib/lv2/matrixmixer.lv2/matrixmixerUI_gl.so
+			Bundle: file:///run/current-system/sw/lib/lv2/matrixmixer.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/matrixmixer.lv2/matrixmixer.ttl
+	                   file:///run/current-system/sw/lib/lv2/matrixmixer.lv2/manifest.ttl
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in1
+		Name:        Audio Input 1
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in2
+		Name:        Audio Input 2
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in3
+		Name:        Audio Input 3
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in4
+		Name:        Audio Input 4
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in5
+		Name:        Audio Input 5
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in6
+		Name:        Audio Input 6
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in7
+		Name:        Audio Input 7
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in8
+		Name:        Audio Input 8
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out1
+		Name:        Audio Output 1
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out2
+		Name:        Audio Output 2
+
+	Port 10:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out3
+		Name:        Audio Output 3
+
+	Port 11:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out4
+		Name:        Audio Output 4
+
+	Port 12:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out5
+		Name:        Audio Output 5
+
+	Port 13:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out6
+		Name:        Audio Output 6
+
+	Port 14:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out7
+		Name:        Audio Output 7
+
+	Port 15:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out8
+		Name:        Audio Output 8
+
+	Port 16:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			-1.0 = "invert"
+			0.0 = "off"
+			1.0 = "on"
+
+		Symbol:      mix_1_1
+		Name:        Mix 1 1
+		Group:       http://gareus.org/oss/lv2/matrixmixer#i8o8g1
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     1.000000
+
+	Port 17:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1.0 = "on"
+			-1.0 = "invert"
+			0.0 = "off"
+
+		Symbol:      mix_1_2
+		Name:        Mix 1 2
+		Group:       http://gareus.org/oss/lv2/matrixmixer#i8o8g1
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 18:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0.0 = "off"
+			1.0 = "on"
+			-1.0 = "invert"
+
+		Symbol:      mix_1_3
+		Name:        Mix 1 3
+		Group:       http://gareus.org/oss/lv2/matrixmixer#i8o8g1
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 19:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1.0 = "on"
+			-1.0 = "invert"
+			0.0 = "off"
+
+		Symbol:      mix_1_4
+		Name:        Mix 1 4
+		Group:       http://gareus.org/oss/lv2/matrixmixer#i8o8g1
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 20:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0.0 = "off"
+			1.0 = "on"
+			-1.0 = "invert"
+
+		Symbol:      mix_1_5
+		Name:        Mix 1 5
+		Group:       http://gareus.org/oss/lv2/matrixmixer#i8o8g1
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 21:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1.0 = "on"
+			-1.0 = "invert"
+			0.0 = "off"
+
+		Symbol:      mix_1_6
+		Name:        Mix 1 6
+		Group:       http://gareus.org/oss/lv2/matrixmixer#i8o8g1
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 22:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0.0 = "off"
+			1.0 = "on"
+			-1.0 = "invert"
+
+		Symbol:      mix_1_7
+		Name:        Mix 1 7
+		Group:       http://gareus.org/oss/lv2/matrixmixer#i8o8g1
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 23:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1.0 = "on"
+			-1.0 = "invert"
+			0.0 = "off"
+
+		Symbol:      mix_1_8
+		Name:        Mix 1 8
+		Group:       http://gareus.org/oss/lv2/matrixmixer#i8o8g1
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 24:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0.0 = "off"
+			1.0 = "on"
+			-1.0 = "invert"
+
+		Symbol:      mix_2_1
+		Name:        Mix 2 1
+		Group:       http://gareus.org/oss/lv2/matrixmixer#i8o8g2
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 25:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1.0 = "on"
+			-1.0 = "invert"
+			0.0 = "off"
+
+		Symbol:      mix_2_2
+		Name:        Mix 2 2
+		Group:       http://gareus.org/oss/lv2/matrixmixer#i8o8g2
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     1.000000
+
+	Port 26:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0.0 = "off"
+			1.0 = "on"
+			-1.0 = "invert"
+
+		Symbol:      mix_2_3
+		Name:        Mix 2 3
+		Group:       http://gareus.org/oss/lv2/matrixmixer#i8o8g2
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 27:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1.0 = "on"
+			-1.0 = "invert"
+			0.0 = "off"
+
+		Symbol:      mix_2_4
+		Name:        Mix 2 4
+		Group:       http://gareus.org/oss/lv2/matrixmixer#i8o8g2
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 28:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0.0 = "off"
+			1.0 = "on"
+			-1.0 = "invert"
+
+		Symbol:      mix_2_5
+		Name:        Mix 2 5
+		Group:       http://gareus.org/oss/lv2/matrixmixer#i8o8g2
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 29:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1.0 = "on"
+			-1.0 = "invert"
+			0.0 = "off"
+
+		Symbol:      mix_2_6
+		Name:        Mix 2 6
+		Group:       http://gareus.org/oss/lv2/matrixmixer#i8o8g2
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 30:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0.0 = "off"
+			1.0 = "on"
+			-1.0 = "invert"
+
+		Symbol:      mix_2_7
+		Name:        Mix 2 7
+		Group:       http://gareus.org/oss/lv2/matrixmixer#i8o8g2
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 31:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1.0 = "on"
+			-1.0 = "invert"
+			0.0 = "off"
+
+		Symbol:      mix_2_8
+		Name:        Mix 2 8
+		Group:       http://gareus.org/oss/lv2/matrixmixer#i8o8g2
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 32:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0.0 = "off"
+			1.0 = "on"
+			-1.0 = "invert"
+
+		Symbol:      mix_3_1
+		Name:        Mix 3 1
+		Group:       http://gareus.org/oss/lv2/matrixmixer#i8o8g3
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 33:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1.0 = "on"
+			-1.0 = "invert"
+			0.0 = "off"
+
+		Symbol:      mix_3_2
+		Name:        Mix 3 2
+		Group:       http://gareus.org/oss/lv2/matrixmixer#i8o8g3
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 34:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0.0 = "off"
+			1.0 = "on"
+			-1.0 = "invert"
+
+		Symbol:      mix_3_3
+		Name:        Mix 3 3
+		Group:       http://gareus.org/oss/lv2/matrixmixer#i8o8g3
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     1.000000
+
+	Port 35:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1.0 = "on"
+			-1.0 = "invert"
+			0.0 = "off"
+
+		Symbol:      mix_3_4
+		Name:        Mix 3 4
+		Group:       http://gareus.org/oss/lv2/matrixmixer#i8o8g3
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 36:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			-1.0 = "invert"
+			0.0 = "off"
+			1.0 = "on"
+
+		Symbol:      mix_3_5
+		Name:        Mix 3 5
+		Group:       http://gareus.org/oss/lv2/matrixmixer#i8o8g3
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 37:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1.0 = "on"
+			-1.0 = "invert"
+			0.0 = "off"
+
+		Symbol:      mix_3_6
+		Name:        Mix 3 6
+		Group:       http://gareus.org/oss/lv2/matrixmixer#i8o8g3
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 38:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0.0 = "off"
+			1.0 = "on"
+			-1.0 = "invert"
+
+		Symbol:      mix_3_7
+		Name:        Mix 3 7
+		Group:       http://gareus.org/oss/lv2/matrixmixer#i8o8g3
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 39:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1.0 = "on"
+			-1.0 = "invert"
+			0.0 = "off"
+
+		Symbol:      mix_3_8
+		Name:        Mix 3 8
+		Group:       http://gareus.org/oss/lv2/matrixmixer#i8o8g3
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 40:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0.0 = "off"
+			1.0 = "on"
+			-1.0 = "invert"
+
+		Symbol:      mix_4_1
+		Name:        Mix 4 1
+		Group:       http://gareus.org/oss/lv2/matrixmixer#i8o8g4
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 41:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1.0 = "on"
+			-1.0 = "invert"
+			0.0 = "off"
+
+		Symbol:      mix_4_2
+		Name:        Mix 4 2
+		Group:       http://gareus.org/oss/lv2/matrixmixer#i8o8g4
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 42:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0.0 = "off"
+			1.0 = "on"
+			-1.0 = "invert"
+
+		Symbol:      mix_4_3
+		Name:        Mix 4 3
+		Group:       http://gareus.org/oss/lv2/matrixmixer#i8o8g4
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 43:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1.0 = "on"
+			-1.0 = "invert"
+			0.0 = "off"
+
+		Symbol:      mix_4_4
+		Name:        Mix 4 4
+		Group:       http://gareus.org/oss/lv2/matrixmixer#i8o8g4
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     1.000000
+
+	Port 44:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0.0 = "off"
+			1.0 = "on"
+			-1.0 = "invert"
+
+		Symbol:      mix_4_5
+		Name:        Mix 4 5
+		Group:       http://gareus.org/oss/lv2/matrixmixer#i8o8g4
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 45:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1.0 = "on"
+			-1.0 = "invert"
+			0.0 = "off"
+
+		Symbol:      mix_4_6
+		Name:        Mix 4 6
+		Group:       http://gareus.org/oss/lv2/matrixmixer#i8o8g4
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 46:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0.0 = "off"
+			1.0 = "on"
+			-1.0 = "invert"
+
+		Symbol:      mix_4_7
+		Name:        Mix 4 7
+		Group:       http://gareus.org/oss/lv2/matrixmixer#i8o8g4
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 47:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Scale Points:
+			1.0 = "on"
+			-1.0 = "invert"
+			0.0 = "off"
+
+		Symbol:      mix_4_8
+		Name:        Mix 4 8
+		Group:       http://gareus.org/oss/lv2/matrixmixer#i8o8g4
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 48:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0.0 = "off"
+			1.0 = "on"
+			-1.0 = "invert"
+
+		Symbol:      mix_5_1
+		Name:        Mix 5 1
+		Group:       http://gareus.org/oss/lv2/matrixmixer#i8o8g5
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 49:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1.0 = "on"
+			-1.0 = "invert"
+			0.0 = "off"
+
+		Symbol:      mix_5_2
+		Name:        Mix 5 2
+		Group:       http://gareus.org/oss/lv2/matrixmixer#i8o8g5
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 50:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0.0 = "off"
+			1.0 = "on"
+			-1.0 = "invert"
+
+		Symbol:      mix_5_3
+		Name:        Mix 5 3
+		Group:       http://gareus.org/oss/lv2/matrixmixer#i8o8g5
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 51:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1.0 = "on"
+			-1.0 = "invert"
+			0.0 = "off"
+
+		Symbol:      mix_5_4
+		Name:        Mix 5 4
+		Group:       http://gareus.org/oss/lv2/matrixmixer#i8o8g5
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 52:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0.0 = "off"
+			1.0 = "on"
+			-1.0 = "invert"
+
+		Symbol:      mix_5_5
+		Name:        Mix 5 5
+		Group:       http://gareus.org/oss/lv2/matrixmixer#i8o8g5
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     1.000000
+
+	Port 53:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1.0 = "on"
+			-1.0 = "invert"
+			0.0 = "off"
+
+		Symbol:      mix_5_6
+		Name:        Mix 5 6
+		Group:       http://gareus.org/oss/lv2/matrixmixer#i8o8g5
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 54:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0.0 = "off"
+			1.0 = "on"
+			-1.0 = "invert"
+
+		Symbol:      mix_5_7
+		Name:        Mix 5 7
+		Group:       http://gareus.org/oss/lv2/matrixmixer#i8o8g5
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 55:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1.0 = "on"
+			-1.0 = "invert"
+			0.0 = "off"
+
+		Symbol:      mix_5_8
+		Name:        Mix 5 8
+		Group:       http://gareus.org/oss/lv2/matrixmixer#i8o8g5
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 56:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0.0 = "off"
+			1.0 = "on"
+			-1.0 = "invert"
+
+		Symbol:      mix_6_1
+		Name:        Mix 6 1
+		Group:       http://gareus.org/oss/lv2/matrixmixer#i8o8g6
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 57:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1.0 = "on"
+			-1.0 = "invert"
+			0.0 = "off"
+
+		Symbol:      mix_6_2
+		Name:        Mix 6 2
+		Group:       http://gareus.org/oss/lv2/matrixmixer#i8o8g6
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 58:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0.0 = "off"
+			1.0 = "on"
+			-1.0 = "invert"
+
+		Symbol:      mix_6_3
+		Name:        Mix 6 3
+		Group:       http://gareus.org/oss/lv2/matrixmixer#i8o8g6
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 59:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1.0 = "on"
+			-1.0 = "invert"
+			0.0 = "off"
+
+		Symbol:      mix_6_4
+		Name:        Mix 6 4
+		Group:       http://gareus.org/oss/lv2/matrixmixer#i8o8g6
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 60:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0.0 = "off"
+			1.0 = "on"
+			-1.0 = "invert"
+
+		Symbol:      mix_6_5
+		Name:        Mix 6 5
+		Group:       http://gareus.org/oss/lv2/matrixmixer#i8o8g6
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 61:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1.0 = "on"
+			-1.0 = "invert"
+			0.0 = "off"
+
+		Symbol:      mix_6_6
+		Name:        Mix 6 6
+		Group:       http://gareus.org/oss/lv2/matrixmixer#i8o8g6
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     1.000000
+
+	Port 62:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0.0 = "off"
+			1.0 = "on"
+			-1.0 = "invert"
+
+		Symbol:      mix_6_7
+		Name:        Mix 6 7
+		Group:       http://gareus.org/oss/lv2/matrixmixer#i8o8g6
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 63:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1.0 = "on"
+			-1.0 = "invert"
+			0.0 = "off"
+
+		Symbol:      mix_6_8
+		Name:        Mix 6 8
+		Group:       http://gareus.org/oss/lv2/matrixmixer#i8o8g6
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 64:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0.0 = "off"
+			1.0 = "on"
+			-1.0 = "invert"
+
+		Symbol:      mix_7_1
+		Name:        Mix 7 1
+		Group:       http://gareus.org/oss/lv2/matrixmixer#i8o8g7
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 65:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1.0 = "on"
+			-1.0 = "invert"
+			0.0 = "off"
+
+		Symbol:      mix_7_2
+		Name:        Mix 7 2
+		Group:       http://gareus.org/oss/lv2/matrixmixer#i8o8g7
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 66:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0.0 = "off"
+			1.0 = "on"
+			-1.0 = "invert"
+
+		Symbol:      mix_7_3
+		Name:        Mix 7 3
+		Group:       http://gareus.org/oss/lv2/matrixmixer#i8o8g7
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 67:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1.0 = "on"
+			-1.0 = "invert"
+			0.0 = "off"
+
+		Symbol:      mix_7_4
+		Name:        Mix 7 4
+		Group:       http://gareus.org/oss/lv2/matrixmixer#i8o8g7
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 68:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0.0 = "off"
+			1.0 = "on"
+			-1.0 = "invert"
+
+		Symbol:      mix_7_5
+		Name:        Mix 7 5
+		Group:       http://gareus.org/oss/lv2/matrixmixer#i8o8g7
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 69:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1.0 = "on"
+			-1.0 = "invert"
+			0.0 = "off"
+
+		Symbol:      mix_7_6
+		Name:        Mix 7 6
+		Group:       http://gareus.org/oss/lv2/matrixmixer#i8o8g7
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 70:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0.0 = "off"
+			1.0 = "on"
+			-1.0 = "invert"
+
+		Symbol:      mix_7_7
+		Name:        Mix 7 7
+		Group:       http://gareus.org/oss/lv2/matrixmixer#i8o8g7
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     1.000000
+
+	Port 71:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1.0 = "on"
+			-1.0 = "invert"
+			0.0 = "off"
+
+		Symbol:      mix_7_8
+		Name:        Mix 7 8
+		Group:       http://gareus.org/oss/lv2/matrixmixer#i8o8g7
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 72:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0.0 = "off"
+			1.0 = "on"
+			-1.0 = "invert"
+
+		Symbol:      mix_8_1
+		Name:        Mix 8 1
+		Group:       http://gareus.org/oss/lv2/matrixmixer#i8o8g8
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 73:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1.0 = "on"
+			-1.0 = "invert"
+			0.0 = "off"
+
+		Symbol:      mix_8_2
+		Name:        Mix 8 2
+		Group:       http://gareus.org/oss/lv2/matrixmixer#i8o8g8
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 74:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0.0 = "off"
+			1.0 = "on"
+			-1.0 = "invert"
+
+		Symbol:      mix_8_3
+		Name:        Mix 8 3
+		Group:       http://gareus.org/oss/lv2/matrixmixer#i8o8g8
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 75:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1.0 = "on"
+			-1.0 = "invert"
+			0.0 = "off"
+
+		Symbol:      mix_8_4
+		Name:        Mix 8 4
+		Group:       http://gareus.org/oss/lv2/matrixmixer#i8o8g8
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 76:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0.0 = "off"
+			1.0 = "on"
+			-1.0 = "invert"
+
+		Symbol:      mix_8_5
+		Name:        Mix 8 5
+		Group:       http://gareus.org/oss/lv2/matrixmixer#i8o8g8
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 77:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1.0 = "on"
+			-1.0 = "invert"
+			0.0 = "off"
+
+		Symbol:      mix_8_6
+		Name:        Mix 8 6
+		Group:       http://gareus.org/oss/lv2/matrixmixer#i8o8g8
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 78:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0.0 = "off"
+			1.0 = "on"
+			-1.0 = "invert"
+
+		Symbol:      mix_8_7
+		Name:        Mix 8 7
+		Group:       http://gareus.org/oss/lv2/matrixmixer#i8o8g8
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 79:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1.0 = "on"
+			-1.0 = "invert"
+			0.0 = "off"
+
+		Symbol:      mix_8_8
+		Name:        Mix 8 8
+		Group:       http://gareus.org/oss/lv2/matrixmixer#i8o8g8
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     1.000000

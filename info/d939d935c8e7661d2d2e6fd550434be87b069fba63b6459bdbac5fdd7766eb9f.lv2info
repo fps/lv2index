@@ -1,0 +1,246 @@
+http://gareus.org/oss/lv2/tuna#two
+
+	Name:              x42 Instrument Tuner[Spectrum]
+	Class:             Analyser Plugin
+	Author:            Robin Gareus
+	Author Email:      mailto:robin@gareus.org
+	Author Homepage:   http://gareus.org/
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/tuna.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/tuna.lv2/tuna.so
+	UIs:
+		http://gareus.org/oss/lv2/tuna#ui_gl
+			Class:  http://lv2plug.in/ns/extensions/ui#X11UI
+			Binary: file:///run/current-system/sw/lib/lv2/tuna.lv2/tunaUI_gl.so
+			Bundle: file:///run/current-system/sw/lib/lv2/tuna.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/tuna.lv2/tuna.ttl
+	                   file:///run/current-system/sw/lib/lv2/tuna.lv2/manifest.ttl
+	Required Features: http://lv2plug.in/ns/ext/urid#map
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	                   http://harrisonconsoles.com/lv2/inlinedisplay#queue_draw
+	Extension Data:    http://harrisonconsoles.com/lv2/inlinedisplay#interface
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/ext/atom#AtomPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      control
+		Name:        Control
+		Designation: http://lv2plug.in/ns/lv2core#control
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/ext/atom#AtomPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      sysex
+		Name:        MTS SysEx
+		Designation: http://lv2plug.in/ns/lv2core#control
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#AudioPort
+		Symbol:      in
+		Name:        Audio Input
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out
+		Name:        Audio output
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			220 = "A2"
+			0 = "auto"
+			440 = "A4"
+			880 = "A5"
+			8000 = "8KHz"
+
+		Symbol:      mode
+		Name:        Mode
+		Minimum:     -128.000000
+		Maximum:     8000.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			440.0 = "standard"
+
+		Symbol:      tuning
+		Name:        Tuning A440
+		Minimum:     220.000000
+		Maximum:     880.000000
+		Default:     440.000000
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Scale Points:
+			-65.0 = "detection threshold"
+
+		Symbol:      rms
+		Name:        Signal Level (RMS)
+		Minimum:     -100.000000
+		Maximum:     -0.000000
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Scale Points:
+			0.0 = "no signal"
+
+		Symbol:      freq_out
+		Name:        Detected Frequency
+		Minimum:     0.000000
+		Maximum:     10000.000000
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      octave
+		Name:        Detected Octave
+		Minimum:     -1.000000
+		Maximum:     10.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Scale Points:
+			4 = "E"
+			1 = "C#"
+			3 = "D#"
+			0 = "C"
+			2 = "D"
+			5 = "F"
+			6 = "F#"
+			7 = "G"
+			8 = "G#"
+			9 = "A"
+			10 = "A#"
+			11 = "B"
+
+		Symbol:      note
+		Name:        Detected Note
+		Minimum:     0.000000
+		Maximum:     12.000000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 10:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Scale Points:
+			-25.0 = "-1/4 semitone"
+			0.0 = "+-0"
+			25.0 = "+1/4 semitone"
+
+		Symbol:      cent
+		Name:        Cent
+		Minimum:     -50.000000
+		Maximum:     50.000000
+
+	Port 11:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Scale Points:
+			0.0 = "accurate"
+
+		Symbol:      accuracy
+		Name:        Note Stability
+		Minimum:     -100.000000
+		Maximum:     100.000000
+
+	Port 12:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      strobetoui
+		Name:        StrobeToUi
+		Minimum:     0.000000
+		Maximum:     100.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#notOnGUI
+
+
+	Port 13:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      thresholdRMS
+		Name:        thresholdRMS
+		Minimum:     -100.000000
+		Maximum:     0.000000
+		Default:     -75.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#notOnGUI
+
+
+	Port 14:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      thresholdPostFilter
+		Name:        thresholdPostFilter
+		Minimum:     -50.000000
+		Maximum:     0.000000
+		Default:     -45.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#notOnGUI
+
+
+	Port 15:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      thresholdFFT
+		Name:        thresholdFFT
+		Minimum:     -50.000000
+		Maximum:     10.000000
+		Default:     -40.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#notOnGUI
+
+
+	Port 16:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      thresholdOverride
+		Name:        thresholdOverride
+		Minimum:     0.000000
+		Maximum:     40.000000
+		Default:     20.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#notOnGUI
+
+
+	Port 17:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      thresholdFundamental
+		Name:        thresholdFundamental
+		Minimum:     0.000000
+		Maximum:     60.000000
+		Default:     5.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#notOnGUI
+
+
+	Port 18:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      thresholdOctave
+		Name:        thresholdOctave
+		Minimum:     -100.000000
+		Maximum:     0.000000
+		Default:     -30.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#notOnGUI
+
+
+	Port 19:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      thresholdOvertones
+		Name:        thresholdvertones
+		Minimum:     -100.000000
+		Maximum:     0.000000
+		Default:     -15.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#notOnGUI
+

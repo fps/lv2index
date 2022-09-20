@@ -1,0 +1,271 @@
+http://rakarrack.sourceforge.net/effects.html#VaryBand
+
+	Name:              rkr VaryBand
+	Class:             Modulator Plugin
+	Author:            Rakarrack Team
+	Author Email:      mailto:ssjackson71@gmail.com
+	Author Homepage:   http://rakarrack.sourceforge.net
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/rkr.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/rkr.lv2/rkrlv2.so
+	Data URIs:         file:///run/current-system/sw/lib/lv2/rkr.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/rkr.lv2/varyband.ttl
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+	         Vary 1
+	         Vary 2
+	         Vary 3
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#AudioPort
+		Symbol:      INPUT_L
+		Name:        Audio In L
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      INPUT_R
+		Name:        Audio In R
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      OUTPUT_L
+		Name:        Audio Out L
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      OUTPUT_R
+		Name:        Audio Out R
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      BYPASS
+		Name:        Bypass
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+		             http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      WETDRY
+		Name:        Wet/Dry
+		Minimum:     0.000000
+		Maximum:     127.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      TEMPO1
+		Name:        Tempo
+		Group:       http://rakarrack.sourceforge.net/effects.html#VaryBand:group:lfo1
+		Minimum:     1.000000
+		Maximum:     600.000000
+		Default:     64.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1 = "Triangle"
+			2 = "Ramp Up"
+			3 = "Ramp Down"
+			4 = "ZigZag"
+			5 = "Modulated Square"
+			6 = "Modulated Saw"
+			7 = "Lorenz Fractal"
+			8 = "Lorenz Fractal XY"
+			9 = "Random Sample and Hold"
+			10 = "Triangle Topped Sine"
+			11 = "Triangle Bottomed Sine"
+			0 = "Sine"
+
+		Symbol:      TYPE1
+		Name:        LFO Type
+		Group:       http://rakarrack.sourceforge.net/effects.html#VaryBand:group:lfo1
+		Minimum:     0.000000
+		Maximum:     11.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      STDL1
+		Name:        LFO L/R Delay
+		Group:       http://rakarrack.sourceforge.net/effects.html#VaryBand:group:lfo1
+		Minimum:     -64.000000
+		Maximum:     63.000000
+		Default:     -2.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      TEMPO2
+		Name:        Tempo
+		Group:       http://rakarrack.sourceforge.net/effects.html#VaryBand:group:lfo2
+		Minimum:     1.000000
+		Maximum:     600.000000
+		Default:     120.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 10:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			9 = "Random Sample and Hold"
+			1 = "Triangle"
+			0 = "Sine"
+			10 = "Triangle Topped Sine"
+			8 = "Lorenz Fractal XY"
+			7 = "Lorenz Fractal"
+			11 = "Triangle Bottomed Sine"
+			4 = "ZigZag"
+			5 = "Modulated Square"
+			3 = "Ramp Down"
+			2 = "Ramp Up"
+			6 = "Modulated Saw"
+
+		Symbol:      TYPE2
+		Name:        LFO Type
+		Group:       http://rakarrack.sourceforge.net/effects.html#VaryBand:group:lfo2
+		Minimum:     0.000000
+		Maximum:     11.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 11:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      STDL2
+		Name:        LFO L/R Delay
+		Group:       http://rakarrack.sourceforge.net/effects.html#VaryBand:group:lfo2
+		Minimum:     -64.000000
+		Maximum:     63.000000
+		Default:     -2.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 12:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      LMCR
+		Name:        Low/Mid1 Crossover
+		Minimum:     20.000000
+		Maximum:     1000.000000
+		Default:     150.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 13:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      MMCR
+		Name:        Mid1/Mid2 Crossover
+		Minimum:     1000.000000
+		Maximum:     8000.000000
+		Default:     1200.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 14:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      MHCR
+		Name:        Mid2/High Crossover
+		Minimum:     2000.000000
+		Maximum:     26000.000000
+		Default:     12000.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 15:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0 = "LF0 1"
+			1 = "LF0 2"
+			3 = "Muted"
+			2 = "Constant"
+
+		Symbol:      LB
+		Name:        Low Band Volume
+		Minimum:     0.000000
+		Maximum:     3.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 16:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0 = "LF0 1"
+			2 = "Constant"
+			3 = "Muted"
+			1 = "LF0 2"
+
+		Symbol:      M1B
+		Name:        Mid Band 1 Volume
+		Minimum:     0.000000
+		Maximum:     3.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 17:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			3 = "Muted"
+			0 = "LF0 1"
+			2 = "Constant"
+			1 = "LF0 2"
+
+		Symbol:      M2B
+		Name:        Mid Band 2 Volume
+		Minimum:     0.000000
+		Maximum:     3.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 18:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0 = "LF0 1"
+			2 = "Constant"
+			3 = "Muted"
+			1 = "LF0 2"
+
+		Symbol:      HB
+		Name:        High Band Volume
+		Minimum:     0.000000
+		Maximum:     3.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/lv2core#integer
+

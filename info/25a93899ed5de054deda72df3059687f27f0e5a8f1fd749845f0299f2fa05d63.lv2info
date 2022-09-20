@@ -1,0 +1,50 @@
+http://www.openavproductions.com/artyfx#whaaa
+
+	Name:              Whaaa
+	Class:             Plugin
+	Author:            OpenAV
+	Author Email:      mailto:harryhaaren@gmail.com
+	Author Homepage:   http://openavproductions.com
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/artyfx.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/artyfx.lv2/artyfx.so
+	UIs:
+		http://www.openavproductions.com/artyfx#whaaa/gui
+			Class:  http://lv2plug.in/ns/extensions/ui#X11UI
+			Binary: file:///run/current-system/sw/lib/lv2/artyfx.lv2/artyfx_ui.so
+			Bundle: file:///run/current-system/sw/lib/lv2/artyfx.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/artyfx.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/artyfx.lv2/whaaa.ttl
+	Required Features: http://lv2plug.in/ns/ext/urid#map
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      inputL
+		Name:        Audio Input L
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      outputL
+		Name:        Audio Output Left
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      freq
+		Name:        Freq
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      mix
+		Name:        Mix
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000

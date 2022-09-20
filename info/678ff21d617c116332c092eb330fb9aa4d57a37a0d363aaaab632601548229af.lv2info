@@ -1,0 +1,153 @@
+https://faustlv2.bitbucket.io/mooSpace
+
+	Name:              mooSpace
+	Class:             Plugin
+	Author:            Arev Imer (arev.imer@students.fhnw.ch)
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/mooSpace.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/mooSpace.lv2/mooSpace.so
+	UIs:
+		https://faustlv2.bitbucket.io/mooSpaceui
+			Class:  http://lv2plug.in/ns/extensions/ui#Qt4UI
+			Binary: file:///run/current-system/sw/lib/lv2/mooSpace.lv2/mooSpaceui.so
+			Bundle: file:///run/current-system/sw/lib/lv2/mooSpace.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/mooSpace.lv2/mooSpace.ttl
+	                   file:///run/current-system/sw/lib/lv2/mooSpace.lv2/manifest.ttl
+	Required Features: http://lv2plug.in/ns/ext/urid#map
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	                   http://lv2plug.in/ns/ext/port-props#supportsStrictBounds
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      High_Cut_0
+		Name:        High Cut
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      Low_Cut_1
+		Name:        Low Cut
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      colour_2
+		Name:        colour
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.100000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      decay_3
+		Name:        decay
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.300000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      drag_4
+		Name:        drag
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lag_5
+		Name:        lag
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      mix_6
+		Name:        mix
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      modulate_7
+		Name:        modulate
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.020000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      push_8
+		Name:        push
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      smear_9
+		Name:        smear
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 10:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in0
+		Name:        in0
+
+	Port 11:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in1
+		Name:        in1
+
+	Port 12:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out0
+		Name:        out0
+
+	Port 13:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out1
+		Name:        out1

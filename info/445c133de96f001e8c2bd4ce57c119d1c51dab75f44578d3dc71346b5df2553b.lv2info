@@ -1,0 +1,31 @@
+http://gareus.org/oss/lv2/controlfilter#invert
+
+	Name:              Control Invert
+	Class:             Utility Plugin
+	Author:            Robin Gareus
+	Author Email:      mailto:robin@gareus.org
+	Author Homepage:   http://gareus.org/
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/controlfilter.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/controlfilter.lv2/controlfilter.so
+	Data URIs:         file:///run/current-system/sw/lib/lv2/controlfilter.lv2/controlfilter.ttl
+	                   file:///run/current-system/sw/lib/lv2/controlfilter.lv2/manifest.ttl
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in
+		Name:        Control Input
+		Minimum:     -1.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out
+		Name:        Control Output
+		Minimum:     -1.000000
+		Maximum:     1.000000

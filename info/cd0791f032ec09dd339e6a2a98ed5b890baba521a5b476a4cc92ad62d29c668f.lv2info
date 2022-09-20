@@ -1,0 +1,52 @@
+http://moddevices.com/plugins/mod-devel/BigMuffPi
+
+	Name:              Open Big Muff
+	Class:             Distortion Plugin
+	Author:            MOD Team
+	Author Email:      mailto:devel@moddevices.com
+	Author Homepage:   http://moddevices.com
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/mod-bigmuff.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/mod-bigmuff.lv2/mod-bigmuff.so
+	Data URIs:         file:///run/current-system/sw/lib/lv2/mod-bigmuff.lv2/bigmuff.ttl
+	                   file:///run/current-system/sw/lib/lv2/mod-bigmuff.lv2/manifest.ttl
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      In
+		Name:        In
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#OutputPort
+		             http://lv2plug.in/ns/lv2core#AudioPort
+		Symbol:      Out1
+		Name:        Out 1
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      Tone
+		Name:        Tone
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      Level
+		Name:        Level
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      Sustain
+		Name:        Sustain
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000

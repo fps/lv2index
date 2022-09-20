@@ -1,0 +1,31 @@
+http://plugin.org.uk/swh-plugins/waveTerrain
+
+	Name:              Wave Terrain Oscillator
+	Class:             Oscillator Plugin
+	Author:            Steve Harris
+	Author Email:      mailto:steve@plugin.org.uk
+	Author Homepage:   http://plugin.org.uk/
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/wave_terrain-swh.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/wave_terrain-swh.lv2/plugin-Linux.so
+	Data URIs:         file:///run/current-system/sw/lib/lv2/wave_terrain-swh.lv2/plugin.ttl
+	                   file:///run/current-system/sw/lib/lv2/wave_terrain-swh.lv2/manifest.ttl
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xb
+		Name:        x
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      yb
+		Name:        y
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      zb
+		Name:        z

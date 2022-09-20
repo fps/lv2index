@@ -1,0 +1,873 @@
+https://www.jahnichen.de/plugins/lv2/BShapr
+
+	Name:              B.Shapr
+	Class:             Envelope Plugin
+	Author:            Sven Jaehnichen
+	Author Homepage:   https://github.com/sjaehn/
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/BShapr.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/BShapr.lv2/BShapr.so
+	UIs:
+		https://www.jahnichen.de/plugins/lv2/BShapr#gui
+			Class:  http://lv2plug.in/ns/extensions/ui#X11UI
+			Binary: file:///run/current-system/sw/lib/lv2/BShapr.lv2/BShaprGUI.so
+			Bundle: file:///run/current-system/sw/lib/lv2/BShapr.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/BShapr.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/BShapr.lv2/BShapr.ttl
+	Required Features: http://lv2plug.in/ns/ext/urid#map
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Extension Data:    http://lv2plug.in/ns/ext/state#interface
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/ext/atom#AtomPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      control
+		Name:        Control
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/ext/atom#AtomPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      notify
+		Name:        Notify
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lv2_audio_in_1
+		Name:        Audio Input 1
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lv2_audio_in_2
+		Name:        Audio Input 2
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      lv2_audio_out_1
+		Name:        Audio Output 1
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      lv2_audio_out_2
+		Name:        Audio Output 2
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0 = "Off"
+			1 = "On"
+
+		Symbol:      bypass
+		Name:        Bypass
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      dry_wet
+		Name:        Dry / wet
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1 = "On"
+			0 = "Off"
+
+		Symbol:      midi_control
+		Name:        MIDI control
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      midi_keys
+		Name:        MIDI Keys
+		Minimum:     0.000000
+		Maximum:     4095.000000
+		Default:     4095.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 10:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0 = "Disable"
+			1 = "Enable"
+
+		Symbol:      midi_thru
+		Name:        MIDI thru
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 11:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0 = "Seconds"
+			1 = "Beats"
+			2 = "Bars"
+
+		Symbol:      base
+		Name:        Base
+		Minimum:     0.000000
+		Maximum:     2.000000
+		Default:     2.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 12:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      base_value
+		Name:        Base value
+		Minimum:     1.000000
+		Maximum:     16.000000
+		Default:     1.000000
+
+	Port 13:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      active_shape
+		Name:        Active shape
+		Minimum:     1.000000
+		Maximum:     4.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 14:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			2 = "Constant"
+			1 = "Audio in"
+			0 = "Off"
+			4 = "Shaper 2"
+			5 = "Shaper 3"
+			6 = "Shaper 4"
+
+		Symbol:      sh1_input
+		Name:        Shaper 1: input
+		Minimum:     0.000000
+		Maximum:     6.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 15:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      sh1_input_amp
+		Name:        Shaper 1: input amplification
+		Minimum:     -1.000000
+		Maximum:     1.000000
+		Default:     1.000000
+
+	Port 16:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1 = "Balance"
+			5 = "Gain"
+			0 = "Level"
+			4 = "High pass"
+			3 = "Low pass"
+			2 = "Width"
+			6 = "Low pass (log)"
+			7 = "High pass (log)"
+			8 = "Pitch"
+			9 = "Delay (const. pitch)"
+			10 = "Doppler delay"
+			11 = "Distortion"
+			12 = "Decimate"
+			13 = "Bitcrush"
+			14 = "Send"
+
+		Symbol:      sh1_target
+		Name:        Shaper 1: target
+		Minimum:     0.000000
+		Maximum:     14.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 17:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      sh1_dry_wet
+		Name:        Shaper 1: dry / wet
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+
+	Port 18:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0 = "Internal"
+			1 = "Audio out"
+
+		Symbol:      sh1_output
+		Name:        Shaper 1: output
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 19:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      sh1_output_amp
+		Name:        Shaper 1: output amplification
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+
+	Port 20:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      sh1_smoothing
+		Name:        Shaper 1: smoothing
+		Minimum:     0.000000
+		Maximum:     100.000000
+		Default:     20.000000
+
+	Port 21:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      sh1_opt1
+		Name:        Shaper 1: option 1
+		Minimum:     12.000000
+		Maximum:     72.000000
+		Default:     36.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 22:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      sh1_opt2
+		Name:        Shaper 1: option 2
+		Minimum:     0.000000
+		Maximum:     4.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 23:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      sh1_opt3
+		Name:        Shaper 1: option 3
+		Minimum:     -60.000000
+		Maximum:     30.000000
+		Default:     0.000000
+
+	Port 24:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      sh1_opt4
+		Name:        Shaper 1: option 4
+		Minimum:     0.000000
+		Maximum:     16.000000
+		Default:     1.000000
+
+	Port 25:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      sh1_opt5
+		Name:        Shaper 1: option 5
+		Minimum:     0.000000
+		Maximum:     127.000000
+		Default:     1.000000
+
+	Port 26:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      sh1_opt6
+		Name:        Shaper 1: option 6
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 27:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      sh1_opt7
+		Name:        Shaper 1: option 7
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 28:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      sh1_opt8
+		Name:        Shaper 1: option 8
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 29:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1 = "Audio in"
+			0 = "Off"
+			3 = "Shaper 1"
+			2 = "Constant"
+			5 = "Shaper 3"
+			6 = "Shaper 4"
+
+		Symbol:      sh2_input
+		Name:        Shaper 2: input
+		Minimum:     0.000000
+		Maximum:     6.000000
+		Default:     3.000000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 30:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      sh2_input_amp
+		Name:        Shaper 2: input amplification
+		Minimum:     -1.000000
+		Maximum:     1.000000
+		Default:     1.000000
+
+	Port 31:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			6 = "Low pass (log)"
+			9 = "Delay (const. pitch)"
+			11 = "Distortion"
+			13 = "Bitcrush"
+			12 = "Decimate"
+			0 = "Level"
+			4 = "High pass"
+			3 = "Low pass"
+			10 = "Doppler delay"
+			8 = "Pitch"
+			7 = "High pass (log)"
+			14 = "Send"
+			5 = "Gain"
+			1 = "Balance"
+			2 = "Width"
+
+		Symbol:      sh2_target
+		Name:        Shaper 2: target
+		Minimum:     0.000000
+		Maximum:     14.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 32:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      sh2_dry_wet
+		Name:        Shaper 2: dry / wet
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+
+	Port 33:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1 = "Audio out"
+			0 = "Internal"
+
+		Symbol:      sh2_output
+		Name:        Shaper 2: output
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 34:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      sh2_output_amp
+		Name:        Shaper 2: output amplification
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+
+	Port 35:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      sh2_smoothing
+		Name:        Shaper 2: smoothing
+		Minimum:     0.000000
+		Maximum:     100.000000
+		Default:     20.000000
+
+	Port 36:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      sh2_opt1
+		Name:        Shaper 2: option 1
+		Minimum:     12.000000
+		Maximum:     72.000000
+		Default:     36.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 37:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      sh2_opt2
+		Name:        Shaper 2: option 2
+		Minimum:     0.000000
+		Maximum:     4.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 38:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      sh2_opt3
+		Name:        Shaper 2: option 3
+		Minimum:     -60.000000
+		Maximum:     30.000000
+		Default:     0.000000
+
+	Port 39:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      sh2_opt4
+		Name:        Shaper 2: option 4
+		Minimum:     0.000000
+		Maximum:     16.000000
+		Default:     1.000000
+
+	Port 40:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      sh2_opt5
+		Name:        Shaper 2: option 5
+		Minimum:     0.000000
+		Maximum:     127.000000
+		Default:     1.000000
+
+	Port 41:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      sh2_opt6
+		Name:        Shaper 2: option 6
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 42:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      sh2_opt7
+		Name:        Shaper 2: option 7
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 43:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      sh2_opt8
+		Name:        Shaper 2: option 8
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 44:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0 = "Off"
+			6 = "Shaper 4"
+			1 = "Audio in"
+			3 = "Shaper 1"
+			4 = "Shaper 2"
+			2 = "Constant"
+
+		Symbol:      sh3_input
+		Name:        Shaper 3: input
+		Minimum:     0.000000
+		Maximum:     6.000000
+		Default:     4.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 45:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      sh3_input_amp
+		Name:        Shaper 3: input amplification
+		Minimum:     -1.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 46:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			9 = "Delay (const. pitch)"
+			4 = "High pass"
+			5 = "Gain"
+			0 = "Level"
+			1 = "Balance"
+			12 = "Decimate"
+			11 = "Distortion"
+			7 = "High pass (log)"
+			14 = "Send"
+			8 = "Pitch"
+			6 = "Low pass (log)"
+			10 = "Doppler delay"
+			2 = "Width"
+			13 = "Bitcrush"
+			3 = "Low pass"
+
+		Symbol:      sh3_target
+		Name:        Shaper 3: target
+		Minimum:     0.000000
+		Maximum:     14.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 47:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      sh3_dry_wet
+		Name:        Shaper 3: dry / wet
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+
+	Port 48:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0 = "Internal"
+			1 = "Audio out"
+
+		Symbol:      sh3_output
+		Name:        Shaper 3: output
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 49:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      sh3_output_amp
+		Name:        Shaper 3: output amplification
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+
+	Port 50:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      sh3_smoothing
+		Name:        Shaper 3: smoothing
+		Minimum:     0.000000
+		Maximum:     100.000000
+		Default:     20.000000
+
+	Port 51:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      sh3_opt1
+		Name:        Shaper 3: option 1
+		Minimum:     12.000000
+		Maximum:     72.000000
+		Default:     36.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 52:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      sh3_opt2
+		Name:        Shaper 3: option 2
+		Minimum:     0.000000
+		Maximum:     4.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 53:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      sh3_opt3
+		Name:        Shaper 3: option 3
+		Minimum:     -60.000000
+		Maximum:     30.000000
+		Default:     0.000000
+
+	Port 54:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      sh3_opt4
+		Name:        Shaper 3: option 4
+		Minimum:     0.000000
+		Maximum:     16.000000
+		Default:     1.000000
+
+	Port 55:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      sh3_opt5
+		Name:        Shaper 3: option 5
+		Minimum:     0.000000
+		Maximum:     127.000000
+		Default:     1.000000
+
+	Port 56:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      sh3_opt6
+		Name:        Shaper 3: option 6
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 57:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      sh3_opt7
+		Name:        Shaper 3: option 7
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 58:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      sh3_opt8
+		Name:        Shaper 3: option 8
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 59:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1 = "Audio in"
+			5 = "Shaper 3"
+			4 = "Shaper 2"
+			3 = "Shaper 1"
+			2 = "Constant"
+			0 = "Off"
+
+		Symbol:      sh4_input
+		Name:        Shaper 4: input
+		Minimum:     0.000000
+		Maximum:     6.000000
+		Default:     5.000000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 60:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      sh4_input_amp
+		Name:        Shaper 4: input amplification
+		Minimum:     -1.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 61:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0 = "Level"
+			14 = "Send"
+			5 = "Gain"
+			2 = "Width"
+			10 = "Doppler delay"
+			11 = "Distortion"
+			3 = "Low pass"
+			1 = "Balance"
+			8 = "Pitch"
+			7 = "High pass (log)"
+			12 = "Decimate"
+			6 = "Low pass (log)"
+			9 = "Delay (const. pitch)"
+			13 = "Bitcrush"
+			4 = "High pass"
+
+		Symbol:      sh4_target
+		Name:        Shaper 4: target
+		Minimum:     0.000000
+		Maximum:     14.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 62:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      sh4_dry_wet
+		Name:        Shaper 4: dry / wet
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+
+	Port 63:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0 = "Internal"
+			1 = "Audio out"
+
+		Symbol:      sh4_output
+		Name:        Shaper 4: output
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 64:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      sh4_output_amp
+		Name:        Shaper 4: output amplification
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+
+	Port 65:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      sh4_smoothing
+		Name:        Shaper 4: smoothing
+		Minimum:     0.000000
+		Maximum:     100.000000
+		Default:     20.000000
+
+	Port 66:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      sh4_opt1
+		Name:        Shaper 4: option 1
+		Minimum:     12.000000
+		Maximum:     72.000000
+		Default:     36.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 67:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      sh4_opt2
+		Name:        Shaper 4: option 2
+		Minimum:     0.000000
+		Maximum:     4.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 68:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      sh4_opt3
+		Name:        Shaper 4: option 3
+		Minimum:     -60.000000
+		Maximum:     30.000000
+		Default:     0.000000
+
+	Port 69:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      sh4_opt4
+		Name:        Shaper 4: option 4
+		Minimum:     0.000000
+		Maximum:     16.000000
+		Default:     1.000000
+
+	Port 70:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      sh4_opt5
+		Name:        Shaper 4: option 5
+		Minimum:     0.000000
+		Maximum:     127.000000
+		Default:     1.000000
+
+	Port 71:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      sh4_opt6
+		Name:        Shaper 4: option 6
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 72:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      sh4_opt7
+		Name:        Shaper 4: option 7
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 73:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      sh4_opt8
+		Name:        Shaper 4: option 8
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000

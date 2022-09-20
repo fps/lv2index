@@ -1,0 +1,90 @@
+http://gareus.org/oss/lv2/meters#dBTPstereo
+
+	Name:              True-Peak Meter (Stereo)
+	Class:             Analyser Plugin
+	Author:            Robin Gareus
+	Author Email:      mailto:robin@gareus.org
+	Author Homepage:   http://gareus.org/
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/meters.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/meters.lv2/meters.so
+	UIs:
+		http://gareus.org/oss/lv2/meters#dpmui_gl
+			Class:  http://kxstudio.sf.net/ns/lv2ext/external-ui#Widget
+			Binary: file:///run/current-system/sw/lib/lv2/meters.lv2/meters_glui.so
+			Bundle: file:///run/current-system/sw/lib/lv2/meters.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/meters.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/meters.lv2/meters.ttl
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      ref
+		Name:        ui notification
+		Minimum:     -4.000000
+		Maximum:     4.000000
+		Default:     -4.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#notOnGUI
+
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#AudioPort
+		Symbol:      inL
+		Name:        InL
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      outL
+		Name:        OutL
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#OutputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      levelL
+		Name:        LevelL
+		Minimum:     0.000000
+		Maximum:     1.000000
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      inR
+		Name:        InR
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      outR
+		Name:        OutR
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      levelR
+		Name:        LevelR
+		Minimum:     0.000000
+		Maximum:     1.000000
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      peakL
+		Name:        peakL
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#notOnGUI
+
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      peakR
+		Name:        peakR
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#notOnGUI
+

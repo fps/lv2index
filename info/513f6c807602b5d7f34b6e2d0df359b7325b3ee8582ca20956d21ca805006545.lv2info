@@ -1,0 +1,63 @@
+http://plugin.org.uk/swh-plugins/flanger
+
+	Name:              Flanger
+	Class:             Flanger Plugin
+	Author:            Steve Harris
+	Author Email:      mailto:steve@plugin.org.uk
+	Author Homepage:   http://plugin.org.uk/
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/flanger-swh.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/flanger-swh.lv2/plugin-Linux.so
+	Data URIs:         file:///run/current-system/sw/lib/lv2/flanger-swh.lv2/plugin.ttl
+	                   file:///run/current-system/sw/lib/lv2/flanger-swh.lv2/manifest.ttl
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      delay_base
+		Name:        Delay base (ms)
+		Minimum:     0.100000
+		Maximum:     25.000000
+		Default:     6.325000
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      detune
+		Name:        Max slowdown (ms)
+		Minimum:     0.000000
+		Maximum:     10.000000
+		Default:     2.500000
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      law_freq
+		Name:        LFO frequency (Hz)
+		Minimum:     0.050000
+		Maximum:     100.000000
+		Default:     25.037500
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      feedback
+		Name:        Feedback
+		Minimum:     -1.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      input
+		Name:        Input
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      output
+		Name:        Output

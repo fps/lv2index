@@ -1,0 +1,130 @@
+urn:zamaudio:ZamTube
+
+	Name:              ZamTube
+	Class:             Distortion Plugin
+	Author:            Damien Zammit
+	Author Homepage:   http://www.zamaudio.com
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/ZamTube.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/ZamTube.lv2/ZamTube_dsp.so
+	UIs:
+		urn:zamaudio:ZamTube#UI
+			Class:  http://lv2plug.in/ns/extensions/ui#X11UI
+			Binary: file:///run/current-system/sw/lib/lv2/ZamTube.lv2/ZamTube_ui.so
+			Bundle: file:///run/current-system/sw/lib/lv2/ZamTube.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/ZamTube.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/ZamTube.lv2/ZamTube_dsp.ttl
+	Required Features: http://lv2plug.in/ns/ext/urid#map
+	                   http://lv2plug.in/ns/ext/options#options
+	Optional Features: http://lv2plug.in/ns/ext/buf-size#boundedBlockLength
+	Extension Data:    http://kxstudio.sf.net/ns/lv2ext/programs#Interface
+	                   http://lv2plug.in/ns/ext/options#interface
+	Presets: 
+	         Default
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#AudioPort
+		Symbol:      lv2_audio_in_1
+		Name:        Audio Input 1
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      lv2_audio_out_1
+		Name:        Audio Output 1
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      tubedrive
+		Name:        Tube Drive
+		Minimum:     0.100000
+		Maximum:     11.000000
+		Default:     0.100000
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      bass
+		Name:        Bass
+		Minimum:     0.000000
+		Maximum:     10.000000
+		Default:     5.000000
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      mids
+		Name:        Mids
+		Minimum:     0.000000
+		Maximum:     10.000000
+		Default:     5.000000
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      treb
+		Name:        Treble
+		Minimum:     0.000000
+		Maximum:     10.000000
+		Default:     5.000000
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0 = "1959 Bassman 5F6-A"
+			2 = "1969 Twin Reverb AA270"
+			3 = "1964 Princeton AA1164"
+			4 = "1959/81 JCM-800 Lead 100"
+			5 = "1981 JCM-2000 Lead"
+			6 = "JTM 45"
+			7 = "1967 Major Lead 200"
+			8 = "M2199 30W"
+			9 = "1959/86 AC-30"
+			10 = "VOX AC-15"
+			11 = "Soldano SLO 100"
+			12 = "Sovtek MIG 100 H"
+			13 = "Peavey C20"
+			14 = "Ibanez GX20"
+			15 = "Roland Cube 60"
+			16 = "Ampeg VL 501"
+			17 = "Ampeg Reverb Rocket"
+			18 = "Bogner Triple Giant Preamp"
+			19 = "Groove Trio Preamp"
+			20 = "Hughes&Kettner"
+			21 = "Fender Blues Junior"
+			22 = "Fender"
+			23 = "Fender Hot Rod"
+			24 = "Gibsen GS12 Reverb Rocket"
+			1 = "Mesa Boogie Mark"
+
+		Symbol:      tonestack
+		Name:        Tone Stack Model
+		Minimum:     0.000000
+		Maximum:     24.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gain
+		Name:        Input level
+		Minimum:     -30.000000
+		Maximum:     30.000000
+		Default:     0.000000
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      insane
+		Name:        Insane Boost
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+

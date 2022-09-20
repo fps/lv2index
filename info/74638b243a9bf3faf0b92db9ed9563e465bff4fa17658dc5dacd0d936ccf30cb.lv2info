@@ -1,0 +1,189 @@
+urn:juce:TalReverb2
+
+	Name:              Tal-Reverb-II
+	Class:             Reverb Plugin
+	Author:            TAL-Togu Audio Line
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/TAL-Reverb-2.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/TAL-Reverb-2.lv2/TAL-Reverb-2.so
+	UIs:
+		urn:juce:TalReverb2#ExternalUI
+			Class:  http://kxstudio.sf.net/ns/lv2ext/external-ui#Widget
+			Binary: file:///run/current-system/sw/lib/lv2/TAL-Reverb-2.lv2/TAL-Reverb-2.so
+			Bundle: file:///run/current-system/sw/lib/lv2/TAL-Reverb-2.lv2/
+		urn:juce:TalReverb2#ParentUI
+			Class:  http://lv2plug.in/ns/extensions/ui#X11UI
+			Binary: file:///run/current-system/sw/lib/lv2/TAL-Reverb-2.lv2/TAL-Reverb-2.so
+			Bundle: file:///run/current-system/sw/lib/lv2/TAL-Reverb-2.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/TAL-Reverb-2.lv2/TAL-Reverb-2.ttl
+	                   file:///run/current-system/sw/lib/lv2/TAL-Reverb-2.lv2/manifest.ttl
+	Required Features: http://lv2plug.in/ns/ext/buf-size#boundedBlockLength
+	                   http://lv2plug.in/ns/ext/urid#map
+	Extension Data:    http://lv2plug.in/ns/ext/state#interface
+	                   http://lv2plug.in/ns/ext/options#interface
+	                   http://kxstudio.sf.net/ns/lv2ext/programs#Interface
+	Presets: 
+	         Big Wet Plate (no EQ)
+	         Mid Plate
+	         Gentle Drum Ambience
+	         Need some Air
+	         Dull Plate
+	         Airy Mono Plate
+	         1100Hz Plate
+	         Short Plate
+	         80's Plate
+	         Small Drum Plate
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lv2_freewheel
+		Name:        Freewheel
+		Designation: http://lv2plug.in/ns/lv2core#freeWheeling
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#notOnGUI
+		             http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lv2_audio_in_1
+		Name:        Audio Input 1
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lv2_audio_in_2
+		Name:        Audio Input 2
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      lv2_audio_out_1
+		Name:        Audio Output 1
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      lv2_audio_out_2
+		Name:        Audio Output 2
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      unused
+		Name:        unused
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      dry
+		Name:        dry
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      wet
+		Name:        wet
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.161000
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      room_size
+		Name:        room size
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.752000
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      pre_delay
+		Name:        pre delay
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.132000
+
+	Port 10:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      low_shelf_frequency
+		Name:        low shelf frequency
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.024000
+
+	Port 11:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      high_shelf_frequency
+		Name:        high shelf frequency
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+
+	Port 12:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      peak_frequency
+		Name:        peak frequency
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.492000
+
+	Port 13:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      low_shelf_gain
+		Name:        low shelf gain
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+
+	Port 14:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      high_shelf_gain
+		Name:        high shelf gain
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+
+	Port 15:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      peak_gain
+		Name:        peak gain
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+
+	Port 16:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      stereo
+		Name:        stereo
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+
+	Port 17:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      stereo_input
+		Name:        stereo input
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000

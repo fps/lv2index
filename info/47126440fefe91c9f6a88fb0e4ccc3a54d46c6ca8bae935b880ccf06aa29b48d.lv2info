@@ -1,0 +1,378 @@
+http://kunz.corrupt.ch/products/tal-vocoder
+
+	Name:              Tal-Vocoder-II
+	Class:             Modulator Plugin
+	Author:            TAL-Togu Audio Line
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/TAL-Vocoder-2.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/TAL-Vocoder-2.lv2/TAL-Vocoder-2.so
+	UIs:
+		http://kunz.corrupt.ch/products/tal-vocoder#ExternalUI
+			Class:  http://kxstudio.sf.net/ns/lv2ext/external-ui#Widget
+			Binary: file:///run/current-system/sw/lib/lv2/TAL-Vocoder-2.lv2/TAL-Vocoder-2.so
+			Bundle: file:///run/current-system/sw/lib/lv2/TAL-Vocoder-2.lv2/
+		http://kunz.corrupt.ch/products/tal-vocoder#ParentUI
+			Class:  http://lv2plug.in/ns/extensions/ui#X11UI
+			Binary: file:///run/current-system/sw/lib/lv2/TAL-Vocoder-2.lv2/TAL-Vocoder-2.so
+			Bundle: file:///run/current-system/sw/lib/lv2/TAL-Vocoder-2.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/TAL-Vocoder-2.lv2/TAL-Vocoder-2.ttl
+	                   file:///run/current-system/sw/lib/lv2/TAL-Vocoder-2.lv2/manifest.ttl
+	Required Features: http://lv2plug.in/ns/ext/buf-size#boundedBlockLength
+	                   http://lv2plug.in/ns/ext/urid#map
+	Extension Data:    http://lv2plug.in/ns/ext/state#interface
+	                   http://lv2plug.in/ns/ext/options#interface
+	                   http://kxstudio.sf.net/ns/lv2ext/programs#Interface
+	Presets: 
+	         C Noise Speech
+	         G default
+	         A Voice Robot 1
+	         F Noisy Speech
+	         E Voice Robot 2
+	         H default
+	         I default
+	         J default
+	         B Voice Robot Harmonic
+	         D Portamento Speech
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/ext/atom#AtomPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lv2_events_in
+		Name:        Events Input
+		Designation: http://lv2plug.in/ns/lv2core#control
+		Properties:  http://lv2plug.in/ns/lv2core#connectionOptional
+
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lv2_freewheel
+		Name:        Freewheel
+		Designation: http://lv2plug.in/ns/lv2core#freeWheeling
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#notOnGUI
+		             http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lv2_audio_in_1
+		Name:        Audio Input 1
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lv2_audio_in_2
+		Name:        Audio Input 2
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      lv2_audio_out_1
+		Name:        Audio Output 1
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      lv2_audio_out_2
+		Name:        Audio Output 2
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      unused
+		Name:        unused
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      tal_volume
+		Name:        TAL_VOLUME
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.504000
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      harmonics
+		Name:        HARMONICS
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      noisevolume
+		Name:        NOISEVOLUME
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 10:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      pulsevolume
+		Name:        PULSEVOLUME
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 11:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      sawvolume
+		Name:        SAWVOLUME
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.976000
+
+	Port 12:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      suboscvolume
+		Name:        SUBOSCVOLUME
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.556000
+
+	Port 13:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      osctranspose
+		Name:        OSCTRANSPOSE
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.400000
+
+	Port 14:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      suboscoctave
+		Name:        SUBOSCOCTAVE
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 15:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      oscsync
+		Name:        OSCSYNC
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 16:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      pulsetune
+		Name:        PULSETUNE
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.508000
+
+	Port 17:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      sawtune
+		Name:        SAWTUNE
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.540000
+
+	Port 18:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      pulsefinetune
+		Name:        PULSEFINETUNE
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.524000
+
+	Port 19:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      sawfinetune
+		Name:        SAWFINETUNE
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.520000
+
+	Port 20:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      esserintensity
+		Name:        ESSERINTENSITY
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.588000
+
+	Port 21:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      polymode
+		Name:        POLYMODE
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+
+	Port 22:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      portamento
+		Name:        PORTAMENTO
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 23:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      tal_tune
+		Name:        TAL_TUNE
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.508000
+
+	Port 24:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      panic
+		Name:        PANIC
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 25:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      inputmode
+		Name:        INPUTMODE
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 26:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      chorus
+		Name:        CHORUS
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 27:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      enveloperelease
+		Name:        ENVELOPERELEASE
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.392000
+
+	Port 28:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      vocoderband00
+		Name:        VOCODERBAND00
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.468000
+
+	Port 29:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      vocoderband01
+		Name:        VOCODERBAND01
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.472000
+
+	Port 30:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      vocoderband02
+		Name:        VOCODERBAND02
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.464000
+
+	Port 31:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      vocoderband03
+		Name:        VOCODERBAND03
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.448000
+
+	Port 32:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      vocoderband04
+		Name:        VOCODERBAND04
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.448000
+
+	Port 33:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      vocoderband05
+		Name:        VOCODERBAND05
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.464000
+
+	Port 34:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      vocoderband06
+		Name:        VOCODERBAND06
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.476000
+
+	Port 35:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      vocoderband07
+		Name:        VOCODERBAND07
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.492000
+
+	Port 36:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      vocoderband08
+		Name:        VOCODERBAND08
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.488000
+
+	Port 37:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      vocoderband09
+		Name:        VOCODERBAND09
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.464000
+
+	Port 38:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      vocoderband10
+		Name:        VOCODERBAND10
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.480000

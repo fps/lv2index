@@ -1,0 +1,85 @@
+http://guitarix.sourceforge.net/plugins/gx_maestro_fz1s_#_maestro_fz1s_
+
+	Name:              GxFz1s
+	Class:             Distortion Plugin
+	Author:            Guitarix team
+	Author Email:      mailto:guitarix-developer@lists.sourceforge.net
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/gx_maestro_fz1s.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/gx_maestro_fz1s.lv2/gx_maestro_fz1s.so
+	UIs:
+		http://guitarix.sourceforge.net/plugins/gx_maestro_fz1s_gui#_maestro_fz1s_
+			Class:  http://lv2plug.in/ns/extensions/ui#X11UI
+			Binary: file:///run/current-system/sw/lib/lv2/gx_maestro_fz1s.lv2/gx_maestro_fz1s_ui.so
+			Bundle: file:///run/current-system/sw/lib/lv2/gx_maestro_fz1s.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/gx_maestro_fz1s.lv2/gx_maestro_fz1s.ttl
+	                   file:///run/current-system/sw/lib/lv2/gx_maestro_fz1s.lv2/manifest.ttl
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out
+		Name:        Out
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in
+		Name:        In
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      BYPASS
+		Name:        BYPASS
+		Designation: http://lv2plug.in/ns/lv2core#enabled
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      BALANCE
+		Name:        BALANCE
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1 = "On"
+			0 = "Off"
+
+		Symbol:      FILTER
+		Name:        FILTER
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      SUSTAIN
+		Name:        SUSTAIN
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      VOLUME
+		Name:        VOLUME
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000

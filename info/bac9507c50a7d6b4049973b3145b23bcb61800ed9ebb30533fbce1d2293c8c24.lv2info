@@ -1,0 +1,52 @@
+http://plugin.org.uk/swh-plugins/allpass_c
+
+	Name:              Allpass delay line, cubic spline interpolation
+	Class:             Delay Plugin
+	Author:            Steve Harris
+	Author Email:      mailto:steve@plugin.org.uk
+	Author Homepage:   http://plugin.org.uk/
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/allpass-swh.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/allpass-swh.lv2/plugin-Linux.so
+	Data URIs:         file:///run/current-system/sw/lib/lv2/allpass-swh.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/allpass-swh.lv2/plugin.ttl
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in
+		Name:        Input
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out
+		Name:        Output
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      max_delay
+		Name:        Max Delay (s)
+		Minimum:     0.000000
+		Maximum:     10.000000
+		Default:     1.000000
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      delay_time
+		Name:        Delay Time (s)
+		Minimum:     0.000000
+		Maximum:     10.000000
+		Default:     0.000000
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      decay_time
+		Name:        Decay Time (s)
+		Minimum:     0.000000
+		Maximum:     10.000000
+		Default:     0.000000
