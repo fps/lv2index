@@ -1,0 +1,174 @@
+<html><head></head><body><pre>
+http://rakarrack.sourceforge.net/effects.html#Shifter
+
+	Name:              rkr Shifter
+	Class:             Pitch Shifter Plugin
+	Author:            Rakarrack Team
+	Author Email:      mailto:ssjackson71@gmail.com
+	Author Homepage:   http://rakarrack.sourceforge.net
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/rkr.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/rkr.lv2/rkrlv2.so
+	Data URIs:         file:///run/current-system/sw/lib/lv2/rkr.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/rkr.lv2/shifter.ttl
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+	         Fast
+	         Slow Up
+	         Slow Down
+	         Chorus
+	         Trigger Chorus
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      INPUT_L
+		Name:        Audio In L
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      INPUT_R
+		Name:        Audio In R
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      OUTPUT_L
+		Name:        Audio Out L
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      OUTPUT_R
+		Name:        Audio Out R
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      BYPASS
+		Name:        Bypass
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+		             http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      WETDRY
+		Name:        Wet/Dry
+		Minimum:     0.000000
+		Maximum:     127.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      PAN
+		Name:        Pan
+		Minimum:     -64.000000
+		Maximum:     63.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      GAIN
+		Name:        Gain
+		Minimum:     -64.000000
+		Maximum:     63.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      ATACK
+		Name:        Attack
+		Minimum:     1.000000
+		Maximum:     2000.000000
+		Default:     500.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      DECAY
+		Name:        Decay
+		Minimum:     1.000000
+		Maximum:     2000.000000
+		Default:     500.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 10:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      THRESH
+		Name:        Thresold
+		Minimum:     -70.000000
+		Maximum:     20.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 11:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      INT
+		Name:        Interval
+		Minimum:     0.000000
+		Maximum:     12.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 12:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      DN
+		Name:        Shift Down
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 13:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0 = "Trigger"
+			1 = "Whammy"
+			2 = "Portamento"
+
+		Symbol:      MODE
+		Name:        Mode
+		Minimum:     0.000000
+		Maximum:     2.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 14:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      WHAMMY
+		Name:        Interval
+		Minimum:     0.000000
+		Maximum:     127.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+</pre></body></html>

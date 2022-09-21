@@ -1,0 +1,1120 @@
+<html><head></head><body><pre>
+http://lsp-plug.in/plugins/lv2/impulse_reverb_mono
+
+	Name:              LSP Impulse Reverb Mono
+	Class:             Reverb Plugin
+	Author:            LSP LV2
+	Author Email:      mailto:lsp.plugin@gmail.com
+	Author Homepage:   https://lsp-plug.in/
+	Has latency:       yes, reported by port 87
+	Bundle:            file:///run/current-system/sw/lib/lv2/lsp-plugins.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/lsp-plugins.lv2/lsp-plugins-lv2-1.2.3.so
+	UIs:
+		http://lsp-plug.in/ui/lv2/impulse_reverb_mono
+			Class:  http://lv2plug.in/ns/extensions/ui#X11UI
+			Binary: file:///run/current-system/sw/lib/lv2/lsp-plugins.lv2/lsp-plugins-lv2ui-1.2.3.so
+			Bundle: file:///run/current-system/sw/lib/lv2/lsp-plugins.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/lsp-plugins.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/lsp-plugins.lv2/impulse_reverb_mono.ttl
+	Required Features: http://lv2plug.in/ns/ext/urid#map
+	Optional Features: http://harrisonconsoles.com/lv2/inlinedisplay#queue_draw
+	                   http://lv2plug.in/ns/ext/state#mapPath
+	                   http://lv2plug.in/ns/ext/options#options
+	                   http://lv2plug.in/ns/ext/worker#schedule
+	                   http://lv2plug.in/ns/lv2core#hardRTCapable
+	Extension Data:    http://lv2plug.in/ns/ext/worker#interface
+	                   http://harrisonconsoles.com/lv2/inlinedisplay#interface
+	                   http://lv2plug.in/ns/ext/state#interface
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#AudioPort
+		Symbol:      in
+		Name:        Input
+		Group:       http://lsp-plug.in/plugins/lv2/impulse_reverb_mono/port_groups#mono_in
+		Designation: http://lv2plug.in/ns/ext/port-groups#center
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out_l
+		Name:        Output L
+		Group:       http://lsp-plug.in/plugins/lv2/impulse_reverb_mono/port_groups#stereo_out
+		Designation: http://lv2plug.in/ns/ext/port-groups#left
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out_r
+		Name:        Output R
+		Group:       http://lsp-plug.in/plugins/lv2/impulse_reverb_mono/port_groups#stereo_out
+		Designation: http://lv2plug.in/ns/ext/port-groups#right
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      enabled
+		Name:        Enabled
+		Designation: http://lv2plug.in/ns/lv2core#enabled
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1 = "File 2"
+			0 = "File 1"
+			2 = "File 3"
+			3 = "File 4"
+
+		Symbol:      fsel
+		Name:        File selector
+		Minimum:     0.000000
+		Maximum:     3.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			2 = "2048"
+			3 = "4096"
+			1 = "1024"
+			0 = "512"
+			4 = "8192"
+			5 = "16384"
+			6 = "32768"
+			7 = "65536"
+
+		Symbol:      fft
+		Name:        FFT size
+		Minimum:     0.000000
+		Maximum:     7.000000
+		Default:     6.000000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      pd
+		Name:        Pre-delay
+		Minimum:     0.000000
+		Maximum:     100.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      p
+		Name:        Panorama
+		Minimum:     -100.000000
+		Maximum:     100.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      dry
+		Name:        Dry amount
+		Minimum:     0.000000
+		Maximum:     10.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      wet
+		Name:        Wet amount
+		Minimum:     0.000000
+		Maximum:     10.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 10:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      g_out
+		Name:        Output gain
+		Minimum:     0.000000
+		Maximum:     1000.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 11:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      ihc0
+		Name:        Head cut 0
+		Minimum:     0.000000
+		Maximum:     10000.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 12:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      itc0
+		Name:        Tail cut 0
+		Minimum:     0.000000
+		Maximum:     10000.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 13:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      ifi0
+		Name:        Fade in 0
+		Minimum:     0.000000
+		Maximum:     10000.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 14:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      ifo0
+		Name:        Fade out 0
+		Minimum:     0.000000
+		Maximum:     10000.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 15:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      ils0
+		Name:        Impulse listen 0
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 16:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      irv0
+		Name:        Impulse reverse 0
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 17:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      ifs0
+		Name:        Load status 0
+		Minimum:     0.000000
+		Maximum:     58.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 18:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      ifl0
+		Name:        Impulse length 0
+		Minimum:     0.000000
+		Maximum:     10000.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 19:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      ihc1
+		Name:        Head cut 1
+		Minimum:     0.000000
+		Maximum:     10000.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 20:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      itc1
+		Name:        Tail cut 1
+		Minimum:     0.000000
+		Maximum:     10000.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 21:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      ifi1
+		Name:        Fade in 1
+		Minimum:     0.000000
+		Maximum:     10000.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 22:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      ifo1
+		Name:        Fade out 1
+		Minimum:     0.000000
+		Maximum:     10000.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 23:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      ils1
+		Name:        Impulse listen 1
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 24:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      irv1
+		Name:        Impulse reverse 1
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 25:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      ifs1
+		Name:        Load status 1
+		Minimum:     0.000000
+		Maximum:     58.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 26:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      ifl1
+		Name:        Impulse length 1
+		Minimum:     0.000000
+		Maximum:     10000.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 27:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      ihc2
+		Name:        Head cut 2
+		Minimum:     0.000000
+		Maximum:     10000.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 28:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      itc2
+		Name:        Tail cut 2
+		Minimum:     0.000000
+		Maximum:     10000.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 29:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      ifi2
+		Name:        Fade in 2
+		Minimum:     0.000000
+		Maximum:     10000.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 30:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      ifo2
+		Name:        Fade out 2
+		Minimum:     0.000000
+		Maximum:     10000.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 31:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      ils2
+		Name:        Impulse listen 2
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 32:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      irv2
+		Name:        Impulse reverse 2
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 33:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      ifs2
+		Name:        Load status 2
+		Minimum:     0.000000
+		Maximum:     58.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 34:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      ifl2
+		Name:        Impulse length 2
+		Minimum:     0.000000
+		Maximum:     10000.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 35:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      ihc3
+		Name:        Head cut 3
+		Minimum:     0.000000
+		Maximum:     10000.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 36:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      itc3
+		Name:        Tail cut 3
+		Minimum:     0.000000
+		Maximum:     10000.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 37:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      ifi3
+		Name:        Fade in 3
+		Minimum:     0.000000
+		Maximum:     10000.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 38:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      ifo3
+		Name:        Fade out 3
+		Minimum:     0.000000
+		Maximum:     10000.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 39:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      ils3
+		Name:        Impulse listen 3
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 40:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      irv3
+		Name:        Impulse reverse 3
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 41:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      ifs3
+		Name:        Load status 3
+		Minimum:     0.000000
+		Maximum:     58.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 42:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      ifl3
+		Name:        Impulse length 3
+		Minimum:     0.000000
+		Maximum:     10000.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 43:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1 = "File 1"
+			0 = "None"
+			3 = "File 3"
+			4 = "File 4"
+			2 = "File 2"
+
+		Symbol:      csf0
+		Name:        Channel source file 0
+		Minimum:     0.000000
+		Maximum:     4.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 44:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			3 = "Track 4"
+			5 = "Track 6"
+			4 = "Track 5"
+			7 = "Track 8"
+			6 = "Track 7"
+			1 = "Track 2"
+			2 = "Track 3"
+			0 = "Track 1"
+
+		Symbol:      cst0
+		Name:        Channel source track 0
+		Minimum:     0.000000
+		Maximum:     7.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 45:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      mk0
+		Name:        Makeup gain 0
+		Minimum:     0.000000
+		Maximum:     100.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 46:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      cam0
+		Name:        Channel mute 0
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 47:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      ca0
+		Name:        Channel activity 0
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 48:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      pd0
+		Name:        Channel pre-delay 0
+		Minimum:     0.000000
+		Maximum:     100.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 49:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      com0
+		Name:        Channel Left/Right output mix 0
+		Minimum:     -100.000000
+		Maximum:     100.000000
+		Default:     -100.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 50:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0 = "None"
+			1 = "File 1"
+			3 = "File 3"
+			4 = "File 4"
+			2 = "File 2"
+
+		Symbol:      csf1
+		Name:        Channel source file 1
+		Minimum:     0.000000
+		Maximum:     4.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 51:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			7 = "Track 8"
+			4 = "Track 5"
+			0 = "Track 1"
+			5 = "Track 6"
+			6 = "Track 7"
+			3 = "Track 4"
+			1 = "Track 2"
+			2 = "Track 3"
+
+		Symbol:      cst1
+		Name:        Channel source track 1
+		Minimum:     0.000000
+		Maximum:     7.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 52:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      mk1
+		Name:        Makeup gain 1
+		Minimum:     0.000000
+		Maximum:     100.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 53:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      cam1
+		Name:        Channel mute 1
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 54:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      ca1
+		Name:        Channel activity 1
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 55:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      pd1
+		Name:        Channel pre-delay 1
+		Minimum:     0.000000
+		Maximum:     100.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 56:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      com1
+		Name:        Channel Left/Right output mix 1
+		Minimum:     -100.000000
+		Maximum:     100.000000
+		Default:     100.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 57:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			3 = "File 3"
+			4 = "File 4"
+			0 = "None"
+			1 = "File 1"
+			2 = "File 2"
+
+		Symbol:      csf2
+		Name:        Channel source file 2
+		Minimum:     0.000000
+		Maximum:     4.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 58:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			4 = "Track 5"
+			7 = "Track 8"
+			2 = "Track 3"
+			0 = "Track 1"
+			3 = "Track 4"
+			1 = "Track 2"
+			5 = "Track 6"
+			6 = "Track 7"
+
+		Symbol:      cst2
+		Name:        Channel source track 2
+		Minimum:     0.000000
+		Maximum:     7.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 59:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      mk2
+		Name:        Makeup gain 2
+		Minimum:     0.000000
+		Maximum:     100.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 60:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      cam2
+		Name:        Channel mute 2
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 61:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      ca2
+		Name:        Channel activity 2
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 62:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      pd2
+		Name:        Channel pre-delay 2
+		Minimum:     0.000000
+		Maximum:     100.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 63:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      com2
+		Name:        Channel Left/Right output mix 2
+		Minimum:     -100.000000
+		Maximum:     100.000000
+		Default:     -100.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 64:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0 = "None"
+			1 = "File 1"
+			2 = "File 2"
+			3 = "File 3"
+			4 = "File 4"
+
+		Symbol:      csf3
+		Name:        Channel source file 3
+		Minimum:     0.000000
+		Maximum:     4.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 65:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			7 = "Track 8"
+			2 = "Track 3"
+			0 = "Track 1"
+			3 = "Track 4"
+			5 = "Track 6"
+			1 = "Track 2"
+			4 = "Track 5"
+			6 = "Track 7"
+
+		Symbol:      cst3
+		Name:        Channel source track 3
+		Minimum:     0.000000
+		Maximum:     7.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 66:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      mk3
+		Name:        Makeup gain 3
+		Minimum:     0.000000
+		Maximum:     100.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 67:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      cam3
+		Name:        Channel mute 3
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 68:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      ca3
+		Name:        Channel activity 3
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 69:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      pd3
+		Name:        Channel pre-delay 3
+		Minimum:     0.000000
+		Maximum:     100.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 70:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      com3
+		Name:        Channel Left/Right output mix 3
+		Minimum:     -100.000000
+		Maximum:     100.000000
+		Default:     100.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 71:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      wpp
+		Name:        Wet post-process
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 72:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      eqv
+		Name:        Equalizer visibility
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 73:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			2 = "24 dB/oct"
+			0 = "off"
+			1 = "12 dB/oct"
+			3 = "36 dB/oct"
+
+		Symbol:      lcm
+		Name:        Low-cut mode
+		Minimum:     0.000000
+		Maximum:     3.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 74:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lcf
+		Name:        Low-cut frequency
+		Minimum:     10.000000
+		Maximum:     1000.000000
+		Default:     50.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 75:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      eq_0
+		Name:        Band 50Hz gain
+		Minimum:     0.251190
+		Maximum:     3.981070
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 76:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      eq_1
+		Name:        Band 107Hz gain
+		Minimum:     0.251190
+		Maximum:     3.981070
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 77:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      eq_2
+		Name:        Band 227Hz gain
+		Minimum:     0.251190
+		Maximum:     3.981070
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 78:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      eq_3
+		Name:        Band 484Hz gain
+		Minimum:     0.251190
+		Maximum:     3.981070
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 79:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      eq_4
+		Name:        Band 1 kHz gain
+		Minimum:     0.251190
+		Maximum:     3.981070
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 80:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      eq_5
+		Name:        Band 2.2 kHz gain
+		Minimum:     0.251190
+		Maximum:     3.981070
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 81:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      eq_6
+		Name:        Band 4.7 kHz gain
+		Minimum:     0.251190
+		Maximum:     3.981070
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 82:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      eq_7
+		Name:        Band 10 kHz gain
+		Minimum:     0.251190
+		Maximum:     3.981070
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 83:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0 = "off"
+			3 = "36 dB/oct"
+			1 = "12 dB/oct"
+			2 = "24 dB/oct"
+
+		Symbol:      hcm
+		Name:        High-cut mode
+		Minimum:     0.000000
+		Maximum:     3.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 84:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      hcf
+		Name:        High-cut frequency
+		Minimum:     2000.000000
+		Maximum:     22000.000000
+		Default:     10000.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 85:
+		Type:        http://lv2plug.in/ns/ext/atom#AtomPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in_ui
+		Name:        UI Input
+		Designation: http://lv2plug.in/ns/lv2core#control
+		Properties:  http://lv2plug.in/ns/lv2core#connectionOptional
+
+
+	Port 86:
+		Type:        http://lv2plug.in/ns/ext/atom#AtomPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out_ui
+		Name:        UI Output
+		Designation: http://lv2plug.in/ns/lv2core#control
+		Properties:  http://lv2plug.in/ns/lv2core#connectionOptional
+
+
+	Port 87:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out_latency
+		Name:        Latency OUT
+		Minimum:     0.000000
+		Maximum:     192000.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#reportsLatency
+
+</pre></body></html>

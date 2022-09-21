@@ -1,0 +1,114 @@
+<html><head></head><body><pre>
+http://guitarix.sourceforge.net/plugins/gx_redeye#chump
+
+	Name:              GxRedeye Chump
+	Class:             Amplifier Plugin
+	Author:            Guitarix team
+	Author Email:      mailto:brummer@web.de
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/gx_redeye.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/gx_redeye.lv2/gx_redeye.so
+	UIs:
+		http://guitarix.sourceforge.net/plugins/gx_redeye#gui
+			Class:  http://lv2plug.in/ns/extensions/ui#X11UI
+			Binary: file:///run/current-system/sw/lib/lv2/gx_redeye.lv2/gx_redeye_gui.so
+			Bundle: file:///run/current-system/sw/lib/lv2/gx_redeye.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/gx_redeye.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/gx_redeye.lv2/gx_redeye.ttl
+	Required Features: http://lv2plug.in/ns/ext/urid#map
+	                   http://lv2plug.in/ns/ext/buf-size#boundedBlockLength
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      Gain
+		Name:        Gain
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      Tone
+		Name:        Tone
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      Volume
+		Name:        Volume
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      Feedback
+		Name:        Feedback
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      Vibe
+		Name:        Vibe
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#notOnGUI
+
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      Speed
+		Name:        Speed
+		Minimum:     0.100000
+		Maximum:     10.000000
+		Default:     5.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#notOnGUI
+
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      Intensity
+		Name:        Intensity
+		Minimum:     0.000000
+		Maximum:     10.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#notOnGUI
+
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      Sinewave
+		Name:        Sinewave
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#notOnGUI
+
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out
+		Name:        Out
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in
+		Name:        in
+</pre></body></html>

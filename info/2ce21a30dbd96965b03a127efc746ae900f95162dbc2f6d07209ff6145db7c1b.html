@@ -1,0 +1,49 @@
+<html><head></head><body><pre>
+http://moddevices.com/plugins/mod-devel/Gain2x2
+
+	Name:              Gain 2x2
+	Class:             Utility Plugin
+	Author:            MOD Team
+	Author Email:      mailto:devel@moddevices.com
+	Author Homepage:   http://moddevices.com
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/mod-gain2x2.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/mod-gain2x2.lv2/mod-gain2x2.so
+	Data URIs:         file:///run/current-system/sw/lib/lv2/mod-gain2x2.lv2/Gain2x2.ttl
+	                   file:///run/current-system/sw/lib/lv2/mod-gain2x2.lv2/modgui.ttl
+	                   file:///run/current-system/sw/lib/lv2/mod-gain2x2.lv2/manifest.ttl
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      In1
+		Name:        In 1
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      In2
+		Name:        In 2
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      Out1
+		Name:        Out 1
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      Out2
+		Name:        Out 2
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      Gain
+		Name:        Gain
+		Minimum:     -40.000000
+		Maximum:     40.000000
+		Default:     3.000000
+</pre></body></html>

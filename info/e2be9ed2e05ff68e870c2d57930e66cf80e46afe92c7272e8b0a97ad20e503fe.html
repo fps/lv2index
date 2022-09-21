@@ -1,0 +1,170 @@
+<html><head></head><body><pre>
+http://plugin.org.uk/swh-plugins/mbeq
+
+	Name:              Multiband EQ
+	Class:             Multiband EQ Plugin
+	Author:            Steve Harris
+	Author Email:      mailto:steve@plugin.org.uk
+	Author Homepage:   http://plugin.org.uk/
+	Has latency:       yes, reported by port 17
+	Bundle:            file:///run/current-system/sw/lib/lv2/mbeq-swh.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/mbeq-swh.lv2/plugin-Linux.so
+	Data URIs:         file:///run/current-system/sw/lib/lv2/mbeq-swh.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/mbeq-swh.lv2/plugin.ttl
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      band_1
+		Name:        50Hz gain (low shelving)
+		Minimum:     -70.000000
+		Maximum:     30.000000
+		Default:     0.000000
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      band_2
+		Name:        100Hz gain
+		Minimum:     -70.000000
+		Maximum:     30.000000
+		Default:     0.000000
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      band_3
+		Name:        156Hz gain
+		Minimum:     -70.000000
+		Maximum:     30.000000
+		Default:     0.000000
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      band_4
+		Name:        220Hz gain
+		Minimum:     -70.000000
+		Maximum:     30.000000
+		Default:     0.000000
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      band_5
+		Name:        311Hz gain
+		Minimum:     -70.000000
+		Maximum:     30.000000
+		Default:     0.000000
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      band_6
+		Name:        440Hz gain
+		Minimum:     -70.000000
+		Maximum:     30.000000
+		Default:     0.000000
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      band_7
+		Name:        622Hz gain
+		Minimum:     -70.000000
+		Maximum:     30.000000
+		Default:     0.000000
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      band_8
+		Name:        880Hz gain
+		Minimum:     -70.000000
+		Maximum:     30.000000
+		Default:     0.000000
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      band_9
+		Name:        1250Hz gain
+		Minimum:     -70.000000
+		Maximum:     30.000000
+		Default:     0.000000
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      band_10
+		Name:        1750Hz gain
+		Minimum:     -70.000000
+		Maximum:     30.000000
+		Default:     0.000000
+
+	Port 10:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      band_11
+		Name:        2500Hz gain
+		Minimum:     -70.000000
+		Maximum:     30.000000
+		Default:     0.000000
+
+	Port 11:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      band_12
+		Name:        3500Hz gain
+		Minimum:     -70.000000
+		Maximum:     30.000000
+		Default:     0.000000
+
+	Port 12:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      band_13
+		Name:        5000Hz gain
+		Minimum:     -70.000000
+		Maximum:     30.000000
+		Default:     0.000000
+
+	Port 13:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      band_14
+		Name:        10000Hz gain
+		Minimum:     -70.000000
+		Maximum:     30.000000
+		Default:     0.000000
+
+	Port 14:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      band_15
+		Name:        20000Hz gain
+		Minimum:     -70.000000
+		Maximum:     30.000000
+		Default:     0.000000
+
+	Port 15:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      input
+		Name:        Input
+
+	Port 16:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      output
+		Name:        Output
+
+	Port 17:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      latency
+		Name:        latency
+		Properties:  http://lv2plug.in/ns/lv2core#reportsLatency
+
+</pre></body></html>

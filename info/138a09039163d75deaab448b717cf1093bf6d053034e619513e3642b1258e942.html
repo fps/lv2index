@@ -1,0 +1,28 @@
+<html><head></head><body><pre>
+http://github.com/blablack/ams-lv2/transport
+
+	Name:              Transport
+	Class:             Utility Plugin
+	Author:            Aurelien Leblond
+	Author Email:      mailto:blablack@gmail.com
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/ams.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/ams.lv2/transport.so
+	Data URIs:         file:///run/current-system/sw/lib/lv2/ams.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/ams.lv2/transport.ttl
+	Required Features: http://lv2plug.in/ns/ext/urid#map
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/ext/atom#AtomPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      time
+		Name:        Time
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#CVPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      play
+		Name:        Play
+</pre></body></html>

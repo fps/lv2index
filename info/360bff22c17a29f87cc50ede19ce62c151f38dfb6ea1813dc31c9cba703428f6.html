@@ -1,0 +1,65 @@
+<html><head></head><body><pre>
+http://gareus.org/oss/lv2/meters#EBUr128
+
+	Name:              EBU R128 Meter
+	Class:             Analyser Plugin
+	Author:            Robin Gareus
+	Author Email:      mailto:robin@gareus.org
+	Author Homepage:   http://gareus.org/
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/meters.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/meters.lv2/meters.so
+	UIs:
+		http://gareus.org/oss/lv2/meters#eburui_gl
+			Class:  http://kxstudio.sf.net/ns/lv2ext/external-ui#Widget
+			Binary: file:///run/current-system/sw/lib/lv2/meters.lv2/meters_glui.so
+			Bundle: file:///run/current-system/sw/lib/lv2/meters.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/meters.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/meters.lv2/meters.ttl
+	Required Features: http://lv2plug.in/ns/ext/urid#map
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Extension Data:    http://lv2plug.in/ns/ext/state#interface
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/ext/atom#AtomPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      control
+		Name:        UI to plugin communication
+		Designation: http://lv2plug.in/ns/lv2core#control
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#OutputPort
+		             http://lv2plug.in/ns/ext/atom#AtomPort
+		Symbol:      notify
+		Name:        plugin to UI communication
+		Designation: http://lv2plug.in/ns/lv2core#control
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      inL
+		Name:        InL
+		Designation: http://lv2plug.in/ns/ext/port-groups#left
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#OutputPort
+		             http://lv2plug.in/ns/lv2core#AudioPort
+		Symbol:      outL
+		Name:        OutL
+		Designation: http://lv2plug.in/ns/ext/port-groups#left
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      inR
+		Name:        InR
+		Designation: http://lv2plug.in/ns/ext/port-groups#right
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      outR
+		Name:        OutR
+		Designation: http://lv2plug.in/ns/ext/port-groups#right
+</pre></body></html>

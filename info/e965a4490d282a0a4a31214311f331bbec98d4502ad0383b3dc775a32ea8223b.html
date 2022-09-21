@@ -1,0 +1,138 @@
+<html><head></head><body><pre>
+http://ssj71.github.io/infamousPlugins/plugs.html#octolo
+
+	Name:              the infamous octolo
+	Class:             Modulator Plugin
+	Author:            Spencer Jackson
+	Author Email:      mailto:ssjackson71@gmail.com
+	Author Homepage:   http://ssj71.github.io/infamousPlugins
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/octolo.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/octolo.lv2/octolo.so
+	Data URIs:         file:///run/current-system/sw/lib/lv2/octolo.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/octolo.lv2/octolo.ttl
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+	         03 Rumbley
+	         02 Arp
+	         00 Straight Trem
+	         01 Chopper Down
+	         04 Beater
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/ext/atom#AtomPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      ATOM_IN
+		Name:        Atom In
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      INPUT
+		Name:        Audio In
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      OUTPUT
+		Name:        Audio Out
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      ENABLE
+		Name:        Enable
+		Designation: http://lv2plug.in/ns/lv2core#enabled
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+		             http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      LENGTH
+		Name:        Length
+		Minimum:     0.010000
+		Maximum:     8.000000
+		Default:     1.000000
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      DRY
+		Name:        Dry
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      WET
+		Name:        Wet
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      OCTDOWN
+		Name:        Octave Down
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      OCTUP
+		Name:        Octave Up
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      SLOPE
+		Name:        Slope
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.800000
+
+	Port 10:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Scale Points:
+			5 = "Cycle Down"
+			0 = "Syncronous"
+			1 = "Alternate 1 Oct"
+			2 = "Alternate 2 Oct"
+			3 = "Step"
+			4 = "Cycle Up"
+
+		Symbol:      SEQUENCE
+		Name:        Sequence
+		Minimum:     0.000000
+		Maximum:     5.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 11:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      OVERLAP
+		Name:        Overlap
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#toggled
+
+</pre></body></html>

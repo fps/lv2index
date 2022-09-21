@@ -1,0 +1,64 @@
+<html><head></head><body><pre>
+http://ssj71.github.io/infamousPlugins/plugs.html#stuck
+
+	Name:              the infamous stuck
+	Class:             Delay Plugin
+	Author:            Spencer Jackson
+	Author Email:      mailto:ssjackson71@gmail.com
+	Author Homepage:   http://ssj71.github.io/infamousPlugins
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/stuck.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/stuck.lv2/stuck.so
+	UIs:
+		http://ssj71.github.io/infamousPlugins/plugs.html#stuck_ui
+			Class:  http://lv2plug.in/ns/extensions/ui#X11UI
+			Binary: file:///run/current-system/sw/lib/lv2/stuck.lv2/stuck_ui.so
+			Bundle: file:///run/current-system/sw/lib/lv2/stuck.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/stuck.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/stuck.lv2/stuck.ttl
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      INPUT
+		Name:        Audio In
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      OUTPUT
+		Name:        Audio Out
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      STICK_IT
+		Name:        Stick it!
+		Designation: http://lv2plug.in/ns/lv2core#enabled
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      DRONE_GAIN
+		Name:        Drone Gain
+		Minimum:     0.000000
+		Maximum:     2.000000
+		Default:     0.500000
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      RELEASE
+		Name:        Release
+		Minimum:     0.010000
+		Maximum:     3.000000
+		Default:     0.500000
+</pre></body></html>

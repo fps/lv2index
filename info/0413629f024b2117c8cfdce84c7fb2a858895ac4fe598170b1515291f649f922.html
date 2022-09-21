@@ -1,0 +1,77 @@
+<html><head></head><body><pre>
+http://drobilla.net/plugins/fomp/cs_chorus2
+
+	Name:              CS Chorus 2
+	Class:             Chorus Plugin
+	Author:            David Robillard
+	Author Email:      mailto:d@drobilla.net
+	Author Homepage:   http://drobilla.net/
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/fomp.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/fomp.lv2/cs_chorus.so
+	Data URIs:         file:///run/current-system/sw/lib/lv2/fomp.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/fomp.lv2/cs_chorus2.ttl
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in
+		Name:        Input
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out1
+		Name:        Output
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      delay
+		Name:        Delay
+		Minimum:     0.000000
+		Maximum:     30.000000
+		Default:     1.000000
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      mod_freq_1
+		Name:        Mod Frequency 1
+		Minimum:     0.003000
+		Maximum:     10.000000
+		Default:     0.250000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      mod_amp_1
+		Name:        Mod Amplitude 1
+		Minimum:     0.000000
+		Maximum:     10.000000
+		Default:     1.000000
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      mod_freq_2
+		Name:        Mod Frequency 2
+		Minimum:     0.010000
+		Maximum:     30.000000
+		Default:     0.125000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      mod_amp_2
+		Name:        Mod Amplitude 2
+		Minimum:     0.000000
+		Maximum:     3.000000
+		Default:     0.500000
+</pre></body></html>

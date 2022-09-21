@@ -1,0 +1,48 @@
+<html><head></head><body><pre>
+http://plugin.org.uk/swh-plugins/sinCos
+
+	Name:              Sine + cosine oscillator
+	Class:             Oscillator Plugin
+	Author:            Steve Harris
+	Author Email:      mailto:steve@plugin.org.uk
+	Author Homepage:   http://plugin.org.uk/
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/sin_cos-swh.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/sin_cos-swh.lv2/plugin-Linux.so
+	Data URIs:         file:///run/current-system/sw/lib/lv2/sin_cos-swh.lv2/plugin.ttl
+	                   file:///run/current-system/sw/lib/lv2/sin_cos-swh.lv2/manifest.ttl
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      freq
+		Name:        Base frequency (Hz)
+		Minimum:     0.000001
+		Maximum:     0.500000
+		Default:     440.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/lv2core#sampleRate
+
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      pitch
+		Name:        Pitch offset
+		Minimum:     0.000000
+		Maximum:     8.000000
+		Default:     0.000000
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      sine
+		Name:        Sine output
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      cosine
+		Name:        Cosine output
+</pre></body></html>

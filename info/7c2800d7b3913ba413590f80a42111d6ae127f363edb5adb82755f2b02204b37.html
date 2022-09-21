@@ -1,0 +1,159 @@
+<html><head></head><body><pre>
+http://eq10q.sourceforge.net/gate
+
+	Name:              GT10QM
+	Class:             Gate Plugin
+	Author:            Pere Ràfols Soler
+	Author Email:      mailto:sapista2@gmail.com
+	Author Homepage:   http://eq10q.sourceforge.net
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/sapistaEQv2.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/sapistaEQv2.lv2/gate.so
+	UIs:
+		http://eq10q.sourceforge.net/dynamics/gui
+			Class:  http://lv2plug.in/ns/extensions/ui#GtkUI
+			Binary: file:///run/current-system/sw/lib/lv2/sapistaEQv2.lv2/gui/dynamics_gui.so
+			Bundle: file:///run/current-system/sw/lib/lv2/sapistaEQv2.lv2/gui/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/sapistaEQv2.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/sapistaEQv2.lv2/gate.ttl
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      output
+		Name:        Output
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      input
+		Name:        Input
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      keylisten
+		Name:        Key Listen
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      threshold
+		Name:        Threshold (dB)
+		Minimum:     -46.000000
+		Maximum:     4.000000
+		Default:     -10.000000
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      attack
+		Name:        Attack (ms)
+		Minimum:     0.010000
+		Maximum:     500.000000
+		Default:     5.000000
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      hold
+		Name:        Hold (ms)
+		Minimum:     0.010000
+		Maximum:     3000.000000
+		Default:     100.000000
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      decay
+		Name:        Decay (ms)
+		Minimum:     5.000000
+		Maximum:     4000.000000
+		Default:     250.000000
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      compratio
+		Name:        Ratio (dB)
+		Minimum:     1.000000
+		Maximum:     100.000000
+		Default:     100.000000
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      hpf
+		Name:        HPF Key Filter (Hz)
+		Minimum:     20.000000
+		Maximum:     20000.000000
+		Default:     20.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lpf
+		Name:        LPF Key Filter (Hz)
+		Minimum:     20.000000
+		Maximum:     20000.000000
+		Default:     20000.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 10:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      ingain
+		Name:        Gain (dB)
+		Minimum:     -20.000000
+		Maximum:     20.000000
+		Default:     0.000000
+
+	Port 11:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out_vu_ctl
+		Name:        Out VU CTL
+
+	Port 12:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      gateled
+		Name:        Gain Reduction
+
+	Port 13:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      knee
+		Name:        Knee (dB)
+		Minimum:     0.000000
+		Maximum:     20.000000
+		Default:     0.000000
+
+	Port 14:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      drywet
+		Name:        Dry/Wet
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+
+	Port 15:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gaterange
+		Name:        Range (dB)
+		Minimum:     -90.000000
+		Maximum:     -1.000000
+		Default:     -90.000000
+</pre></body></html>

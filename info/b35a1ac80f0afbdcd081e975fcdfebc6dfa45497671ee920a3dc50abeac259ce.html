@@ -1,0 +1,65 @@
+<html><head></head><body><pre>
+http://github.com/blablack/ams-lv2/mixer_2ch
+
+	Name:              AMS Mixer 2 channels
+	Class:             Utility Plugin
+	Author:            Aurelien Leblond
+	Author Email:      mailto:blablack@gmail.com
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/ams.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/ams.lv2/mixer_2ch.so
+	UIs:
+		http://github.com/blablack/ams-lv2/mixer_2ch/gui
+			Class:  http://lv2plug.in/ns/extensions/ui#GtkUI
+			Binary: file:///run/current-system/sw/lib/lv2/ams.lv2/mixer_2ch_gui.so
+			Bundle: file:///run/current-system/sw/lib/lv2/ams.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/ams.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/ams.lv2/mixer_2ch.ttl
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in1
+		Name:        In 1
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in2
+		Name:        In 2
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gain
+		Name:        Gain
+		Minimum:     0.000000
+		Maximum:     2.000000
+		Default:     1.000000
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      volume1
+		Name:        Volume 1
+		Minimum:     0.000000
+		Maximum:     2.000000
+		Default:     1.000000
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      volume2
+		Name:        Volume 2
+		Minimum:     0.000000
+		Maximum:     2.000000
+		Default:     1.000000
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out
+		Name:        Out
+</pre></body></html>

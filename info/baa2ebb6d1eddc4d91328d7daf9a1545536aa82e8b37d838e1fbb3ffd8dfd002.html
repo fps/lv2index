@@ -1,0 +1,61 @@
+<html><head></head><body><pre>
+http://github.com/blablack/ams-lv2/noise2
+
+	Name:              AMS Noise2
+	Class:             Generator Plugin
+	Author:            Aurelien Leblond
+	Author Email:      mailto:blablack@gmail.com
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/ams.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/ams.lv2/noise2.so
+	UIs:
+		http://github.com/blablack/ams-lv2/noise2/gui
+			Class:  http://lv2plug.in/ns/extensions/ui#GtkUI
+			Binary: file:///run/current-system/sw/lib/lv2/ams.lv2/noise2_gui.so
+			Bundle: file:///run/current-system/sw/lib/lv2/ams.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/ams.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/ams.lv2/noise2.ttl
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0 = "White"
+			1 = "Random"
+			2 = "Pink"
+			3 = "Pulsetrain"
+
+		Symbol:      noiseType
+		Name:        Noise Type
+		Minimum:     0.000000
+		Maximum:     3.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      rate
+		Name:        Random Rate
+		Minimum:     0.000000
+		Maximum:     10.000000
+		Default:     5.000000
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      level
+		Name:        Random Level
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#CVPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out
+		Name:        Out
+</pre></body></html>

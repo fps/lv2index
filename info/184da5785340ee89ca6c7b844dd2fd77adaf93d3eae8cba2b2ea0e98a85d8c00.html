@@ -1,0 +1,513 @@
+<html><head></head><body><pre>
+http://gareus.org/oss/lv2/mixtri#lv2
+
+	Name:              Mixer'n'Trigger
+	Class:             Utility Plugin
+	Author:            Robin Gareus
+	Author Email:      mailto:robin@gareus.org
+	Author Homepage:   http://gareus.org/
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/mixtri.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/mixtri.lv2/mixtri.so
+	UIs:
+		http://gareus.org/oss/lv2/mixtri#ui_gl
+			Class:  http://kxstudio.sf.net/ns/lv2ext/external-ui#Widget
+			Binary: file:///run/current-system/sw/lib/lv2/mixtri.lv2/mixtriUI_gl.so
+			Bundle: file:///run/current-system/sw/lib/lv2/mixtri.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/mixtri.lv2/mixtri.ttl
+	                   file:///run/current-system/sw/lib/lv2/mixtri.lv2/manifest.ttl
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in1
+		Name:        Audio Input 1
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in2
+		Name:        Audio Input 2
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in3
+		Name:        Audio Input 3
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in4
+		Name:        Audio Input 4
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out1
+		Name:        Audio Output 1
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out2
+		Name:        Audio Output 2
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out3
+		Name:        Audio Output 3
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      trigger_out
+		Name:        Audio Output Trigger
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gain_in_0
+		Name:        Input Gain 0
+		Minimum:     -60.000000
+		Maximum:     30.000000
+		Default:     0.000000
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gain_in_1
+		Name:        Input Gain 1
+		Minimum:     -60.000000
+		Maximum:     30.000000
+		Default:     0.000000
+
+	Port 10:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gain_in_2
+		Name:        Input Gain 2
+		Minimum:     -60.000000
+		Maximum:     30.000000
+		Default:     0.000000
+
+	Port 11:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gain_in_3
+		Name:        Input Gain 3
+		Minimum:     -60.000000
+		Maximum:     30.000000
+		Default:     0.000000
+
+	Port 12:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			-1.0 = "invert"
+			0.0 = "off"
+			1.0 = "on"
+
+		Symbol:      mix_0_0
+		Name:        Mix 0 0
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     1.000000
+
+	Port 13:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1.0 = "on"
+			-1.0 = "invert"
+			0.0 = "off"
+
+		Symbol:      mix_0_1
+		Name:        Mix 0 1
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 14:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0.0 = "off"
+			1.0 = "on"
+			-1.0 = "invert"
+
+		Symbol:      mix_0_2
+		Name:        Mix 0 2
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 15:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1.0 = "on"
+			0.0 = "off"
+			-1.0 = "invert"
+
+		Symbol:      mix_1_0
+		Name:        Mix 1 0
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 16:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1.0 = "on"
+			0.0 = "off"
+			-1.0 = "invert"
+
+		Symbol:      mix_1_1
+		Name:        Mix 1 1
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     1.000000
+
+	Port 17:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0.0 = "off"
+			1.0 = "on"
+			-1.0 = "invert"
+
+		Symbol:      mix_1_2
+		Name:        Mix 1 2
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 18:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0.0 = "off"
+			1.0 = "on"
+			-1.0 = "invert"
+
+		Symbol:      mix_2_0
+		Name:        Mix 2 0
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 19:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1.0 = "on"
+			0.0 = "off"
+			-1.0 = "invert"
+
+		Symbol:      mix_2_1
+		Name:        Mix 2 1
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 20:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1.0 = "on"
+			0.0 = "off"
+			-1.0 = "invert"
+
+		Symbol:      mix_2_2
+		Name:        Mix 2 2
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     1.000000
+
+	Port 21:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0.0 = "off"
+			1.0 = "on"
+			-1.0 = "invert"
+
+		Symbol:      mix_3_0
+		Name:        Mix 3 0
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 22:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0.0 = "off"
+			1.0 = "on"
+			-1.0 = "invert"
+
+		Symbol:      mix_3_1
+		Name:        Mix 3 1
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 23:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1.0 = "on"
+			0.0 = "off"
+			-1.0 = "invert"
+
+		Symbol:      mix_3_2
+		Name:        Mix 3 2
+		Minimum:     -6.000000
+		Maximum:     6.000000
+		Default:     0.000000
+
+	Port 24:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      delay_in_0
+		Name:        Delay input 0
+		Minimum:     0.000000
+		Maximum:     48000.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 25:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      delay_in_1
+		Name:        Delay input 1
+		Minimum:     0.000000
+		Maximum:     48000.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 26:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      delay_in_2
+		Name:        Delay input 2
+		Minimum:     0.000000
+		Maximum:     48000.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 27:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      delay_in_3
+		Name:        Delay input 3
+		Minimum:     0.000000
+		Maximum:     48000.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 28:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      delay_out_0
+		Name:        Delay output 0
+		Minimum:     0.000000
+		Maximum:     48000.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 29:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      delay_out_1
+		Name:        Delay output 1
+		Minimum:     0.000000
+		Maximum:     48000.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 30:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      delay_out_2
+		Name:        Delay output 2
+		Minimum:     0.000000
+		Maximum:     48000.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 31:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0 = "none"
+			2 = "high-pass filter"
+			1 = "mute"
+
+		Symbol:      mod_in_0
+		Name:        Input 0 Mode
+		Minimum:     0.000000
+		Maximum:     3.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 32:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			2 = "high-pass filter"
+			1 = "mute"
+			0 = "none"
+
+		Symbol:      mod_in_1
+		Name:        Input 1 Mode
+		Minimum:     0.000000
+		Maximum:     3.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 33:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1 = "mute"
+			2 = "high-pass filter"
+			0 = "none"
+
+		Symbol:      mod_in_2
+		Name:        Input 2 Mode
+		Minimum:     0.000000
+		Maximum:     3.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 34:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			2 = "high-pass filter"
+			1 = "mute"
+			0 = "none"
+
+		Symbol:      mod_in_3
+		Name:        Input 3 Mode
+		Minimum:     0.000000
+		Maximum:     3.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 35:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      trigger_channel
+		Name:        Trigger Channel
+		Minimum:     0.000000
+		Maximum:     3.000000
+		Default:     3.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 36:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1 = "LTC"
+			2 = "Edge"
+			0 = "passtru"
+			3 = "Pulsewidth"
+			4 = "Pulsetrain"
+			5 = "Window enter"
+			6 = "Window leave"
+			7 = "Hysteresis"
+			8 = "Runt"
+			9 = "Dropout"
+			10 = "Drop-in"
+			11 = "RMS"
+			12 = "LPF"
+
+		Symbol:      trigger_mode
+		Name:        Trigger Mode
+		Minimum:     0.000000
+		Maximum:     12.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 37:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			2 = "falling-edge"
+			1 = "rising-edge"
+			3 = "any-edge"
+
+		Symbol:      trigger_edge
+		Name:        Trigger Edge Mode
+		Minimum:     1.000000
+		Maximum:     3.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 38:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      trigger_level1
+		Name:        Trigger Level1
+		Minimum:     -1.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 39:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      trigger_level2
+		Name:        Trigger Level2
+		Minimum:     -1.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 40:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      trigger_time1
+		Name:        Trigger time1
+		Minimum:     0.000000
+		Maximum:     192000.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 41:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      trigger_time2
+		Name:        Trigger time2
+		Minimum:     0.000000
+		Maximum:     192000.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+</pre></body></html>

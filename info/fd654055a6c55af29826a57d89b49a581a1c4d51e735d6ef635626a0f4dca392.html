@@ -1,0 +1,41 @@
+<html><head></head><body><pre>
+http://gareus.org/oss/lv2/nodelay#mega
+
+	Name:              Mega Delay Line
+	Class:             Utility Plugin
+	Author:            Robin Gareus
+	Author Email:      mailto:robin@gareus.org
+	Author Homepage:   http://gareus.org/
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/nodelay.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/nodelay.lv2/nodelay.so
+	Data URIs:         file:///run/current-system/sw/lib/lv2/nodelay.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/nodelay.lv2/nodelay.ttl
+	Optional Features: http://lv2plug.in/ns/ext/buf-size#coarseBlockLength
+	                   http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      delay
+		Name:        Delay Time
+		Minimum:     0.000000
+		Maximum:     240000.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://ardour.org/lv2/ext#inlineMixerControl
+
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in
+		Name:        In
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#OutputPort
+		             http://lv2plug.in/ns/lv2core#AudioPort
+		Symbol:      out
+		Name:        Out
+</pre></body></html>

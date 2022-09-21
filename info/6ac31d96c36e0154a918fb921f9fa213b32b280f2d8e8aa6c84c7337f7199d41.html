@@ -1,0 +1,198 @@
+<html><head></head><body><pre>
+http://rakarrack.sourceforge.net/effects.html#CompBand
+
+	Name:              rkr CompBand
+	Class:             Compressor Plugin
+	Author:            Rakarrack Team
+	Author Email:      mailto:ssjackson71@gmail.com
+	Author Homepage:   http://rakarrack.sourceforge.net
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/rkr.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/rkr.lv2/rkrlv2.so
+	Data URIs:         file:///run/current-system/sw/lib/lv2/rkr.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/rkr.lv2/compband.ttl
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+	         Good Start
+	         Loudness
+	         Loudness 2
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      INPUT_L
+		Name:        Audio In L
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      INPUT_R
+		Name:        Audio In R
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      OUTPUT_L
+		Name:        Audio Out L
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      OUTPUT_R
+		Name:        Audio Out R
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      BYPASS
+		Name:        Bypass
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      WETDRY
+		Name:        Wet/Dry
+		Minimum:     0.000000
+		Maximum:     127.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      LR
+		Name:        Low Band Ratio
+		Minimum:     2.000000
+		Maximum:     42.000000
+		Default:     4.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      M1R
+		Name:        Mid Band 1 Ratio
+		Minimum:     2.000000
+		Maximum:     42.000000
+		Default:     4.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      M2R
+		Name:        Mid Band 2 Ratio
+		Minimum:     2.000000
+		Maximum:     42.000000
+		Default:     4.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      HR
+		Name:        High Band Ratio
+		Minimum:     2.000000
+		Maximum:     42.000000
+		Default:     4.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 10:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      LT
+		Name:        Low Band Threshold
+		Minimum:     -70.000000
+		Maximum:     24.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 11:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      M1T
+		Name:        Mid Band 1 Threshold
+		Minimum:     -70.000000
+		Maximum:     24.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 12:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      M2T
+		Name:        Mid Band 2 Threshold
+		Minimum:     -70.000000
+		Maximum:     24.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 13:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      HT
+		Name:        High Threshold
+		Minimum:     -70.000000
+		Maximum:     24.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 14:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      LMCR
+		Name:        Low/Mid1 Crossover
+		Minimum:     20.000000
+		Maximum:     1000.000000
+		Default:     200.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 15:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      MMCR
+		Name:        Mid1/Mid2 Crossover
+		Minimum:     1000.000000
+		Maximum:     8000.000000
+		Default:     2000.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 16:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      MHCR
+		Name:        Mid2/High Crossover
+		Minimum:     2000.000000
+		Maximum:     26000.000000
+		Default:     15000.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 17:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      GAIN
+		Name:        Gain
+		Minimum:     0.000000
+		Maximum:     127.000000
+		Default:     88.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+</pre></body></html>

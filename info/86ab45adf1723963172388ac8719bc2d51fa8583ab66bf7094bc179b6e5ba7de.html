@@ -1,0 +1,163 @@
+<html><head></head><body><pre>
+http://gareus.org/oss/lv2/meters#TPnRMSstereo
+
+	Name:              True-Peak and RMS Meter (Stereo)
+	Class:             Analyser Plugin
+	Author:            Robin Gareus
+	Author Email:      mailto:robin@gareus.org
+	Author Homepage:   http://gareus.org/
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/meters.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/meters.lv2/meters.so
+	UIs:
+		http://gareus.org/oss/lv2/meters#dr14meterui_gl
+			Class:  http://kxstudio.sf.net/ns/lv2ext/external-ui#Widget
+			Binary: file:///run/current-system/sw/lib/lv2/meters.lv2/meters_glui.so
+			Bundle: file:///run/current-system/sw/lib/lv2/meters.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/meters.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/meters.lv2/meters.ttl
+	Required Features: http://lv2plug.in/ns/ext/urid#map
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/ext/atom#AtomPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      control
+		Name:        Control
+		Designation: http://lv2plug.in/ns/lv2core#control
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      unused1
+		Name:        Unused
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#notOnGUI
+
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      reset
+		Name:        Reset
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#trigger
+		             http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#OutputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      blkcnt
+		Name:        Integration Time
+		Minimum:     0.000000
+		Maximum:     3600.000000
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in1
+		Name:        InL
+		Designation: http://lv2plug.in/ns/ext/port-groups#left
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out1
+		Name:        OutL
+		Designation: http://lv2plug.in/ns/ext/port-groups#left
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      dBTP_m1
+		Name:        dBTP - momentaty
+		Minimum:     -80.000000
+		Maximum:     6.000000
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      dBTP_p1
+		Name:        dBTP - peak
+		Minimum:     -80.000000
+		Maximum:     6.000000
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      dBRMS_m1
+		Name:        dB RMS - momentaty
+		Minimum:     -80.000000
+		Maximum:     0.000000
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      dBRMS_p1
+		Name:        dB RMS - peak
+		Minimum:     -80.000000
+		Maximum:     0.000000
+
+	Port 10:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      unused2
+		Name:        Unused Out
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#notOnGUI
+		             http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 11:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in2
+		Name:        InR
+		Designation: http://lv2plug.in/ns/ext/port-groups#right
+
+	Port 12:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out2
+		Name:        OutR
+		Designation: http://lv2plug.in/ns/ext/port-groups#right
+
+	Port 13:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      dBTP_m2
+		Name:        dBTP - momentaty
+		Minimum:     -80.000000
+		Maximum:     6.000000
+
+	Port 14:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      dBTP_p2
+		Name:        dBTP - peak
+		Minimum:     -80.000000
+		Maximum:     6.000000
+
+	Port 15:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      dBRMS_m2
+		Name:        dB RMS - momentaty
+		Minimum:     -80.000000
+		Maximum:     0.000000
+
+	Port 16:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      dBFS_p2
+		Name:        dBFS [hold]
+		Minimum:     -80.000000
+		Maximum:     0.000000
+</pre></body></html>

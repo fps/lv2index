@@ -1,0 +1,60 @@
+<html><head></head><body><pre>
+http://gareus.org/oss/lv2/phaserotate
+
+	Name:              Phaserotate
+	Class:             Utility Plugin
+	Author:            Robin Gareus
+	Author Email:      mailto:robin@gareus.org
+	Author Homepage:   http://gareus.org/
+	Has latency:       yes, reported by port 3
+	Bundle:            file:///run/current-system/sw/lib/lv2/phaserotate.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/phaserotate.lv2/phaserotate.so
+	Data URIs:         file:///run/current-system/sw/lib/lv2/phaserotate.lv2/phaserotate.ttl
+	                   file:///run/current-system/sw/lib/lv2/phaserotate.lv2/manifest.ttl
+	Required Features: http://lv2plug.in/ns/ext/urid#map
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#AudioPort
+		Symbol:      in
+		Name:        In
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out
+		Name:        Out
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			135.0 = "135°"
+			180.0 = "180°"
+			-180.0 = "-180°"
+			-135.0 = "-135°"
+			-90.0 = "-90°"
+			-45.0 = "-45°"
+			0.0 = "0°"
+			45.0 = "45°"
+			90.0 = "90°"
+
+		Symbol:      angle
+		Name:        Angle
+		Minimum:     -180.000000
+		Maximum:     180.000000
+		Default:     0.000000
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      latency
+		Name:        Signal Latency
+		Minimum:     0.000000
+		Maximum:     8192.000000
+		Properties:  http://lv2plug.in/ns/lv2core#reportsLatency
+		             http://lv2plug.in/ns/lv2core#integer
+
+</pre></body></html>

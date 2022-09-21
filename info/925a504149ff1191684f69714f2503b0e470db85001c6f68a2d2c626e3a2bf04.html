@@ -1,0 +1,53 @@
+<html><head></head><body><pre>
+http://github.com/blablack/ams-lv2/samplehold
+
+	Name:              AMS Sample&Hold
+	Class:             Delay Plugin
+	Author:            Aurelien Leblond
+	Author Email:      mailto:blablack@gmail.com
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/ams.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/ams.lv2/samplehold.so
+	UIs:
+		http://github.com/blablack/ams-lv2/samplehold/gui
+			Class:  http://lv2plug.in/ns/extensions/ui#GtkUI
+			Binary: file:///run/current-system/sw/lib/lv2/ams.lv2/samplehold_gui.so
+			Bundle: file:///run/current-system/sw/lib/lv2/ams.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/ams.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/ams.lv2/samplehold.ttl
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      triggerLevel
+		Name:        Trigger Level
+		Minimum:     0.000000
+		Maximum:     10.000000
+		Default:     0.500000
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#CVPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      input
+		Name:        Input
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#CVPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      trigger
+		Name:        Trigger
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#CVPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      output
+		Name:        Output
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#CVPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      gate
+		Name:        Gate
+</pre></body></html>

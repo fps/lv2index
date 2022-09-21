@@ -1,0 +1,196 @@
+<html><head></head><body><pre>
+http://github.com/blablack/ams-lv2/fftvocoder
+
+	Name:              AMS FFT Vocoder
+	Class:             Spectral Plugin
+	Author:            Aurelien Leblond
+	Author Email:      mailto:blablack@gmail.com
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/ams.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/ams.lv2/fftvocoder.so
+	UIs:
+		http://github.com/blablack/ams-lv2/fftvocoder/gui
+			Class:  http://lv2plug.in/ns/extensions/ui#GtkUI
+			Binary: file:///run/current-system/sw/lib/lv2/ams.lv2/fftvocoder_gui.so
+			Bundle: file:///run/current-system/sw/lib/lv2/ams.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/ams.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/ams.lv2/fftvocoder.ttl
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      modulator
+		Name:        Modulator
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#CVPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      pitchshift
+		Name:        Pitch Shift
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#CVPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      freqshift
+		Name:        Freq Shift
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#CVPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      channels
+		Name:        Channels
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      carrier
+		Name:        Carrier
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      bins_channel
+		Name:        Bins/Channel
+		Minimum:     1.000000
+		Maximum:     999.000000
+		Default:     16.000000
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      vcbins_channels
+		Name:        VC Bins/Channels
+		Minimum:     -100.000000
+		Maximum:     100.000000
+		Default:     0.000000
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      attacktime
+		Name:        Attack Time
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      releasetime
+		Name:        Release Time
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      pitchshift_octaves
+		Name:        Pitch Shift (octaves)
+		Minimum:     -3.000000
+		Maximum:     3.000000
+		Default:     0.000000
+
+	Port 10:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      vcpitchshift
+		Name:        VC Pitch Shift
+		Minimum:     -5.000000
+		Maximum:     5.000000
+		Default:     0.000000
+
+	Port 11:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      freq_bode_shift
+		Name:        Frequency (Bode) Shift
+		Minimum:     -999.000000
+		Maximum:     999.000000
+		Default:     0.000000
+
+	Port 12:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      vcfreqshift
+		Name:        VC Freq Shift
+		Minimum:     -500.000000
+		Maximum:     500.000000
+		Default:     0.000000
+
+	Port 13:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      phaseshift
+		Name:        Phase Shift
+		Minimum:     -6.280000
+		Maximum:     6.280000
+		Default:     0.000000
+
+	Port 14:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0 = "Rectangular"
+			1 = "Trapezoidal"
+			2 = "Hann (Cosine)"
+			3 = "Hamming (Cosine)"
+			4 = "Tukey (flattop cosine)"
+			5 = "Blackman-Nutall (minimum spill)"
+
+		Symbol:      fftwindowfunction
+		Name:        FFT Window Function
+		Minimum:     0.000000
+		Maximum:     5.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 15:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      dynamicsplicing
+		Name:        Dynamic Splicing
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 16:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      rthetamodulator
+		Name:        R-Theta Modulator
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 17:
+		Type:        http://lv2plug.in/ns/lv2core#CVPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      alteredmod
+		Name:        Altered Mod
+
+	Port 18:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      vocoderout
+		Name:        Vocoder Out
+
+	Port 19:
+		Type:        http://lv2plug.in/ns/lv2core#CVPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      modulatorfft
+		Name:        Modulator FFT
+
+	Port 20:
+		Type:        http://lv2plug.in/ns/lv2core#CVPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      mod1stH
+		Name:        Mod 1st H
+</pre></body></html>

@@ -1,0 +1,1069 @@
+<html><head></head><body><pre>
+http://lsp-plug.in/plugins/lv2/oscilloscope_x2
+
+	Name:              LSP Oscilloscope x2
+	Class:             Utility Plugin
+	Author:            LSP LV2
+	Author Email:      mailto:lsp.plugin@gmail.com
+	Author Homepage:   https://lsp-plug.in/
+	Has latency:       yes, reported by port 79
+	Bundle:            file:///run/current-system/sw/lib/lv2/lsp-plugins.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/lsp-plugins.lv2/lsp-plugins-lv2-1.2.3.so
+	UIs:
+		http://lsp-plug.in/ui/lv2/oscilloscope_x2
+			Class:  http://lv2plug.in/ns/extensions/ui#X11UI
+			Binary: file:///run/current-system/sw/lib/lv2/lsp-plugins.lv2/lsp-plugins-lv2ui-1.2.3.so
+			Bundle: file:///run/current-system/sw/lib/lv2/lsp-plugins.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/lsp-plugins.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/lsp-plugins.lv2/oscilloscope_x2.ttl
+	Required Features: http://lv2plug.in/ns/ext/urid#map
+	Optional Features: http://harrisonconsoles.com/lv2/inlinedisplay#queue_draw
+	                   http://lv2plug.in/ns/ext/state#mapPath
+	                   http://lv2plug.in/ns/ext/options#options
+	                   http://lv2plug.in/ns/ext/worker#schedule
+	                   http://lv2plug.in/ns/lv2core#hardRTCapable
+	Extension Data:    http://lv2plug.in/ns/ext/worker#interface
+	                   http://harrisonconsoles.com/lv2/inlinedisplay#interface
+	                   http://lv2plug.in/ns/ext/state#interface
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#AudioPort
+		Symbol:      in_x_1
+		Name:        Input x 1
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in_y_1
+		Name:        Input y 1
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in_ext_1
+		Name:        Input external 1
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out_x_1
+		Name:        Output x 1
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out_y_1
+		Name:        Output y 1
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in_x_2
+		Name:        Input x 2
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in_y_2
+		Name:        Input y 2
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in_ext_2
+		Name:        Input external 2
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out_x_2
+		Name:        Output x 2
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out_y_2
+		Name:        Output y 2
+
+	Port 10:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      sh_sz
+		Name:        Strobe History Size
+		Minimum:     0.000000
+		Maximum:     10.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 11:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xyrt
+		Name:        XY Record Time
+		Minimum:     1.000000
+		Maximum:     50.000000
+		Default:     10.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 12:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      maxdots
+		Name:        Maximum Dots for Plotting
+		Minimum:     512.000000
+		Maximum:     16384.000000
+		Default:     8192.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 13:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      freeze
+		Name:        Global Freeze Switch
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 14:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0 = "1"
+			1 = "2"
+
+		Symbol:      osc_cs
+		Name:        Oscilloscope Channel Selector
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 15:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0 = "None"
+			1 = "2X"
+			2 = "3X"
+			3 = "4X"
+			4 = "6X"
+			5 = "8X"
+
+		Symbol:      ovmo
+		Name:        Oversampler Mode Global
+		Minimum:     0.000000
+		Maximum:     5.000000
+		Default:     5.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 16:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1 = "Triggered"
+			0 = "XY"
+			2 = "Goniometer"
+
+		Symbol:      scmo
+		Name:        Mode Global
+		Minimum:     0.000000
+		Maximum:     2.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 17:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1 = "DC"
+			0 = "AC"
+
+		Symbol:      sccx
+		Name:        Coupling X Global
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 18:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0 = "AC"
+			1 = "DC"
+
+		Symbol:      sccy
+		Name:        Coupling Y Global
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 19:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1 = "DC"
+			0 = "AC"
+
+		Symbol:      scce
+		Name:        Coupling EXT Global
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 20:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1 = "Triangular"
+			2 = "Sine"
+			0 = "Sawtooth"
+
+		Symbol:      swtp
+		Name:        Sweep Type Global
+		Minimum:     0.000000
+		Maximum:     2.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 21:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      tmdv
+		Name:        Time Division Global
+		Minimum:     0.050000
+		Maximum:     50.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 22:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      hzdv
+		Name:        Horizontal Division Global
+		Minimum:     0.001000
+		Maximum:     10.000000
+		Default:     0.500000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 23:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      hzps
+		Name:        Horizontal Position Global
+		Minimum:     -100.000000
+		Maximum:     100.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 24:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      vedv
+		Name:        Vertical Division Global
+		Minimum:     0.001000
+		Maximum:     10.000000
+		Default:     0.500000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 25:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      veps
+		Name:        Vertical Position Global
+		Minimum:     -100.000000
+		Maximum:     100.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 26:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      trhy
+		Name:        Trigger Hysteresis Global
+		Minimum:     0.000000
+		Maximum:     50.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 27:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      trlv
+		Name:        Trigger Level Global
+		Minimum:     -100.000000
+		Maximum:     100.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 28:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      trho
+		Name:        Trigger Hold Time Global
+		Minimum:     0.000000
+		Maximum:     60.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 29:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			2 = "Repeat"
+			1 = "Manual"
+			0 = "Single"
+
+		Symbol:      trmo
+		Name:        Trigger Mode Global
+		Minimum:     0.000000
+		Maximum:     2.000000
+		Default:     2.000000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 30:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			2 = "Simple Falling Edge"
+			1 = "Simple Rising Edge"
+			4 = "Advanced Falling Edge"
+			3 = "Advanced Rising Edge"
+			0 = "None"
+
+		Symbol:      trtp
+		Name:        Trigger Type Global
+		Minimum:     0.000000
+		Maximum:     4.000000
+		Default:     3.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 31:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1 = "EXT"
+			0 = "Y"
+
+		Symbol:      trin
+		Name:        Trigger Input Global
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 32:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      trre
+		Name:        Trigger Reset
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 33:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1 = "2X"
+			4 = "6X"
+			2 = "3X"
+			0 = "None"
+			5 = "8X"
+			3 = "4X"
+
+		Symbol:      ovmo_1
+		Name:        Oversampler Mode 1
+		Minimum:     0.000000
+		Maximum:     5.000000
+		Default:     5.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 34:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1 = "Triggered"
+			0 = "XY"
+			2 = "Goniometer"
+
+		Symbol:      scmo_1
+		Name:        Mode 1
+		Minimum:     0.000000
+		Maximum:     2.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 35:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0 = "AC"
+			1 = "DC"
+
+		Symbol:      sccx_1
+		Name:        Coupling X 1
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 36:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1 = "DC"
+			0 = "AC"
+
+		Symbol:      sccy_1
+		Name:        Coupling Y 1
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 37:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1 = "DC"
+			0 = "AC"
+
+		Symbol:      scce_1
+		Name:        Coupling EXT 1
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 38:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1 = "Triangular"
+			2 = "Sine"
+			0 = "Sawtooth"
+
+		Symbol:      swtp_1
+		Name:        Sweep Type 1
+		Minimum:     0.000000
+		Maximum:     2.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 39:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      tmdv_1
+		Name:        Time Division 1
+		Minimum:     0.050000
+		Maximum:     50.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 40:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      hzdv_1
+		Name:        Horizontal Division 1
+		Minimum:     0.001000
+		Maximum:     10.000000
+		Default:     0.500000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 41:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      hzps_1
+		Name:        Horizontal Position 1
+		Minimum:     -100.000000
+		Maximum:     100.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 42:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      vedv_1
+		Name:        Vertical Division 1
+		Minimum:     0.001000
+		Maximum:     10.000000
+		Default:     0.500000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 43:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      veps_1
+		Name:        Vertical Position 1
+		Minimum:     -100.000000
+		Maximum:     100.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 44:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      trhy_1
+		Name:        Trigger Hysteresis 1
+		Minimum:     0.000000
+		Maximum:     50.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 45:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      trlv_1
+		Name:        Trigger Level 1
+		Minimum:     -100.000000
+		Maximum:     100.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 46:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      trho_1
+		Name:        Trigger Hold Time 1
+		Minimum:     0.000000
+		Maximum:     60.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 47:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1 = "Manual"
+			0 = "Single"
+			2 = "Repeat"
+
+		Symbol:      trmo_1
+		Name:        Trigger Mode 1
+		Minimum:     0.000000
+		Maximum:     2.000000
+		Default:     2.000000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 48:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			2 = "Simple Falling Edge"
+			3 = "Advanced Rising Edge"
+			0 = "None"
+			1 = "Simple Rising Edge"
+			4 = "Advanced Falling Edge"
+
+		Symbol:      trtp_1
+		Name:        Trigger Type 1
+		Minimum:     0.000000
+		Maximum:     4.000000
+		Default:     3.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 49:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0 = "Y"
+			1 = "EXT"
+
+		Symbol:      trin_1
+		Name:        Trigger Input 1
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 50:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      trre_1
+		Name:        Trigger Reset
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 51:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			2 = "3X"
+			0 = "None"
+			1 = "2X"
+			5 = "8X"
+			3 = "4X"
+			4 = "6X"
+
+		Symbol:      ovmo_2
+		Name:        Oversampler Mode 2
+		Minimum:     0.000000
+		Maximum:     5.000000
+		Default:     5.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 52:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1 = "Triggered"
+			0 = "XY"
+			2 = "Goniometer"
+
+		Symbol:      scmo_2
+		Name:        Mode 2
+		Minimum:     0.000000
+		Maximum:     2.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 53:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1 = "DC"
+			0 = "AC"
+
+		Symbol:      sccx_2
+		Name:        Coupling X 2
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 54:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0 = "AC"
+			1 = "DC"
+
+		Symbol:      sccy_2
+		Name:        Coupling Y 2
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 55:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1 = "DC"
+			0 = "AC"
+
+		Symbol:      scce_2
+		Name:        Coupling EXT 2
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 56:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1 = "Triangular"
+			2 = "Sine"
+			0 = "Sawtooth"
+
+		Symbol:      swtp_2
+		Name:        Sweep Type 2
+		Minimum:     0.000000
+		Maximum:     2.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 57:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      tmdv_2
+		Name:        Time Division 2
+		Minimum:     0.050000
+		Maximum:     50.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 58:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      hzdv_2
+		Name:        Horizontal Division 2
+		Minimum:     0.001000
+		Maximum:     10.000000
+		Default:     0.500000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 59:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      hzps_2
+		Name:        Horizontal Position 2
+		Minimum:     -100.000000
+		Maximum:     100.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 60:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      vedv_2
+		Name:        Vertical Division 2
+		Minimum:     0.001000
+		Maximum:     10.000000
+		Default:     0.500000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 61:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      veps_2
+		Name:        Vertical Position 2
+		Minimum:     -100.000000
+		Maximum:     100.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 62:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      trhy_2
+		Name:        Trigger Hysteresis 2
+		Minimum:     0.000000
+		Maximum:     50.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 63:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      trlv_2
+		Name:        Trigger Level 2
+		Minimum:     -100.000000
+		Maximum:     100.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 64:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      trho_2
+		Name:        Trigger Hold Time 2
+		Minimum:     0.000000
+		Maximum:     60.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 65:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			2 = "Repeat"
+			1 = "Manual"
+			0 = "Single"
+
+		Symbol:      trmo_2
+		Name:        Trigger Mode 2
+		Minimum:     0.000000
+		Maximum:     2.000000
+		Default:     2.000000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 66:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			2 = "Simple Falling Edge"
+			4 = "Advanced Falling Edge"
+			1 = "Simple Rising Edge"
+			0 = "None"
+			3 = "Advanced Rising Edge"
+
+		Symbol:      trtp_2
+		Name:        Trigger Type 2
+		Minimum:     0.000000
+		Maximum:     4.000000
+		Default:     3.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 67:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0 = "Y"
+			1 = "EXT"
+
+		Symbol:      trin_2
+		Name:        Trigger Input 2
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 68:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      trre_2
+		Name:        Trigger Reset
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 69:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      glsw_1
+		Name:        Global Switch 1
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 70:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      frz_1
+		Name:        Freeze Switch 1
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 71:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      chsl_1
+		Name:        Solo Switch 1
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 72:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      chmt_1
+		Name:        Mute Switch 1
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 73:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      glsw_2
+		Name:        Global Switch 2
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 74:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      frz_2
+		Name:        Freeze Switch 2
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 75:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      chsl_2
+		Name:        Solo Switch 2
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 76:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      chmt_2
+		Name:        Mute Switch 2
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 77:
+		Type:        http://lv2plug.in/ns/ext/atom#AtomPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in_ui
+		Name:        UI Input
+		Designation: http://lv2plug.in/ns/lv2core#control
+		Properties:  http://lv2plug.in/ns/lv2core#connectionOptional
+
+
+	Port 78:
+		Type:        http://lv2plug.in/ns/ext/atom#AtomPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out_ui
+		Name:        UI Output
+		Designation: http://lv2plug.in/ns/lv2core#control
+		Properties:  http://lv2plug.in/ns/lv2core#connectionOptional
+
+
+	Port 79:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out_latency
+		Name:        Latency OUT
+		Minimum:     0.000000
+		Maximum:     192000.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#reportsLatency
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+</pre></body></html>

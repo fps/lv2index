@@ -1,0 +1,70 @@
+<html><head></head><body><pre>
+http://fps.io/plugins/clipping.hard
+
+	Name:              clipping.hard
+	Class:             Plugin
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/clipping.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/clipping.lv2/hard.so
+	Data URIs:         file:///run/current-system/sw/lib/lv2/clipping.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/clipping.lv2/hard.ttl
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in
+		Name:        In
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out
+		Name:        Out
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      pregain
+		Name:        Pre-Gain
+		Minimum:     -96.000000
+		Maximum:     96.000000
+		Default:     0.000000
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      threshold
+		Name:        Threshold
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      bias
+		Name:        Bias
+		Minimum:     -1.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      postgain
+		Name:        Post-Gain
+		Minimum:     -96.000000
+		Maximum:     96.000000
+		Default:     0.000000
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      drywet
+		Name:        Dry/Wet
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+</pre></body></html>

@@ -1,0 +1,309 @@
+<html><head></head><body><pre>
+http://lsp-plug.in/plugins/lv2/sampler_stereo
+
+	Name:              LSP Sampler Stereo
+	Class:             Instrument Plugin
+	Author:            LSP LV2
+	Author Email:      mailto:lsp.plugin@gmail.com
+	Author Homepage:   https://lsp-plug.in/
+	Has latency:       yes, reported by port 21
+	Bundle:            file:///run/current-system/sw/lib/lv2/lsp-plugins.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/lsp-plugins.lv2/lsp-plugins-lv2-1.2.3.so
+	UIs:
+		http://lsp-plug.in/ui/lv2/sampler_stereo
+			Class:  http://lv2plug.in/ns/extensions/ui#X11UI
+			Binary: file:///run/current-system/sw/lib/lv2/lsp-plugins.lv2/lsp-plugins-lv2ui-1.2.3.so
+			Bundle: file:///run/current-system/sw/lib/lv2/lsp-plugins.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/lsp-plugins.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/lsp-plugins.lv2/sampler_stereo.ttl
+	Required Features: http://lv2plug.in/ns/ext/urid#map
+	Optional Features: http://harrisonconsoles.com/lv2/inlinedisplay#queue_draw
+	                   http://lv2plug.in/ns/ext/state#mapPath
+	                   http://lv2plug.in/ns/ext/options#options
+	                   http://lv2plug.in/ns/ext/worker#schedule
+	                   http://lv2plug.in/ns/lv2core#hardRTCapable
+	Extension Data:    http://lv2plug.in/ns/ext/worker#interface
+	                   http://harrisonconsoles.com/lv2/inlinedisplay#interface
+	                   http://lv2plug.in/ns/ext/state#interface
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#AudioPort
+		Symbol:      in_l
+		Name:        Input L
+		Group:       http://lsp-plug.in/plugins/lv2/sampler_stereo/port_groups#stereo_in
+		Designation: http://lv2plug.in/ns/ext/port-groups#left
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#AudioPort
+		Symbol:      in_r
+		Name:        Input R
+		Group:       http://lsp-plug.in/plugins/lv2/sampler_stereo/port_groups#stereo_in
+		Designation: http://lv2plug.in/ns/ext/port-groups#right
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out_l
+		Name:        Output L
+		Group:       http://lsp-plug.in/plugins/lv2/sampler_stereo/port_groups#stereo_out
+		Designation: http://lv2plug.in/ns/ext/port-groups#left
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out_r
+		Name:        Output R
+		Group:       http://lsp-plug.in/plugins/lv2/sampler_stereo/port_groups#stereo_out
+		Designation: http://lv2plug.in/ns/ext/port-groups#right
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      enabled
+		Name:        Enabled
+		Designation: http://lv2plug.in/ns/lv2core#enabled
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      mute
+		Name:        Forced mute
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      muting
+		Name:        Mute on stop
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      noff
+		Name:        Note-off handling
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      fout
+		Name:        Note-off fadeout
+		Minimum:     0.000000
+		Maximum:     50.000000
+		Default:     10.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      dry
+		Name:        Dry amount
+		Minimum:     0.000000
+		Maximum:     10.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 10:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      wet
+		Name:        Wet amount
+		Minimum:     0.000000
+		Maximum:     10.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 11:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      g_out
+		Name:        Output gain
+		Minimum:     0.000000
+		Maximum:     1000.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 12:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0 = "01"
+			1 = "02"
+			2 = "03"
+			3 = "04"
+			4 = "05"
+			5 = "06"
+			6 = "07"
+			7 = "08"
+			8 = "09"
+			9 = "10"
+			10 = "11"
+			11 = "12"
+			12 = "13"
+			13 = "14"
+			14 = "15"
+			15 = "16"
+
+		Symbol:      chan
+		Name:        Channel
+		Minimum:     0.000000
+		Maximum:     15.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 13:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1 = "C#"
+			0 = "C"
+			9 = "A"
+			11 = "B"
+			10 = "A#"
+			8 = "G#"
+			7 = "G"
+			3 = "D#"
+			2 = "D"
+			6 = "F#"
+			4 = "E"
+			5 = "F"
+
+		Symbol:      note
+		Name:        Note
+		Minimum:     0.000000
+		Maximum:     11.000000
+		Default:     9.000000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 14:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			2 = "1"
+			7 = "6"
+			0 = "-1"
+			1 = "0"
+			3 = "2"
+			9 = "8"
+			10 = "9"
+			8 = "7"
+			5 = "4"
+			4 = "3"
+			6 = "5"
+
+		Symbol:      oct
+		Name:        Octave
+		Minimum:     0.000000
+		Maximum:     10.000000
+		Default:     4.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 15:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      mn
+		Name:        MIDI Note #
+		Minimum:     0.000000
+		Maximum:     127.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 16:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      trg
+		Name:        Instrument listen
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 17:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      dyna
+		Name:        Dynamics
+		Minimum:     0.000000
+		Maximum:     100.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 18:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      drft
+		Name:        Time drifting
+		Minimum:     0.000000
+		Maximum:     100.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 19:
+		Type:        http://lv2plug.in/ns/ext/atom#AtomPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in_midi
+		Name:        MIDI Input, UI Input
+		Designation: http://lv2plug.in/ns/lv2core#control
+
+	Port 20:
+		Type:        http://lv2plug.in/ns/ext/atom#AtomPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out_midi
+		Name:        MIDI Output, UI Output
+		Designation: http://lv2plug.in/ns/lv2core#control
+
+	Port 21:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out_latency
+		Name:        Latency OUT
+		Minimum:     0.000000
+		Maximum:     192000.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#reportsLatency
+
+</pre></body></html>

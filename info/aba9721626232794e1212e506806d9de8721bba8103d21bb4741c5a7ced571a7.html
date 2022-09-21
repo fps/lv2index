@@ -1,0 +1,888 @@
+<html><head></head><body><pre>
+urn:juce:Vex
+
+	Name:              Vex
+	Class:             Instrument Plugin
+	Author:            RockHardbuns
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/vex.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/vex.lv2/vex.so
+	UIs:
+		urn:juce:Vex#ExternalUI
+			Class:  http://kxstudio.sf.net/ns/lv2ext/external-ui#Widget
+			Binary: file:///run/current-system/sw/lib/lv2/vex.lv2/vex.so
+			Bundle: file:///run/current-system/sw/lib/lv2/vex.lv2/
+		urn:juce:Vex#ParentUI
+			Class:  http://lv2plug.in/ns/extensions/ui#X11UI
+			Binary: file:///run/current-system/sw/lib/lv2/vex.lv2/vex.so
+			Bundle: file:///run/current-system/sw/lib/lv2/vex.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/vex.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/vex.lv2/vex.ttl
+	Required Features: http://lv2plug.in/ns/ext/urid#map
+	                   http://lv2plug.in/ns/ext/buf-size#boundedBlockLength
+	                   http://lv2plug.in/ns/ext/buf-size#fixedBlockLength
+	Extension Data:    http://lv2plug.in/ns/ext/options#interface
+	                   http://lv2plug.in/ns/ext/state#interface
+	                   http://kxstudio.sf.net/ns/lv2ext/programs#Interface
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/ext/atom#AtomPort
+		Symbol:      lv2_events_in
+		Name:        Events Input
+		Designation: http://lv2plug.in/ns/lv2core#control
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lv2_freewheel
+		Name:        Freewheel
+		Designation: http://lv2plug.in/ns/lv2core#freeWheeling
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+		             http://lv2plug.in/ns/ext/port-props#notOnGUI
+
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      lv2_audio_out_1
+		Name:        Audio Output 1
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      lv2_audio_out_2
+		Name:        Audio Output 2
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      master
+		Name:        Master
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part1_oct
+		Name:        Part1 Oct
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part1_cent
+		Name:        Part1 Cent
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part1_phase
+		Name:        Part1 Phase
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part1_tune
+		Name:        Part1 Tune
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part1_filter_cut
+		Name:        Part1 Filter Cut
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.900000
+
+	Port 10:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part1_filter_res
+		Name:        Part1 Filter Res
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 11:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part1_filter_hp_lp
+		Name:        Part1 Filter HP/LP
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+
+	Port 12:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part1_filter_env
+		Name:        Part1 Filter Env
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 13:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part1_filter_env_atk
+		Name:        Part1 Filter Env Atk
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 14:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part1_filter_env_dec
+		Name:        Part1 Filter Env Dec
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.200000
+
+	Port 15:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part1_filter_env_sus
+		Name:        Part1 Filter Env Sus
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 16:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part1_filter_env_rel
+		Name:        Part1 Filter Env Rel
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 17:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part1_filter_env_vel
+		Name:        Part1 Filter Env Vel
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 18:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part1_amp_env_atk
+		Name:        Part1 Amp Env Atk
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 19:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part1_amp_env_dec
+		Name:        Part1 Amp Env Dec
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.300000
+
+	Port 20:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part1_amp_env_sus
+		Name:        Part1 Amp Env Sus
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.700000
+
+	Port 21:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part1_amp_env_rel
+		Name:        Part1 Amp Env Rel
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.100000
+
+	Port 22:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part1_amp_env_vel
+		Name:        Part1 Amp Env Vel
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 23:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part1_lfo_rate
+		Name:        Part1 LFO Rate
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 24:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part1_lfo_amp
+		Name:        Part1 LFO Amp
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 25:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part1_lfo_flt
+		Name:        Part1 LFO Flt
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 26:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part1_delay
+		Name:        Part1 Delay
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 27:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part1_chorus
+		Name:        Part1 Chorus
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 28:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part1_reverb
+		Name:        Part1 Reverb
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 29:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part2_oct
+		Name:        Part2 Oct
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 30:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part2_cent
+		Name:        Part2 Cent
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 31:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part2_phase
+		Name:        Part2 Phase
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 32:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part2_tune
+		Name:        Part2 Tune
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 33:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part2_filter_cut
+		Name:        Part2 Filter Cut
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.900000
+
+	Port 34:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part2_filter_res
+		Name:        Part2 Filter Res
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 35:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part2_filter_hp_lp
+		Name:        Part2 Filter HP/LP
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+
+	Port 36:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part2_filter_env
+		Name:        Part2 Filter Env
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 37:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part2_filter_env_atk
+		Name:        Part2 Filter Env Atk
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 38:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part2_filter_env_dec
+		Name:        Part2 Filter Env Dec
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.200000
+
+	Port 39:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      part2_filter_env_sus
+		Name:        Part2 Filter Env Sus
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 40:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part2_filter_env_rel
+		Name:        Part2 Filter Env Rel
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 41:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part2_filter_env_vel
+		Name:        Part2 Filter Env Vel
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 42:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part2_amp_env_atk
+		Name:        Part2 Amp Env Atk
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 43:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part2_amp_env_dec
+		Name:        Part2 Amp Env Dec
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.300000
+
+	Port 44:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part2_amp_env_sus
+		Name:        Part2 Amp Env Sus
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.700000
+
+	Port 45:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part2_amp_env_rel
+		Name:        Part2 Amp Env Rel
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.100000
+
+	Port 46:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part2_amp_env_vel
+		Name:        Part2 Amp Env Vel
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 47:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part2_lfo_rate
+		Name:        Part2 LFO Rate
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 48:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part2_lfo_amp
+		Name:        Part2 LFO Amp
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 49:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part2_lfo_flt
+		Name:        Part2 LFO Flt
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 50:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part2_delay
+		Name:        Part2 Delay
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 51:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part2_chorus
+		Name:        Part2 Chorus
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 52:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part2_reverb
+		Name:        Part2 Reverb
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 53:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part3_oct
+		Name:        Part3 Oct
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 54:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part3_cent
+		Name:        Part3 Cent
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 55:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part3_phase
+		Name:        Part3 Phase
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 56:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part3_tune
+		Name:        Part3 Tune
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 57:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part3_filter_cut
+		Name:        Part3 Filter Cut
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.900000
+
+	Port 58:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part3_filter_res
+		Name:        Part3 Filter Res
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 59:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part3_filter_hp_lp
+		Name:        Part3 Filter HP/LP
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+
+	Port 60:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part3_filter_env
+		Name:        Part3 Filter Env
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 61:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part3_filter_env_atk
+		Name:        Part3 Filter Env Atk
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 62:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part3_filter_env_dec
+		Name:        Part3 Filter Env Dec
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.200000
+
+	Port 63:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part3_filter_env_sus
+		Name:        Part3 Filter Env Sus
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 64:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part3_filter_env_rel
+		Name:        Part3 Filter Env Rel
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 65:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part3_filter_env_vel
+		Name:        Part3 Filter Env Vel
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 66:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part3_amp_env_atk
+		Name:        Part3 Amp Env Atk
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 67:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part3_amp_env_dec
+		Name:        Part3 Amp Env Dec
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.300000
+
+	Port 68:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part3_amp_env_sus
+		Name:        Part3 Amp Env Sus
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.700000
+
+	Port 69:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part3_amp_env_rel
+		Name:        Part3 Amp Env Rel
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.100000
+
+	Port 70:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part3_amp_env_vel
+		Name:        Part3 Amp Env Vel
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 71:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part3_lfo_rate
+		Name:        Part3 LFO Rate
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 72:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part3_lfo_amp
+		Name:        Part3 LFO Amp
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 73:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part3_lfo_flt
+		Name:        Part3 LFO Flt
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 74:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part3_delay
+		Name:        Part3 Delay
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 75:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part3_chorus
+		Name:        Part3 Chorus
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 76:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part3_reverb
+		Name:        Part3 Reverb
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 77:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      delay_time
+		Name:        Delay Time
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 78:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      delay_feedback
+		Name:        Delay Feedback
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.400000
+
+	Port 79:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      delay_level
+		Name:        Delay Level
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 80:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      chorus_rate
+		Name:        Chorus Rate
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.300000
+
+	Port 81:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      chorus_depth
+		Name:        Chorus Depth
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.600000
+
+	Port 82:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      chorus_level
+		Name:        Chorus Level
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 83:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      reverb_size
+		Name:        Reverb Size
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.600000
+
+	Port 84:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      reverb_width
+		Name:        Reverb Width
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.700000
+
+	Port 85:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      reverb_damp
+		Name:        Reverb Damp
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.600000
+
+	Port 86:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      reverb_level
+		Name:        Reverb Level
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 87:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part1_panning
+		Name:        Part1 Panning
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 88:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part2_panning
+		Name:        Part2 Panning
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 89:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part3_panning
+		Name:        Part3 Panning
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 90:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part1_volume
+		Name:        Part1 Volume
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 91:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part2_volume
+		Name:        Part2 Volume
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 92:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part3_volume
+		Name:        Part3 Volume
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 93:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part1_on_off
+		Name:        Part1 on/off
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+
+	Port 94:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part2_on_off
+		Name:        Part2 on/off
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 95:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      part3_on_off
+		Name:        Part3 on/off
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+</pre></body></html>

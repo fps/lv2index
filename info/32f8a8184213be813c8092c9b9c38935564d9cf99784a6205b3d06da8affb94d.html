@@ -1,0 +1,308 @@
+<html><head></head><body><pre>
+http://guitarix.sourceforge.net/plugins/gxtuner#tuner
+
+	Name:              GxTuner
+	Class:             Analyser Plugin
+	Author:            Guitarix team
+	Author Email:      mailto:brummer@web.de
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/gxtuner.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/gxtuner.lv2/gxtuner.so
+	UIs:
+		http://guitarix.sourceforge.net/plugins/gxtuner#gui
+			Class:  http://lv2plug.in/ns/extensions/ui#X11UI
+			Binary: file:///run/current-system/sw/lib/lv2/gxtuner.lv2/gxtuner_gui.so
+			Bundle: file:///run/current-system/sw/lib/lv2/gxtuner.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/gxtuner.lv2/gxtuner.ttl
+	                   file:///run/current-system/sw/lib/lv2/gxtuner.lv2/manifest.ttl
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      FREQ
+		Name:        FREQ
+		Minimum:     0.000000
+		Maximum:     1000.000000
+		Default:     0.000000
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      REFFREQ
+		Name:        REFFREQ
+		Minimum:     427.000000
+		Maximum:     453.000000
+		Default:     440.000000
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			7 = "1 and 1/2 Steps Down"
+			6 = "Full Step Down"
+			8 = "Double Drop D"
+			9 = "Drop C"
+			10 = "Drop C#"
+			11 = "Drop B"
+			12 = "Drop A#"
+			13 = "Drop A"
+			14 = "Open D"
+			15 = "Open D Minor"
+			16 = "Open G"
+			17 = "Open G Minor"
+			18 = "Open C"
+			19 = "Open C#"
+			20 = "Open C Minor"
+			21 = "Open E7"
+			22 = "Open E Minor7"
+			23 = "Open G Major7"
+			24 = "Open A Minor"
+			25 = "Open A Minor7"
+			26 = "Open A"
+			27 = "C Tuning"
+			28 = "C# Tuning"
+			29 = "Bb Tuning"
+			30 = "A to A (Baritone)"
+			31 = "Open Dsus2"
+			32 = "Open Gsus2"
+			33 = "Modal G"
+			34 = "Overtone"
+			35 = "Pentatonic"
+			0 = "(Chromatic)"
+			36 = "Minor Third"
+			37 = "Major Third"
+			38 = "All Fourths"
+			39 = "Augmented Fourths"
+			40 = "Slow Motion"
+			41 = "Admiral"
+			42 = "Buzzard"
+			43 = "Face"
+			44 = "Four and Twenty"
+			45 = "Ostrich"
+			1 = "Standard/E"
+			46 = "Capo 200"
+			47 = "Balalaika"
+			48 = "Cittern One"
+			49 = "Cittern Two"
+			50 = "Dobro"
+			51 = "Lefty"
+			52 = "Mandoguitar"
+			53 = "Rusty Cage"
+			54 = "Hardcore"
+			2 = "Standard/Es"
+			3 = "Open E"
+			4 = "Drop D"
+			5 = "Half Step Down"
+
+		Symbol:      TUNER_MODE
+		Name:        Tuner Mode
+		Minimum:     0.000000
+		Maximum:     54.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      TEMPERAMENT
+		Name:        TEMPERAMENT
+		Minimum:     0.000000
+		Maximum:     4.000000
+		Default:     0.000000
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      THRESHOLD
+		Name:        THRESHOLD
+		Minimum:     -60.000000
+		Maximum:     4.000000
+		Default:     -50.000000
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      MAXL
+		Name:        MAXL
+		Minimum:     0.000000
+		Maximum:     1000.000000
+		Default:     0.000000
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      RESET
+		Name:        RESET
+		Minimum:     -10.000000
+		Maximum:     10.000000
+		Default:     1.000000
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      LEVEL
+		Name:        LEVEL
+		Minimum:     -60.000000
+		Maximum:     4.000000
+		Default:     -45.000000
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1 = "1"
+			0 = "0"
+			3 = "3"
+			16 = "16"
+			14 = "14"
+			13 = "13"
+			15 = "15"
+			11 = "11"
+			12 = "12"
+			2 = "2"
+			9 = "9"
+			7 = "7"
+			10 = "10"
+			6 = "6"
+			8 = "8"
+			4 = "4"
+			5 = "5"
+
+		Symbol:      CHANNEL
+		Name:        CHANNELL
+		Minimum:     0.000000
+		Maximum:     16.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      MIDI_ON
+		Name:        MIDI_ON
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 10:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      FASTNOTE
+		Name:        FASTNOTE
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 11:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      PITCHBEND
+		Name:        PITCHBEND
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 12:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      SINGLENOTE
+		Name:        SINGLENOTE
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 13:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      BPM
+		Name:        BPM
+		Minimum:     0.000000
+		Maximum:     360.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 14:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      VELOCITY
+		Name:        VELOCITY
+		Minimum:     0.000000
+		Maximum:     127.000000
+		Default:     64.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 15:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      VERIFY
+		Name:        VERIFY
+		Minimum:     1.000000
+		Maximum:     12.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 16:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      GATE
+		Name:        GATE
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 17:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      SYNTHFREQ
+		Name:        SYNTHFREQ
+		Minimum:     30.000000
+		Maximum:     1000.000000
+		Default:     220.000000
+
+	Port 18:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      GAIN
+		Name:        GAIN
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+
+	Port 19:
+		Type:        http://lv2plug.in/ns/ext/atom#AtomPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      midi_out
+		Name:        MIDI Out
+		Designation: http://lv2plug.in/ns/lv2core#control
+
+	Port 20:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out
+		Name:        Out
+
+	Port 21:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in
+		Name:        In
+</pre></body></html>

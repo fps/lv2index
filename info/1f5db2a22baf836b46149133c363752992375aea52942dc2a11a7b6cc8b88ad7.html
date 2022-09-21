@@ -1,0 +1,69 @@
+<html><head></head><body><pre>
+http://gareus.org/oss/lv2/nodelay
+
+	Name:              No Delay Line
+	Class:             Utility Plugin
+	Author:            Robin Gareus
+	Author Email:      mailto:robin@gareus.org
+	Author Homepage:   http://gareus.org/
+	Has latency:       yes, reported by port 2
+	Bundle:            file:///run/current-system/sw/lib/lv2/nodelay.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/nodelay.lv2/nodelay.so
+	Data URIs:         file:///run/current-system/sw/lib/lv2/nodelay.lv2/nodelay.ttl
+	                   file:///run/current-system/sw/lib/lv2/nodelay.lv2/manifest.ttl
+	Optional Features: http://lv2plug.in/ns/ext/buf-size#coarseBlockLength
+	                   http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      delay
+		Name:        Delay Time
+		Minimum:     0.000000
+		Maximum:     192000.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0 = "Delay, do not report latency"
+			1 = "Delay and report latency"
+			2 = "No delay, only report latency"
+			3 = "No delay, do not report latency"
+
+		Symbol:      report_latency
+		Name:        Operation Mode
+		Minimum:     0.000000
+		Maximum:     3.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      latency
+		Name:        latency
+		Minimum:     0.000000
+		Maximum:     192000.000000
+		Properties:  http://lv2plug.in/ns/lv2core#reportsLatency
+		             http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in
+		Name:        In
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out
+		Name:        Out
+</pre></body></html>

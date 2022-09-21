@@ -1,0 +1,163 @@
+<html><head></head><body><pre>
+urn:zamaudio:ZamCompX2
+
+	Name:              ZamCompX2
+	Class:             Compressor Plugin
+	Author:            Damien Zammit
+	Author Homepage:   http://www.zamaudio.com
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/ZamCompX2.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/ZamCompX2.lv2/ZamCompX2_dsp.so
+	UIs:
+		urn:zamaudio:ZamCompX2#UI
+			Class:  http://lv2plug.in/ns/extensions/ui#X11UI
+			Binary: file:///run/current-system/sw/lib/lv2/ZamCompX2.lv2/ZamCompX2_ui.so
+			Bundle: file:///run/current-system/sw/lib/lv2/ZamCompX2.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/ZamCompX2.lv2/ZamCompX2_dsp.ttl
+	                   file:///run/current-system/sw/lib/lv2/ZamCompX2.lv2/manifest.ttl
+	Required Features: http://lv2plug.in/ns/ext/urid#map
+	                   http://lv2plug.in/ns/ext/options#options
+	Optional Features: http://lv2plug.in/ns/ext/buf-size#boundedBlockLength
+	                   http://lv2plug.in/ns/lv2core#hardRTCapable
+	Extension Data:    http://lv2plug.in/ns/ext/options#interface
+	                   http://kxstudio.sf.net/ns/lv2ext/programs#Interface
+	Presets: 
+	         Zero
+	         VocalLeveller
+	         PoppySnare
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#AudioPort
+		Symbol:      lv2_audio_in_1
+		Name:        Audio Input 1
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lv2_audio_in_2
+		Name:        Audio Input 2
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lv2_sidechain_in
+		Name:        Sidechain Input
+		Properties:  http://lv2plug.in/ns/lv2core#isSideChain
+
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      lv2_audio_out_1
+		Name:        Audio Output 1
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      lv2_audio_out_2
+		Name:        Audio Output 2
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      att
+		Name:        Attack
+		Minimum:     0.100000
+		Maximum:     100.000000
+		Default:     10.000000
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      rel
+		Name:        Release
+		Minimum:     1.000000
+		Maximum:     500.000000
+		Default:     80.000000
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      kn
+		Name:        Knee
+		Minimum:     0.000000
+		Maximum:     8.000000
+		Default:     0.000000
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      rat
+		Name:        Ratio
+		Minimum:     1.000000
+		Maximum:     20.000000
+		Default:     4.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      thr
+		Name:        Threshold
+		Minimum:     -80.000000
+		Maximum:     0.000000
+		Default:     0.000000
+
+	Port 10:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      mak
+		Name:        Makeup
+		Minimum:     0.000000
+		Maximum:     30.000000
+		Default:     0.000000
+
+	Port 11:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      slew
+		Name:        Slew
+		Minimum:     1.000000
+		Maximum:     150.000000
+		Default:     1.000000
+
+	Port 12:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      stereodet
+		Name:        Stereo Detection
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 13:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      sidechain
+		Name:        Sidechain
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 14:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      gr
+		Name:        Gain Reduction
+		Minimum:     0.000000
+		Maximum:     20.000000
+
+	Port 15:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      outlevel
+		Name:        Output Level
+		Minimum:     -45.000000
+		Maximum:     20.000000
+</pre></body></html>

@@ -1,0 +1,244 @@
+<html><head></head><body><pre>
+http://rakarrack.sourceforge.net/effects.html#StereoHarm_no_mid
+
+	Name:              rkr StereoHarmonizer (no midi)
+	Class:             Pitch Shifter Plugin
+	Author:            Rakarrack Team
+	Author Email:      mailto:ssjackson71@gmail.com
+	Author Homepage:   http://rakarrack.sourceforge.net
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/rkr.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/rkr.lv2/rkrlv2.so
+	Data URIs:         file:///run/current-system/sw/lib/lv2/rkr.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/rkr.lv2/stereoharm_no_midi.ttl
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	                   http://lv2plug.in/ns/ext/buf-size#boundedBlockLength
+	                   http://lv2plug.in/ns/ext/urid#map
+	Presets: 
+	         Hard Chorus
+	         Plain
+	         Chorus
+	         Octavator
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#AudioPort
+		Symbol:      INPUT_L
+		Name:        Audio In L
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      INPUT_R
+		Name:        Audio In R
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      OUTPUT_L
+		Name:        Audio Out L
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      OUTPUT_R
+		Name:        Audio Out R
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      BYPASS
+		Name:        Bypass
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      WETDRY
+		Name:        Wet/Dry
+		Minimum:     0.000000
+		Maximum:     127.000000
+		Default:     64.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      GAINL
+		Name:        Left Gain
+		Minimum:     -64.000000
+		Maximum:     63.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      INTL
+		Name:        Left Interval
+		Minimum:     -12.000000
+		Maximum:     12.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      CHRML
+		Name:        Left Chroma
+		Minimum:     -2000.000000
+		Maximum:     2000.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      GAINR
+		Name:        Right Gain
+		Minimum:     -64.000000
+		Maximum:     64.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 10:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      INTR
+		Name:        Right Interval
+		Minimum:     -12.000000
+		Maximum:     12.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 11:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      CHR
+		Name:        Right Chroma
+		Minimum:     -2000.000000
+		Maximum:     2000.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 12:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      SELECT
+		Name:        Select Chord Mode
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 13:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0 = "C"
+			2 = "D"
+			3 = "Eb"
+			4 = "E"
+			5 = "F"
+			6 = "Gb"
+			7 = "G"
+			8 = "Ab"
+			9 = "A"
+			10 = "Bb"
+			11 = "B"
+			12 = "C"
+			13 = "C#"
+			14 = "D"
+			15 = "D#"
+			16 = "E"
+			17 = "F"
+			18 = "F#"
+			19 = "G"
+			20 = "G#"
+			21 = "A"
+			22 = "A#"
+			23 = "A"
+			1 = "Db"
+
+		Symbol:      NOTE
+		Name:        Note
+		Minimum:     0.000000
+		Maximum:     23.000000
+		Default:     4.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 14:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			6 = "6/9"
+			21 = "7(b5)"
+			1 = "6"
+			0 = "None"
+			20 = "7(Sus4)"
+			22 = "7(9)"
+			18 = "dim7"
+			19 = "7"
+			23 = "7(#11)"
+			9 = "min6"
+			16 = "min(Maj7)(9)"
+			14 = "min7(11)"
+			17 = "dim"
+			13 = "min7(9)"
+			15 = "min(Maj7)"
+			11 = "min7(b5)"
+			12 = "min9"
+			10 = "min7"
+			8 = "min"
+			7 = "+"
+			3 = "lyd"
+			2 = "Maj7"
+			4 = "Maj(9)"
+			5 = "Maj7(9)"
+			24 = "7(13)"
+			25 = "7(b9)"
+			26 = "7(b13)"
+			27 = "7(#9)"
+			28 = "+Maj7"
+			29 = "+7"
+			30 = "1+8"
+			31 = "1+5"
+			32 = "(Sus4)"
+			33 = "2"
+
+		Symbol:      CHORD
+		Name:        Chord
+		Minimum:     0.000000
+		Maximum:     33.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 15:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      LRC
+		Name:        Left/Right Crossover
+		Minimum:     0.000000
+		Maximum:     127.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+</pre></body></html>

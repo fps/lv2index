@@ -1,0 +1,165 @@
+<html><head></head><body><pre>
+http://gareus.org/oss/lv2/midifilter#keysplit
+
+	Name:              MIDI Keysplit
+	Class:             MIDI
+	Author:            Robin Gareus
+	Author Email:      mailto:robin@gareus.org
+	Author Homepage:   http://gareus.org/
+	Has latency:       yes, reported by port 2
+	Bundle:            file:///run/current-system/sw/lib/lv2/midifilter.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/midifilter.lv2/midifilter.so
+	Data URIs:         file:///run/current-system/sw/lib/lv2/midifilter.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/midifilter.lv2/midifilter.ttl
+	Required Features: http://lv2plug.in/ns/ext/urid#map
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/ext/atom#AtomPort
+		Symbol:      midiin
+		Name:        MIDI In
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/ext/atom#AtomPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      midiout
+		Name:        MIDI Out
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      latency
+		Name:        latency
+		Minimum:     0.000000
+		Maximum:     192000.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#reportsLatency
+		             http://lv2plug.in/ns/ext/port-props#notOnGUI
+
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1 = "01"
+			0 = "Any"
+			2 = "02"
+			3 = "03"
+			4 = "04"
+			5 = "05"
+			6 = "06"
+			7 = "07"
+			8 = "08"
+			9 = "09"
+			10 = "10"
+			11 = "11"
+			12 = "12"
+			13 = "13"
+			14 = "14"
+			15 = "15"
+			16 = "16"
+
+		Symbol:      channelf
+		Name:        Filter Channel
+		Minimum:     0.000000
+		Maximum:     16.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      split
+		Name:        Splitpoint
+		Minimum:     0.000000
+		Maximum:     127.000000
+		Default:     48.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			15 = "15"
+			1 = "01"
+			14 = "14"
+			16 = "16"
+			12 = "12"
+			13 = "13"
+			10 = "10"
+			8 = "08"
+			11 = "11"
+			4 = "04"
+			9 = "09"
+			3 = "03"
+			7 = "07"
+			2 = "02"
+			5 = "05"
+			6 = "06"
+
+		Symbol:      channel0
+		Name:        Channel Lower
+		Minimum:     1.000000
+		Maximum:     16.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      transp0
+		Name:        Transpose Lower
+		Minimum:     -48.000000
+		Maximum:     48.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			7 = "07"
+			13 = "13"
+			16 = "16"
+			2 = "02"
+			12 = "12"
+			1 = "01"
+			4 = "04"
+			14 = "14"
+			9 = "09"
+			15 = "15"
+			10 = "10"
+			8 = "08"
+			6 = "06"
+			11 = "11"
+			5 = "05"
+			3 = "03"
+
+		Symbol:      channel1
+		Name:        Channel Upper
+		Minimum:     1.000000
+		Maximum:     16.000000
+		Default:     2.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      transp1
+		Name:        Transpose Upper
+		Minimum:     -48.000000
+		Maximum:     48.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+</pre></body></html>

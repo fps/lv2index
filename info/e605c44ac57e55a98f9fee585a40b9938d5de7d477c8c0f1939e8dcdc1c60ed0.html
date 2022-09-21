@@ -1,0 +1,72 @@
+<html><head></head><body><pre>
+http://www.openavproductions.com/artyfx#roomy
+
+	Name:              Roomy
+	Class:             Reverb Plugin
+	Author:            OpenAV
+	Author Email:      mailto:harryhaaren@gmail.com
+	Author Homepage:   http://openavproductions.com
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/artyfx.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/artyfx.lv2/artyfx.so
+	UIs:
+		http://www.openavproductions.com/artyfx#roomy/gui
+			Class:  http://lv2plug.in/ns/extensions/ui#X11UI
+			Binary: file:///run/current-system/sw/lib/lv2/artyfx.lv2/artyfx_ui.so
+			Bundle: file:///run/current-system/sw/lib/lv2/artyfx.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/artyfx.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/artyfx.lv2/roomy.ttl
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in_left
+		Name:        In Left
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in_right
+		Name:        In Right
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#OutputPort
+		             http://lv2plug.in/ns/lv2core#AudioPort
+		Symbol:      out_left
+		Name:        Output Left
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out_right
+		Name:        Output Right
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      time
+		Name:        Time
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      damping
+		Name:        Damping
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      dry_wet
+		Name:        Dry Wet Mix
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+</pre></body></html>

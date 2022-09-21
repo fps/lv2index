@@ -1,0 +1,44 @@
+<html><head></head><body><pre>
+http://plugin.org.uk/swh-plugins/pitchScaleHQ
+
+	Name:              Higher Quality Pitch Scaler
+	Class:             Pitch Shifter Plugin
+	Author:            Steve Harris
+	Author Email:      mailto:steve@plugin.org.uk
+	Author Homepage:   http://plugin.org.uk/
+	Has latency:       yes, reported by port 3
+	Bundle:            file:///run/current-system/sw/lib/lv2/pitch_scale-swh.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/pitch_scale-swh.lv2/plugin-Linux.so
+	Data URIs:         file:///run/current-system/sw/lib/lv2/pitch_scale-swh.lv2/plugin.ttl
+	                   file:///run/current-system/sw/lib/lv2/pitch_scale-swh.lv2/manifest.ttl
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      mult
+		Name:        Pitch co-efficient
+		Minimum:     0.500000
+		Maximum:     2.000000
+		Default:     1.000000
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      input
+		Name:        Input
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      output
+		Name:        Output
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      latency
+		Name:        latency
+		Properties:  http://lv2plug.in/ns/lv2core#reportsLatency
+
+</pre></body></html>

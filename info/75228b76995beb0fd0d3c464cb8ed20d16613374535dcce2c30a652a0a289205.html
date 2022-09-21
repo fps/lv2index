@@ -1,0 +1,93 @@
+<html><head></head><body><pre>
+http://www.openavproductions.com/artyfx#ducka
+
+	Name:              Ducka
+	Class:             Envelope Plugin
+	Author:            OpenAV
+	Author Email:      mailto:harryhaaren@gmail.com
+	Author Homepage:   http://openavproductions.com
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/artyfx.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/artyfx.lv2/artyfx.so
+	UIs:
+		http://www.openavproductions.com/artyfx#ducka/gui
+			Class:  http://lv2plug.in/ns/extensions/ui#X11UI
+			Binary: file:///run/current-system/sw/lib/lv2/artyfx.lv2/artyfx_ui.so
+			Bundle: file:///run/current-system/sw/lib/lv2/artyfx.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/artyfx.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/artyfx.lv2/ducka.ttl
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in_left
+		Name:        In Left
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in_right
+		Name:        In Right
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      sidechain_input
+		Name:        Sidechain Input
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out_left
+		Name:        Output Left
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out_right
+		Name:        Output Right
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      threshold
+		Name:        Threshold
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.250000
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      reduction
+		Name:        Reduction
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      release_time
+		Name:        Release Time
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      sidechain_amp
+		Name:        Sidechain Amplitude
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/ext/atom#AtomPort
+		Symbol:      control
+		Name:        Control
+</pre></body></html>

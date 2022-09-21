@@ -1,0 +1,3906 @@
+<html><head></head><body><pre>
+http://lsp-plug.in/plugins/lv2/graph_equalizer_x32_lr
+
+	Name:              LSP Graphic Equalizer x32 LeftRight
+	Class:             Multiband EQ Plugin
+	Author:            LSP LV2
+	Author Email:      mailto:lsp.plugin@gmail.com
+	Author Homepage:   https://lsp-plug.in/
+	Has latency:       yes, reported by port 343
+	Bundle:            file:///run/current-system/sw/lib/lv2/lsp-plugins.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/lsp-plugins.lv2/lsp-plugins-lv2-1.2.3.so
+	UIs:
+		http://lsp-plug.in/ui/lv2/graph_equalizer_x32_lr
+			Class:  http://lv2plug.in/ns/extensions/ui#X11UI
+			Binary: file:///run/current-system/sw/lib/lv2/lsp-plugins.lv2/lsp-plugins-lv2ui-1.2.3.so
+			Bundle: file:///run/current-system/sw/lib/lv2/lsp-plugins.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/lsp-plugins.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/lsp-plugins.lv2/graph_equalizer_x32_lr.ttl
+	Required Features: http://lv2plug.in/ns/ext/urid#map
+	Optional Features: http://harrisonconsoles.com/lv2/inlinedisplay#queue_draw
+	                   http://lv2plug.in/ns/ext/state#mapPath
+	                   http://lv2plug.in/ns/ext/options#options
+	                   http://lv2plug.in/ns/ext/worker#schedule
+	                   http://lv2plug.in/ns/lv2core#hardRTCapable
+	Extension Data:    http://lv2plug.in/ns/ext/worker#interface
+	                   http://harrisonconsoles.com/lv2/inlinedisplay#interface
+	                   http://lv2plug.in/ns/ext/state#interface
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#AudioPort
+		Symbol:      in_l
+		Name:        Input L
+		Group:       http://lsp-plug.in/plugins/lv2/graph_equalizer_x32_lr/port_groups#stereo_in
+		Designation: http://lv2plug.in/ns/ext/port-groups#left
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in_r
+		Name:        Input R
+		Group:       http://lsp-plug.in/plugins/lv2/graph_equalizer_x32_lr/port_groups#stereo_in
+		Designation: http://lv2plug.in/ns/ext/port-groups#right
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out_l
+		Name:        Output L
+		Group:       http://lsp-plug.in/plugins/lv2/graph_equalizer_x32_lr/port_groups#stereo_out
+		Designation: http://lv2plug.in/ns/ext/port-groups#left
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out_r
+		Name:        Output R
+		Group:       http://lsp-plug.in/plugins/lv2/graph_equalizer_x32_lr/port_groups#stereo_out
+		Designation: http://lv2plug.in/ns/ext/port-groups#right
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      enabled
+		Name:        Enabled
+		Designation: http://lv2plug.in/ns/lv2core#enabled
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      g_in
+		Name:        Input gain
+		Minimum:     0.000000
+		Maximum:     10.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      g_out
+		Name:        Output gain
+		Minimum:     0.000000
+		Maximum:     10.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0 = "IIR"
+			1 = "FIR"
+			2 = "FFT"
+			3 = "SPM"
+
+		Symbol:      mode
+		Name:        Equalizer mode
+		Minimum:     0.000000
+		Maximum:     3.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			2 = "BT72"
+			3 = "MT72"
+			1 = "MT48"
+			0 = "BT48"
+			4 = "BT96"
+			5 = "MT96"
+
+		Symbol:      slope
+		Name:        Filter slope
+		Minimum:     0.000000
+		Maximum:     5.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1 = "Post-eq"
+			0 = "Off"
+			2 = "Pre-eq"
+
+		Symbol:      fft
+		Name:        FFT analysis
+		Minimum:     0.000000
+		Maximum:     2.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 10:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      react
+		Name:        FFT reactivity
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.200000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 11:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      shift
+		Name:        Shift gain
+		Minimum:     0.000000
+		Maximum:     100.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 12:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      zoom
+		Name:        Graph zoom
+		Minimum:     0.015850
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 13:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			2 = "Bands Left 16-31"
+			3 = "Bands Right 16-31"
+			0 = "Bands Left 0-15"
+			1 = "Bands Right 0-15"
+
+		Symbol:      fsel
+		Name:        Band select
+		Minimum:     0.000000
+		Maximum:     3.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 14:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      bal
+		Name:        Output balance
+		Minimum:     -100.000000
+		Maximum:     100.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 15:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      iml
+		Name:        Input signal meter Left
+		Minimum:     0.000000
+		Maximum:     3.981070
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 16:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      sml
+		Name:        Output signal meter Left
+		Minimum:     0.000000
+		Maximum:     3.981070
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 17:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      fftv_l
+		Name:        FFT visibility Left
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 18:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      imr
+		Name:        Input signal meter Right
+		Minimum:     0.000000
+		Maximum:     3.981070
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 19:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      smr
+		Name:        Output signal meter Right
+		Minimum:     0.000000
+		Maximum:     3.981070
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 20:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      fftv_r
+		Name:        FFT visibility Right
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 21:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xsl_0
+		Name:        Band solo Left 16
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 22:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xml_0
+		Name:        Band mute Left 16
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 23:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xel_0
+		Name:        Band on Left 16
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 24:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      fvl_0
+		Name:        Filter visibility  Left 16
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 25:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gl_0
+		Name:        Band gain Left 16
+		Minimum:     0.015850
+		Maximum:     63.095749
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 26:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xsr_0
+		Name:        Band solo Right 16
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 27:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xmr_0
+		Name:        Band mute Right 16
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 28:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xer_0
+		Name:        Band on Right 16
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 29:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      fvr_0
+		Name:        Filter visibility  Right 16
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 30:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gr_0
+		Name:        Band gain Right 16
+		Minimum:     0.015850
+		Maximum:     63.095749
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 31:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xsl_1
+		Name:        Band solo Left 20
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 32:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xml_1
+		Name:        Band mute Left 20
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 33:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xel_1
+		Name:        Band on Left 20
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 34:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      fvl_1
+		Name:        Filter visibility  Left 20
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 35:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gl_1
+		Name:        Band gain Left 20
+		Minimum:     0.015850
+		Maximum:     63.095749
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 36:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xsr_1
+		Name:        Band solo Right 20
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 37:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xmr_1
+		Name:        Band mute Right 20
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 38:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xer_1
+		Name:        Band on Right 20
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 39:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      fvr_1
+		Name:        Filter visibility  Right 20
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 40:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gr_1
+		Name:        Band gain Right 20
+		Minimum:     0.015850
+		Maximum:     63.095749
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 41:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xsl_2
+		Name:        Band solo Left 25
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 42:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xml_2
+		Name:        Band mute Left 25
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 43:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xel_2
+		Name:        Band on Left 25
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 44:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      fvl_2
+		Name:        Filter visibility  Left 25
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 45:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gl_2
+		Name:        Band gain Left 25
+		Minimum:     0.015850
+		Maximum:     63.095749
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 46:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xsr_2
+		Name:        Band solo Right 25
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 47:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xmr_2
+		Name:        Band mute Right 25
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 48:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xer_2
+		Name:        Band on Right 25
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 49:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      fvr_2
+		Name:        Filter visibility  Right 25
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 50:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gr_2
+		Name:        Band gain Right 25
+		Minimum:     0.015850
+		Maximum:     63.095749
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 51:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xsl_3
+		Name:        Band solo Left 31.5
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 52:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xml_3
+		Name:        Band mute Left 31.5
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 53:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xel_3
+		Name:        Band on Left 31.5
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 54:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      fvl_3
+		Name:        Filter visibility  Left 31.5
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 55:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gl_3
+		Name:        Band gain Left 31.5
+		Minimum:     0.015850
+		Maximum:     63.095749
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 56:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xsr_3
+		Name:        Band solo Right 31.5
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 57:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xmr_3
+		Name:        Band mute Right 31.5
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 58:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xer_3
+		Name:        Band on Right 31.5
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 59:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      fvr_3
+		Name:        Filter visibility  Right 31.5
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 60:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gr_3
+		Name:        Band gain Right 31.5
+		Minimum:     0.015850
+		Maximum:     63.095749
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 61:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xsl_4
+		Name:        Band solo Left 40
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 62:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xml_4
+		Name:        Band mute Left 40
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 63:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xel_4
+		Name:        Band on Left 40
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 64:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      fvl_4
+		Name:        Filter visibility  Left 40
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 65:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gl_4
+		Name:        Band gain Left 40
+		Minimum:     0.015850
+		Maximum:     63.095749
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 66:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xsr_4
+		Name:        Band solo Right 40
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 67:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      xmr_4
+		Name:        Band mute Right 40
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 68:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xer_4
+		Name:        Band on Right 40
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 69:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      fvr_4
+		Name:        Filter visibility  Right 40
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 70:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gr_4
+		Name:        Band gain Right 40
+		Minimum:     0.015850
+		Maximum:     63.095749
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 71:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xsl_5
+		Name:        Band solo Left 50
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 72:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xml_5
+		Name:        Band mute Left 50
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 73:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xel_5
+		Name:        Band on Left 50
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 74:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      fvl_5
+		Name:        Filter visibility  Left 50
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 75:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gl_5
+		Name:        Band gain Left 50
+		Minimum:     0.015850
+		Maximum:     63.095749
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 76:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xsr_5
+		Name:        Band solo Right 50
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 77:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xmr_5
+		Name:        Band mute Right 50
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 78:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xer_5
+		Name:        Band on Right 50
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 79:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      fvr_5
+		Name:        Filter visibility  Right 50
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 80:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gr_5
+		Name:        Band gain Right 50
+		Minimum:     0.015850
+		Maximum:     63.095749
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 81:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xsl_6
+		Name:        Band solo Left 63
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 82:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xml_6
+		Name:        Band mute Left 63
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 83:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xel_6
+		Name:        Band on Left 63
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 84:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      fvl_6
+		Name:        Filter visibility  Left 63
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 85:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gl_6
+		Name:        Band gain Left 63
+		Minimum:     0.015850
+		Maximum:     63.095749
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 86:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xsr_6
+		Name:        Band solo Right 63
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 87:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xmr_6
+		Name:        Band mute Right 63
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 88:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xer_6
+		Name:        Band on Right 63
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 89:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      fvr_6
+		Name:        Filter visibility  Right 63
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 90:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gr_6
+		Name:        Band gain Right 63
+		Minimum:     0.015850
+		Maximum:     63.095749
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 91:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xsl_7
+		Name:        Band solo Left 80
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 92:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xml_7
+		Name:        Band mute Left 80
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 93:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xel_7
+		Name:        Band on Left 80
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 94:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      fvl_7
+		Name:        Filter visibility  Left 80
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 95:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gl_7
+		Name:        Band gain Left 80
+		Minimum:     0.015850
+		Maximum:     63.095749
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 96:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xsr_7
+		Name:        Band solo Right 80
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 97:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xmr_7
+		Name:        Band mute Right 80
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 98:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xer_7
+		Name:        Band on Right 80
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 99:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      fvr_7
+		Name:        Filter visibility  Right 80
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 100:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gr_7
+		Name:        Band gain Right 80
+		Minimum:     0.015850
+		Maximum:     63.095749
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 101:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xsl_8
+		Name:        Band solo Left 100
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 102:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xml_8
+		Name:        Band mute Left 100
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 103:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xel_8
+		Name:        Band on Left 100
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 104:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      fvl_8
+		Name:        Filter visibility  Left 100
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 105:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gl_8
+		Name:        Band gain Left 100
+		Minimum:     0.015850
+		Maximum:     63.095749
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 106:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xsr_8
+		Name:        Band solo Right 100
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 107:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xmr_8
+		Name:        Band mute Right 100
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 108:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xer_8
+		Name:        Band on Right 100
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 109:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      fvr_8
+		Name:        Filter visibility  Right 100
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 110:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gr_8
+		Name:        Band gain Right 100
+		Minimum:     0.015850
+		Maximum:     63.095749
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 111:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xsl_9
+		Name:        Band solo Left 125
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 112:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xml_9
+		Name:        Band mute Left 125
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 113:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xel_9
+		Name:        Band on Left 125
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 114:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      fvl_9
+		Name:        Filter visibility  Left 125
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 115:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gl_9
+		Name:        Band gain Left 125
+		Minimum:     0.015850
+		Maximum:     63.095749
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 116:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xsr_9
+		Name:        Band solo Right 125
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 117:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xmr_9
+		Name:        Band mute Right 125
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 118:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xer_9
+		Name:        Band on Right 125
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 119:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      fvr_9
+		Name:        Filter visibility  Right 125
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 120:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gr_9
+		Name:        Band gain Right 125
+		Minimum:     0.015850
+		Maximum:     63.095749
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 121:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xsl_10
+		Name:        Band solo Left 160
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 122:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xml_10
+		Name:        Band mute Left 160
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 123:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xel_10
+		Name:        Band on Left 160
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 124:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      fvl_10
+		Name:        Filter visibility  Left 160
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 125:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gl_10
+		Name:        Band gain Left 160
+		Minimum:     0.015850
+		Maximum:     63.095749
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 126:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xsr_10
+		Name:        Band solo Right 160
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 127:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xmr_10
+		Name:        Band mute Right 160
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 128:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xer_10
+		Name:        Band on Right 160
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 129:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      fvr_10
+		Name:        Filter visibility  Right 160
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 130:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gr_10
+		Name:        Band gain Right 160
+		Minimum:     0.015850
+		Maximum:     63.095749
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 131:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xsl_11
+		Name:        Band solo Left 200
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 132:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xml_11
+		Name:        Band mute Left 200
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 133:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xel_11
+		Name:        Band on Left 200
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 134:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      fvl_11
+		Name:        Filter visibility  Left 200
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 135:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gl_11
+		Name:        Band gain Left 200
+		Minimum:     0.015850
+		Maximum:     63.095749
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 136:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xsr_11
+		Name:        Band solo Right 200
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 137:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xmr_11
+		Name:        Band mute Right 200
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 138:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xer_11
+		Name:        Band on Right 200
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 139:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      fvr_11
+		Name:        Filter visibility  Right 200
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 140:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gr_11
+		Name:        Band gain Right 200
+		Minimum:     0.015850
+		Maximum:     63.095749
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 141:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xsl_12
+		Name:        Band solo Left 250
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 142:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xml_12
+		Name:        Band mute Left 250
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 143:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xel_12
+		Name:        Band on Left 250
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 144:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      fvl_12
+		Name:        Filter visibility  Left 250
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 145:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gl_12
+		Name:        Band gain Left 250
+		Minimum:     0.015850
+		Maximum:     63.095749
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 146:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xsr_12
+		Name:        Band solo Right 250
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 147:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xmr_12
+		Name:        Band mute Right 250
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 148:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xer_12
+		Name:        Band on Right 250
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 149:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      fvr_12
+		Name:        Filter visibility  Right 250
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 150:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gr_12
+		Name:        Band gain Right 250
+		Minimum:     0.015850
+		Maximum:     63.095749
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 151:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xsl_13
+		Name:        Band solo Left 315
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 152:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xml_13
+		Name:        Band mute Left 315
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 153:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xel_13
+		Name:        Band on Left 315
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 154:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      fvl_13
+		Name:        Filter visibility  Left 315
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 155:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gl_13
+		Name:        Band gain Left 315
+		Minimum:     0.015850
+		Maximum:     63.095749
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 156:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xsr_13
+		Name:        Band solo Right 315
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 157:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xmr_13
+		Name:        Band mute Right 315
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 158:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xer_13
+		Name:        Band on Right 315
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 159:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      fvr_13
+		Name:        Filter visibility  Right 315
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 160:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gr_13
+		Name:        Band gain Right 315
+		Minimum:     0.015850
+		Maximum:     63.095749
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 161:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xsl_14
+		Name:        Band solo Left 400
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 162:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xml_14
+		Name:        Band mute Left 400
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 163:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xel_14
+		Name:        Band on Left 400
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 164:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      fvl_14
+		Name:        Filter visibility  Left 400
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 165:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gl_14
+		Name:        Band gain Left 400
+		Minimum:     0.015850
+		Maximum:     63.095749
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 166:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xsr_14
+		Name:        Band solo Right 400
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 167:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xmr_14
+		Name:        Band mute Right 400
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 168:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xer_14
+		Name:        Band on Right 400
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 169:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      fvr_14
+		Name:        Filter visibility  Right 400
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 170:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gr_14
+		Name:        Band gain Right 400
+		Minimum:     0.015850
+		Maximum:     63.095749
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 171:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xsl_15
+		Name:        Band solo Left 500
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 172:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xml_15
+		Name:        Band mute Left 500
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 173:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xel_15
+		Name:        Band on Left 500
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 174:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      fvl_15
+		Name:        Filter visibility  Left 500
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 175:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gl_15
+		Name:        Band gain Left 500
+		Minimum:     0.015850
+		Maximum:     63.095749
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 176:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xsr_15
+		Name:        Band solo Right 500
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 177:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xmr_15
+		Name:        Band mute Right 500
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 178:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xer_15
+		Name:        Band on Right 500
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 179:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      fvr_15
+		Name:        Filter visibility  Right 500
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 180:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gr_15
+		Name:        Band gain Right 500
+		Minimum:     0.015850
+		Maximum:     63.095749
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 181:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xsl_16
+		Name:        Band solo Left 630
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 182:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xml_16
+		Name:        Band mute Left 630
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 183:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xel_16
+		Name:        Band on Left 630
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 184:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      fvl_16
+		Name:        Filter visibility  Left 630
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 185:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gl_16
+		Name:        Band gain Left 630
+		Minimum:     0.015850
+		Maximum:     63.095749
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 186:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xsr_16
+		Name:        Band solo Right 630
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 187:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xmr_16
+		Name:        Band mute Right 630
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 188:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xer_16
+		Name:        Band on Right 630
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 189:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      fvr_16
+		Name:        Filter visibility  Right 630
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 190:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gr_16
+		Name:        Band gain Right 630
+		Minimum:     0.015850
+		Maximum:     63.095749
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 191:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xsl_17
+		Name:        Band solo Left 800
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 192:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xml_17
+		Name:        Band mute Left 800
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 193:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xel_17
+		Name:        Band on Left 800
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 194:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      fvl_17
+		Name:        Filter visibility  Left 800
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 195:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gl_17
+		Name:        Band gain Left 800
+		Minimum:     0.015850
+		Maximum:     63.095749
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 196:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xsr_17
+		Name:        Band solo Right 800
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 197:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xmr_17
+		Name:        Band mute Right 800
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 198:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xer_17
+		Name:        Band on Right 800
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 199:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      fvr_17
+		Name:        Filter visibility  Right 800
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 200:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gr_17
+		Name:        Band gain Right 800
+		Minimum:     0.015850
+		Maximum:     63.095749
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 201:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xsl_18
+		Name:        Band solo Left 1K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 202:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xml_18
+		Name:        Band mute Left 1K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 203:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xel_18
+		Name:        Band on Left 1K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 204:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      fvl_18
+		Name:        Filter visibility  Left 1K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 205:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gl_18
+		Name:        Band gain Left 1K
+		Minimum:     0.015850
+		Maximum:     63.095749
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 206:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xsr_18
+		Name:        Band solo Right 1K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 207:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xmr_18
+		Name:        Band mute Right 1K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 208:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xer_18
+		Name:        Band on Right 1K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 209:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      fvr_18
+		Name:        Filter visibility  Right 1K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 210:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gr_18
+		Name:        Band gain Right 1K
+		Minimum:     0.015850
+		Maximum:     63.095749
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 211:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xsl_19
+		Name:        Band solo Left 1.25K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 212:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xml_19
+		Name:        Band mute Left 1.25K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 213:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xel_19
+		Name:        Band on Left 1.25K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 214:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      fvl_19
+		Name:        Filter visibility  Left 1.25K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 215:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gl_19
+		Name:        Band gain Left 1.25K
+		Minimum:     0.015850
+		Maximum:     63.095749
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 216:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xsr_19
+		Name:        Band solo Right 1.25K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 217:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xmr_19
+		Name:        Band mute Right 1.25K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 218:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xer_19
+		Name:        Band on Right 1.25K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 219:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      fvr_19
+		Name:        Filter visibility  Right 1.25K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 220:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gr_19
+		Name:        Band gain Right 1.25K
+		Minimum:     0.015850
+		Maximum:     63.095749
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 221:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xsl_20
+		Name:        Band solo Left 1.6K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 222:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xml_20
+		Name:        Band mute Left 1.6K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 223:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xel_20
+		Name:        Band on Left 1.6K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 224:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      fvl_20
+		Name:        Filter visibility  Left 1.6K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 225:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gl_20
+		Name:        Band gain Left 1.6K
+		Minimum:     0.015850
+		Maximum:     63.095749
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 226:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xsr_20
+		Name:        Band solo Right 1.6K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 227:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xmr_20
+		Name:        Band mute Right 1.6K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 228:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xer_20
+		Name:        Band on Right 1.6K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 229:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      fvr_20
+		Name:        Filter visibility  Right 1.6K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 230:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gr_20
+		Name:        Band gain Right 1.6K
+		Minimum:     0.015850
+		Maximum:     63.095749
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 231:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xsl_21
+		Name:        Band solo Left 2K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 232:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xml_21
+		Name:        Band mute Left 2K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 233:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xel_21
+		Name:        Band on Left 2K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 234:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      fvl_21
+		Name:        Filter visibility  Left 2K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 235:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gl_21
+		Name:        Band gain Left 2K
+		Minimum:     0.015850
+		Maximum:     63.095749
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 236:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xsr_21
+		Name:        Band solo Right 2K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 237:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xmr_21
+		Name:        Band mute Right 2K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 238:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xer_21
+		Name:        Band on Right 2K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 239:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      fvr_21
+		Name:        Filter visibility  Right 2K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 240:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gr_21
+		Name:        Band gain Right 2K
+		Minimum:     0.015850
+		Maximum:     63.095749
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 241:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xsl_22
+		Name:        Band solo Left 2.5K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 242:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xml_22
+		Name:        Band mute Left 2.5K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 243:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xel_22
+		Name:        Band on Left 2.5K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 244:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      fvl_22
+		Name:        Filter visibility  Left 2.5K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 245:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gl_22
+		Name:        Band gain Left 2.5K
+		Minimum:     0.015850
+		Maximum:     63.095749
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 246:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xsr_22
+		Name:        Band solo Right 2.5K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 247:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xmr_22
+		Name:        Band mute Right 2.5K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 248:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xer_22
+		Name:        Band on Right 2.5K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 249:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      fvr_22
+		Name:        Filter visibility  Right 2.5K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 250:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gr_22
+		Name:        Band gain Right 2.5K
+		Minimum:     0.015850
+		Maximum:     63.095749
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 251:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xsl_23
+		Name:        Band solo Left 3.15K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 252:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xml_23
+		Name:        Band mute Left 3.15K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 253:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xel_23
+		Name:        Band on Left 3.15K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 254:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      fvl_23
+		Name:        Filter visibility  Left 3.15K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 255:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gl_23
+		Name:        Band gain Left 3.15K
+		Minimum:     0.015850
+		Maximum:     63.095749
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 256:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xsr_23
+		Name:        Band solo Right 3.15K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 257:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xmr_23
+		Name:        Band mute Right 3.15K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 258:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xer_23
+		Name:        Band on Right 3.15K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 259:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      fvr_23
+		Name:        Filter visibility  Right 3.15K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 260:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gr_23
+		Name:        Band gain Right 3.15K
+		Minimum:     0.015850
+		Maximum:     63.095749
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 261:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xsl_24
+		Name:        Band solo Left 4K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 262:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xml_24
+		Name:        Band mute Left 4K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 263:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xel_24
+		Name:        Band on Left 4K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 264:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      fvl_24
+		Name:        Filter visibility  Left 4K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 265:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gl_24
+		Name:        Band gain Left 4K
+		Minimum:     0.015850
+		Maximum:     63.095749
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 266:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xsr_24
+		Name:        Band solo Right 4K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 267:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xmr_24
+		Name:        Band mute Right 4K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 268:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xer_24
+		Name:        Band on Right 4K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 269:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      fvr_24
+		Name:        Filter visibility  Right 4K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 270:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gr_24
+		Name:        Band gain Right 4K
+		Minimum:     0.015850
+		Maximum:     63.095749
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 271:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xsl_25
+		Name:        Band solo Left 5K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 272:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xml_25
+		Name:        Band mute Left 5K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 273:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xel_25
+		Name:        Band on Left 5K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 274:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      fvl_25
+		Name:        Filter visibility  Left 5K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 275:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gl_25
+		Name:        Band gain Left 5K
+		Minimum:     0.015850
+		Maximum:     63.095749
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 276:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xsr_25
+		Name:        Band solo Right 5K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 277:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xmr_25
+		Name:        Band mute Right 5K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 278:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xer_25
+		Name:        Band on Right 5K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 279:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      fvr_25
+		Name:        Filter visibility  Right 5K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 280:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gr_25
+		Name:        Band gain Right 5K
+		Minimum:     0.015850
+		Maximum:     63.095749
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 281:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xsl_26
+		Name:        Band solo Left 6.3K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 282:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xml_26
+		Name:        Band mute Left 6.3K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 283:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xel_26
+		Name:        Band on Left 6.3K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 284:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      fvl_26
+		Name:        Filter visibility  Left 6.3K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 285:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gl_26
+		Name:        Band gain Left 6.3K
+		Minimum:     0.015850
+		Maximum:     63.095749
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 286:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xsr_26
+		Name:        Band solo Right 6.3K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 287:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xmr_26
+		Name:        Band mute Right 6.3K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 288:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xer_26
+		Name:        Band on Right 6.3K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 289:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      fvr_26
+		Name:        Filter visibility  Right 6.3K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 290:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gr_26
+		Name:        Band gain Right 6.3K
+		Minimum:     0.015850
+		Maximum:     63.095749
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 291:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xsl_27
+		Name:        Band solo Left 8K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 292:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xml_27
+		Name:        Band mute Left 8K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 293:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xel_27
+		Name:        Band on Left 8K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 294:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      fvl_27
+		Name:        Filter visibility  Left 8K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 295:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gl_27
+		Name:        Band gain Left 8K
+		Minimum:     0.015850
+		Maximum:     63.095749
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 296:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xsr_27
+		Name:        Band solo Right 8K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 297:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xmr_27
+		Name:        Band mute Right 8K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 298:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xer_27
+		Name:        Band on Right 8K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 299:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      fvr_27
+		Name:        Filter visibility  Right 8K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 300:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gr_27
+		Name:        Band gain Right 8K
+		Minimum:     0.015850
+		Maximum:     63.095749
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 301:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xsl_28
+		Name:        Band solo Left 10K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 302:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xml_28
+		Name:        Band mute Left 10K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 303:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xel_28
+		Name:        Band on Left 10K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 304:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      fvl_28
+		Name:        Filter visibility  Left 10K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 305:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gl_28
+		Name:        Band gain Left 10K
+		Minimum:     0.015850
+		Maximum:     63.095749
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 306:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xsr_28
+		Name:        Band solo Right 10K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 307:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xmr_28
+		Name:        Band mute Right 10K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 308:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xer_28
+		Name:        Band on Right 10K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 309:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      fvr_28
+		Name:        Filter visibility  Right 10K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 310:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gr_28
+		Name:        Band gain Right 10K
+		Minimum:     0.015850
+		Maximum:     63.095749
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 311:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xsl_29
+		Name:        Band solo Left 12.5K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 312:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xml_29
+		Name:        Band mute Left 12.5K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 313:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xel_29
+		Name:        Band on Left 12.5K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 314:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      fvl_29
+		Name:        Filter visibility  Left 12.5K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 315:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gl_29
+		Name:        Band gain Left 12.5K
+		Minimum:     0.015850
+		Maximum:     63.095749
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 316:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xsr_29
+		Name:        Band solo Right 12.5K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 317:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xmr_29
+		Name:        Band mute Right 12.5K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 318:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xer_29
+		Name:        Band on Right 12.5K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 319:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      fvr_29
+		Name:        Filter visibility  Right 12.5K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 320:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gr_29
+		Name:        Band gain Right 12.5K
+		Minimum:     0.015850
+		Maximum:     63.095749
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 321:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xsl_30
+		Name:        Band solo Left 16K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 322:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xml_30
+		Name:        Band mute Left 16K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 323:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xel_30
+		Name:        Band on Left 16K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 324:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      fvl_30
+		Name:        Filter visibility  Left 16K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 325:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gl_30
+		Name:        Band gain Left 16K
+		Minimum:     0.015850
+		Maximum:     63.095749
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 326:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xsr_30
+		Name:        Band solo Right 16K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 327:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xmr_30
+		Name:        Band mute Right 16K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 328:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xer_30
+		Name:        Band on Right 16K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 329:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      fvr_30
+		Name:        Filter visibility  Right 16K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 330:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gr_30
+		Name:        Band gain Right 16K
+		Minimum:     0.015850
+		Maximum:     63.095749
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 331:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xsl_31
+		Name:        Band solo Left 20K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 332:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xml_31
+		Name:        Band mute Left 20K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 333:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xel_31
+		Name:        Band on Left 20K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 334:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      fvl_31
+		Name:        Filter visibility  Left 20K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 335:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gl_31
+		Name:        Band gain Left 20K
+		Minimum:     0.015850
+		Maximum:     63.095749
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 336:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xsr_31
+		Name:        Band solo Right 20K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 337:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xmr_31
+		Name:        Band mute Right 20K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 338:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xer_31
+		Name:        Band on Right 20K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 339:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      fvr_31
+		Name:        Filter visibility  Right 20K
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 340:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gr_31
+		Name:        Band gain Right 20K
+		Minimum:     0.015850
+		Maximum:     63.095749
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 341:
+		Type:        http://lv2plug.in/ns/ext/atom#AtomPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in_ui
+		Name:        UI Input
+		Designation: http://lv2plug.in/ns/lv2core#control
+		Properties:  http://lv2plug.in/ns/lv2core#connectionOptional
+
+
+	Port 342:
+		Type:        http://lv2plug.in/ns/ext/atom#AtomPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out_ui
+		Name:        UI Output
+		Designation: http://lv2plug.in/ns/lv2core#control
+		Properties:  http://lv2plug.in/ns/lv2core#connectionOptional
+
+
+	Port 343:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out_latency
+		Name:        Latency OUT
+		Minimum:     0.000000
+		Maximum:     192000.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#reportsLatency
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/lv2core#integer
+
+</pre></body></html>

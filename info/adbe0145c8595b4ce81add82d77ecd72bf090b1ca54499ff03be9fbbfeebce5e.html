@@ -1,0 +1,536 @@
+<html><head></head><body><pre>
+urn:jeremy.salwen:plugins:talentedhack
+
+	Name:              TalentedHack
+	Class:             Pitch Shifter Plugin
+	Author:            Jeremy Salwen
+	Author Email:      mailto:jeremybubs@gmail.com
+	Has latency:       yes, reported by port 41
+	Bundle:            file:///run/current-system/sw/lib/lv2/talentedhack.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/talentedhack.lv2/talentedhack.so
+	Data URIs:         file:///run/current-system/sw/lib/lv2/talentedhack.lv2/talentedhack.ttl
+	                   file:///run/current-system/sw/lib/lv2/talentedhack.lv2/manifest.ttl
+	Optional Features: http://lv2plug.in/ns/ext/event
+	                   http://lv2plug.in/ns/ext/uri-map
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/ext/event#EventPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Supported events:
+			http://lv2plug.in/ns/ext/midi#MidiEvent
+
+		Symbol:      midi_out
+		Name:        MIDI Out
+		Properties:  http://lv2plug.in/ns/lv2core#connectionOptional
+
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/ext/event#EventPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Supported events:
+			http://lv2plug.in/ns/ext/midi#MidiEvent
+
+		Symbol:      midi_in
+		Name:        MIDI In
+		Properties:  http://lv2plug.in/ns/lv2core#connectionOptional
+
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in
+		Name:        Audio In
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out
+		Name:        Audio Out
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      mix
+		Name:        Mix
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      pitchpull_amount
+		Name:        Pull To In Tune
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      pitchsmooth_amount
+		Name:        Smooth Pitch
+		Minimum:     0.000000
+		Maximum:     0.500000
+		Default:     0.000000
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1 = "On"
+			0 = "Off"
+
+		Symbol:      formant_correction
+		Name:        Formant Correction
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      formant_warp
+		Name:        Formant Warp
+		Minimum:     -1.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1 = "On"
+			0 = "Off"
+
+		Symbol:      accept_midi
+		Name:        Jump To Midi Input
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 10:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1 = "Send Corrected Midi"
+			0 = "Send Uncorrected Midi"
+
+		Symbol:      correct_midiout
+		Name:        Pitch Correct Midi Out
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 11:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1 = "Send Corrected Midi"
+			0 = "Send Uncorrected Midi"
+
+		Symbol:      lfo_quant
+		Name:        Quantize LFO
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 12:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lfo_amp
+		Name:        LFO Amplitude
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 13:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lfo_rate
+		Name:        LFO Rate (Hz)
+		Minimum:     0.000000
+		Maximum:     10.000000
+		Default:     5.000000
+
+	Port 14:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lfo_shape
+		Name:        LFO Shape
+		Minimum:     -1.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 15:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lfo_symm
+		Name:        LFO Symmetry
+		Minimum:     -1.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 16:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      aref
+		Name:        Concert A (Hz)
+		Minimum:     400.000000
+		Maximum:     480.000000
+		Default:     440.000000
+
+	Port 17:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0 = "Enabled"
+			-1 = "Disabled"
+			1 = "Preferred"
+
+		Symbol:      da
+		Name:        Detect A
+		Minimum:     -1.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 18:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1 = "Preferred"
+			-1 = "Disabled"
+			0 = "Enabled"
+
+		Symbol:      daa
+		Name:        Detect A#
+		Minimum:     -1.000000
+		Maximum:     1.000000
+		Default:     -1.000000
+
+	Port 19:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0 = "Enabled"
+			1 = "Preferred"
+			-1 = "Disabled"
+
+		Symbol:      db
+		Name:        Detect B
+		Minimum:     -1.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 20:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0 = "Enabled"
+			1 = "Preferred"
+			-1 = "Disabled"
+
+		Symbol:      dc
+		Name:        Detect C
+		Minimum:     -1.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 21:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1 = "Preferred"
+			0 = "Enabled"
+			-1 = "Disabled"
+
+		Symbol:      dcc
+		Name:        Detect C#
+		Minimum:     -1.000000
+		Maximum:     1.000000
+		Default:     -1.000000
+
+	Port 22:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0 = "Enabled"
+			1 = "Preferred"
+			-1 = "Disabled"
+
+		Symbol:      dd
+		Name:        Detect D
+		Minimum:     -1.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 23:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0 = "Enabled"
+			1 = "Preferred"
+			-1 = "Disabled"
+
+		Symbol:      ddd
+		Name:        Detect D#
+		Minimum:     -1.000000
+		Maximum:     1.000000
+		Default:     -1.000000
+
+	Port 24:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1 = "Preferred"
+			0 = "Enabled"
+			-1 = "Disabled"
+
+		Symbol:      de
+		Name:        Detect E
+		Minimum:     -1.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 25:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1 = "Preferred"
+			0 = "Enabled"
+			-1 = "Disabled"
+
+		Symbol:      df
+		Name:        Detect F
+		Minimum:     -1.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 26:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0 = "Enabled"
+			1 = "Preferred"
+			-1 = "Disabled"
+
+		Symbol:      dff
+		Name:        Detect F#
+		Minimum:     -1.000000
+		Maximum:     1.000000
+		Default:     -1.000000
+
+	Port 27:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1 = "Preferred"
+			0 = "Enabled"
+			-1 = "Disabled"
+
+		Symbol:      dg
+		Name:        Detect G
+		Minimum:     -1.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 28:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0 = "Enabled"
+			1 = "Preferred"
+			-1 = "Disabled"
+
+		Symbol:      dgg
+		Name:        Detect G#
+		Minimum:     -1.000000
+		Maximum:     1.000000
+		Default:     -1.000000
+
+	Port 29:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0 = "Enabled"
+			1 = "Preferred"
+			-1 = "Disabled"
+
+		Symbol:      oa
+		Name:        Output A
+		Minimum:     -1.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 30:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0 = "Enabled"
+			1 = "Preferred"
+			-1 = "Disabled"
+
+		Symbol:      oaa
+		Name:        Output A#
+		Minimum:     -1.000000
+		Maximum:     1.000000
+		Default:     -1.000000
+
+	Port 31:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1 = "Preferred"
+			0 = "Enabled"
+			-1 = "Disabled"
+
+		Symbol:      ob
+		Name:        Output B
+		Minimum:     -1.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 32:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0 = "Enabled"
+			1 = "Preferred"
+			-1 = "Disabled"
+
+		Symbol:      oc
+		Name:        Output C
+		Minimum:     -1.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 33:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1 = "Preferred"
+			0 = "Enabled"
+			-1 = "Disabled"
+
+		Symbol:      occ
+		Name:        Output C#
+		Minimum:     -1.000000
+		Maximum:     1.000000
+		Default:     -1.000000
+
+	Port 34:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1 = "Preferred"
+			0 = "Enabled"
+			-1 = "Disabled"
+
+		Symbol:      od
+		Name:        Output D
+		Minimum:     -1.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 35:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0 = "Enabled"
+			1 = "Preferred"
+			-1 = "Disabled"
+
+		Symbol:      odd
+		Name:        Output D#
+		Minimum:     -1.000000
+		Maximum:     1.000000
+		Default:     -1.000000
+
+	Port 36:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0 = "Enabled"
+			1 = "Preferred"
+			-1 = "Disabled"
+
+		Symbol:      oe
+		Name:        Output E
+		Minimum:     -1.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 37:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1 = "Preferred"
+			0 = "Enabled"
+			-1 = "Disabled"
+
+		Symbol:      of
+		Name:        Output F
+		Minimum:     -1.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 38:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0 = "Enabled"
+			1 = "Preferred"
+			-1 = "Disabled"
+
+		Symbol:      off
+		Name:        Output F#
+		Minimum:     -1.000000
+		Maximum:     1.000000
+		Default:     -1.000000
+
+	Port 39:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0 = "Enabled"
+			1 = "Preferred"
+			-1 = "Disabled"
+
+		Symbol:      og
+		Name:        Output G
+		Minimum:     -1.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 40:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1 = "Preferred"
+			0 = "Enabled"
+			-1 = "Disabled"
+
+		Symbol:      ogg
+		Name:        Output G#
+		Minimum:     -1.000000
+		Maximum:     1.000000
+		Default:     -1.000000
+
+	Port 41:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      latency
+		Name:        Latency
+		Minimum:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#reportsLatency
+
+</pre></body></html>

@@ -1,0 +1,108 @@
+<html><head></head><body><pre>
+http://www.drowaudio.co.uk/audio/audio_plugins/distortion
+
+	Name:              dRowAudio: Distortion
+	Class:             Distortion Plugin
+	Author:            dRowAudio
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/drowaudio-distortion.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/drowaudio-distortion.lv2/drowaudio-distortion.so
+	UIs:
+		http://www.drowaudio.co.uk/audio/audio_plugins/distortion#ExternalUI
+			Class:  http://kxstudio.sf.net/ns/lv2ext/external-ui#Widget
+			Binary: file:///run/current-system/sw/lib/lv2/drowaudio-distortion.lv2/drowaudio-distortion.so
+			Bundle: file:///run/current-system/sw/lib/lv2/drowaudio-distortion.lv2/
+		http://www.drowaudio.co.uk/audio/audio_plugins/distortion#ParentUI
+			Class:  http://lv2plug.in/ns/extensions/ui#X11UI
+			Binary: file:///run/current-system/sw/lib/lv2/drowaudio-distortion.lv2/drowaudio-distortion.so
+			Bundle: file:///run/current-system/sw/lib/lv2/drowaudio-distortion.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/drowaudio-distortion.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/drowaudio-distortion.lv2/drowaudio-distortion.ttl
+	Required Features: http://lv2plug.in/ns/ext/buf-size#boundedBlockLength
+	                   http://lv2plug.in/ns/ext/urid#map
+	Extension Data:    http://lv2plug.in/ns/ext/options#interface
+	                   http://kxstudio.sf.net/ns/lv2ext/programs#Interface
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      lv2_freewheel
+		Name:        Freewheel
+		Designation: http://lv2plug.in/ns/lv2core#freeWheeling
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#notOnGUI
+		             http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lv2_audio_in_1
+		Name:        Audio Input 1
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lv2_audio_in_2
+		Name:        Audio Input 2
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      lv2_audio_out_1
+		Name:        Audio Output 1
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      lv2_audio_out_2
+		Name:        Audio Output 2
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      pre_filtering
+		Name:        Pre Filtering
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.090909
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      input_gain
+		Name:        Input Gain
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.066667
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      colour
+		Name:        Colour
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.100000
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      post_filtering
+		Name:        Post Filtering
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.090909
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      output_gain
+		Name:        Output Gain
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+</pre></body></html>

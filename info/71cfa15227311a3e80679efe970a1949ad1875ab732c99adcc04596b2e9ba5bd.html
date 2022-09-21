@@ -1,0 +1,148 @@
+<html><head></head><body><pre>
+http://gareus.org/oss/lv2/midifilter#midistrum
+
+	Name:              MIDI Strum
+	Class:             MIDI
+	Author:            Robin Gareus
+	Author Email:      mailto:robin@gareus.org
+	Author Homepage:   http://gareus.org/
+	Has latency:       yes, reported by port 2
+	Bundle:            file:///run/current-system/sw/lib/lv2/midifilter.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/midifilter.lv2/midifilter.so
+	Data URIs:         file:///run/current-system/sw/lib/lv2/midifilter.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/midifilter.lv2/midifilter.ttl
+	Required Features: http://lv2plug.in/ns/ext/urid#map
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/ext/atom#AtomPort
+		Symbol:      midiin
+		Name:        MIDI In
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/ext/atom#AtomPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      midiout
+		Name:        MIDI Out
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      latency
+		Name:        latency
+		Minimum:     0.000000
+		Maximum:     192000.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#notOnGUI
+		             http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#reportsLatency
+
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0 = "Control Port"
+			1 = "Plugin Host (if available)"
+
+		Symbol:      bpmsrc
+		Name:        BPM source
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      bpm
+		Name:        BPM
+		Minimum:     1.000000
+		Maximum:     280.000000
+		Default:     120.000000
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1 = "Always Up (high notes first)"
+			2 = "Alternate"
+			3 = "Up/Down Beat"
+			4 = "Up/Down 8th"
+			0 = "Always Down (low notes first)"
+
+		Symbol:      mode
+		Name:        Strum Direction
+		Minimum:     0.000000
+		Maximum:     4.000000
+		Default:     2.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      collect
+		Name:        Note Collect Timeout [ms]
+		Minimum:     0.000000
+		Maximum:     300.000000
+		Default:     15.000000
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0.25 = "16th"
+			0.125 = "32th"
+			1.0 = "Quarter"
+			0.0 = "Immediate"
+			0.5 = "Eighth"
+			2.0 = "Half Note"
+			4.0 = "Whole Note"
+
+		Symbol:      duration
+		Name:        Strum Duration in Beats
+		Minimum:     0.000000
+		Maximum:     4.000000
+		Default:     0.250000
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      adjspeed
+		Name:        Strum Acceleration
+		Minimum:     -1.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      adjvelocity
+		Name:        Velocity Change
+		Minimum:     -112.000000
+		Maximum:     112.000000
+		Default:     0.000000
+
+	Port 10:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      randspeed
+		Name:        Randomize Acceleration
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 11:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      randvelocity
+		Name:        Randomize Velocity
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+</pre></body></html>

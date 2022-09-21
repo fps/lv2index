@@ -1,0 +1,71 @@
+<html><head></head><body><pre>
+http://guitarix.sourceforge.net/plugins/gx_cstb_#_cstb_
+
+	Name:              GxColorSound Tonebender
+	Class:             Distortion Plugin
+	Author:            Guitarix team
+	Author Email:      mailto:guitarix-developer@lists.sourceforge.net
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/gx_cstb.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/gx_cstb.lv2/gx_cstb.so
+	UIs:
+		http://guitarix.sourceforge.net/plugins/gx_cstb_gui#_cstb_
+			Class:  http://lv2plug.in/ns/extensions/ui#X11UI
+			Binary: file:///run/current-system/sw/lib/lv2/gx_cstb.lv2/gx_cstb_gui.so
+			Bundle: file:///run/current-system/sw/lib/lv2/gx_cstb.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/gx_cstb.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/gx_cstb.lv2/gx_cstb.ttl
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out
+		Name:        Out
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in
+		Name:        In
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      ATTACK
+		Name:        ATTACK
+		Minimum:     0.000000
+		Maximum:     0.950000
+		Default:     0.500000
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      LEVEL
+		Name:        LEVEL
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.200000
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      WET_DRY
+		Name:        WET_DRY
+		Minimum:     0.000000
+		Maximum:     100.000000
+		Default:     50.000000
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      BYPASS
+		Name:        BYPASS
+		Designation: http://lv2plug.in/ns/lv2core#enabled
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+</pre></body></html>

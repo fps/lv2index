@@ -1,0 +1,65 @@
+<html><head></head><body><pre>
+http://ssj71.github.io/infamousPlugins/plugs.html#bentdelay
+
+	Name:              the infamous bent delay
+	Class:             Delay Plugin
+	Author:            Spencer Jackson
+	Author Email:      mailto:ssjackson71@gmail.com
+	Author Homepage:   http://ssj71.github.io/infamousPlugins
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/bentdelay.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/bentdelay.lv2/bentdelay.so
+	Data URIs:         file:///run/current-system/sw/lib/lv2/bentdelay.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/bentdelay.lv2/bentdelay.ttl
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      INPUT
+		Name:        Audio In
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      OUTPUT
+		Name:        Audio Out
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0 = "1x"
+			5 = "32x"
+			1 = "2x"
+			2 = "4x"
+			3 = "8x"
+			4 = "16x"
+
+		Symbol:      DECIMATE
+		Name:        Bend
+		Minimum:     0.000000
+		Maximum:     5.000000
+		Default:     3.000000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      DELAY
+		Name:        Delay
+		Minimum:     0.000000
+		Maximum:     1400.000000
+		Default:     300.000000
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      FEEDBACK
+		Name:        Feedback
+		Minimum:     0.000000
+		Maximum:     100.000000
+		Default:     50.000000
+</pre></body></html>

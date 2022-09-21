@@ -1,0 +1,79 @@
+<html><head></head><body><pre>
+http://drobilla.net/plugins/fomp/mvchpf1
+
+	Name:              Moog High-Pass Filter 1
+	Class:             Highpass Filter Plugin
+	Author:            David Robillard
+	Author Email:      mailto:d@drobilla.net
+	Author Homepage:   http://drobilla.net/
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/fomp.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/fomp.lv2/mvchpf24.so
+	Data URIs:         file:///run/current-system/sw/lib/lv2/fomp.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/fomp.lv2/mvchpf1.ttl
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in
+		Name:        Input
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out
+		Name:        Output
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#CVPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      fm
+		Name:        FM
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#CVPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      exp_fm
+		Name:        Exp FM
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in_gain
+		Name:        Input gain
+		Minimum:     -60.000000
+		Maximum:     10.000000
+		Default:     0.000000
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      freq
+		Name:        Frequency
+		Minimum:     0.000031
+		Maximum:     0.500000
+		Default:     440.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/lv2core#sampleRate
+
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      exp_fm_gain
+		Name:        Exp FM gain
+		Minimum:     0.000000
+		Maximum:     10.000000
+		Default:     1.000000
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      out_gain
+		Name:        Output gain
+		Minimum:     -15.000000
+		Maximum:     15.000000
+		Default:     0.000000
+</pre></body></html>

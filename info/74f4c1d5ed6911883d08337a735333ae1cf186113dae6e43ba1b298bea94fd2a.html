@@ -1,0 +1,1234 @@
+<html><head></head><body><pre>
+http://kunz.corrupt.ch/products/tal-noisemaker
+
+	Name:              Noize Mak3r
+	Class:             Instrument Plugin
+	Author:            TAL-Togu Audio Line
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/TAL-NoiseMaker.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/TAL-NoiseMaker.lv2/TAL-NoiseMaker.so
+	UIs:
+		http://kunz.corrupt.ch/products/tal-noisemaker#ExternalUI
+			Class:  http://kxstudio.sf.net/ns/lv2ext/external-ui#Widget
+			Binary: file:///run/current-system/sw/lib/lv2/TAL-NoiseMaker.lv2/TAL-NoiseMaker.so
+			Bundle: file:///run/current-system/sw/lib/lv2/TAL-NoiseMaker.lv2/
+		http://kunz.corrupt.ch/products/tal-noisemaker#ParentUI
+			Class:  http://lv2plug.in/ns/extensions/ui#X11UI
+			Binary: file:///run/current-system/sw/lib/lv2/TAL-NoiseMaker.lv2/TAL-NoiseMaker.so
+			Bundle: file:///run/current-system/sw/lib/lv2/TAL-NoiseMaker.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/TAL-NoiseMaker.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/TAL-NoiseMaker.lv2/TAL-NoiseMaker.ttl
+	Required Features: http://lv2plug.in/ns/ext/buf-size#boundedBlockLength
+	                   http://lv2plug.in/ns/ext/urid#map
+	Extension Data:    http://lv2plug.in/ns/ext/state#interface
+	                   http://lv2plug.in/ns/ext/options#interface
+	                   http://kxstudio.sf.net/ns/lv2ext/programs#Interface
+	Presets: 
+	         ARP All sync s/l
+	         BS Crispy bass v
+	         BS No character bass 10
+	         BS No character bass 11
+	         BS No character bass 12
+	         BS No character bass 1
+	         BS No character bass 2
+	         BS No character bass 3
+	         BS No character bass 4
+	         BS No character bass 5
+	         BS No character bass 6
+	         BS No character bass 7 
+	         BS No character bass 8 
+	         BS No character bass 9
+	         BS Noisy bass  l
+	         BS Odd bass 1 pb var1
+	         BS Odd bass 1 pb var2
+	         BS Odd bass 2 v/pb var1
+	         BS Odd bass 2 v/pb var2
+	         BS Odd bass 2 v/pb var3
+	         BS PWM bass pb
+	         BS Short pulse pb
+	         BS Short saw pb
+	         BS Short triangle
+	         BS Square bass 1 pb
+	         BS Square bass 2 v
+	         BS Sub bass
+	         CH Fast summer
+	         CH Shortchord pb
+	         DR Bass drum 1
+	         DR Bass drum 2
+	         DR Techno percussion 1
+	         DR Techno percussion 2
+	         DR Techno percussion 3
+	         DR Techno percussion 4
+	         DR Techno percussion 5 
+	         FX Arcade 1 l
+	         FX Arcade 2 l
+	         FX Arcade 3 s/pb/l
+	         FX Metal vibrations v
+	         FX Noise scratch s
+	         FX Qnoise rise s
+	         FX Reso rise s/pb
+	         FX S-chained bird s
+	         FX S-chained fall 1 s/l
+	         FX S-chained fall 2 s/l
+	         FX S-chained fall 3 s/l
+	         FX S-chained noise 1 s
+	         FX S-chained noise 2 s
+	         FX S-chained noise3 s/p
+	         FX S-chained rise 1 s
+	         FX S-chained rise 2 s/l
+	         FX S-chained rise 3 s/l
+	         FX S-chained rise 4 s/l
+	         FX S-chained rise 5 s/l
+	         FX S-chained rise 6 s/l
+	         ARP Gated dyad s/l
+	         ARP Gated chord s/pb/l
+	         ARP Undergroud Hpass s
+	         ARP 5th gate s/l
+	         ARP S-chain bass s/pb
+	         ARP PWM s/l
+	         BS Bass tom 1 pb
+	         BS Bass tom 2 pb
+	         BS Burning pb/l var1
+	         BS Burning pb/l var2
+	         FX Stellar.com pb
+	         FX The awakening
+	         FX Time machine
+	         LD Ambient valley 1
+	         LD Ambient valley 2
+	         LD Ambient valley 3
+	         LD Ambient valley 4
+	         LD Analog keys 1
+	         LD Analog keys 2 pb
+	         LD Android v/pb
+	         LD Battery low TB pb/l
+	         LD Compulead l
+	         LD Frozen flute v
+	         LD Hard stab
+	         LD Industrial age
+	         LD Minor percussion
+	         LD Popcorn
+	         LD Popcorn special
+	         LD Porta lead l
+	         LD Saw cut var1
+	         LD Saw cut var2
+	         LD See saw saw l
+	         LD Techno marimba pb
+	         PD Reverse mono s/pb/l
+	         PD Reverse strings s/pb
+	         ! Startup Juno Osc TAL
+	         ARP 2050 Punk TAL
+	         ARP 303 Like FN
+	         ARP 303 Like II FN
+	         ARP Armageddon FN
+	         ARP C64 FN
+	         ARP C64 II FN
+	         ARP C64 III FN
+	         ARP C64 IV FN
+	         ARP Danger Dance TUC
+	         ARP Demotrack ARP FN
+	         ARP Infected TAL
+	         ARP On The Run TUC
+	         ARP Phasing Saws TAL
+	         ARP Rumpelkammer FN
+	         ARP Super Sync TAL
+	         BS 007 FN
+	         BS 7th Gates FN
+	         BS Bass Deep TAL
+	         BS Bass is your friend F
+	         BS Bassolead FN
+	         BS Basspa FN
+	         BS Big Starter TAL
+	         BS C64 Octavebass FN
+	         BS Clean Flat Bass TAL
+	         BS D&B Wubler TAL
+	         BS Dark Bass TAL
+	         BS Dark Night FN
+	         BS Deep Driver TAL
+	         BS Detuned FN
+	         BS Double Whoppy TUC
+	         BS Eager Beaver AS
+	         BS Easy Listener FN
+	         BS Energyator FN
+	         BS Fat Side FN
+	         BS Flamming Bass FN
+	         BS FM Pulse Train TAL
+	         BS Goodspeed FN
+	         BS Hard 80's TAL
+	         BS Jelly Mountain AS
+	         BS Joop Joop 1 AS
+	         BS Juicy Bass TUC
+	         BS Justice TAL
+	         BS Knarziger FN
+	         BS LFO Roller FN
+	         BS Madskillz FN
+	         BS Mixmiddle FN
+	         BS Mong AS
+	         BS Neon Bass AS
+	         BS Night And Day FN
+	         BS Noizigian FN
+	         BS Open Bass FN
+	         BS Pluggiator FN
+	         BS Reso Bass Classic TAL
+	         BS SAWbreaker FN
+	         BS Sawlight FN
+	         BS Sci Fi TAL
+	         BS Slow Filter FN
+	         BS Small Bassist FN
+	         BS Syncetel Bass FN
+	         BS Terminator TAL
+	         BS The Island FN
+	         BS Tock Sick AS
+	         BS Tremolo Bass TAL
+	         BS Tripple Wobbler TAL
+	         BS Whoppy The Fifth TUC
+	         BS Wobbler FN
+	         BS Wobbler II FN
+	         BS Wonderland FN
+	         CD Universal FN
+	         CH Chordionator FN
+	         CH Chordionator II FN
+	         CH Chordionator III FN
+	         CH Chordionator IV FN
+	         CH Open Mind FN
+	         CH SIDchord FN
+	         DR 8bit  Kick II FN
+	         DR 8bit  Kick III FN
+	         DR 8bit Kick FN
+	         DR Clap Maker TAL
+	         DR Crash Space TAL
+	         DR Hat Reverse TAL
+	         DR Hat Short Moves TAL
+	         DR Hat Short TAL
+	         DR HiHat FN
+	         DR Kick Clean TAL
+	         DR Kick FN
+	         DR Kick Goa TAL
+	         DR Kick II FN
+	         DR Kick III FN
+	         DR Kick Nuuuu TAL
+	         DR Kick Old School TAL
+	         DR Kick Phat TAL
+	         DR Kick Pitch TAL
+	         DR Kick Universal TAL
+	         DR Perc Bongo Room TAL
+	         DR Perc Elektro Click TA
+	         DR Perc Old Zipper TAL
+	         DR Perc Room TAL
+	         DR Perc Tommer TAL
+	         DR Perc Tuned Tom TAL
+	         DR Snare Dry TAL
+	         DR Snare Snappy TAL
+	         DR Sub Impact TAL
+	         FX  Jumper TAL
+	         FX Alien Storm TAL
+	         FX Analog Modem TAL
+	         FX Another World TAL
+	         FX Bit Shuffla TAL
+	         FX Blubberwasser FN
+	         FX Break FM
+	         FX Breaking Up AS
+	         FX C64 FN
+	         FX Cave Divers TUC
+	         FX Clean Noise Ramp TAL
+	         FX Cool Sci Fi Ramp TAL
+	         FX Digital Aquanaut TAL
+	         FX Digital Transfer TAL
+	         FX Falling Bombs TAL
+	         FX Falling Break TAL
+	         FX High Voltage Start TA
+	         FX Loony Bin AS
+	         FX Metallica FN
+	         FX Mobile Noise TAL
+	         FX Mod Triangle FM TAL
+	         FX Noiz3machin3 FN
+	         FX Quitscheentchen FN
+	         FX Radeberger FN
+	         FX Raindrops FN
+	         FX Reso Attack TAL
+	         FX Reverse FM TAL
+	         FX SO 24dB Sweep TAL
+	         FX Space Train TAL
+	         FX Swell FN
+	         FX THX for the people TA
+	         FX Turbo Loader TAL
+	         FX Turntable FN
+	         FX Whooo! AS
+	         KB Big Synth FN
+	         KB Chimp Organ TUC
+	         KB Drops TAL
+	         KB E-Piano TAL
+	         KB Ghostly Glomp AS
+	         KB Glass Star TUC
+	         KB Glockenschlag FN
+	         KB Piano House TAL
+	         KB Pop Pluck TUC
+	         KB Sawberry Milkshake TU
+	         KB Screetcher TUC
+	         KB Smooth Sine TAL
+	         KB White Noise FN
+	         KE Dreaming FN
+	         LD 3D Game Boy TAL
+	         LD 8bitter II FN
+	         LD Acid Dist Noisy TAL
+	         LD Acid Saw TAL
+	         LD Aggggggro TAL
+	         LD Alarm Light TUC
+	         LD Analog Down Glider TA
+	         LD Basic Whapp TUC
+	         LD Big Dipper AS
+	         LD Bon Voyage FN
+	         LD Breadbin Burble AS
+	         LD Crazy Triangle Arp TA
+	         LD Crazy Trumped AS
+	         LD Croke AS
+	         LD Crystal Lead TAL
+	         LD D Robot TAL
+	         LD Delay Filter Step TAL
+	         LD Dirty Snow AS
+	         LD Drop In Pulse TAL
+	         LD Electric Charged TAL
+	         LD Everglade Walk TAL
+	         LD FM Pulse Train TAL
+	         LD FM Sync Voice AS
+	         LD Fug Pugly AS
+	         LD Funky Mod TAL
+	         LD Fuzzy Box TAL
+	         LD Fuzzy Cargo TAL
+	         LD Geiler Patch FN
+	         LD Green Glass Worm TUC
+	         LD Happy go Mucky AS
+	         LD Haunted Strings AS
+	         LD High Noon AS
+	         LD High Voltage Lift TAL
+	         LD It's Complicated AS
+	         LD Lo Fi Party TAL
+	         LD Luxury Lead AS
+	         LD Marging Fifth AS
+	         LD Mellow Chord TAL
+	         LD Mellow Organ TAL
+	         LD Metal Lead TAL
+	         LD Metal Spikes AS
+	         LD Metal Wahuuu TAL
+	         LD Mod-U-Crush AS
+	         LD ModWave AS
+	         LD Morph Sync TAL
+	         LD Muchos Air TAL
+	         LD Neon Knife TUC
+	         LD Noisy Sync Lead TAL
+	         LD Ohm Duck Solo TAL
+	         LD Phasing Saws TAL
+	         LD Plastic Attack TAL
+	         LD Pleutonium FN
+	         LD Plucked String TAL
+	         LD Power Lead TAL
+	         LD Pwap AS
+	         LD Rasp Lead AS
+	         LD Resobells FN
+	         LD Resolve 2 AS
+	         LD Ringing Lead TAL
+	         LD Sci Fi Organ TAL
+	         LD Shiver Stab AS
+	         LD Shutter Lead TAL
+	         LD Slop AS
+	         LD Soft Bell Lead TAL
+	         LD Special Starter TAL
+	         LD Spook AS
+	         LD Spring Bell TAL
+	         LD Steam Pulse AS
+	         LD SYNCElead FN
+	         LD Take Up Strings TAL
+	         LD Technoshocker FN
+	         LD The Colour Purple AS
+	         LD The Joy of Stalking A
+	         LD Thin Lead TAL
+	         LD Tranceline FN
+	         LD Triangle Madness TAL
+	         LD We Felt Digital TUC
+	         LD Woholead FN
+	         PD  Ringmodded FN
+	         PD Base Pad TAL
+	         PD Bellomatism FN
+	         PD Big Trancer FN
+	         PD Bionic Pad TAL
+	         PD Bit Orchestra TAL
+	         PD Bursting Pad TAL
+	         PD Dark Animations FN
+	         PD Dream of '86 TUC
+	         PD Easymat FN
+	         PD Fantasy Pad TAL
+	         PD Floating Pad TAL
+	         PD Fuzzy Chorda TAL
+	         PD Gated Pad TAL
+	         PD Glasometer FN
+	         PD Lightstorm TUC
+	         PD Luxury Strings AS
+	         PD Open Square FN
+	         PD Padwobbler FN
+	         PD Parallax Pad AS
+	         PD Ringmod Mod TAL
+	         PD Spooky Organ TAL
+	         PD Sun Rise TAL
+	         PD Sweet Analogue TAL
+	         PD Tron TAL
+	         PD Twoflower FN
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/ext/atom#AtomPort
+		Symbol:      lv2_events_in
+		Name:        Events Input
+		Designation: http://lv2plug.in/ns/lv2core#control
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lv2_freewheel
+		Name:        Freewheel
+		Designation: http://lv2plug.in/ns/lv2core#freeWheeling
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+		             http://lv2plug.in/ns/ext/port-props#notOnGUI
+
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#OutputPort
+		             http://lv2plug.in/ns/lv2core#AudioPort
+		Symbol:      lv2_audio_out_1
+		Name:        Audio Output 1
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#OutputPort
+		             http://lv2plug.in/ns/lv2core#AudioPort
+		Symbol:      lv2_audio_out_2
+		Name:        Audio Output 2
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      unused
+		Name:        unused
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      volume
+		Name:        volume
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.408000
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      filtertype
+		Name:        filtertype
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      cutoff
+		Name:        cutoff
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      resonance
+		Name:        resonance
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      keyfollow
+		Name:        keyfollow
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 10:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      filtercontour
+		Name:        filtercontour
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 11:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      filterattack
+		Name:        filterattack
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 12:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      filterdecay
+		Name:        filterdecay
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 13:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      filtersustain
+		Name:        filtersustain
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+
+	Port 14:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      filterrelease
+		Name:        filterrelease
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 15:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      ampattack
+		Name:        ampattack
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 16:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      ampdecay
+		Name:        ampdecay
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 17:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      ampsustain
+		Name:        ampsustain
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+
+	Port 18:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      amprelease
+		Name:        amprelease
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 19:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      osc1volume
+		Name:        osc1volume
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.800000
+
+	Port 20:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      osc2volume
+		Name:        osc2volume
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 21:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      osc3volume
+		Name:        osc3volume
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.800000
+
+	Port 22:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      oscmastertune
+		Name:        oscmastertune
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 23:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      osc1tune
+		Name:        osc1tune
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.250000
+
+	Port 24:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      osc2tune
+		Name:        osc2tune
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 25:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      osc1finetune
+		Name:        osc1finetune
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 26:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      osc2finetune
+		Name:        osc2finetune
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 27:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      osc1waveform
+		Name:        osc1waveform
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 28:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      osc2waveform
+		Name:        osc2waveform
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 29:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      oscsync
+		Name:        oscsync
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 30:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      lfo1waveform
+		Name:        lfo1waveform
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 31:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      lfo2waveform
+		Name:        lfo2waveform
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 32:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lfo1rate
+		Name:        lfo1rate
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 33:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lfo2rate
+		Name:        lfo2rate
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 34:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lfo1amount
+		Name:        lfo1amount
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 35:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lfo2amount
+		Name:        lfo2amount
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 36:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lfo1destination
+		Name:        lfo1destination
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 37:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lfo2destination
+		Name:        lfo2destination
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 38:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lfo1phase
+		Name:        lfo1phase
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 39:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lfo2phase
+		Name:        lfo2phase
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 40:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      osc2fm
+		Name:        osc2fm
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 41:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      osc2phase
+		Name:        osc2phase
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 42:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      osc1pw
+		Name:        osc1pw
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 43:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      osc1phase
+		Name:        osc1phase
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 44:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      transpose
+		Name:        transpose
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 45:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      freeadattack
+		Name:        freeadattack
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 46:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      freeaddecay
+		Name:        freeaddecay
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 47:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      freeadamount
+		Name:        freeadamount
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 48:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      freeaddestination
+		Name:        freeaddestination
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 49:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      lfo1sync
+		Name:        lfo1sync
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 50:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      lfo1keytrigger
+		Name:        lfo1keytrigger
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 51:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      lfo2sync
+		Name:        lfo2sync
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 52:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lfo2keytrigger
+		Name:        lfo2keytrigger
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 53:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      portamento
+		Name:        portamento
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 54:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      portamentomode
+		Name:        portamentomode
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 55:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      voices
+		Name:        voices
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 56:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      velocityvolume
+		Name:        velocityvolume
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 57:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      velocitycontour
+		Name:        velocitycontour
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 58:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      velocitycutoff
+		Name:        velocitycutoff
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 59:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      pitchwheelcutoff
+		Name:        pitchwheelcutoff
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 60:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      pitchwheelpitch
+		Name:        pitchwheelpitch
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 61:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      ringmodulation
+		Name:        ringmodulation
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 62:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      chorus1enable
+		Name:        chorus1enable
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 63:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      chorus2enable
+		Name:        chorus2enable
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 64:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      reverbwet
+		Name:        reverbwet
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 65:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      reverbdecay
+		Name:        reverbdecay
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 66:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      reverbpredelay
+		Name:        reverbpredelay
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 67:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      reverbhighcut
+		Name:        reverbhighcut
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 68:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      reverblowcut
+		Name:        reverblowcut
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+
+	Port 69:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      oscbitcrusher
+		Name:        oscbitcrusher
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+
+	Port 70:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      highpass
+		Name:        highpass
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 71:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      detune
+		Name:        detune
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 72:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      vintagenoise
+		Name:        vintagenoise
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 73:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      lv2_port_70
+		Name:        Port 70
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 74:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      unused_2
+		Name:        unused
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 75:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      envelopeeditordest1
+		Name:        envelopeeditordest1
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 76:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      envelopeeditorspeed
+		Name:        envelopeeditorspeed
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 77:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      envelopeeditoramount
+		Name:        envelopeeditoramount
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 78:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      envelopeoneshot
+		Name:        envelopeoneshot
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 79:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      envelopefixtempo
+		Name:        envelopefixtempo
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 80:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      lv2_port_77
+		Name:        Port 77
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 81:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      lv2_port_78
+		Name:        Port 78
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+
+	Port 82:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      lv2_port_79
+		Name:        Port 79
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 83:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lv2_port_80
+		Name:        Port 80
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 84:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      lv2_port_81
+		Name:        Port 81
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+
+	Port 85:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      filterdrive
+		Name:        filterdrive
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 86:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      delaywet
+		Name:        delaywet
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 87:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      delaytime
+		Name:        delaytime
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 88:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      delaysync
+		Name:        delaysync
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 89:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      delayfactorl
+		Name:        delayfactorl
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 90:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      delayfactorr
+		Name:        delayfactorr
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 91:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      delayhighshelf
+		Name:        delayhighshelf
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 92:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      delaylowshelf
+		Name:        delaylowshelf
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 93:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      delayfeedback
+		Name:        delayfeedback
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 94:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lv2_port_91
+		Name:        Port 91
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 95:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lv2_port_92
+		Name:        Port 92
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+</pre></body></html>

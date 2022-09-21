@@ -1,0 +1,126 @@
+<html><head></head><body><pre>
+http://guitarix.sourceforge.net/plugins/gx_echo_stereo#_echo_stereo
+
+	Name:              GxEcho-Stereo
+	Class:             Delay Plugin
+	Author:            Guitarix team
+	Author Email:      mailto:brummer@web.de
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/gx_echo.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/gx_echo.lv2/gx_echo.so
+	UIs:
+		http://guitarix.sourceforge.net/plugins/gx_echo_stereo#gui
+			Class:  http://lv2plug.in/ns/extensions/ui#X11UI
+			Binary: file:///run/current-system/sw/lib/lv2/gx_echo.lv2/gx_echo_gui.so
+			Bundle: file:///run/current-system/sw/lib/lv2/gx_echo.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/gx_echo.lv2/gx_echo.ttl
+	                   file:///run/current-system/sw/lib/lv2/gx_echo.lv2/manifest.ttl
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0 = "linear"
+			1 = "pingpong"
+
+		Symbol:      mode
+		Name:        Mode
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      level_r
+		Name:        R Level
+		Minimum:     0.000000
+		Maximum:     100.000000
+		Default:     30.000000
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      timt_r
+		Name:        R Time
+		Minimum:     1.000000
+		Maximum:     2000.000000
+		Default:     100.000000
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      level_l
+		Name:        L Level
+		Minimum:     0.000000
+		Maximum:     100.000000
+		Default:     30.000000
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      timt_l
+		Name:        L Time
+		Minimum:     1.000000
+		Maximum:     2000.000000
+		Default:     100.000000
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lfo
+		Name:        LFO
+		Minimum:     0.200000
+		Maximum:     5.000000
+		Default:     0.200000
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      link
+		Name:        Link (L+R)
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out
+		Name:        Out
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out1
+		Name:        Out1
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in
+		Name:        In
+
+	Port 10:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in1
+		Name:        In1
+
+	Port 11:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      BYPASS
+		Name:        BYPASS
+		Designation: http://lv2plug.in/ns/lv2core#enabled
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+</pre></body></html>

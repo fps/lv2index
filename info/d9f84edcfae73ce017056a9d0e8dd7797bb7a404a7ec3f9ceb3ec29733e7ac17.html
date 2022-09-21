@@ -1,0 +1,397 @@
+<html><head></head><body><pre>
+http://lsp-plug.in/plugins/lv2/surge_filter_stereo
+
+	Name:              LSP Surge Filter Stereo
+	Class:             Dynamics Plugin
+	Author:            LSP LV2
+	Author Email:      mailto:lsp.plugin@gmail.com
+	Author Homepage:   https://lsp-plug.in/
+	Has latency:       yes, reported by port 31
+	Bundle:            file:///run/current-system/sw/lib/lv2/lsp-plugins.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/lsp-plugins.lv2/lsp-plugins-lv2-1.2.3.so
+	UIs:
+		http://lsp-plug.in/ui/lv2/surge_filter_stereo
+			Class:  http://lv2plug.in/ns/extensions/ui#X11UI
+			Binary: file:///run/current-system/sw/lib/lv2/lsp-plugins.lv2/lsp-plugins-lv2ui-1.2.3.so
+			Bundle: file:///run/current-system/sw/lib/lv2/lsp-plugins.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/lsp-plugins.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/lsp-plugins.lv2/surge_filter_stereo.ttl
+	Required Features: http://lv2plug.in/ns/ext/urid#map
+	Optional Features: http://harrisonconsoles.com/lv2/inlinedisplay#queue_draw
+	                   http://lv2plug.in/ns/ext/state#mapPath
+	                   http://lv2plug.in/ns/ext/options#options
+	                   http://lv2plug.in/ns/ext/worker#schedule
+	                   http://lv2plug.in/ns/lv2core#hardRTCapable
+	Extension Data:    http://lv2plug.in/ns/ext/worker#interface
+	                   http://harrisonconsoles.com/lv2/inlinedisplay#interface
+	                   http://lv2plug.in/ns/ext/state#interface
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#AudioPort
+		Symbol:      in_l
+		Name:        Input L
+		Group:       http://lsp-plug.in/plugins/lv2/surge_filter_stereo/port_groups#stereo_in
+		Designation: http://lv2plug.in/ns/ext/port-groups#left
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#AudioPort
+		Symbol:      in_r
+		Name:        Input R
+		Group:       http://lsp-plug.in/plugins/lv2/surge_filter_stereo/port_groups#stereo_in
+		Designation: http://lv2plug.in/ns/ext/port-groups#right
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out_l
+		Name:        Output L
+		Group:       http://lsp-plug.in/plugins/lv2/surge_filter_stereo/port_groups#stereo_out
+		Designation: http://lv2plug.in/ns/ext/port-groups#left
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out_r
+		Name:        Output R
+		Group:       http://lsp-plug.in/plugins/lv2/surge_filter_stereo/port_groups#stereo_out
+		Designation: http://lv2plug.in/ns/ext/port-groups#right
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      enabled
+		Name:        Enabled
+		Designation: http://lv2plug.in/ns/lv2core#enabled
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			4 = "Parabolic"
+			3 = "Gaussian"
+			0 = "Linear"
+			1 = "Cubic"
+			2 = "Sine"
+
+		Symbol:      modein
+		Name:        Fade in mode
+		Minimum:     0.000000
+		Maximum:     4.000000
+		Default:     3.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			4 = "Parabolic"
+			1 = "Cubic"
+			0 = "Linear"
+			3 = "Gaussian"
+			2 = "Sine"
+
+		Symbol:      modeout
+		Name:        Fade out mode
+		Minimum:     0.000000
+		Maximum:     4.000000
+		Default:     3.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      input
+		Name:        Input gain
+		Minimum:     0.000000
+		Maximum:     15.848930
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      thr_on
+		Name:        Threshold for switching on
+		Minimum:     0.000001
+		Maximum:     0.063100
+		Default:     0.000251
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      thr_off
+		Name:        Threshold for switching off
+		Minimum:     0.000001
+		Maximum:     0.063100
+		Default:     0.000251
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 10:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      rms
+		Name:        RMS estimation time
+		Minimum:     4.000000
+		Maximum:     100.000000
+		Default:     10.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 11:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      fadein
+		Name:        Fade in time
+		Minimum:     0.000000
+		Maximum:     1000.000000
+		Default:     100.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 12:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      fadeout
+		Name:        Fade out time
+		Minimum:     0.000000
+		Maximum:     500.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 13:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      fidelay
+		Name:        Fade in cancel delay time
+		Minimum:     0.000000
+		Maximum:     100.000000
+		Default:     10.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 14:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      fodelay
+		Name:        Fade out cancel delay time
+		Minimum:     0.000000
+		Maximum:     100.000000
+		Default:     10.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 15:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      active
+		Name:        Activity indicator
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 16:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      output
+		Name:        Output gain
+		Minimum:     0.000000
+		Maximum:     15.848930
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 17:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      grv
+		Name:        Gain reduction visibility
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 18:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      ev
+		Name:        Envelope visibility
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 19:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      grm
+		Name:        Gain reduction meter
+		Minimum:     0.000000
+		Maximum:     15.848930
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 20:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      em
+		Name:        Envelope meter
+		Minimum:     0.000000
+		Maximum:     15.848930
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 21:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      igv_l
+		Name:        Input graph visibility left
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 22:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      ogv_l
+		Name:        Output graph visibility left
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 23:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      ilm_l
+		Name:        Input level meter left
+		Minimum:     0.000000
+		Maximum:     15.848930
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 24:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      olm_l
+		Name:        Output level meter left
+		Minimum:     0.000000
+		Maximum:     15.848930
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 25:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      igv_r
+		Name:        Input graph visibility right
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 26:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      ogv_r
+		Name:        Output graph visibility right
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 27:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      ilm_r
+		Name:        Input level meter right
+		Minimum:     0.000000
+		Maximum:     15.848930
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 28:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      olm_r
+		Name:        Output level meter right
+		Minimum:     0.000000
+		Maximum:     15.848930
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 29:
+		Type:        http://lv2plug.in/ns/ext/atom#AtomPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in_ui
+		Name:        UI Input
+		Designation: http://lv2plug.in/ns/lv2core#control
+		Properties:  http://lv2plug.in/ns/lv2core#connectionOptional
+
+
+	Port 30:
+		Type:        http://lv2plug.in/ns/ext/atom#AtomPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out_ui
+		Name:        UI Output
+		Designation: http://lv2plug.in/ns/lv2core#control
+		Properties:  http://lv2plug.in/ns/lv2core#connectionOptional
+
+
+	Port 31:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out_latency
+		Name:        Latency OUT
+		Minimum:     0.000000
+		Maximum:     192000.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+		             http://lv2plug.in/ns/lv2core#reportsLatency
+		             http://lv2plug.in/ns/lv2core#integer
+
+</pre></body></html>

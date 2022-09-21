@@ -1,0 +1,50 @@
+<html><head></head><body><pre>
+http://moddevices.com/plugins/mod-devel/switchbox_2-1
+
+	Name:              Switchbox 2-1
+	Class:             Utility Plugin
+	Author:            MOD
+	Author Email:      mailto:devel@moddevices.com
+	Author Homepage:   http://moddevices.com
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/switchbox_2-1.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/switchbox_2-1.lv2/switchbox_2-1.so
+	Data URIs:         file:///run/current-system/sw/lib/lv2/switchbox_2-1.lv2/modgui.ttl
+	                   file:///run/current-system/sw/lib/lv2/switchbox_2-1.lv2/switchbox_2-1.ttl
+	                   file:///run/current-system/sw/lib/lv2/switchbox_2-1.lv2/manifest.ttl
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      In1
+		Name:        In 1
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      IN2
+		Name:        IN 2
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      Out
+		Name:        Out 
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0 = "1"
+			1 = "2"
+
+		Symbol:      Switch
+		Name:        Channel
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+</pre></body></html>

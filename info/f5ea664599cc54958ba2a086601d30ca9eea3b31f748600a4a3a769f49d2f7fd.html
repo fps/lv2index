@@ -1,0 +1,200 @@
+<html><head></head><body><pre>
+https://github.com/HiFi-LoFi/KlangFalter
+
+	Name:              KlangFalter
+	Class:             Reverb Plugin
+	Author:            HiFi-LoFi
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/KlangFalter.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/KlangFalter.lv2/KlangFalter.so
+	UIs:
+		https://github.com/HiFi-LoFi/KlangFalter#ExternalUI
+			Class:  http://kxstudio.sf.net/ns/lv2ext/external-ui#Widget
+			Binary: file:///run/current-system/sw/lib/lv2/KlangFalter.lv2/KlangFalter.so
+			Bundle: file:///run/current-system/sw/lib/lv2/KlangFalter.lv2/
+		https://github.com/HiFi-LoFi/KlangFalter#ParentUI
+			Class:  http://lv2plug.in/ns/extensions/ui#X11UI
+			Binary: file:///run/current-system/sw/lib/lv2/KlangFalter.lv2/KlangFalter.so
+			Bundle: file:///run/current-system/sw/lib/lv2/KlangFalter.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/KlangFalter.lv2/KlangFalter.ttl
+	                   file:///run/current-system/sw/lib/lv2/KlangFalter.lv2/manifest.ttl
+	Required Features: http://lv2plug.in/ns/ext/urid#map
+	                   http://lv2plug.in/ns/ext/buf-size#boundedBlockLength
+	                   http://lv2plug.in/ns/ext/buf-size#fixedBlockLength
+	Extension Data:    http://lv2plug.in/ns/ext/options#interface
+	                   http://lv2plug.in/ns/ext/state#interface
+	                   http://kxstudio.sf.net/ns/lv2ext/programs#Interface
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/ext/atom#AtomPort
+		Symbol:      lv2_events_in
+		Name:        Events Input
+		Designation: http://lv2plug.in/ns/lv2core#control
+		Properties:  http://lv2plug.in/ns/lv2core#connectionOptional
+
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lv2_freewheel
+		Name:        Freewheel
+		Designation: http://lv2plug.in/ns/lv2core#freeWheeling
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+		             http://lv2plug.in/ns/ext/port-props#notOnGUI
+
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lv2_audio_in_1
+		Name:        Audio Input 1
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lv2_audio_in_2
+		Name:        Audio Input 2
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      lv2_audio_out_1
+		Name:        Audio Output 1
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      lv2_audio_out_2
+		Name:        Audio Output 2
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      wet_on
+		Name:        Wet On
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      wet
+		Name:        Wet
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.833333
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      dry_on
+		Name:        Dry On
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      dry
+		Name:        Dry
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.833333
+
+	Port 10:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      eq_low_type
+		Name:        EQ Low Type
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 11:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      eq_low_cut_freq
+		Name:        EQ Low Cut Freq
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 12:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      eq_low_shelf_freq
+		Name:        EQ Low Shelf Freq
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 13:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      eq_low_shelf_gain
+		Name:        EQ Low Shelf Gain
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 14:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      eq_high_type
+		Name:        EQ High Type
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 15:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      eq_high_cut_freq
+		Name:        EQ High Cut Freq
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+
+	Port 16:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      eq_high_shelf_freq
+		Name:        EQ High Shelf Freq
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+
+	Port 17:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      eq_high_shelf_gain
+		Name:        EQ High Shelf Gain
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 18:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      stereo_width
+		Name:        Stereo Width
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.100000
+
+	Port 19:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      autogain_on
+		Name:        Autogain On
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+</pre></body></html>

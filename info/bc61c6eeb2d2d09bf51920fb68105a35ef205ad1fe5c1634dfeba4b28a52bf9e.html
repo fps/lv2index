@@ -1,0 +1,90 @@
+<html><head></head><body><pre>
+http://plugin.org.uk/swh-plugins/giantFlange
+
+	Name:              Giant flange
+	Class:             Flanger Plugin
+	Author:            Steve Harris
+	Author Email:      mailto:steve@plugin.org.uk
+	Author Homepage:   http://plugin.org.uk/
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/giant_flange-swh.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/giant_flange-swh.lv2/plugin-Linux.so
+	Data URIs:         file:///run/current-system/sw/lib/lv2/giant_flange-swh.lv2/plugin.ttl
+	                   file:///run/current-system/sw/lib/lv2/giant_flange-swh.lv2/manifest.ttl
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      deldouble
+		Name:        Double delay
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      freq1
+		Name:        LFO frequency 1 (Hz)
+		Minimum:     0.000000
+		Maximum:     30.000000
+		Default:     1.000000
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      delay1
+		Name:        Delay 1 range (s)
+		Minimum:     0.000000
+		Maximum:     10.500000
+		Default:     2.625000
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      freq2
+		Name:        LFO frequency 2 (Hz)
+		Minimum:     0.000000
+		Maximum:     30.000000
+		Default:     1.000000
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      delay2
+		Name:        Delay 2 range (s)
+		Minimum:     0.000000
+		Maximum:     10.500000
+		Default:     0.000000
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      feedback
+		Name:        Feedback
+		Minimum:     -100.000000
+		Maximum:     100.000000
+		Default:     0.000000
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      wet
+		Name:        Dry/Wet level
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      input
+		Name:        Input
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      output
+		Name:        Output
+</pre></body></html>

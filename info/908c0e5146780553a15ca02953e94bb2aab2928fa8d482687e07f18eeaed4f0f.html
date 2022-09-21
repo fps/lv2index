@@ -1,0 +1,36 @@
+<html><head></head><body><pre>
+urn:zamaudio:ZamAutoSat
+
+	Name:              ZamAutoSat
+	Class:             Dynamics Plugin
+	Author:            Damien Zammit
+	Author Homepage:   http://www.zamaudio.com
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/ZamAutoSat.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/ZamAutoSat.lv2/ZamAutoSat_dsp.so
+	UIs:
+		urn:zamaudio:ZamAutoSat#UI
+			Class:  http://lv2plug.in/ns/extensions/ui#X11UI
+			Binary: file:///run/current-system/sw/lib/lv2/ZamAutoSat.lv2/ZamAutoSat_ui.so
+			Bundle: file:///run/current-system/sw/lib/lv2/ZamAutoSat.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/ZamAutoSat.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/ZamAutoSat.lv2/ZamAutoSat_dsp.ttl
+	Required Features: http://lv2plug.in/ns/ext/urid#map
+	                   http://lv2plug.in/ns/ext/options#options
+	Optional Features: http://lv2plug.in/ns/ext/buf-size#boundedBlockLength
+	                   http://lv2plug.in/ns/lv2core#hardRTCapable
+	Extension Data:    http://lv2plug.in/ns/ext/options#interface
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lv2_audio_in_1
+		Name:        Audio Input 1
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      lv2_audio_out_1
+		Name:        Audio Output 1
+</pre></body></html>

@@ -1,0 +1,109 @@
+<html><head></head><body><pre>
+http://rakarrack.sourceforge.net/effects.html#StompBox_fuzz
+
+	Name:              rkr StompBox:Fuzz
+	Class:             Distortion Plugin
+	Author:            Rakarrack Team
+	Author Email:      mailto:ssjackson71@gmail.com
+	Author Homepage:   http://rakarrack.sourceforge.net
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/rkr.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/rkr.lv2/rkrlv2.so
+	Data URIs:         file:///run/current-system/sw/lib/lv2/rkr.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/rkr.lv2/stompfuzz.ttl
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+	         Gnasty
+	         Classic Fuzz
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#AudioPort
+		Symbol:      INPUT_L
+		Name:        Audio In L
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      INPUT_R
+		Name:        Audio In R
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      OUTPUT_L
+		Name:        Audio Out L
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      OUTPUT_R
+		Name:        Audio Out R
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      BYPASS
+		Name:        Bypass
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      LEVEL
+		Name:        Level
+		Minimum:     0.000000
+		Maximum:     127.000000
+		Default:     40.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      HI
+		Name:        Tone
+		Minimum:     -64.000000
+		Maximum:     64.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      MID
+		Name:        Mid
+		Minimum:     -64.000000
+		Maximum:     64.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      LO
+		Name:        Bias
+		Minimum:     -64.000000
+		Maximum:     64.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      GAIN
+		Name:        Gain
+		Minimum:     0.000000
+		Maximum:     127.000000
+		Default:     64.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+</pre></body></html>

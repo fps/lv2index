@@ -1,0 +1,75 @@
+<html><head></head><body><pre>
+http://guitarix.sourceforge.net/plugins/gx_tonemachine_#_tonemachine_
+
+	Name:              GxToneMachine
+	Class:             Distortion Plugin
+	Author:            Guitarix team
+	Author Email:      mailto:guitarix-developer@lists.sourceforge.net
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/gx_tonemachine.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/gx_tonemachine.lv2/gx_tonemachine.so
+	UIs:
+		http://guitarix.sourceforge.net/plugins/gx_tonemachine_gui#_tonemachine_
+			Class:  http://lv2plug.in/ns/extensions/ui#X11UI
+			Binary: file:///run/current-system/sw/lib/lv2/gx_tonemachine.lv2/gx_tonemachine_ui.so
+			Bundle: file:///run/current-system/sw/lib/lv2/gx_tonemachine.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/gx_tonemachine.lv2/gx_tonemachine.ttl
+	                   file:///run/current-system/sw/lib/lv2/gx_tonemachine.lv2/manifest.ttl
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out
+		Name:        Out
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in
+		Name:        In
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0 = "OFF"
+			1 = "ON"
+
+		Symbol:      OCTAVE
+		Name:        OCTAVE
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      SUSTAIN
+		Name:        SUSTAIN
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.250000
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      TONE
+		Name:        TONE
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      VOLUME
+		Name:        VOLUME
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.250000
+</pre></body></html>

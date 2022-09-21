@@ -1,0 +1,165 @@
+<html><head></head><body><pre>
+http://drobilla.net/plugins/mda/BeatBox
+
+	Name:              MDA BeatBox
+	Class:             Generator Plugin
+	Author:            David Robillard
+	Author Email:      mailto:d@drobilla.net
+	Author Homepage:   http://drobilla.net/
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/mda.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/mda.lv2/BeatBox.so
+	Data URIs:         file:///run/current-system/sw/lib/lv2/mda.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/mda.lv2/BeatBox.ttl
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      hat_thr
+		Name:        Hat Thr
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.300000
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      hat_rate
+		Name:        Hat Rate
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.450000
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      hat_mix
+		Name:        Hat Mix
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      kik_thr
+		Name:        Kik Thr
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.460000
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      kik_trig
+		Name:        Kik Trig
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.150000
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      kik_mix
+		Name:        Kik Mix
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      snr_thr
+		Name:        Snr Thr
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      snr_trig
+		Name:        Snr Trig
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.700000
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      snr_mix
+		Name:        Snr Mix
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      dynamics
+		Name:        Dynamics
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 10:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0.0 = "None"
+			0.25 = "Monitor Input"
+			0.5 = "Record Hat"
+			0.75 = "Record Kick"
+			1.0 = "Record Snare"
+
+		Symbol:      record
+		Name:        Record
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 11:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      thru_mix
+		Name:        Thru Mix
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 12:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      left_in
+		Name:        Left In
+		Group:       http://drobilla.net/plugins/mda/mainIn
+		Designation: http://lv2plug.in/ns/ext/port-groups#left
+
+	Port 13:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      right_in
+		Name:        Right In
+		Group:       http://drobilla.net/plugins/mda/mainIn
+		Designation: http://lv2plug.in/ns/ext/port-groups#right
+
+	Port 14:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      left_out
+		Name:        Left Out
+		Group:       http://drobilla.net/plugins/mda/mainOut
+		Designation: http://lv2plug.in/ns/ext/port-groups#left
+
+	Port 15:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      right_out
+		Name:        Right Out
+		Group:       http://drobilla.net/plugins/mda/mainOut
+		Designation: http://lv2plug.in/ns/ext/port-groups#right
+</pre></body></html>

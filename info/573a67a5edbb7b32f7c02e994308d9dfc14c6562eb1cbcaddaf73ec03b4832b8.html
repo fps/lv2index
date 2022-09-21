@@ -1,0 +1,127 @@
+<html><head></head><body><pre>
+http://plugin.org.uk/swh-plugins/gate
+
+	Name:              Gate
+	Class:             Gate Plugin
+	Author:            Steve Harris
+	Author Email:      mailto:steve@plugin.org.uk
+	Author Homepage:   http://plugin.org.uk/
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/gate-swh.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/gate-swh.lv2/plugin-Linux.so
+	Data URIs:         file:///run/current-system/sw/lib/lv2/gate-swh.lv2/plugin.ttl
+	                   file:///run/current-system/sw/lib/lv2/gate-swh.lv2/manifest.ttl
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lf_fc
+		Name:        LF key filter (Hz)
+		Minimum:     25.000000
+		Maximum:     4000.000000
+		Default:     500.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      hf_fc
+		Name:        HF key filter (Hz)
+		Minimum:     250.000000
+		Maximum:     20000.000000
+		Default:     2000.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      threshold
+		Name:        Threshold (dB)
+		Minimum:     -70.000000
+		Maximum:     20.000000
+		Default:     -40.000000
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      attack
+		Name:        Attack (ms)
+		Minimum:     0.010000
+		Maximum:     1000.000000
+		Default:     0.100000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      hold
+		Name:        Hold (ms)
+		Minimum:     2.000000
+		Maximum:     2000.000000
+		Default:     50.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      decay
+		Name:        Decay (ms)
+		Minimum:     2.000000
+		Maximum:     4000.000000
+		Default:     50.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      range
+		Name:        Range (dB)
+		Minimum:     -90.000000
+		Maximum:     0.000000
+		Default:     -20.000000
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      select
+		Name:        Output select (-1 = key listen, 0 = gate, 1 = bypass)
+		Minimum:     -1.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      level
+		Name:        Key level (dB)
+		Minimum:     -90.000000
+		Maximum:     0.000000
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      gate_state
+		Name:        Gate state
+		Minimum:     0.000000
+		Maximum:     1.000000
+
+	Port 10:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      input
+		Name:        Input
+
+	Port 11:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      output
+		Name:        Output
+</pre></body></html>

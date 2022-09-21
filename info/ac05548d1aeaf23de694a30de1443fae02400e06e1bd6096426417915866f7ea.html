@@ -1,0 +1,155 @@
+<html><head></head><body><pre>
+http://guitarix.sourceforge.net/plugins/gx_zita_rev1_stereo#_zita_rev1_stereo
+
+	Name:              GxZita_rev1-Stereo
+	Class:             Reverb Plugin
+	Author:            Guitarix team
+	Author Email:      mailto:brummer@web.de
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/gx_zita_rev1.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/gx_zita_rev1.lv2/gx_zita_rev1.so
+	UIs:
+		http://guitarix.sourceforge.net/plugins/gx_zita_rev1_stereo#gui
+			Class:  http://lv2plug.in/ns/extensions/ui#X11UI
+			Binary: file:///run/current-system/sw/lib/lv2/gx_zita_rev1.lv2/gx_zita_rev1_gui.so
+			Bundle: file:///run/current-system/sw/lib/lv2/gx_zita_rev1.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/gx_zita_rev1.lv2/gx_zita_rev1.ttl
+	                   file:///run/current-system/sw/lib/lv2/gx_zita_rev1.lv2/manifest.ttl
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      level
+		Name:        LEVEL
+		Minimum:     -60.000000
+		Maximum:     4.000000
+		Default:     0.000000
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      EQ2_FREQ
+		Name:        EQ2_FREQ
+		Minimum:     160.000000
+		Maximum:     10000.000000
+		Default:     1500.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      EQ1_LEVEL
+		Name:        EQ1_LEVEL
+		Minimum:     -15.000000
+		Maximum:     15.000000
+		Default:     0.000000
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      EQ1_FREQ
+		Name:        EQ1_FREQ
+		Minimum:     40.000000
+		Maximum:     2500.000000
+		Default:     315.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      IN_DELAY
+		Name:        IN_DELAY
+		Minimum:     20.000000
+		Maximum:     100.000000
+		Default:     60.000000
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      LOW_RT60
+		Name:        LOW_RT60
+		Minimum:     1.000000
+		Maximum:     8.000000
+		Default:     3.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      LF_X
+		Name:        LF_X
+		Minimum:     50.000000
+		Maximum:     1000.000000
+		Default:     200.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      HF_DAMPING
+		Name:        HF_DAMPING
+		Minimum:     1500.000000
+		Maximum:     23520.000000
+		Default:     6000.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      MID_RT60
+		Name:        MID_RT60
+		Minimum:     1.000000
+		Maximum:     8.000000
+		Default:     2.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      DRY_WET_MIX
+		Name:        DRY_WET_MIX
+		Minimum:     -1.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 10:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      EQ2_LEVEL
+		Name:        EQ2_LEVEL
+		Minimum:     -15.000000
+		Maximum:     15.000000
+		Default:     0.000000
+
+	Port 11:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out
+		Name:        Out
+
+	Port 12:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out1
+		Name:        Out1
+
+	Port 13:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in
+		Name:        In
+
+	Port 14:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in1
+		Name:        In1
+</pre></body></html>

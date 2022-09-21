@@ -1,0 +1,468 @@
+<html><head></head><body><pre>
+http://guitarix.sourceforge.net/plugins/gx_mbcompressor_#_mbcompressor_
+
+	Name:              GxMultiBandCompressor
+	Class:             Compressor Plugin
+	Author:            Guitarix team
+	Author Email:      mailto:brummer@web.de
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/gx_mbcompressor.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/gx_mbcompressor.lv2/gx_mbcompressor.so
+	UIs:
+		http://guitarix.sourceforge.net/plugins/gx_mbcompressor_#gui
+			Class:  http://lv2plug.in/ns/extensions/ui#X11UI
+			Binary: file:///run/current-system/sw/lib/lv2/gx_mbcompressor.lv2/gx_mbcompressor_gui.so
+			Bundle: file:///run/current-system/sw/lib/lv2/gx_mbcompressor.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/gx_mbcompressor.lv2/gx_mbcompressor.ttl
+	                   file:///run/current-system/sw/lib/lv2/gx_mbcompressor.lv2/manifest.ttl
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			2 = "Bypass"
+			1 = "Compress"
+			3 = "Mute"
+
+		Symbol:      MODE1
+		Name:        MODE1
+		Minimum:     1.000000
+		Maximum:     3.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			3 = "Mute"
+			2 = "Bypass"
+			1 = "Compress"
+
+		Symbol:      MODE2
+		Name:        MODE2
+		Minimum:     1.000000
+		Maximum:     3.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			2 = "Bypass"
+			3 = "Mute"
+			1 = "Compress"
+
+		Symbol:      MODE3
+		Name:        MODE3
+		Minimum:     1.000000
+		Maximum:     3.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			3 = "Mute"
+			2 = "Bypass"
+			1 = "Compress"
+
+		Symbol:      MODE4
+		Name:        MODE4
+		Minimum:     1.000000
+		Maximum:     3.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			2 = "Bypass"
+			3 = "Mute"
+			1 = "Compress"
+
+		Symbol:      MODE5
+		Name:        MODE5
+		Minimum:     1.000000
+		Maximum:     3.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      MAKEUP1
+		Name:        MAKEUP1
+		Minimum:     -50.000000
+		Maximum:     50.000000
+		Default:     10.000000
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      MAKEUP2
+		Name:        MAKEUP2
+		Minimum:     -50.000000
+		Maximum:     50.000000
+		Default:     10.000000
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      MAKEUP3
+		Name:        MAKEUP3
+		Minimum:     -50.000000
+		Maximum:     50.000000
+		Default:     10.000000
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      MAKEUP4
+		Name:        MAKEUP4
+		Minimum:     -50.000000
+		Maximum:     50.000000
+		Default:     10.000000
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      MAKEUP5
+		Name:        MAKEUP5
+		Minimum:     -50.000000
+		Maximum:     50.000000
+		Default:     10.000000
+
+	Port 10:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      MAKEUPTHRESHOLD1
+		Name:        MAKEUPTHRESHOLD1
+		Minimum:     0.000000
+		Maximum:     10.000000
+		Default:     2.000000
+
+	Port 11:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      MAKEUPTHRESHOLD2
+		Name:        MAKEUPTHRESHOLD2
+		Minimum:     0.000000
+		Maximum:     10.000000
+		Default:     2.000000
+
+	Port 12:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      MAKEUPTHRESHOLD3
+		Name:        MAKEUPTHRESHOLD3
+		Minimum:     0.000000
+		Maximum:     10.000000
+		Default:     2.000000
+
+	Port 13:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      MAKEUPTHRESHOLD4
+		Name:        MAKEUPTHRESHOLD4
+		Minimum:     0.000000
+		Maximum:     10.000000
+		Default:     2.000000
+
+	Port 14:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      MAKEUPTHRESHOLD5
+		Name:        MAKEUPTHRESHOLD5
+		Minimum:     0.000000
+		Maximum:     10.000000
+		Default:     2.000000
+
+	Port 15:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      RATIO1
+		Name:        RATIO1
+		Minimum:     1.000000
+		Maximum:     100.000000
+		Default:     13.000000
+
+	Port 16:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      RATIO2
+		Name:        RATIO2
+		Minimum:     1.000000
+		Maximum:     100.000000
+		Default:     10.000000
+
+	Port 17:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      RATIO3
+		Name:        RATIO3
+		Minimum:     1.000000
+		Maximum:     100.000000
+		Default:     4.000000
+
+	Port 18:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      RATIO4
+		Name:        RATIO4
+		Minimum:     1.000000
+		Maximum:     100.000000
+		Default:     8.000000
+
+	Port 19:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      RATIO5
+		Name:        RATIO5
+		Minimum:     1.000000
+		Maximum:     100.000000
+		Default:     11.000000
+
+	Port 20:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      ATTACK1
+		Name:        ATTACK1
+		Minimum:     0.001000
+		Maximum:     1.000000
+		Default:     0.012000
+
+	Port 21:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      ATTACK2
+		Name:        ATTACK2
+		Minimum:     0.001000
+		Maximum:     1.000000
+		Default:     0.012000
+
+	Port 22:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      ATTACK3
+		Name:        ATTACK3
+		Minimum:     0.001000
+		Maximum:     1.000000
+		Default:     0.012000
+
+	Port 23:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      ATTACK4
+		Name:        ATTACK4
+		Minimum:     0.001000
+		Maximum:     1.000000
+		Default:     0.012000
+
+	Port 24:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      ATTACK5
+		Name:        ATTACK5
+		Minimum:     0.001000
+		Maximum:     1.000000
+		Default:     0.012000
+
+	Port 25:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      RELEASE1
+		Name:        RELEASE1
+		Minimum:     0.010000
+		Maximum:     10.000000
+		Default:     1.250000
+
+	Port 26:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      RELEASE2
+		Name:        RELEASE2
+		Minimum:     0.010000
+		Maximum:     10.000000
+		Default:     1.250000
+
+	Port 27:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      RELEASE3
+		Name:        RELEASE3
+		Minimum:     0.010000
+		Maximum:     10.000000
+		Default:     1.250000
+
+	Port 28:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      RELEASE4
+		Name:        RELEASE4
+		Minimum:     0.010000
+		Maximum:     10.000000
+		Default:     1.250000
+
+	Port 29:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      RELEASE5
+		Name:        RELEASE5
+		Minimum:     0.010000
+		Maximum:     10.000000
+		Default:     1.250000
+
+	Port 30:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      CROSSOVER_B1_B2
+		Name:        LOW SHELF
+		Minimum:     20.000000
+		Maximum:     20000.000000
+		Default:     80.000000
+
+	Port 31:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      CROSSOVER_B2_B3
+		Name:        CROSSOVER_B2_B3
+		Minimum:     20.000000
+		Maximum:     20000.000000
+		Default:     210.000000
+
+	Port 32:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      CROSSOVER_B3_B4
+		Name:        CROSSOVER_B3_B4
+		Minimum:     20.000000
+		Maximum:     20000.000000
+		Default:     1700.000000
+
+	Port 33:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      CROSSOVER_B4_B5
+		Name:        CROSSOVER_B4_B5
+		Minimum:     20.000000
+		Maximum:     20000.000000
+		Default:     5000.000000
+
+	Port 34:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      V1
+		Name:        V1
+		Minimum:     -70.000000
+		Maximum:     4.000000
+		Default:     0.000000
+
+	Port 35:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      V2
+		Name:        V2
+		Minimum:     -70.000000
+		Maximum:     4.000000
+		Default:     0.000000
+
+	Port 36:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      V3
+		Name:        V3
+		Minimum:     -70.000000
+		Maximum:     4.000000
+		Default:     0.000000
+
+	Port 37:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      V4
+		Name:        V4
+		Minimum:     -70.000000
+		Maximum:     4.000000
+		Default:     0.000000
+
+	Port 38:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      V5
+		Name:        V5
+		Minimum:     -70.000000
+		Maximum:     4.000000
+		Default:     0.000000
+
+	Port 39:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      V6
+		Name:        V6
+		Minimum:     -70.000000
+		Maximum:     4.000000
+		Default:     0.000000
+
+	Port 40:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      V7
+		Name:        V7
+		Minimum:     -70.000000
+		Maximum:     4.000000
+		Default:     0.000000
+
+	Port 41:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      V8
+		Name:        V8
+		Minimum:     -70.000000
+		Maximum:     4.000000
+		Default:     0.000000
+
+	Port 42:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      V9
+		Name:        V9
+		Minimum:     -70.000000
+		Maximum:     4.000000
+		Default:     0.000000
+
+	Port 43:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      V10
+		Name:        V10
+		Minimum:     -70.000000
+		Maximum:     4.000000
+		Default:     0.000000
+
+	Port 44:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out
+		Name:        Out
+
+	Port 45:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in
+		Name:        In
+</pre></body></html>

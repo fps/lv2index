@@ -1,0 +1,170 @@
+<html><head></head><body><pre>
+http://guitarix.sourceforge.net/plugins/gx_detune_#_detune_
+
+	Name:              Gxdetune
+	Class:             Pitch Shifter Plugin
+	Author:            Guitarix team
+	Author Email:      mailto:guitarix-developer@lists.sourceforge.net
+	Has latency:       yes, reported by port 12
+	Bundle:            file:///run/current-system/sw/lib/lv2/gx_detune.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/gx_detune.lv2/gx_detune.so
+	UIs:
+		http://guitarix.sourceforge.net/plugins/gx_detune_#gui
+			Class:  http://lv2plug.in/ns/extensions/ui#X11UI
+			Binary: file:///run/current-system/sw/lib/lv2/gx_detune.lv2/gx_detune_gui.so
+			Bundle: file:///run/current-system/sw/lib/lv2/gx_detune.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/gx_detune.lv2/gx_detune.ttl
+	                   file:///run/current-system/sw/lib/lv2/gx_detune.lv2/manifest.ttl
+	Required Features: http://lv2plug.in/ns/ext/buf-size#boundedBlockLength
+	                   http://lv2plug.in/ns/ext/worker#schedule
+	                   http://lv2plug.in/ns/ext/urid#map
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Extension Data:    http://lv2plug.in/ns/ext/worker#interface
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out
+		Name:        Out
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in
+		Name:        In
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      DETUNE
+		Name:        DETUNE
+		Minimum:     -12.000000
+		Maximum:     12.000000
+		Default:     0.000000
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1 = "octaveup"
+			0 = "normal"
+			2 = "octavedown"
+
+		Symbol:      OCTAVE
+		Name:        OCTAVE
+		Minimum:     0.000000
+		Maximum:     2.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1 = "compensate"
+			0 = "latency"
+
+		Symbol:      COMPENSATE
+		Name:        COMPENSATE
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			2 = "realtime"
+			0 = "highquality"
+			1 = "lowquality"
+
+		Symbol:      LATENCY
+		Name:        LATENCY
+		Minimum:     0.000000
+		Maximum:     2.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      WET
+		Name:        WET
+		Minimum:     0.000000
+		Maximum:     100.000000
+		Default:     50.000000
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      DRY
+		Name:        DRY
+		Minimum:     0.000000
+		Maximum:     100.000000
+		Default:     50.000000
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      LOW
+		Name:        LOW
+		Minimum:     0.000000
+		Maximum:     2.000000
+		Default:     1.000000
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      MIDDLELOW
+		Name:        MIDDLELOW
+		Minimum:     0.000000
+		Maximum:     2.000000
+		Default:     1.000000
+
+	Port 10:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      MIDDLETREBLE
+		Name:        MIDDLETREBLE
+		Minimum:     0.000000
+		Maximum:     2.000000
+		Default:     1.000000
+
+	Port 11:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      TREBLE
+		Name:        TREBLE
+		Minimum:     0.000000
+		Maximum:     2.000000
+		Default:     1.000000
+
+	Port 12:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      latency
+		Name:        latency (samples)
+		Designation: http://lv2plug.in/ns/lv2core#latency
+		Minimum:     0.000000
+		Maximum:     4096.000000
+
+	Port 13:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      BYPASS
+		Name:        BYPASS
+		Designation: http://lv2plug.in/ns/lv2core#enabled
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+</pre></body></html>

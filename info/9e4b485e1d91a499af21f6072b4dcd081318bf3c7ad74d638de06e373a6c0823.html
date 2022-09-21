@@ -1,0 +1,137 @@
+<html><head></head><body><pre>
+http://gareus.org/oss/lv2/dpl#stereo
+
+	Name:              x42-dpl - Digital Peak Limiter Stereo
+	Class:             Limiter Plugin
+	Author:            Robin Gareus
+	Author Email:      mailto:robin@gareus.org
+	Author Homepage:   http://gareus.org/
+	Has latency:       yes, reported by port 8
+	Bundle:            file:///run/current-system/sw/lib/lv2/dpl.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/dpl.lv2/dpl.so
+	UIs:
+		http://gareus.org/oss/lv2/dpl#ui_gl
+			Class:  http://lv2plug.in/ns/extensions/ui#X11UI
+			Binary: file:///run/current-system/sw/lib/lv2/dpl.lv2/dplUI_gl.so
+			Bundle: file:///run/current-system/sw/lib/lv2/dpl.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/dpl.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/dpl.lv2/dpl.ttl
+	Required Features: http://lv2plug.in/ns/ext/urid#map
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	                   http://lv2plug.in/ns/ext/options#options
+	                   http://harrisonconsoles.com/lv2/inlinedisplay#queue_draw
+	Extension Data:    http://lv2plug.in/ns/ext/state#interface
+	                   http://harrisonconsoles.com/lv2/inlinedisplay#interface
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/ext/atom#AtomPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      control
+		Name:        control
+		Designation: http://lv2plug.in/ns/lv2core#control
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/ext/atom#AtomPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      notify
+		Name:        Notify
+		Designation: http://lv2plug.in/ns/lv2core#control
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      enable
+		Name:        Enable
+		Designation: http://lv2plug.in/ns/lv2core#enabled
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gain
+		Name:        Input Gain
+		Minimum:     -10.000000
+		Maximum:     30.000000
+		Default:     0.000000
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      threshold
+		Name:        Threshold
+		Minimum:     -10.000000
+		Maximum:     0.000000
+		Default:     -1.000000
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      release
+		Name:        Release Time
+		Minimum:     0.001000
+		Maximum:     1.000000
+		Default:     0.010000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      truepeak
+		Name:        True Peak
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      level
+		Name:        Signal Level
+		Minimum:     -10.000000
+		Maximum:     20.000000
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      latency
+		Name:        Signal Latency
+		Minimum:     0.000000
+		Maximum:     1024.000000
+		Properties:  http://lv2plug.in/ns/lv2core#reportsLatency
+		             http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      inL
+		Name:        In Left
+
+	Port 10:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      outL
+		Name:        Out Left
+
+	Port 11:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      inR
+		Name:        In Right
+
+	Port 12:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      outR
+		Name:        Out Right
+</pre></body></html>

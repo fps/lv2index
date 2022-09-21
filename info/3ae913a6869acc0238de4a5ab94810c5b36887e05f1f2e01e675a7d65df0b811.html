@@ -1,0 +1,46 @@
+<html><head></head><body><pre>
+file:///run/current-system/sw/lib/lv2/StereoInstrument.ingen/StereoInstrument.ttl
+
+	Name:              Ingen Stereo Instrument Template
+	Class:             Graph
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/StereoInstrument.ingen/
+	Binary:            file:///run/current-system/sw/lib/lv2/ingen.lv2/libingen_lv2.so
+	UIs:
+		http://drobilla.net/ns/ingen#GraphUIGtk2
+			Class:  http://lv2plug.in/ns/extensions/ui#GtkUI
+			Binary: file:///run/current-system/sw/lib/lv2/ingen.lv2/libingen_gui_lv2.so
+			Bundle: file:///run/current-system/sw/lib/lv2/ingen.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/StereoInstrument.ingen/StereoInstrument.ttl
+	                   file:///run/current-system/sw/lib/lv2/StereoInstrument.ingen/manifest.ttl
+	Extension Data:    http://lv2plug.in/ns/ext/state#interface
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/ext/atom#AtomPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      control
+		Name:        Control
+		Properties:  http://lv2plug.in/ns/lv2core#connectionOptional
+
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/ext/atom#AtomPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      notify
+		Name:        Control
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      left_out
+		Name:        Left Out
+		Designation: http://lv2plug.in/ns/ext/port-groups#left
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      right_out
+		Name:        Right Out
+		Designation: http://lv2plug.in/ns/ext/port-groups#right
+</pre></body></html>

@@ -1,0 +1,161 @@
+<html><head></head><body><pre>
+http://rakarrack.sourceforge.net/effects.html#eco
+
+	Name:              rkr Echo
+	Class:             Reverb Plugin
+	Author:            Rakarrack Team
+	Author Email:      mailto:ssjackson71@gmail.com
+	Author Homepage:   http://rakarrack.sourceforge.net
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/rkr.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/rkr.lv2/rkrlv2.so
+	Data URIs:         file:///run/current-system/sw/lib/lv2/rkr.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/rkr.lv2/echo.ttl
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+	         Panning Echo 2
+	         Panning Echo 1
+	         Simple Echo
+	         Echo 3
+	         Feedback Echo
+	         Echo 2
+	         Canyon
+	         Echo 1
+	         Panning Echo 3
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      INPUT_L
+		Name:        Audio In L
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      INPUT_R
+		Name:        Audio In R
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      OUTPUT_L
+		Name:        Audio Out L
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      OUTPUT_R
+		Name:        Audio Out R
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      BYPASS
+		Name:        Bypass
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      WETDRY
+		Name:        Wet/Dry
+		Minimum:     0.000000
+		Maximum:     127.000000
+		Default:     67.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      PAN
+		Name:        Panning
+		Minimum:     -64.000000
+		Maximum:     63.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      DELAY
+		Name:        Delay
+		Minimum:     20.000000
+		Maximum:     2000.000000
+		Default:     565.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      LR_DELAY
+		Name:        Left/Right Delay Offset
+		Minimum:     -64.000000
+		Maximum:     63.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      LRCr
+		Name:        Left/Right Crossover
+		Minimum:     0.000000
+		Maximum:     127.000000
+		Default:     30.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 10:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      FEEDBACK
+		Name:        Feedback
+		Minimum:     0.000000
+		Maximum:     127.000000
+		Default:     59.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 11:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      DAMP
+		Name:        Damping
+		Minimum:     0.000000
+		Maximum:     127.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 12:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      REV
+		Name:        Reverse
+		Minimum:     0.000000
+		Maximum:     127.000000
+		Default:     127.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 13:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      DIRECT
+		Name:        Direct
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+		             http://lv2plug.in/ns/lv2core#integer
+
+</pre></body></html>

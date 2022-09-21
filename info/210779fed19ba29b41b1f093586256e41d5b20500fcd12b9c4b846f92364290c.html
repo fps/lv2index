@@ -1,0 +1,186 @@
+<html><head></head><body><pre>
+http://www.drowaudio.co.uk/audio/audio_plugins/reverb
+
+	Name:              dRowAudio: Reverb
+	Class:             Reverb Plugin
+	Author:            dRowAudio
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/drowaudio-reverb.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/drowaudio-reverb.lv2/drowaudio-reverb.so
+	UIs:
+		http://www.drowaudio.co.uk/audio/audio_plugins/reverb#ExternalUI
+			Class:  http://kxstudio.sf.net/ns/lv2ext/external-ui#Widget
+			Binary: file:///run/current-system/sw/lib/lv2/drowaudio-reverb.lv2/drowaudio-reverb.so
+			Bundle: file:///run/current-system/sw/lib/lv2/drowaudio-reverb.lv2/
+		http://www.drowaudio.co.uk/audio/audio_plugins/reverb#ParentUI
+			Class:  http://lv2plug.in/ns/extensions/ui#X11UI
+			Binary: file:///run/current-system/sw/lib/lv2/drowaudio-reverb.lv2/drowaudio-reverb.so
+			Bundle: file:///run/current-system/sw/lib/lv2/drowaudio-reverb.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/drowaudio-reverb.lv2/drowaudio-reverb.ttl
+	                   file:///run/current-system/sw/lib/lv2/drowaudio-reverb.lv2/manifest.ttl
+	Required Features: http://lv2plug.in/ns/ext/buf-size#boundedBlockLength
+	                   http://lv2plug.in/ns/ext/urid#map
+	Extension Data:    http://lv2plug.in/ns/ext/options#interface
+	                   http://kxstudio.sf.net/ns/lv2ext/programs#Interface
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/ext/atom#AtomPort
+		Symbol:      lv2_events_in
+		Name:        Events Input
+		Designation: http://lv2plug.in/ns/lv2core#control
+		Properties:  http://lv2plug.in/ns/lv2core#connectionOptional
+
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/ext/atom#AtomPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      lv2_midi_out
+		Name:        MIDI Output
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lv2_freewheel
+		Name:        Freewheel
+		Designation: http://lv2plug.in/ns/lv2core#freeWheeling
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+		             http://lv2plug.in/ns/ext/port-props#notOnGUI
+
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lv2_audio_in_1
+		Name:        Audio Input 1
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lv2_audio_in_2
+		Name:        Audio Input 2
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      lv2_audio_out_1
+		Name:        Audio Output 1
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      lv2_audio_out_2
+		Name:        Audio Output 2
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      pre_delay
+		Name:        Pre Delay
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.249906
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      room_shape
+		Name:        Room Shape
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      early_decay_time
+		Name:        Early Decay Time
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.250000
+
+	Port 10:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      early_late_mix
+		Name:        Early/Late Mix
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 11:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      rev__time
+		Name:        Rev. Time
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.250000
+
+	Port 12:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      room_size
+		Name:        Room Size
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.799700
+
+	Port 13:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      absorption
+		Name:        Absorption
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.174174
+
+	Port 14:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      diffusion
+		Name:        Diffusion
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.600000
+
+	Port 15:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      stereo_spread
+		Name:        Stereo Spread
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 16:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      low_eq
+		Name:        Low EQ
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.714286
+
+	Port 17:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      high_eq
+		Name:        High EQ
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.714286
+
+	Port 18:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      wet_mix
+		Name:        Wet Mix
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+</pre></body></html>

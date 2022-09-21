@@ -1,0 +1,133 @@
+<html><head></head><body><pre>
+http://drobilla.net/plugins/mda/Vocoder
+
+	Name:              MDA Vocoder
+	Class:             Filter Plugin
+	Author:            David Robillard
+	Author Email:      mailto:d@drobilla.net
+	Author Homepage:   http://drobilla.net/
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/mda.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/mda.lv2/Vocoder.so
+	Data URIs:         file:///run/current-system/sw/lib/lv2/mda.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/mda.lv2/Vocoder.ttl
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+	         Old Vocoder
+	         Pad Vocoder
+	         Default
+	         16 Band Vocoder
+	         Choral Vocoder
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0.0 = "Left"
+			1.0 = "Right"
+
+		Symbol:      mod_in
+		Name:        Mod In
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      output
+		Name:        Output
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      hi_thru
+		Name:        Hi Thru
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.400000
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      hi_band
+		Name:        Hi Band
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.400000
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      envelope
+		Name:        Envelope
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.160000
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      filter_q
+		Name:        Filter Q
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.550000
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      mid_freq
+		Name:        Mid Freq
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.666700
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      quality
+		Name:        Quality
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#AudioPort
+		Symbol:      left_in
+		Name:        Left In
+		Group:       http://drobilla.net/plugins/mda/mainIn
+		Designation: http://lv2plug.in/ns/ext/port-groups#left
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      right_in
+		Name:        Right In
+		Group:       http://drobilla.net/plugins/mda/mainIn
+		Designation: http://lv2plug.in/ns/ext/port-groups#right
+
+	Port 10:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      left_out
+		Name:        Left Out
+		Group:       http://drobilla.net/plugins/mda/mainOut
+		Designation: http://lv2plug.in/ns/ext/port-groups#left
+
+	Port 11:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      right_out
+		Name:        Right Out
+		Group:       http://drobilla.net/plugins/mda/mainOut
+		Designation: http://lv2plug.in/ns/ext/port-groups#right
+</pre></body></html>

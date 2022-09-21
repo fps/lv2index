@@ -1,0 +1,149 @@
+<html><head></head><body><pre>
+http://gareus.org/oss/lv2/midifilter#scalecc
+
+	Name:              MIDI Scale CC Value
+	Class:             MIDI
+	Author:            Robin Gareus
+	Author Email:      mailto:robin@gareus.org
+	Author Homepage:   http://gareus.org/
+	Has latency:       yes, reported by port 2
+	Bundle:            file:///run/current-system/sw/lib/lv2/midifilter.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/midifilter.lv2/midifilter.so
+	Data URIs:         file:///run/current-system/sw/lib/lv2/midifilter.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/midifilter.lv2/midifilter.ttl
+	Required Features: http://lv2plug.in/ns/ext/urid#map
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+	         Invert CC Value
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/ext/atom#AtomPort
+		Symbol:      midiin
+		Name:        MIDI In
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/ext/atom#AtomPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      midiout
+		Name:        MIDI Out
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      latency
+		Name:        latency
+		Minimum:     0.000000
+		Maximum:     192000.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#notOnGUI
+		             http://lv2plug.in/ns/lv2core#reportsLatency
+		             http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1 = "01"
+			3 = "03"
+			2 = "02"
+			0 = "Any"
+			4 = "04"
+			5 = "05"
+			6 = "06"
+			7 = "07"
+			8 = "08"
+			9 = "09"
+			10 = "10"
+			11 = "11"
+			12 = "12"
+			13 = "13"
+			14 = "14"
+			15 = "15"
+			16 = "16"
+
+		Symbol:      channelf
+		Name:        Filter Channel
+		Minimum:     0.000000
+		Maximum:     16.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lower
+		Name:        Parameter (Min)
+		Minimum:     0.000000
+		Maximum:     127.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      upper
+		Name:        Parameter (Max)
+		Minimum:     0.000000
+		Maximum:     127.000000
+		Default:     127.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0 = "Bypass"
+			1 = "Include Range"
+			2 = "Exclude Range"
+
+		Symbol:      pmode
+		Name:        Parameter Mode
+		Minimum:     0.000000
+		Maximum:     2.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      valmul
+		Name:        Value Scale
+		Minimum:     -10.000000
+		Maximum:     10.000000
+		Default:     1.000000
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      valoff
+		Name:        Value Offset
+		Minimum:     -64.000000
+		Maximum:     64.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1 = "Reflect Overflow (-1 to 1, 128 to 127)"
+			0 = "Clamp to 0..127"
+			2 = "Truncate Overflow (-1 to 127, 128 to 0)"
+
+		Symbol:      vmode
+		Name:        Value Mode
+		Minimum:     0.000000
+		Maximum:     2.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/lv2core#integer
+
+</pre></body></html>

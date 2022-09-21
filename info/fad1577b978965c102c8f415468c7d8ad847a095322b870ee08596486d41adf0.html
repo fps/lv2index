@@ -1,0 +1,55 @@
+<html><head></head><body><pre>
+http://kxstudio.sf.net/carla/plugins/audiogain
+
+	Name:              Audio Gain (Mono)
+	Class:             Utility Plugin
+	Author:            Filipe Coelho
+	Author Email:      mailto:falktx@falktx.com
+	Author Homepage:   https://falktx.com/
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/carla.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/carla.lv2/carla.so
+	Data URIs:         file:///run/current-system/sw/lib/lv2/carla.lv2/audiogain.ttl
+	                   file:///run/current-system/sw/lib/lv2/carla.lv2/manifest.ttl
+	Required Features: http://lv2plug.in/ns/ext/urid#map
+	                   http://lv2plug.in/ns/ext/buf-size#boundedBlockLength
+	                   http://lv2plug.in/ns/ext/options#options
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Extension Data:    http://lv2plug.in/ns/ext/options#interface
+	                   http://kxstudio.sf.net/ns/lv2ext/programs#Interface
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lv2_freewheel
+		Name:        Freewheel
+		Designation: http://lv2plug.in/ns/lv2core#freeWheeling
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+		             http://lv2plug.in/ns/ext/port-props#notOnGUI
+
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#AudioPort
+		Symbol:      lv2_audio_in_1
+		Name:        Audio Input 1
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      lv2_audio_out_1
+		Name:        Audio Output 1
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gain
+		Name:        Gain
+		Minimum:     0.000000
+		Maximum:     4.000000
+		Default:     1.000000
+</pre></body></html>

@@ -1,0 +1,559 @@
+<html><head></head><body><pre>
+http://gareus.org/oss/lv2/meters#spectr30mono
+
+	Name:              1/3 Octave Spectrum Display Mono
+	Class:             Analyser Plugin
+	Author:            Robin Gareus
+	Author Email:      mailto:robin@gareus.org
+	Author Homepage:   http://gareus.org/
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/meters.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/meters.lv2/meters.so
+	UIs:
+		http://gareus.org/oss/lv2/meters#dpmui_gl
+			Class:  http://kxstudio.sf.net/ns/lv2ext/external-ui#Widget
+			Binary: file:///run/current-system/sw/lib/lv2/meters.lv2/meters_glui.so
+			Bundle: file:///run/current-system/sw/lib/lv2/meters.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/meters.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/meters.lv2/meters.ttl
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      band25
+		Name:        25Hz
+		Minimum:     -100.000000
+		Maximum:     6.000000
+		Default:     -100.000000
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      band31
+		Name:        31.5Hz
+		Minimum:     -100.000000
+		Maximum:     6.000000
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      band40
+		Name:        40Hz
+		Minimum:     -100.000000
+		Maximum:     6.000000
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      band50
+		Name:        50Hz
+		Minimum:     -100.000000
+		Maximum:     6.000000
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      band63
+		Name:        63Hz
+		Minimum:     -100.000000
+		Maximum:     6.000000
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      band80
+		Name:        80Hz
+		Minimum:     -100.000000
+		Maximum:     6.000000
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      band100
+		Name:        100Hz
+		Minimum:     -100.000000
+		Maximum:     6.000000
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      band125
+		Name:        125Hz
+		Minimum:     -100.000000
+		Maximum:     6.000000
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      band160
+		Name:        160Hz
+		Minimum:     -100.000000
+		Maximum:     6.000000
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      band200
+		Name:        200Hz
+		Minimum:     -100.000000
+		Maximum:     6.000000
+
+	Port 10:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      band250
+		Name:        250Hz
+		Minimum:     -100.000000
+		Maximum:     6.000000
+
+	Port 11:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      band315
+		Name:        315Hz
+		Minimum:     -100.000000
+		Maximum:     6.000000
+
+	Port 12:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      band400
+		Name:        400Hz
+		Minimum:     -100.000000
+		Maximum:     6.000000
+
+	Port 13:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      band500
+		Name:        500Hz
+		Minimum:     -100.000000
+		Maximum:     6.000000
+
+	Port 14:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      band630
+		Name:        630Hz
+		Minimum:     -100.000000
+		Maximum:     6.000000
+
+	Port 15:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      band800
+		Name:        800Hz
+		Minimum:     -100.000000
+		Maximum:     6.000000
+
+	Port 16:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      band1000
+		Name:        1kHz
+		Minimum:     -100.000000
+		Maximum:     6.000000
+
+	Port 17:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      band1250
+		Name:        1.25kHz
+		Minimum:     -100.000000
+		Maximum:     6.000000
+
+	Port 18:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      band1600
+		Name:        1.6kHz
+		Minimum:     -100.000000
+		Maximum:     6.000000
+
+	Port 19:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      band2000
+		Name:        2kHz
+		Minimum:     -100.000000
+		Maximum:     6.000000
+
+	Port 20:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      band2500
+		Name:        2.5Hz
+		Minimum:     -100.000000
+		Maximum:     6.000000
+
+	Port 21:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      band3150
+		Name:        3.15Hz
+		Minimum:     -100.000000
+		Maximum:     6.000000
+
+	Port 22:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      band4000
+		Name:        4Hz
+		Minimum:     -100.000000
+		Maximum:     6.000000
+
+	Port 23:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      band5000
+		Name:        5kHz
+		Minimum:     -100.000000
+		Maximum:     6.000000
+
+	Port 24:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      band6300
+		Name:        6.3kHz
+		Minimum:     -100.000000
+		Maximum:     6.000000
+
+	Port 25:
+		Type:        http://lv2plug.in/ns/lv2core#OutputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      band8000
+		Name:        8Hz
+		Minimum:     -100.000000
+		Maximum:     6.000000
+
+	Port 26:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      band10000
+		Name:        10Hz
+		Minimum:     -100.000000
+		Maximum:     6.000000
+
+	Port 27:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      band12500
+		Name:        12.5Hz
+		Minimum:     -100.000000
+		Maximum:     6.000000
+
+	Port 28:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      band16000
+		Name:        16kHz
+		Minimum:     -100.000000
+		Maximum:     6.000000
+
+	Port 29:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      band20000
+		Name:        20kHz
+		Minimum:     -100.000000
+		Maximum:     6.000000
+
+	Port 30:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      max25
+		Name:        Peak 25Hz
+		Minimum:     -100.000000
+		Maximum:     6.000000
+
+	Port 31:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      max31
+		Name:        Peak 31.5Hz
+		Minimum:     -100.000000
+		Maximum:     6.000000
+
+	Port 32:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      max40
+		Name:        Peak 40Hz
+		Minimum:     -100.000000
+		Maximum:     6.000000
+
+	Port 33:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      max50
+		Name:        Peak 50Hz
+		Minimum:     -100.000000
+		Maximum:     6.000000
+
+	Port 34:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      max63
+		Name:        Peak 63Hz
+		Minimum:     -100.000000
+		Maximum:     6.000000
+
+	Port 35:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      max80
+		Name:        Peak 80Hz
+		Minimum:     -100.000000
+		Maximum:     6.000000
+
+	Port 36:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      max100
+		Name:        Peak 100Hz
+		Minimum:     -100.000000
+		Maximum:     6.000000
+
+	Port 37:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      max125
+		Name:        Peak 125Hz
+		Minimum:     -100.000000
+		Maximum:     6.000000
+
+	Port 38:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      max160
+		Name:        Peak 160Hz
+		Minimum:     -100.000000
+		Maximum:     6.000000
+
+	Port 39:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      max200
+		Name:        Peak 200Hz
+		Minimum:     -100.000000
+		Maximum:     6.000000
+
+	Port 40:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      max250
+		Name:        Peak 250Hz
+		Minimum:     -100.000000
+		Maximum:     6.000000
+
+	Port 41:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      max315
+		Name:        Peak 315Hz
+		Minimum:     -100.000000
+		Maximum:     6.000000
+
+	Port 42:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      max400
+		Name:        Peak 400Hz
+		Minimum:     -100.000000
+		Maximum:     6.000000
+
+	Port 43:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      max500
+		Name:        Peak 500Hz
+		Minimum:     -100.000000
+		Maximum:     6.000000
+
+	Port 44:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      max630
+		Name:        Peak 630Hz
+		Minimum:     -100.000000
+		Maximum:     6.000000
+
+	Port 45:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      max800
+		Name:        Peak 800Hz
+		Minimum:     -100.000000
+		Maximum:     6.000000
+
+	Port 46:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      max1000
+		Name:        Peak 1kHz
+		Minimum:     -100.000000
+		Maximum:     6.000000
+
+	Port 47:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      max1250
+		Name:        Peak 1.25kHz
+		Minimum:     -100.000000
+		Maximum:     6.000000
+
+	Port 48:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      max1600
+		Name:        Peak 1.6kHz
+		Minimum:     -100.000000
+		Maximum:     6.000000
+
+	Port 49:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      max2000
+		Name:        Peak 2kHz
+		Minimum:     -100.000000
+		Maximum:     6.000000
+
+	Port 50:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      max2500
+		Name:        Peak 2.5Hz
+		Minimum:     -100.000000
+		Maximum:     6.000000
+
+	Port 51:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      max3150
+		Name:        Peak 3.15Hz
+		Minimum:     -100.000000
+		Maximum:     6.000000
+
+	Port 52:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      max4000
+		Name:        Peak 4Hz
+		Minimum:     -100.000000
+		Maximum:     6.000000
+
+	Port 53:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      max5000
+		Name:        Peak 5kHz
+		Minimum:     -100.000000
+		Maximum:     6.000000
+
+	Port 54:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      max6300
+		Name:        Peak 6.3kHz
+		Minimum:     -100.000000
+		Maximum:     6.000000
+
+	Port 55:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      max8000
+		Name:        Peak 8Hz
+		Minimum:     -100.000000
+		Maximum:     6.000000
+
+	Port 56:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      max10000
+		Name:        Peak 10Hz
+		Minimum:     -100.000000
+		Maximum:     6.000000
+
+	Port 57:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      max12500
+		Name:        Peak 12.5Hz
+		Minimum:     -100.000000
+		Maximum:     6.000000
+
+	Port 58:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      max16000
+		Name:        Peak 16kHz
+		Minimum:     -100.000000
+		Maximum:     6.000000
+
+	Port 59:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      max20000
+		Name:        Peak 20kHz
+		Minimum:     -100.000000
+		Maximum:     6.000000
+
+	Port 60:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      UIspeed
+		Name:        UI speed
+		Minimum:     0.020000
+		Maximum:     15.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#notOnGUI
+
+
+	Port 61:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      UIreset
+		Name:        UI reset peak
+		Minimum:     -4.000000
+		Maximum:     4.000000
+		Default:     -4.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#notOnGUI
+
+
+	Port 62:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      UIgain
+		Name:        UI gain
+		Minimum:     -12.000000
+		Maximum:     32.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#notOnGUI
+
+
+	Port 63:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      UImiscstate
+		Name:        UI miscstate
+		Minimum:     0.000000
+		Maximum:     256.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/ext/port-props#notOnGUI
+
+
+	Port 64:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in
+		Name:        In
+
+	Port 65:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out
+		Name:        Out
+</pre></body></html>

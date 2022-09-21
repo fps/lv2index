@@ -1,0 +1,50 @@
+<html><head></head><body><pre>
+http://guitarix.sourceforge.net/plugins/gx_hyperion_#_hyperion_
+
+	Name:              GxHyperion
+	Class:             Distortion Plugin
+	Author:            Guitarix team
+	Author Email:      mailto:guitarix-developer@lists.sourceforge.net
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/gx_hyperion.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/gx_hyperion.lv2/gx_hyperion.so
+	UIs:
+		http://guitarix.sourceforge.net/plugins/gx_hyperion_gui#_hyperion_
+			Class:  http://lv2plug.in/ns/extensions/ui#X11UI
+			Binary: file:///run/current-system/sw/lib/lv2/gx_hyperion.lv2/gx_hyperion_ui.so
+			Bundle: file:///run/current-system/sw/lib/lv2/gx_hyperion.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/gx_hyperion.lv2/gx_hyperion.ttl
+	                   file:///run/current-system/sw/lib/lv2/gx_hyperion.lv2/manifest.ttl
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out
+		Name:        Out
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in
+		Name:        In
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      INTENSITY
+		Name:        INTENSITY
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      VOLUME
+		Name:        VOLUME
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+</pre></body></html>

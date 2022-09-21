@@ -1,0 +1,509 @@
+<html><head></head><body><pre>
+http://plugin.org.uk/swh-plugins/hermesFilter
+
+	Name:              Hermes Filter
+	Class:             Filter Plugin
+	Author:            Steve Harris
+	Author Email:      mailto:steve@plugin.org.uk
+	Author Homepage:   http://plugin.org.uk/
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/hermes_filter-swh.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/hermes_filter-swh.lv2/plugin-Linux.so
+	Data URIs:         file:///run/current-system/sw/lib/lv2/hermes_filter-swh.lv2/plugin.ttl
+	                   file:///run/current-system/sw/lib/lv2/hermes_filter-swh.lv2/manifest.ttl
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lfo1_freq
+		Name:        LFO1 freq (Hz)
+		Minimum:     0.000000
+		Maximum:     1000.000000
+		Default:     250.000000
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lfo1_wave
+		Name:        LFO1 wave (0 = sin, 1 = tri, 2 = saw, 3 = squ, 4 = s&h)
+		Minimum:     0.000000
+		Maximum:     4.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lfo2_freq
+		Name:        LFO2 freq (Hz)
+		Minimum:     0.000000
+		Maximum:     1000.000000
+		Default:     250.000000
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lfo2_wave
+		Name:        LFO2 wave (0 = sin, 1 = tri, 2 = saw, 3 = squ, 4 = s&h)
+		Minimum:     0.000000
+		Maximum:     4.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      osc1_freq
+		Name:        Osc1 freq (Hz)
+		Minimum:     0.000000
+		Maximum:     4000.000000
+		Default:     440.000000
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      osc1_wave
+		Name:        Osc1 wave (0 = sin, 1 = tri, 2 = saw, 3 = squ, 4 = noise)
+		Minimum:     0.000000
+		Maximum:     4.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      osc2_freq
+		Name:        Osc2 freq (Hz)
+		Minimum:     0.000000
+		Maximum:     4000.000000
+		Default:     440.000000
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      osc2_wave
+		Name:        Osc2 wave (0 = sin, 1 = tri, 2 = saw, 3 = squ, 4 = noise)
+		Minimum:     0.000000
+		Maximum:     4.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      rm1_depth
+		Name:        Ringmod 1 depth (0=none, 1=AM, 2=RM)
+		Minimum:     0.000000
+		Maximum:     2.000000
+		Default:     0.000000
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      rm2_depth
+		Name:        Ringmod 2 depth (0=none, 1=AM, 2=RM)
+		Minimum:     0.000000
+		Maximum:     2.000000
+		Default:     0.000000
+
+	Port 10:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      rm3_depth
+		Name:        Ringmod 3 depth (0=none, 1=AM, 2=RM)
+		Minimum:     0.000000
+		Maximum:     2.000000
+		Default:     0.000000
+
+	Port 11:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      osc1_gain_db
+		Name:        Osc1 gain (dB)
+		Minimum:     -70.000000
+		Maximum:     20.000000
+		Default:     -70.000000
+
+	Port 12:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      rm1_gain_db
+		Name:        RM1 gain (dB)
+		Minimum:     -70.000000
+		Maximum:     20.000000
+		Default:     -70.000000
+
+	Port 13:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      osc2_gain_db
+		Name:        Osc2 gain (dB)
+		Minimum:     -70.000000
+		Maximum:     20.000000
+		Default:     -70.000000
+
+	Port 14:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      rm2_gain_db
+		Name:        RM2 gain (dB)
+		Minimum:     -70.000000
+		Maximum:     20.000000
+		Default:     -70.000000
+
+	Port 15:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in_gain_db
+		Name:        Input gain (dB)
+		Minimum:     -70.000000
+		Maximum:     20.000000
+		Default:     0.000000
+
+	Port 16:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      rm3_gain_db
+		Name:        RM3 gain (dB)
+		Minimum:     -70.000000
+		Maximum:     20.000000
+		Default:     -70.000000
+
+	Port 17:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xover_lfreqp
+		Name:        Xover lower freq
+		Minimum:     50.000000
+		Maximum:     6000.000000
+		Default:     1537.500000
+
+	Port 18:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      xover_ufreqp
+		Name:        Xover upper freq
+		Minimum:     1000.000000
+		Maximum:     10000.000000
+		Default:     7750.000000
+
+	Port 19:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      drive1
+		Name:        Dist1 drive
+		Minimum:     0.000000
+		Maximum:     3.000000
+		Default:     0.000000
+
+	Port 20:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      drive2
+		Name:        Dist2 drive
+		Minimum:     0.000000
+		Maximum:     3.000000
+		Default:     0.000000
+
+	Port 21:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      drive3
+		Name:        Dist3 drive
+		Minimum:     0.000000
+		Maximum:     3.000000
+		Default:     0.000000
+
+	Port 22:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      filt1_type
+		Name:        Filt1 type (0=none, 1=LP, 2=HP, 3=BP, 4=BR, 5=AP)
+		Minimum:     0.000000
+		Maximum:     5.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 23:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      filt1_freq
+		Name:        Filt1 freq
+		Minimum:     0.000000
+		Maximum:     8000.000000
+		Default:     440.000000
+
+	Port 24:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      filt1_q
+		Name:        Filt1 q
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 25:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      filt1_res
+		Name:        Filt1 resonance
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 26:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      filt1_lfo1
+		Name:        Filt1 LFO1 level
+		Minimum:     -500.000000
+		Maximum:     500.000000
+		Default:     0.000000
+
+	Port 27:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      filt1_lfo2
+		Name:        Filt1 LFO2 level
+		Minimum:     -500.000000
+		Maximum:     500.000000
+		Default:     0.000000
+
+	Port 28:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      filt2_type
+		Name:        Filt2 type (0=none, 1=LP, 2=HP, 3=BP, 4=BR, 5=AP)
+		Minimum:     0.000000
+		Maximum:     5.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 29:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      filt2_freq
+		Name:        Filt2 freq
+		Minimum:     0.000000
+		Maximum:     8000.000000
+		Default:     440.000000
+
+	Port 30:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      filt2_q
+		Name:        Filt2 q
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 31:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      filt2_res
+		Name:        Filt2 resonance
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 32:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      filt2_lfo1
+		Name:        Filt2 LFO1 level
+		Minimum:     -500.000000
+		Maximum:     500.000000
+		Default:     0.000000
+
+	Port 33:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      filt2_lfo2
+		Name:        Filt2 LFO2 level
+		Minimum:     -500.000000
+		Maximum:     500.000000
+		Default:     0.000000
+
+	Port 34:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      filt3_type
+		Name:        Filt3 type (0=none, 1=LP, 2=HP, 3=BP, 4=BR, 5=AP)
+		Minimum:     0.000000
+		Maximum:     5.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 35:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      filt3_freq
+		Name:        Filt3 freq
+		Minimum:     0.000000
+		Maximum:     8000.000000
+		Default:     440.000000
+
+	Port 36:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      filt3_q
+		Name:        Filt3 q
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 37:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      filt3_res
+		Name:        Filt3 resonance
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 38:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      filt3_lfo1
+		Name:        Filt3 LFO1 level
+		Minimum:     -500.000000
+		Maximum:     500.000000
+		Default:     0.000000
+
+	Port 39:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      filt3_lfo2
+		Name:        Filt3 LFO2 level
+		Minimum:     -500.000000
+		Maximum:     500.000000
+		Default:     0.000000
+
+	Port 40:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      dela1_length
+		Name:        Delay1 length (s)
+		Minimum:     0.000000
+		Maximum:     2.000000
+		Default:     0.000000
+
+	Port 41:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      dela1_fb
+		Name:        Delay1 feedback
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 42:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      dela1_wet
+		Name:        Delay1 wetness
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 43:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      dela2_length
+		Name:        Delay2 length (s)
+		Minimum:     0.000000
+		Maximum:     2.000000
+		Default:     0.000000
+
+	Port 44:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      dela2_fb
+		Name:        Delay2 feedback
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 45:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      dela2_wet
+		Name:        Delay2 wetness
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 46:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      dela3_length
+		Name:        Delay3 length (s)
+		Minimum:     0.000000
+		Maximum:     2.000000
+		Default:     0.000000
+
+	Port 47:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      dela3_fb
+		Name:        Delay3 feedback
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 48:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      dela3_wet
+		Name:        Delay3 wetness
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 49:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      band1_gain_db
+		Name:        Band 1 gain (dB)
+		Minimum:     -70.000000
+		Maximum:     20.000000
+		Default:     0.000000
+
+	Port 50:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      band2_gain_db
+		Name:        Band 2 gain (dB)
+		Minimum:     -70.000000
+		Maximum:     20.000000
+		Default:     0.000000
+
+	Port 51:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      band3_gain_db
+		Name:        Band 3 gain (dB)
+		Minimum:     -70.000000
+		Maximum:     20.000000
+		Default:     0.000000
+
+	Port 52:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      input
+		Name:        Input
+
+	Port 53:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      output
+		Name:        Output
+</pre></body></html>

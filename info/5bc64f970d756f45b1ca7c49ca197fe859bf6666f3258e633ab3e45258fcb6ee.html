@@ -1,0 +1,53 @@
+<html><head></head><body><pre>
+http://gareus.org/oss/lv2/midimap
+
+	Name:              Midi Event Map
+	Class:             Utility Plugin
+	Author:            Robin Gareus
+	Author Email:      mailto:robin@gareus.org
+	Author Homepage:   http://gareus.org/
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/midimap.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/midimap.lv2/midimap.so
+	Data URIs:         file:///run/current-system/sw/lib/lv2/midimap.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/midimap.lv2/midimap.ttl
+	Required Features: http://lv2plug.in/ns/ext/urid#map
+	                   http://lv2plug.in/ns/ext/worker#schedule
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	                   http://lv2plug.in/ns/ext/state#mapPath
+	                   http://lv2plug.in/ns/ext/state#freePath
+	                   http://lv2plug.in/ns/ext/log#log
+	Extension Data:    http://lv2plug.in/ns/ext/worker#interface
+	                   http://lv2plug.in/ns/ext/state#interface
+	Presets: 
+	         LaunchPad 8-String Guitar
+	         Push2 Row Tuned - Colors
+	         Push2 Row Tuned by Third
+	         Push2 8-String Guitar
+	         LaunchPad Row Tuned - Colors
+	         push2 8-String Guitar - Colors
+	         LaunchPad 8-String Guitar - Colors
+	         LaunchPad Row Tuned by Third
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/ext/atom#AtomPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      midiin
+		Name:        MIDI In
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#OutputPort
+		             http://lv2plug.in/ns/ext/atom#AtomPort
+		Symbol:      midiout
+		Name:        MIDI Out
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#OutputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      rulecount
+		Name:        Active Rule Count
+		Minimum:     0.000000
+		Maximum:     512.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+</pre></body></html>

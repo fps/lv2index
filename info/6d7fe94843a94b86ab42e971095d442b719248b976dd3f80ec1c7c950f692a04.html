@@ -1,0 +1,77 @@
+<html><head></head><body><pre>
+http://guitarix.sourceforge.net/plugins/gx_fuzz_#fuzz_
+
+	Name:              GxFuzz
+	Class:             Distortion Plugin
+	Author:            Guitarix team
+	Author Email:      mailto:brummer@web.de
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/gx_fuzz.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/gx_fuzz.lv2/gx_fuzz.so
+	UIs:
+		http://guitarix.sourceforge.net/plugins/gx_fuzz_#gui
+			Class:  http://lv2plug.in/ns/extensions/ui#X11UI
+			Binary: file:///run/current-system/sw/lib/lv2/gx_fuzz.lv2/gx_fuzz_gui.so
+			Bundle: file:///run/current-system/sw/lib/lv2/gx_fuzz.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/gx_fuzz.lv2/gx_fuzz.ttl
+	                   file:///run/current-system/sw/lib/lv2/gx_fuzz.lv2/manifest.ttl
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      INPUT
+		Name:        INPUT
+		Minimum:     -20.000000
+		Maximum:     10.000000
+		Default:     0.000000
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      OUTPUT
+		Name:        OUTPUT
+		Minimum:     10.000000
+		Maximum:     100.000000
+		Default:     100.000000
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      DRIVE
+		Name:        DRIVE
+		Minimum:     -3.000000
+		Maximum:     100.000000
+		Default:     1.000000
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      TONE
+		Name:        TONE
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      V1
+		Name:        V1
+		Minimum:     0.000000
+		Maximum:     1.500000
+		Default:     0.000000
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out
+		Name:        Out
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in
+		Name:        In
+</pre></body></html>

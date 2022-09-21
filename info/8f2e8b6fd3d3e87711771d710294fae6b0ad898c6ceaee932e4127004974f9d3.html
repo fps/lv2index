@@ -1,0 +1,77 @@
+<html><head></head><body><pre>
+http://guitarix.sourceforge.net/plugins/gx_guvnor_#_guvnor_
+
+	Name:              GxGuvnor
+	Class:             Distortion Plugin
+	Author:            Guitarix team
+	Author Email:      mailto:guitarix-developer@lists.sourceforge.net
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/gx_guvnor.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/gx_guvnor.lv2/gx_guvnor.so
+	UIs:
+		http://guitarix.sourceforge.net/plugins/gx_guvnor_gui#_guvnor_
+			Class:  http://lv2plug.in/ns/extensions/ui#X11UI
+			Binary: file:///run/current-system/sw/lib/lv2/gx_guvnor.lv2/gx_guvnor_ui.so
+			Bundle: file:///run/current-system/sw/lib/lv2/gx_guvnor.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/gx_guvnor.lv2/gx_guvnor.ttl
+	                   file:///run/current-system/sw/lib/lv2/gx_guvnor.lv2/manifest.ttl
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out
+		Name:        Out
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in
+		Name:        In
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      BASS
+		Name:        BASS
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      GAIN
+		Name:        GAIN
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      LEVEL
+		Name:        LEVEL
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      MID
+		Name:        MID
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      TREBLE
+		Name:        TREBLE
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+</pre></body></html>

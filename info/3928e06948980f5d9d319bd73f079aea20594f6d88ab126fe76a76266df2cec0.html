@@ -1,0 +1,288 @@
+<html><head></head><body><pre>
+http://plujain/plugins/ramp
+
+	Name:              Plujain-Ramp
+	Class:             Modulator Plugin
+	Author:            Houston4444
+	Author Email:      mailto:4444houston@gmail.com
+	Author Homepage:   file:///run/current-system/sw/lib/lv2/plujain-ramp.lv2/ramp.ttl
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/plujain-ramp.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/plujain-ramp.lv2/ramp.so
+	Data URIs:         file:///run/current-system/sw/lib/lv2/plujain-ramp.lv2/ramp.ttl
+	                   file:///run/current-system/sw/lib/lv2/plujain-ramp.lv2/modgui.ttl
+	                   file:///run/current-system/sw/lib/lv2/plujain-ramp.lv2/manifest.ttl
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      In
+		Name:        In
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/ext/atom#AtomPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      ctrl_in
+		Name:        Ctrl In
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      Out
+		Name:        Out
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      on
+		Name:        Active
+		Designation: http://lv2plug.in/ns/lv2core#enabled
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+		             http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      pre_start
+		Name:        Pre Start
+		Minimum:     0.000000
+		Maximum:     32.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			2 = "beat/2"
+			3 = "beat/3"
+			4 = "beat/4"
+			6 = "beat/6"
+			8 = "beat/8"
+			1 = "beat"
+
+		Symbol:      pre_start_units
+		Name:        Pre Start Units
+		Minimum:     1.000000
+		Maximum:     8.000000
+		Default:     2.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      beat_offset
+		Name:        Beat Offset
+		Minimum:     -1.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      bpm_host
+		Name:        Host BPM
+		Designation: http://lv2plug.in/ns/ext/time#beatsPerMinute
+		Minimum:     1.000000
+		Maximum:     300.000000
+		Default:     120.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#notOnGUI
+		             http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Scale Points:
+			5 = "3beats"
+			0 = "8beats"
+			1 = "7beats"
+			4 = "4beats"
+			3 = "5beats"
+			2 = "6beats"
+			6 = "2beats"
+			7 = "beat"
+			8 = "beat/2"
+			9 = "beat/2 t"
+			10 = "beat/3"
+			11 = "beat/4"
+			12 = "beat/4 t"
+			13 = "beat/6"
+			14 = "beat/8"
+
+		Symbol:      division
+		Name:        Division
+		Minimum:     0.000000
+		Maximum:     14.000000
+		Default:     11.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0.03125 = "beat/32"
+			0.0625 = "beat/16"
+			0.25 = "beat/4"
+			0.125 = "beat/8"
+			0.5 = "beat/2"
+
+		Symbol:      max_duration
+		Name:        Max Duration
+		Minimum:     0.031500
+		Maximum:     8.000000
+		Default:     8.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 10:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      half_speed
+		Name:        Half Speed
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 11:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      double_speed
+		Name:        Double Speed
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+		             http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 12:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      attack
+		Name:        Attack
+		Minimum:     0.500000
+		Maximum:     200.000000
+		Default:     5.000000
+
+	Port 13:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      shape
+		Name:        Shape
+		Minimum:     -4.000000
+		Maximum:     4.000000
+		Default:     0.000000
+
+	Port 14:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      depth
+		Name:        Depth
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+
+	Port 15:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			-80 = "Mute"
+
+		Symbol:      volume
+		Name:        Volume
+		Minimum:     -80.000000
+		Maximum:     12.000000
+		Default:     0.000000
+
+	Port 16:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0.75 = "Fifth -"
+			-2 = "Octave + reverse"
+			-3.0 = "Octave + Fifth reverse"
+			-0.5 = "Octave - reverse"
+			2 = "Octave +"
+			4 = "Octave ++"
+			3 = "Octave + Fifth"
+			-1.5 = "Fifth reverse"
+			-1 = "Reverse"
+			1.5 = "Fifth +"
+			0.5 = "Octave -"
+			0.25 = "Octave --"
+			-0.25 = "Octave -- reverse"
+			-4 = "Octave ++ reverse"
+
+		Symbol:      speed_effect_1
+		Name:        Speed Effect 1
+		Minimum:     -4.000000
+		Maximum:     4.000000
+		Default:     0.500000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 17:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			-80 = "Mute"
+
+		Symbol:      speed_effect_1_vol
+		Name:        Speed Effect 1 Volume
+		Minimum:     -80.000000
+		Maximum:     12.000000
+		Default:     -80.000000
+
+	Port 18:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			4 = "Octave ++"
+			0.25 = "Octave --"
+			-4 = "Octave ++ reverse"
+			-3.0 = "Octave + Fifth reverse"
+			0.75 = "Fifth -"
+			-2 = "Octave + reverse"
+			0.5 = "Octave -"
+			-1 = "Reverse"
+			-0.5 = "Octave - reverse"
+			2 = "Octave +"
+			1.5 = "Fifth +"
+			3 = "Octave + Fifth"
+			-1.5 = "Fifth reverse"
+			-0.25 = "Octave -- reverse"
+
+		Symbol:      speed_effect_2
+		Name:        Speed Effect 2
+		Minimum:     -4.000000
+		Maximum:     4.000000
+		Default:     2.000000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 19:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			-80 = "Mute"
+
+		Symbol:      speed_effect_2_vol
+		Name:        Speed Effect 2 Volume
+		Minimum:     -80.000000
+		Maximum:     12.000000
+		Default:     -80.000000
+</pre></body></html>

@@ -1,0 +1,87 @@
+<html><head></head><body><pre>
+http://github.com/blablack/ams-lv2/analogmemory
+
+	Name:              AMS Analog Memory
+	Class:             Delay Plugin
+	Author:            Aurelien Leblond
+	Author Email:      mailto:blablack@gmail.com
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/ams.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/ams.lv2/analogmemory.so
+	UIs:
+		http://github.com/blablack/ams-lv2/analogmemory/gui
+			Class:  http://lv2plug.in/ns/extensions/ui#GtkUI
+			Binary: file:///run/current-system/sw/lib/lv2/ams.lv2/analogmemory_gui.so
+			Bundle: file:///run/current-system/sw/lib/lv2/ams.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/ams.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/ams.lv2/analogmemory.ttl
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#CVPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      input_cv
+		Name:        Input CV
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#CVPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      write_addr
+		Name:        Write Address
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#CVPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      write_ena
+		Name:        Write Enabled
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#CVPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      read_addr
+		Name:        Read Address
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			4 = "Linear down only, fill"
+			5 = "Reflected"
+			0 = "Direct (no fill)"
+			1 = "Linear up only, no fill"
+			2 = "Linear up only, fill"
+			3 = "Linear down only, no fill"
+
+		Symbol:      write_addressing_mode
+		Name:        Write Addressing Mode
+		Minimum:     0.000000
+		Maximum:     5.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      n
+		Name:        N (for 2^N memory cells)
+		Minimum:     1.000000
+		Maximum:     20.000000
+		Default:     20.000000
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      write_tresh
+		Name:        Write Threshold
+		Minimum:     -1.000000
+		Maximum:     1.000000
+		Default:     -0.100000
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#CVPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out_cv
+		Name:        Out CV
+</pre></body></html>

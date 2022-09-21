@@ -1,0 +1,100 @@
+<html><head></head><body><pre>
+http://guitarix.sourceforge.net/plugins/gx_jcm800pre_st#_jcm800pre_st
+
+	Name:              Gxjcm800preST
+	Class:             Amplifier Plugin
+	Author:            Guitarix team
+	Author Email:      mailto:guitarix-developer@lists.sourceforge.net
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/gx_jcm800pre_st.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/gx_jcm800pre_st.lv2/gx_jcm800pre_st.so
+	UIs:
+		http://guitarix.sourceforge.net/plugins/gx_jcm800pre_st#gui
+			Class:  http://lv2plug.in/ns/extensions/ui#X11UI
+			Binary: file:///run/current-system/sw/lib/lv2/gx_jcm800pre_st.lv2/gx_jcm800pre_st_gui.so
+			Bundle: file:///run/current-system/sw/lib/lv2/gx_jcm800pre_st.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/gx_jcm800pre_st.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/gx_jcm800pre_st.lv2/gx_jcm800pre_st.ttl
+	Required Features: http://lv2plug.in/ns/ext/urid#map
+	                   http://lv2plug.in/ns/ext/buf-size#boundedBlockLength
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out
+		Name:        Out
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out1
+		Name:        Out1
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in
+		Name:        In
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in1
+		Name:        In1
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      P6v
+		Name:        Pre Amp
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      Middle
+		Name:        Middle
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      Bass
+		Name:        Bass
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      Treble
+		Name:        Treble
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      WET_DRY
+		Name:        Presence
+		Minimum:     0.000000
+		Maximum:     100.000000
+		Default:     50.000000
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      GAIN
+		Name:        Master Volume
+		Minimum:     -20.000000
+		Maximum:     20.000000
+		Default:     0.000000
+</pre></body></html>

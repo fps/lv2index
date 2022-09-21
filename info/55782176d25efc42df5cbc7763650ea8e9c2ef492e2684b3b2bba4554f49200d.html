@@ -1,0 +1,66 @@
+<html><head></head><body><pre>
+http://drobilla.net/plugins/mda/RoundPan
+
+	Name:              MDA RoundPan
+	Class:             Spatial Plugin
+	Author:            David Robillard
+	Author Email:      mailto:d@drobilla.net
+	Author Homepage:   http://drobilla.net/
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/mda.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/mda.lv2/RoundPan.so
+	Data URIs:         file:///run/current-system/sw/lib/lv2/mda.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/mda.lv2/RoundPan.ttl
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      pan
+		Name:        Pan
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      auto
+		Name:        Auto
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.800000
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      left_in
+		Name:        Left In
+		Group:       http://drobilla.net/plugins/mda/mainIn
+		Designation: http://lv2plug.in/ns/ext/port-groups#left
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      right_in
+		Name:        Right In
+		Group:       http://drobilla.net/plugins/mda/mainIn
+		Designation: http://lv2plug.in/ns/ext/port-groups#right
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      left_out
+		Name:        Left Out
+		Group:       http://drobilla.net/plugins/mda/mainOut
+		Designation: http://lv2plug.in/ns/ext/port-groups#left
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      right_out
+		Name:        Right Out
+		Group:       http://drobilla.net/plugins/mda/mainOut
+		Designation: http://lv2plug.in/ns/ext/port-groups#right
+</pre></body></html>

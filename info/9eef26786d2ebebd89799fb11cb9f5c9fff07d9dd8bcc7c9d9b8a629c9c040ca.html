@@ -1,0 +1,26 @@
+<html><head></head><body><pre>
+http://lv2plug.in/plugins/eg-metro
+
+	Name:              Example Metronome
+	Class:             Plugin
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/eg-metro.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/eg-metro.lv2/metro.so
+	Data URIs:         file:///run/current-system/sw/lib/lv2/eg-metro.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/eg-metro.lv2/metro.ttl
+	Required Features: http://lv2plug.in/ns/ext/urid#map
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/ext/atom#AtomPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      control
+		Name:        Control
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out
+		Name:        Out
+</pre></body></html>

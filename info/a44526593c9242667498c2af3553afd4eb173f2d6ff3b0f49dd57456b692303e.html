@@ -1,0 +1,139 @@
+<html><head></head><body><pre>
+http://eq10q.sourceforge.net/eq/eq1qm
+
+	Name:              EQ1Q Mono
+	Class:             Equaliser Plugin
+	Author:            Pere Ràfols Soler
+	Author Email:      mailto:sapista2@gmail.com
+	Author Homepage:   http://eq10q.sourceforge.net
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/sapistaEQv2.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/sapistaEQv2.lv2/eq1qm.so
+	UIs:
+		http://eq10q.sourceforge.net/eq/eq10q/gui
+			Class:  http://lv2plug.in/ns/extensions/ui#GtkUI
+			Binary: file:///run/current-system/sw/lib/lv2/sapistaEQv2.lv2/gui/eq10q_gui.so
+			Bundle: file:///run/current-system/sw/lib/lv2/sapistaEQv2.lv2/gui/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/sapistaEQv2.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/sapistaEQv2.lv2/eq1qm.ttl
+	Required Features: http://lv2plug.in/ns/ext/urid#map
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      bypass
+		Name:        Bypass
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      input_gain
+		Name:        Input Gain
+		Minimum:     -20.000000
+		Maximum:     20.000000
+		Default:     0.000000
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      output_gain
+		Name:        Output Gain
+		Minimum:     -20.000000
+		Maximum:     20.000000
+		Default:     0.000000
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      input
+		Name:        Input
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      output
+		Name:        Output
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      filter1_gain
+		Name:        Filter 1 Gain
+		Minimum:     -20.000000
+		Maximum:     20.000000
+		Default:     0.000000
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      filter1_freq
+		Name:        Filter 1 Freq
+		Minimum:     20.000000
+		Maximum:     20000.000000
+		Default:     1000.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      filter1_q
+		Name:        Filter 1 Q
+		Minimum:     0.100000
+		Maximum:     16.000000
+		Default:     2.000000
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      filter1_type
+		Name:        Filter 1 Type
+		Minimum:     1.000000
+		Maximum:     12.000000
+		Default:     11.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      filter1_enable
+		Name:        Filter 1 Enable
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 10:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      in_vu_ctl
+		Name:        In Vu CTL
+
+	Port 11:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out_vu_ctl
+		Name:        Out VU CTL
+
+	Port 12:
+		Type:        http://lv2plug.in/ns/ext/atom#AtomPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      notify
+		Name:        Notify
+
+	Port 13:
+		Type:        http://lv2plug.in/ns/ext/atom#AtomPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      control
+		Name:        Control
+		Designation: http://lv2plug.in/ns/lv2core#control
+</pre></body></html>

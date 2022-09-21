@@ -1,0 +1,308 @@
+<html><head></head><body><pre>
+urn:zamaudio:ZamGEQ31
+
+	Name:              ZamGEQ31
+	Class:             Equaliser Plugin
+	Author:            Damien Zammit
+	Author Homepage:   http://www.zamaudio.com
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/ZamGEQ31.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/ZamGEQ31.lv2/ZamGEQ31_dsp.so
+	UIs:
+		urn:zamaudio:ZamGEQ31#UI
+			Class:  http://lv2plug.in/ns/extensions/ui#X11UI
+			Binary: file:///run/current-system/sw/lib/lv2/ZamGEQ31.lv2/ZamGEQ31_ui.so
+			Bundle: file:///run/current-system/sw/lib/lv2/ZamGEQ31.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/ZamGEQ31.lv2/ZamGEQ31_dsp.ttl
+	                   file:///run/current-system/sw/lib/lv2/ZamGEQ31.lv2/manifest.ttl
+	Required Features: http://lv2plug.in/ns/ext/urid#map
+	                   http://lv2plug.in/ns/ext/options#options
+	Optional Features: http://lv2plug.in/ns/ext/buf-size#boundedBlockLength
+	                   http://lv2plug.in/ns/lv2core#hardRTCapable
+	Extension Data:    http://lv2plug.in/ns/ext/options#interface
+	                   http://kxstudio.sf.net/ns/lv2ext/programs#Interface
+	Presets: 
+	         Default
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#AudioPort
+		Symbol:      lv2_audio_in_1
+		Name:        Audio Input 1
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      lv2_audio_out_1
+		Name:        Audio Output 1
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      master
+		Name:        Master Gain
+		Minimum:     -30.000000
+		Maximum:     30.000000
+		Default:     0.000000
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      band1
+		Name:        32Hz
+		Minimum:     -12.000000
+		Maximum:     12.000000
+		Default:     0.000000
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      band2
+		Name:        40Hz
+		Minimum:     -12.000000
+		Maximum:     12.000000
+		Default:     0.000000
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      band3
+		Name:        50Hz
+		Minimum:     -12.000000
+		Maximum:     12.000000
+		Default:     0.000000
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      band4
+		Name:        63Hz
+		Minimum:     -12.000000
+		Maximum:     12.000000
+		Default:     0.000000
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      band5
+		Name:        79Hz
+		Minimum:     -12.000000
+		Maximum:     12.000000
+		Default:     0.000000
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      band6
+		Name:        100Hz
+		Minimum:     -12.000000
+		Maximum:     12.000000
+		Default:     0.000000
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      band7
+		Name:        126Hz
+		Minimum:     -12.000000
+		Maximum:     12.000000
+		Default:     0.000000
+
+	Port 10:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      band8
+		Name:        158Hz
+		Minimum:     -12.000000
+		Maximum:     12.000000
+		Default:     0.000000
+
+	Port 11:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      band9
+		Name:        200Hz
+		Minimum:     -12.000000
+		Maximum:     12.000000
+		Default:     0.000000
+
+	Port 12:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      band10
+		Name:        251Hz
+		Minimum:     -12.000000
+		Maximum:     12.000000
+		Default:     0.000000
+
+	Port 13:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      band11
+		Name:        316Hz
+		Minimum:     -12.000000
+		Maximum:     12.000000
+		Default:     0.000000
+
+	Port 14:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      band12
+		Name:        398Hz
+		Minimum:     -12.000000
+		Maximum:     12.000000
+		Default:     0.000000
+
+	Port 15:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      band13
+		Name:        501Hz
+		Minimum:     -12.000000
+		Maximum:     12.000000
+		Default:     0.000000
+
+	Port 16:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      band14
+		Name:        631Hz
+		Minimum:     -12.000000
+		Maximum:     12.000000
+		Default:     0.000000
+
+	Port 17:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      band15
+		Name:        794Hz
+		Minimum:     -12.000000
+		Maximum:     12.000000
+		Default:     0.000000
+
+	Port 18:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      band16
+		Name:        999Hz
+		Minimum:     -12.000000
+		Maximum:     12.000000
+		Default:     0.000000
+
+	Port 19:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      band17
+		Name:        1257Hz
+		Minimum:     -12.000000
+		Maximum:     12.000000
+		Default:     0.000000
+
+	Port 20:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      band18
+		Name:        1584Hz
+		Minimum:     -12.000000
+		Maximum:     12.000000
+		Default:     0.000000
+
+	Port 21:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      band19
+		Name:        1997Hz
+		Minimum:     -12.000000
+		Maximum:     12.000000
+		Default:     0.000000
+
+	Port 22:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      band20
+		Name:        2514Hz
+		Minimum:     -12.000000
+		Maximum:     12.000000
+		Default:     0.000000
+
+	Port 23:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      band21
+		Name:        3165Hz
+		Minimum:     -12.000000
+		Maximum:     12.000000
+		Default:     0.000000
+
+	Port 24:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      band22
+		Name:        3986Hz
+		Minimum:     -12.000000
+		Maximum:     12.000000
+		Default:     0.000000
+
+	Port 25:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      band23
+		Name:        5017Hz
+		Minimum:     -12.000000
+		Maximum:     12.000000
+		Default:     0.000000
+
+	Port 26:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      band24
+		Name:        6318Hz
+		Minimum:     -12.000000
+		Maximum:     12.000000
+		Default:     0.000000
+
+	Port 27:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      band25
+		Name:        7963Hz
+		Minimum:     -12.000000
+		Maximum:     12.000000
+		Default:     0.000000
+
+	Port 28:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      band26
+		Name:        10032Hz
+		Minimum:     -12.000000
+		Maximum:     12.000000
+		Default:     0.000000
+
+	Port 29:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      band27
+		Name:        12662Hz
+		Minimum:     -12.000000
+		Maximum:     12.000000
+		Default:     0.000000
+
+	Port 30:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      band28
+		Name:        16081Hz
+		Minimum:     -12.000000
+		Maximum:     12.000000
+		Default:     0.000000
+
+	Port 31:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      band29
+		Name:        20801Hz
+		Minimum:     -12.000000
+		Maximum:     12.000000
+		Default:     0.000000
+</pre></body></html>

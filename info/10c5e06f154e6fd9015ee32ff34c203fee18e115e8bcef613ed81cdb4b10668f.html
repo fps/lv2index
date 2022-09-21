@@ -1,0 +1,104 @@
+<html><head></head><body><pre>
+http://guitarix.sourceforge.net/plugins/gx_switched_tremolo_#_switched_tremolo_
+
+	Name:              Gxswitched_tremolo
+	Class:             Modulator Plugin
+	Author:            Guitarix team
+	Author Email:      mailto:guitarix-developer@lists.sourceforge.net
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/gx_switched_tremolo.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/gx_switched_tremolo.lv2/gx_switched_tremolo.so
+	UIs:
+		http://guitarix.sourceforge.net/plugins/gx_switched_tremolo_#gui
+			Class:  http://lv2plug.in/ns/extensions/ui#X11UI
+			Binary: file:///run/current-system/sw/lib/lv2/gx_switched_tremolo.lv2/gx_switched_tremolo_gui.so
+			Bundle: file:///run/current-system/sw/lib/lv2/gx_switched_tremolo.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/gx_switched_tremolo.lv2/gx_switched_tremolo.ttl
+	                   file:///run/current-system/sw/lib/lv2/gx_switched_tremolo.lv2/manifest.ttl
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out
+		Name:        Out
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#AudioPort
+		Symbol:      in
+		Name:        In
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      DEPTH
+		Name:        DEPTH
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      FREQ0
+		Name:        FREQ0
+		Minimum:     0.250000
+		Maximum:     15.000000
+		Default:     1.000000
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      FREQ1
+		Name:        FREQ1
+		Minimum:     0.250000
+		Maximum:     15.000000
+		Default:     2.000000
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      FREQ2
+		Name:        FREQ2
+		Minimum:     0.250000
+		Maximum:     15.000000
+		Default:     4.000000
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      FREQ3
+		Name:        FREQ3
+		Minimum:     0.250000
+		Maximum:     15.000000
+		Default:     8.000000
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      STEPS
+		Name:        STEPS
+		Minimum:     1.000000
+		Maximum:     4.000000
+		Default:     4.000000
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      SWITCHFREQ
+		Name:        SWITCHFREQ
+		Minimum:     0.250000
+		Maximum:     5.000000
+		Default:     1.000000
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      WET_DRY
+		Name:        WET_DRY
+		Minimum:     0.000000
+		Maximum:     100.000000
+		Default:     50.000000
+</pre></body></html>

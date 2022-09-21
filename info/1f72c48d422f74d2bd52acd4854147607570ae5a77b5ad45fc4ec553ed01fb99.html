@@ -1,0 +1,129 @@
+<html><head></head><body><pre>
+http://drobilla.net/plugins/mda/Tracker
+
+	Name:              MDA Tracker
+	Class:             Spectral Plugin
+	Author:            David Robillard
+	Author Email:      mailto:d@drobilla.net
+	Author Homepage:   http://drobilla.net/
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/mda.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/mda.lv2/Tracker.so
+	Data URIs:         file:///run/current-system/sw/lib/lv2/mda.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/mda.lv2/Tracker.ttl
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0.0 = "Sine oscillator"
+			0.25 = "Square oscillator"
+			0.5 = "Sawtooth oscillator"
+			0.75 = "Ring modulator"
+			1.0 = "Peaking EQ"
+
+		Symbol:      mode
+		Name:        Mode
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      dynamics
+		Name:        Dynamics
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      mix
+		Name:        Mix
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      glide
+		Name:        Glide
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.970000
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      transpose
+		Name:        Transpose
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      maximum
+		Name:        Maximum
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.800000
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      trigger
+		Name:        Trigger
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      output
+		Name:        Output
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      left_in
+		Name:        Left In
+		Group:       http://drobilla.net/plugins/mda/mainIn
+		Designation: http://lv2plug.in/ns/ext/port-groups#left
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      right_in
+		Name:        Right In
+		Group:       http://drobilla.net/plugins/mda/mainIn
+		Designation: http://lv2plug.in/ns/ext/port-groups#right
+
+	Port 10:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      left_out
+		Name:        Left Out
+		Group:       http://drobilla.net/plugins/mda/mainOut
+		Designation: http://lv2plug.in/ns/ext/port-groups#left
+
+	Port 11:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      right_out
+		Name:        Right Out
+		Group:       http://drobilla.net/plugins/mda/mainOut
+		Designation: http://lv2plug.in/ns/ext/port-groups#right
+</pre></body></html>

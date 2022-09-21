@@ -1,0 +1,83 @@
+<html><head></head><body><pre>
+http://plugin.org.uk/swh-plugins/multivoiceChorus
+
+	Name:              Multivoice Chorus
+	Class:             Chorus Plugin
+	Author:            Steve Harris
+	Author Email:      mailto:steve@plugin.org.uk
+	Author Homepage:   http://plugin.org.uk/
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/multivoice_chorus-swh.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/multivoice_chorus-swh.lv2/plugin-Linux.so
+	Data URIs:         file:///run/current-system/sw/lib/lv2/multivoice_chorus-swh.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/multivoice_chorus-swh.lv2/plugin.ttl
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      voices
+		Name:        Number of voices
+		Minimum:     1.000000
+		Maximum:     8.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      delay_base
+		Name:        Delay base (ms)
+		Minimum:     10.000000
+		Maximum:     40.000000
+		Default:     10.000000
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      voice_spread
+		Name:        Voice separation (ms)
+		Minimum:     0.000000
+		Maximum:     2.000000
+		Default:     0.500000
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      detune
+		Name:        Detune (%)
+		Minimum:     0.000000
+		Maximum:     5.000000
+		Default:     1.000000
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      law_freq
+		Name:        LFO frequency (Hz)
+		Minimum:     2.000000
+		Maximum:     30.000000
+		Default:     9.000000
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      attendb
+		Name:        Output attenuation (dB)
+		Minimum:     -20.000000
+		Maximum:     0.000000
+		Default:     0.000000
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      input
+		Name:        Input
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      output
+		Name:        Output
+</pre></body></html>

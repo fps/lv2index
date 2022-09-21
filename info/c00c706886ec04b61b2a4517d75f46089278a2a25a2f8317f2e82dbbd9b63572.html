@@ -1,0 +1,120 @@
+<html><head></head><body><pre>
+http://drobilla.net/plugins/fomp/rec_vco
+
+	Name:              Rec VCO
+	Class:             Oscillator Plugin
+	Author:            David Robillard
+	Author Email:      mailto:d@drobilla.net
+	Author Homepage:   http://drobilla.net/
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/fomp.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/fomp.lv2/blvco.so
+	Data URIs:         file:///run/current-system/sw/lib/lv2/fomp.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/fomp.lv2/rec_vco.ttl
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out
+		Name:        Output
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#CVPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      freq
+		Name:        Frequency
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+		             http://lv2plug.in/ns/lv2core#sampleRate
+
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#CVPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      exp_fm
+		Name:        Exp FM
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#CVPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lin_fm
+		Name:        Lin FM
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#CVPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      mod
+		Name:        Mod
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#CVPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      sync
+		Name:        Sync
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      octave
+		Name:        Octave
+		Minimum:     -4.000000
+		Maximum:     4.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      tune
+		Name:        Tune
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      exp_fm_gain
+		Name:        Exp FM gain
+		Minimum:     0.000000
+		Maximum:     4.000000
+		Default:     1.000000
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lin_fm_gain
+		Name:        Lin FM gain
+		Minimum:     0.000000
+		Maximum:     4.000000
+		Default:     1.000000
+
+	Port 10:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      waveform
+		Name:        Waveform
+		Minimum:     -1.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 11:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      form_mod
+		Name:        Form mod
+		Minimum:     0.000000
+		Maximum:     4.000000
+		Default:     0.000000
+
+	Port 12:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lp_filter
+		Name:        LP filter
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+</pre></body></html>

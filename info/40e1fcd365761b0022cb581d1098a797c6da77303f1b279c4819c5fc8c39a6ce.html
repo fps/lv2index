@@ -1,0 +1,78 @@
+<html><head></head><body><pre>
+http://kxstudio.sf.net/carla/plugins/carlarack
+
+	Name:              Carla-Rack
+	Class:             Plugin
+	Author:            Filipe Coelho
+	Author Email:      mailto:falktx@falktx.com
+	Author Homepage:   https://falktx.com/
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/carla.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/carla.lv2/carla.so
+	UIs:
+		http://kxstudio.sf.net/carla/ui-ext
+			Class:  http://kxstudio.sf.net/ns/lv2ext/external-ui#Widget
+			Binary: file:///run/current-system/sw/lib/lv2/carla.lv2/carla.so
+			Bundle: file:///run/current-system/sw/lib/lv2/carla.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/carla.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/carla.lv2/carlarack.ttl
+	Required Features: http://lv2plug.in/ns/ext/options#options
+	                   http://lv2plug.in/ns/ext/buf-size#boundedBlockLength
+	                   http://lv2plug.in/ns/ext/urid#map
+	Optional Features: http://lv2plug.in/ns/ext/state#threadSafeRestore
+	Extension Data:    http://lv2plug.in/ns/ext/worker#interface
+	                   http://lv2plug.in/ns/ext/options#interface
+	                   http://kxstudio.sf.net/ns/lv2ext/programs#Interface
+	                   http://lv2plug.in/ns/ext/state#interface
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/ext/atom#AtomPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lv2_events_in
+		Name:        Events Input
+		Designation: http://lv2plug.in/ns/lv2core#control
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#OutputPort
+		             http://lv2plug.in/ns/ext/atom#AtomPort
+		Symbol:      lv2_events_out
+		Name:        Events Output
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lv2_freewheel
+		Name:        Freewheel
+		Designation: http://lv2plug.in/ns/lv2core#freeWheeling
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+		             http://lv2plug.in/ns/ext/port-props#notOnGUI
+
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lv2_audio_in_1
+		Name:        Audio Input 1
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lv2_audio_in_2
+		Name:        Audio Input 2
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      lv2_audio_out_1
+		Name:        Audio Output 1
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      lv2_audio_out_2
+		Name:        Audio Output 2
+</pre></body></html>

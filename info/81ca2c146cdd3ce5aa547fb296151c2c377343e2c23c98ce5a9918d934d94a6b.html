@@ -1,0 +1,132 @@
+<html><head></head><body><pre>
+http://guitarix.sourceforge.net/plugins/gx_cabinet#CABINET
+
+	Name:              GxCabinet
+	Class:             Simulator Plugin
+	Author:            Guitarix team
+	Author Email:      mailto:brummer@web.de
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/gx_cabinet.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/gx_cabinet.lv2/gx_cabinet.so
+	UIs:
+		http://guitarix.sourceforge.net/plugins/gx_cabinet#gui
+			Class:  http://lv2plug.in/ns/extensions/ui#X11UI
+			Binary: file:///run/current-system/sw/lib/lv2/gx_cabinet.lv2/gx_cabinet_gui.so
+			Bundle: file:///run/current-system/sw/lib/lv2/gx_cabinet.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/gx_cabinet.lv2/gx_cabinet.ttl
+	                   file:///run/current-system/sw/lib/lv2/gx_cabinet.lv2/manifest.ttl
+	Required Features: http://lv2plug.in/ns/ext/urid#map
+	                   http://lv2plug.in/ns/ext/buf-size#boundedBlockLength
+	                   http://lv2plug.in/ns/ext/worker#schedule
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Extension Data:    http://lv2plug.in/ns/ext/worker#interface
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      CLevel
+		Name:        Cabinet
+		Minimum:     0.500000
+		Maximum:     5.000000
+		Default:     1.000000
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      CBass
+		Name:        Bass
+		Minimum:     -10.000000
+		Maximum:     10.000000
+		Default:     0.000000
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      CTreble
+		Name:        Treble
+		Minimum:     -10.000000
+		Maximum:     10.000000
+		Default:     0.000000
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			5 = "HighGain Style"
+			6 = "Twin Style"
+			7 = "Bassman Style"
+			8 = "Marshall Style"
+			9 = "AC30 Style"
+			10 = "Princeton Style"
+			11 = "A2 Style"
+			12 = "1x15"
+			13 = "Mesa Style"
+			14 = "Briliant"
+			15 = "Vitalize"
+			16 = "Charisma"
+			17 = "1x8"
+			18 = "Off"
+			0 = "4x12"
+			1 = "2x12"
+			2 = "1x12"
+			3 = "4x10"
+			4 = "2x10"
+
+		Symbol:      c_model
+		Name:        Cab Model
+		Minimum:     0.000000
+		Maximum:     18.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/ext/atom#AtomPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      control
+		Name:        Control
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/ext/atom#AtomPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      notify
+		Name:        Notify
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      SCHEDULE
+		Name:        SCHEDULE
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/ext/port-props#notOnGUI
+
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out
+		Name:        Out
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in
+		Name:        in
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      BYPASS
+		Name:        BYPASS
+		Designation: http://lv2plug.in/ns/lv2core#enabled
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+</pre></body></html>

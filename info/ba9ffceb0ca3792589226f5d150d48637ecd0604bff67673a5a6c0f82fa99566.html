@@ -1,0 +1,325 @@
+<html><head></head><body><pre>
+http://drobilla.net/plugins/mda/JX10
+
+	Name:              MDA JX10
+	Class:             Instrument Plugin
+	Author:            David Robillard
+	Author Email:      mailto:d@drobilla.net
+	Author Homepage:   http://drobilla.net/
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/mda.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/mda.lv2/JX10.so
+	Data URIs:         file:///run/current-system/sw/lib/lv2/mda.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/mda.lv2/JX10.ttl
+	Required Features: http://lv2plug.in/ns/ext/urid#map
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+	         Brass Section
+	         Bubble
+	         808 State Lead
+	         Gangsta Whine
+	         Ghost [SA]
+	         Hard Lead [SA]
+	         Hard Organ
+	         Helicopter
+	         Higher Synth [ZF]
+	         Leslie Organ
+	         Low Pulses
+	         Mono Glide
+	         Monosynth
+	         Moogcury Lite
+	         Pizzicato
+	         Power PWM
+	         Rubber Backing [ZF]
+	         Rubber Bass [ZF]
+	         Sine Infra-Bass
+	         Bass Clarinet
+	         Soft E.Piano
+	         Soft Horn
+	         Soft Pick Bass
+	         Solid Backing
+	         Space Chimes [SA]
+	         Squelch Bass
+	         Squelchy Frog
+	         Steel Drums [ZF]
+	         Synth Brass
+	         Synth Strings
+	         Synth Strings 2
+	         Synth Tom
+	         Thip
+	         Thumb Piano
+	         Trumpet
+	         Velocity Backing [SA]
+	         Very Soft Pad
+	         Water Velocity [SA]
+	         Whistler
+	         Wobble Bass [SA]
+	         Analog Bass
+	         Car Horn
+	         Click Organ
+	         Detuned Syn Brass [ZF]
+	         Detuned Techno Lead
+	         Echo Pad [SA]
+	         Fretless Bass
+	         5th Sweep Pad
+	         303 Saw Bass
+	         303 Square Bass
+	         Arctic Wind
+	         Analog Bass 2
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      osc_mix
+		Name:        OSC Mix
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      osc_tune
+		Name:        OSC Tune
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.370000
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      osc_fine
+		Name:        OSC Fine
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.250000
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      glide
+		Name:        Glide
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.300000
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gld_rate
+		Name:        Gld Rate
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.320000
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gld_bend
+		Name:        Gld Bend
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      vcf_freq
+		Name:        VCF Freq
+		Designation: http://lv2plug.in/ns/ext/parameters#cutoffFrequency
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.900000
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      vcf_reso
+		Name:        VCF Reso
+		Designation: http://lv2plug.in/ns/ext/parameters#resonance
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.600000
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      vcf_env
+		Name:        VCF Env
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.120000
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      vcf_lfo
+		Name:        VCF LFO
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 10:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      vcf_vel
+		Name:        VCF Vel
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 11:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      vcf_att
+		Name:        VCF Att
+		Group:       http://drobilla.net/plugins/mda/JX10/filt_env
+		Designation: http://lv2plug.in/ns/ext/parameters#attack
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.900000
+
+	Port 12:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      vcf_dec
+		Name:        VCF Dec
+		Group:       http://drobilla.net/plugins/mda/JX10/filt_env
+		Designation: http://lv2plug.in/ns/ext/parameters#decay
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.890000
+
+	Port 13:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      vcf_sus
+		Name:        VCF Sus
+		Group:       http://drobilla.net/plugins/mda/JX10/filt_env
+		Designation: http://lv2plug.in/ns/ext/parameters#sustain
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.900000
+
+	Port 14:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      vcf_rel
+		Name:        VCF Rel
+		Group:       http://drobilla.net/plugins/mda/JX10/filt_env
+		Designation: http://lv2plug.in/ns/ext/parameters#release
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.730000
+
+	Port 15:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      env_att
+		Name:        ENV Att
+		Group:       http://drobilla.net/plugins/mda/JX10/amp_env
+		Designation: http://lv2plug.in/ns/ext/parameters#attack
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 16:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      env_dec
+		Name:        ENV Dec
+		Group:       http://drobilla.net/plugins/mda/JX10/amp_env
+		Designation: http://lv2plug.in/ns/ext/parameters#decay
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 17:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      env_sus
+		Name:        ENV Sus
+		Group:       http://drobilla.net/plugins/mda/JX10/amp_env
+		Designation: http://lv2plug.in/ns/ext/parameters#sustain
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+
+	Port 18:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      env_rel
+		Name:        ENV Rel
+		Group:       http://drobilla.net/plugins/mda/JX10/amp_env
+		Designation: http://lv2plug.in/ns/ext/parameters#release
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.710000
+
+	Port 19:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lfo_rate
+		Name:        LFO Rate
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.810000
+
+	Port 20:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      vibrato
+		Name:        Vibrato
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.650000
+
+	Port 21:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      noise
+		Name:        Noise
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 22:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      octave
+		Name:        Octave
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 23:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      tuning
+		Name:        Tuning
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 24:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      left_out
+		Name:        Left Out
+		Group:       http://drobilla.net/plugins/mda/mainOut
+		Designation: http://lv2plug.in/ns/ext/port-groups#left
+
+	Port 25:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      right_out
+		Name:        Right Out
+		Group:       http://drobilla.net/plugins/mda/mainOut
+		Designation: http://lv2plug.in/ns/ext/port-groups#right
+
+	Port 26:
+		Type:        http://lv2plug.in/ns/ext/atom#AtomPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      event_in
+		Name:        Event In
+</pre></body></html>

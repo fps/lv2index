@@ -1,0 +1,1369 @@
+<html><head></head><body><pre>
+http://github.com/blablack/ams-lv2/dynamicwaves2_6
+
+	Name:              AMS Dynamic Waves 2 - 6 Osc
+	Class:             Oscillator Plugin
+	Author:            Aurelien Leblond
+	Author Email:      mailto:blablack@gmail.com
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/ams.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/ams.lv2/dynamicwaves2_6.so
+	UIs:
+		http://github.com/blablack/ams-lv2/dynamicwaves2_6/gui
+			Class:  http://lv2plug.in/ns/extensions/ui#GtkUI
+			Binary: file:///run/current-system/sw/lib/lv2/ams.lv2/dynamicwaves2_6_gui.so
+			Bundle: file:///run/current-system/sw/lib/lv2/ams.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/ams.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/ams.lv2/dynamicwaves2_6.ttl
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#CVPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      freq
+		Name:        Frequency
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#inputs
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#CVPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      expFM
+		Name:        Exp FM
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#inputs
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#CVPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      linFM
+		Name:        Lin FM
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#inputs
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#CVPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gate
+		Name:        Gate
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#inputs
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#CVPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      retrigger
+		Name:        Retrigger
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#inputs
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      octave
+		Name:        Octave
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#master_controls
+		Minimum:     0.000000
+		Maximum:     6.000000
+		Default:     3.000000
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      tune
+		Name:        Tune
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#master_controls
+		Minimum:     -1.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      expFMGain
+		Name:        Exp FM Gain
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#master_controls
+		Minimum:     0.000000
+		Maximum:     10.000000
+		Default:     0.000000
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      linFMGain
+		Name:        Lin FM Gain
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#master_controls
+		Minimum:     0.000000
+		Maximum:     10.000000
+		Default:     0.000000
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      timeScale
+		Name:        Time Scale
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#master_controls
+		Minimum:     1.000000
+		Maximum:     10.000000
+		Default:     0.100000
+
+	Port 10:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      volume1
+		Name:        Volume 1
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#mixer
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+
+	Port 11:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      volume2
+		Name:        Volume 2
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#mixer
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+
+	Port 12:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      volume3
+		Name:        Volume 3
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#mixer
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+
+	Port 13:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      volume4
+		Name:        Volume 4
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#mixer
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+
+	Port 14:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      volume5
+		Name:        Volume 5
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#mixer
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+
+	Port 15:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      volume6
+		Name:        Volume 6
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#mixer
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+
+	Port 16:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0 = "Sine"
+			1 = "Sawtooth"
+			2 = "Triangle"
+			3 = "Rectangle"
+			4 = "Saw 2"
+
+		Symbol:      vco1_waveForm
+		Name:        VCO 1 - Wave Form
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_vco1
+		Minimum:     0.000000
+		Maximum:     6.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 17:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      vco1_octave
+		Name:        VCO 1 - Octave
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_vco1
+		Minimum:     0.000000
+		Maximum:     6.000000
+		Default:     3.000000
+
+	Port 18:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      vco1_tune
+		Name:        VCO 1 - Tune
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_vco1
+		Minimum:     -1.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 19:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      vco1_semitone
+		Name:        VCO 1 - Semitone
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_vco1
+		Minimum:     0.000000
+		Maximum:     12.000000
+		Default:     0.000000
+
+	Port 20:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      vco1_phi0
+		Name:        VCO 1 - Phi0
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_vco1
+		Minimum:     0.000000
+		Maximum:     6.283000
+		Default:     0.000000
+
+	Port 21:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			4 = "Saw 2"
+			1 = "Sawtooth"
+			0 = "Sine"
+			3 = "Rectangle"
+			2 = "Triangle"
+
+		Symbol:      vco2_waveForm
+		Name:        VCO 2 - Wave Form
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_vco2
+		Minimum:     0.000000
+		Maximum:     6.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 22:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      vco2_octave
+		Name:        VCO 2 - Octave
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_vco2
+		Minimum:     0.000000
+		Maximum:     6.000000
+		Default:     3.000000
+
+	Port 23:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      vco2_tune
+		Name:        VCO 2 - Tune
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_vco2
+		Minimum:     -1.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 24:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      vco2_semitone
+		Name:        VCO 2 - Semitone
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_vco2
+		Minimum:     0.000000
+		Maximum:     12.000000
+		Default:     0.000000
+
+	Port 25:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      vco2_phi0
+		Name:        VCO 2 - Phi0
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_vco2
+		Minimum:     0.000000
+		Maximum:     6.283000
+		Default:     0.000000
+
+	Port 26:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0 = "Sine"
+			1 = "Sawtooth"
+			3 = "Rectangle"
+			2 = "Triangle"
+			4 = "Saw 2"
+
+		Symbol:      vco3_waveForm
+		Name:        VCO 3 - Wave Form
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_vco3
+		Minimum:     0.000000
+		Maximum:     6.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 27:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      vco3_octave
+		Name:        VCO 3 - Octave
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_vco3
+		Minimum:     0.000000
+		Maximum:     6.000000
+		Default:     3.000000
+
+	Port 28:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      vco3_tune
+		Name:        VCO 3 - Tune
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_vco3
+		Minimum:     -1.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 29:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      vco3_semitone
+		Name:        VCO 3 - Semitone
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_vco3
+		Minimum:     0.000000
+		Maximum:     12.000000
+		Default:     0.000000
+
+	Port 30:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      vco3_phi0
+		Name:        VCO 3 - Phi0
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_vco3
+		Minimum:     0.000000
+		Maximum:     6.283000
+		Default:     0.000000
+
+	Port 31:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			4 = "Saw 2"
+			2 = "Triangle"
+			3 = "Rectangle"
+			1 = "Sawtooth"
+			0 = "Sine"
+
+		Symbol:      vco4_waveForm
+		Name:        VCO 4 - Wave Form
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_vco4
+		Minimum:     0.000000
+		Maximum:     6.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 32:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      vco4_octave
+		Name:        VCO 4 - Octave
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_vco4
+		Minimum:     0.000000
+		Maximum:     6.000000
+		Default:     3.000000
+
+	Port 33:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      vco4_tune
+		Name:        VCO 4 - Tune
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_vco4
+		Minimum:     -1.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 34:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      vco4_semitone
+		Name:        VCO 4 - Semitone
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_vco4
+		Minimum:     0.000000
+		Maximum:     12.000000
+		Default:     0.000000
+
+	Port 35:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      vco4_phi0
+		Name:        VCO 4 - Phi0
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_vco4
+		Minimum:     0.000000
+		Maximum:     6.283000
+		Default:     0.000000
+
+	Port 36:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			4 = "Saw 2"
+			3 = "Rectangle"
+			0 = "Sine"
+			1 = "Sawtooth"
+			2 = "Triangle"
+
+		Symbol:      vco5_waveForm
+		Name:        VCO 5 - Wave Form
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_vco5
+		Minimum:     0.000000
+		Maximum:     6.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 37:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      vco5_octave
+		Name:        VCO 5 - Octave
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_vco5
+		Minimum:     0.000000
+		Maximum:     6.000000
+		Default:     3.000000
+
+	Port 38:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      vco5_tune
+		Name:        VCO 5 - Tune
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_vco5
+		Minimum:     -1.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 39:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      vco5_semitone
+		Name:        VCO 5 - Semitone
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_vco5
+		Minimum:     0.000000
+		Maximum:     12.000000
+		Default:     0.000000
+
+	Port 40:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      vco5_phi0
+		Name:        VCO 5 - Phi0
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_vco5
+		Minimum:     0.000000
+		Maximum:     6.283000
+		Default:     0.000000
+
+	Port 41:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1 = "Sawtooth"
+			4 = "Saw 2"
+			0 = "Sine"
+			3 = "Rectangle"
+			2 = "Triangle"
+
+		Symbol:      vco6_waveForm
+		Name:        VCO 6 - Wave Form
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_vco6
+		Minimum:     0.000000
+		Maximum:     6.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 42:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      vco6_octave
+		Name:        VCO 6 - Octave
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_vco6
+		Minimum:     0.000000
+		Maximum:     6.000000
+		Default:     3.000000
+
+	Port 43:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      vco6_tune
+		Name:        VCO 6 - Tune
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_vco6
+		Minimum:     -1.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 44:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      vco6_semitone
+		Name:        VCO 6 - Semitone
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_vco6
+		Minimum:     0.000000
+		Maximum:     12.000000
+		Default:     0.000000
+
+	Port 45:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      vco6_phi0
+		Name:        VCO 6 - Phi0
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_vco6
+		Minimum:     0.000000
+		Maximum:     6.283000
+		Default:     0.000000
+
+	Port 46:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env1_delay
+		Name:        Env 1 - Delay
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env1
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 47:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env1_attackTime1
+		Name:        Env 1 - Attack Time 1
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env1
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.010000
+
+	Port 48:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env1_attackLevel1
+		Name:        Env 1 - Attack Level 1
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env1
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 49:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env1_attackTime2
+		Name:        Env 1 - Attack Time 2
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env1
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.010000
+
+	Port 50:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env1_attackLevel2
+		Name:        Env 1 - Attack Level 2
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env1
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+
+	Port 51:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env1_attackTime3
+		Name:        Env 1 - Attack Time 3
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env1
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.100000
+
+	Port 52:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env1_attackLevel3
+		Name:        Env 1 - Attack Level 3
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env1
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.900000
+
+	Port 53:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env1_attackTime4
+		Name:        Env 1 - Attack Time 4
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env1
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.100000
+
+	Port 54:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env1_sustain
+		Name:        Env 1 - Sustain
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env1
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.800000
+
+	Port 55:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env1_releaseTime1
+		Name:        Env 1 - Release Time 1
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env1
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.010000
+
+	Port 56:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env1_releaseLevel1
+		Name:        Env 1 - Release Leve 1
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env1
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.700000
+
+	Port 57:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env1_releaseTime2
+		Name:        Env 1 - Release Time 2
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env1
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.010000
+
+	Port 58:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env1_releaseLevel2
+		Name:        Env 1 - Release Level 2
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env1
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 59:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env1_releaseTime3
+		Name:        Env 1 - Release Time 3
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env1
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.010000
+
+	Port 60:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env2_delay
+		Name:        Env 2 - Delay
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env2
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 61:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env2_attackTime1
+		Name:        Env 2 - Attack Time 1
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env2
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.010000
+
+	Port 62:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env2_attackLevel1
+		Name:        Env 2 - Attack Level 1
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env2
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 63:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env2_attackTime2
+		Name:        Env 2 - Attack Time 2
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env2
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.010000
+
+	Port 64:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env2_attackLevel2
+		Name:        Env 2 - Attack Level 2
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env2
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+
+	Port 65:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env2_attackTime3
+		Name:        Env 2 - Attack Time 3
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env2
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.100000
+
+	Port 66:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env2_attackLevel3
+		Name:        Env 2 - Attack Level 3
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env2
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.900000
+
+	Port 67:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env2_attackTime4
+		Name:        Env 2 - Attack Time 4
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env2
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.100000
+
+	Port 68:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env2_sustain
+		Name:        Env 2 - Sustain
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env2
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.800000
+
+	Port 69:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env2_releaseTime1
+		Name:        Env 2 - Release Time 1
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env2
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.010000
+
+	Port 70:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env2_releaseLevel1
+		Name:        Env 2 - Release Leve 1
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env2
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.700000
+
+	Port 71:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env2_releaseTime2
+		Name:        Env 2 - Release Time 2
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env2
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.010000
+
+	Port 72:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env2_releaseLevel2
+		Name:        Env 2 - Release Level 2
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env2
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 73:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env2_releaseTime3
+		Name:        Env 2 - Release Time 3
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env2
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.010000
+
+	Port 74:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env3_delay
+		Name:        Env 3 - Delay
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env3
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 75:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env3_attackTime1
+		Name:        Env 3 - Attack Time 1
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env3
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.010000
+
+	Port 76:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env3_attackLevel1
+		Name:        Env 3 - Attack Level 1
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env3
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 77:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env3_attackTime2
+		Name:        Env 3 - Attack Time 2
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env3
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.010000
+
+	Port 78:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env3_attackLevel2
+		Name:        Env 3 - Attack Level 2
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env3
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+
+	Port 79:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env3_attackTime3
+		Name:        Env 3 - Attack Time 3
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env3
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.100000
+
+	Port 80:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env3_attackLevel3
+		Name:        Env 3 - Attack Level 3
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env3
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.900000
+
+	Port 81:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env3_attackTime4
+		Name:        Env 3 - Attack Time 4
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env3
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.100000
+
+	Port 82:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env3_sustain
+		Name:        Env 3 - Sustain
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env3
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.800000
+
+	Port 83:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env3_releaseTime1
+		Name:        Env 3 - Release Time 1
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env3
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.010000
+
+	Port 84:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env3_releaseLevel1
+		Name:        Env 3 - Release Leve 1
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env3
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.700000
+
+	Port 85:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env3_releaseTime2
+		Name:        Env 3 - Release Time 2
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env3
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.010000
+
+	Port 86:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env3_releaseLevel2
+		Name:        Env 3 - Release Level 2
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env3
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 87:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env3_releaseTime3
+		Name:        Env 3 - Release Time 3
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env3
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.010000
+
+	Port 88:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env4_delay
+		Name:        Env 4 - Delay
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env4
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 89:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env4_attackTime1
+		Name:        Env 4 - Attack Time 1
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env4
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.010000
+
+	Port 90:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env4_attackLevel1
+		Name:        Env 4 - Attack Level 1
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env4
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 91:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env4_attackTime2
+		Name:        Env 4 - Attack Time 2
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env4
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.010000
+
+	Port 92:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env4_attackLevel2
+		Name:        Env 4 - Attack Level 2
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env4
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+
+	Port 93:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env4_attackTime3
+		Name:        Env 4 - Attack Time 3
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env4
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.100000
+
+	Port 94:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env4_attackLevel3
+		Name:        Env 4 - Attack Level 3
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env4
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.900000
+
+	Port 95:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env4_attackTime4
+		Name:        Env 4 - Attack Time 4
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env4
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.100000
+
+	Port 96:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env4_sustain
+		Name:        Env 4 - Sustain
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env4
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.800000
+
+	Port 97:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env4_releaseTime1
+		Name:        Env 4 - Release Time 1
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env4
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.010000
+
+	Port 98:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env4_releaseLevel1
+		Name:        Env 4 - Release Leve 1
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env4
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.700000
+
+	Port 99:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env4_releaseTime2
+		Name:        Env 4 - Release Time 2
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env4
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.010000
+
+	Port 100:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env4_releaseLevel2
+		Name:        Env 4 - Release Level 2
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env4
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 101:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env4_releaseTime3
+		Name:        Env 4 - Release Time 3
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env4
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.010000
+
+	Port 102:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env5_delay
+		Name:        Env 5 - Delay
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env5
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 103:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env5_attackTime1
+		Name:        Env 5 - Attack Time 1
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env5
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.010000
+
+	Port 104:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env5_attackLevel1
+		Name:        Env 5 - Attack Level 1
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env5
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 105:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env5_attackTime2
+		Name:        Env 5 - Attack Time 2
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env5
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.010000
+
+	Port 106:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env5_attackLevel2
+		Name:        Env 5 - Attack Level 2
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env5
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+
+	Port 107:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env5_attackTime3
+		Name:        Env 5 - Attack Time 3
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env5
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.100000
+
+	Port 108:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env5_attackLevel3
+		Name:        Env 5 - Attack Level 3
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env5
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.900000
+
+	Port 109:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env5_attackTime4
+		Name:        Env 5 - Attack Time 4
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env5
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.100000
+
+	Port 110:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env5_sustain
+		Name:        Env 5 - Sustain
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env5
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.800000
+
+	Port 111:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env5_releaseTime1
+		Name:        Env 5 - Release Time 1
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env5
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.010000
+
+	Port 112:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env5_releaseLevel1
+		Name:        Env 5 - Release Leve 1
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env5
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.700000
+
+	Port 113:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env5_releaseTime2
+		Name:        Env 5 - Release Time 2
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env5
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.010000
+
+	Port 114:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env5_releaseLevel2
+		Name:        Env 5 - Release Level 2
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env5
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 115:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env5_releaseTime3
+		Name:        Env 5 - Release Time 3
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env5
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.010000
+
+	Port 116:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env6_delay
+		Name:        Env 6 - Delay
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env6
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 117:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env6_attackTime1
+		Name:        Env 6 - Attack Time 1
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env6
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.010000
+
+	Port 118:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env6_attackLevel1
+		Name:        Env 6 - Attack Level 1
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env6
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 119:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env6_attackTime2
+		Name:        Env 6 - Attack Time 2
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env6
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.010000
+
+	Port 120:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env6_attackLevel2
+		Name:        Env 6 - Attack Level 2
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env6
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+
+	Port 121:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env6_attackTime3
+		Name:        Env 6 - Attack Time 3
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env6
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.100000
+
+	Port 122:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env6_attackLevel3
+		Name:        Env 6 - Attack Level 3
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env6
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.900000
+
+	Port 123:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env6_attackTime4
+		Name:        Env 6 - Attack Time 4
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env6
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.100000
+
+	Port 124:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env6_sustain
+		Name:        Env 6 - Sustain
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env6
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.800000
+
+	Port 125:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env6_releaseTime1
+		Name:        Env 6 - Release Time 1
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env6
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.010000
+
+	Port 126:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env6_releaseLevel1
+		Name:        Env 6 - Release Leve 1
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env6
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.700000
+
+	Port 127:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env6_releaseTime2
+		Name:        Env 6 - Release Time 2
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env6
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.010000
+
+	Port 128:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env6_releaseLevel2
+		Name:        Env 6 - Release Level 2
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env6
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 129:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env6_releaseTime3
+		Name:        Env 6 - Release Time 3
+		Group:       http://github.com/blablack/ams-lv2/dynamicwaves2_6#group_env6
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.010000
+
+	Port 130:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out
+		Name:        Out
+</pre></body></html>

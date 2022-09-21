@@ -1,0 +1,218 @@
+<html><head></head><body><pre>
+http://gareus.org/oss/lv2/mididebug
+
+	Name:              MIDI Event Generator
+	Class:             Utility Plugin
+	Author:            Robin Gareus
+	Author Email:      mailto:robin@gareus.org
+	Author Homepage:   http://gareus.org/
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/mididebug.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/mididebug.lv2/mididebug.so
+	Data URIs:         file:///run/current-system/sw/lib/lv2/mididebug.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/mididebug.lv2/mididebug.ttl
+	Required Features: http://lv2plug.in/ns/ext/urid#map
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/ext/atom#AtomPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      midiout
+		Name:        MIDI Out
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			1 = "1 byte"
+			0 = "Automatic"
+			2 = "2 bytes"
+			3 = "3 bytes"
+
+		Symbol:      bytes
+		Name:        Bytes to Send
+		Minimum:     0.000000
+		Maximum:     3.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			221 = "(0xDD) Chn. Aftertouch C14"
+			222 = "(0xDE) Chn. Aftertouch C15"
+			220 = "(0xDC) Chn. Aftertouch C13"
+			130 = "(0x82) Note Off C03"
+			223 = "(0xDF) Chn. Aftertouch C16"
+			224 = "(0xE0) PitchBend C01"
+			225 = "(0xE1) PitchBend C02"
+			226 = "(0xE2) PitchBend C03"
+			227 = "(0xE3) PitchBend C04"
+			228 = "(0xE4) PitchBend C04"
+			229 = "(0xE5) PitchBend C06"
+			131 = "(0x83) Note Off C04"
+			230 = "(0xE6) PitchBend C07"
+			231 = "(0xE7) PitchBend C08"
+			232 = "(0xE8) PitchBend C09"
+			233 = "(0xE9) PitchBend C10"
+			234 = "(0xEA) PitchBend C11"
+			235 = "(0xEB) PitchBend C12"
+			236 = "(0xEC) PitchBend C13"
+			237 = "(0xED) PitchBend C14"
+			238 = "(0xEE) PitchBend C15"
+			239 = "(0xEF) PitchBend C16"
+			132 = "(0x84) Note Off C04"
+			240 = "(0xF0) N/A - SysEx"
+			241 = "(0xF1) N/A - MTC QFrame"
+			242 = "(0xF2) Song Position"
+			243 = "(0xF3) Song Select"
+			244 = "(0xF4) Undefined - Reserved"
+			245 = "(0xF5) Undefined - Reserved"
+			246 = "(0xF6) Tune request"
+			247 = "(0xF7) End of SysEx [EOX]"
+			248 = "(0xF8) Timing clock"
+			249 = "(0xF9) Undefined - Reserved"
+			133 = "(0x85) Note Off C06"
+			250 = "(0xFA) MClk Start"
+			251 = "(0xFB) MClk Stop"
+			252 = "(0xFC) MClk Continue"
+			253 = "(0xFD) Undefined - Reserved"
+			254 = "(0xFE) Active Sensing"
+			255 = "(0xFF) System Reset"
+			134 = "(0x86) Note Off C07"
+			135 = "(0x87) Note Off C08"
+			136 = "(0x88) Note Off C09"
+			137 = "(0x89) Note Off C10"
+			138 = "(0x8A) Note Off C11"
+			139 = "(0x8B) Note Off C12"
+			140 = "(0x8C) Note Off C13"
+			141 = "(0x8D) Note Off C14"
+			142 = "(0x8E) Note Off C15"
+			143 = "(0x8F) Note Off C16"
+			144 = "(0x90) Note On C01"
+			145 = "(0x91) Note On C02"
+			146 = "(0x92) Note On C03"
+			147 = "(0x93) Note On C04"
+			148 = "(0x94) Note On C04"
+			149 = "(0x95) Note On C06"
+			150 = "(0x96) Note On C07"
+			151 = "(0x97) Note On C08"
+			152 = "(0x98) Note On C09"
+			153 = "(0x99) Note On C10"
+			154 = "(0x9A) Note On C11"
+			155 = "(0x9B) Note On C12"
+			156 = "(0x9C) Note On C13"
+			157 = "(0x9D) Note On C14"
+			158 = "(0x9E) Note On C15"
+			159 = "(0x9F) Note On C16"
+			160 = "(0xA0) Poly. Aftertouch C01"
+			161 = "(0xA1) Poly. Aftertouch C02"
+			162 = "(0xA2) Poly. Aftertouch C03"
+			163 = "(0xA3) Poly. Aftertouch C04"
+			164 = "(0xA4) Poly. Aftertouch C04"
+			165 = "(0xA5) Poly. Aftertouch C06"
+			166 = "(0xA6) Poly. Aftertouch C07"
+			167 = "(0xA7) Poly. Aftertouch C08"
+			168 = "(0xA8) Poly. Aftertouch C09"
+			169 = "(0xA9) Poly. Aftertouch C10"
+			170 = "(0xAA) Poly. Aftertouch C11"
+			171 = "(0xAB) Poly. Aftertouch C12"
+			172 = "(0xAC) Poly. Aftertouch C13"
+			173 = "(0xAD) Poly. Aftertouch C14"
+			174 = "(0xAE) Poly. Aftertouch C15"
+			175 = "(0xAF) Poly. Aftertouch C16"
+			176 = "(0xB0) Control Change C01"
+			177 = "(0xB1) Control Change C02"
+			178 = "(0xB2) Control Change C03"
+			179 = "(0xB3) Control Change C04"
+			180 = "(0xB4) Control Change C04"
+			181 = "(0xB5) Control Change C06"
+			182 = "(0xB6) Control Change C07"
+			183 = "(0xB7) Control Change C08"
+			184 = "(0xB8) Control Change C09"
+			185 = "(0xB9) Control Change C10"
+			186 = "(0xBA) Control Change C11"
+			187 = "(0xBB) Control Change C12"
+			188 = "(0xBC) Control Change C13"
+			189 = "(0xBD) Control Change C14"
+			190 = "(0xBE) Control Change C15"
+			191 = "(0xBF) Control Change C16"
+			192 = "(0xC0) Program Change C01"
+			193 = "(0xC1) Program Change C02"
+			194 = "(0xC2) Program Change C03"
+			195 = "(0xC3) Program Change C04"
+			196 = "(0xC4) Program Change C04"
+			197 = "(0xC5) Program Change C06"
+			198 = "(0xC6) Program Change C07"
+			199 = "(0xC7) Program Change C08"
+			128 = "(0x80) Note Off C01"
+			200 = "(0xC8) Program Change C09"
+			201 = "(0xC9) Program Change C10"
+			202 = "(0xCA) Program Change C11"
+			203 = "(0xCB) Program Change C12"
+			204 = "(0xCC) Program Change C13"
+			205 = "(0xCD) Program Change C14"
+			206 = "(0xCE) Program Change C15"
+			207 = "(0xCF) Program Change C16"
+			208 = "(0xD0) Chn. Aftertouch C01"
+			209 = "(0xD1) Chn. Aftertouch C02"
+			129 = "(0x81) Note Off C02"
+			210 = "(0xD2) Chn. Aftertouch C03"
+			211 = "(0xD3) Chn. Aftertouch C04"
+			212 = "(0xD4) Chn. Aftertouch C04"
+			213 = "(0xD5) Chn. Aftertouch C06"
+			214 = "(0xD6) Chn. Aftertouch C07"
+			215 = "(0xD7) Chn. Aftertouch C08"
+			216 = "(0xD8) Chn. Aftertouch C09"
+			217 = "(0xD9) Chn. Aftertouch C10"
+			218 = "(0xDA) Chn. Aftertouch C11"
+			219 = "(0xDB) Chn. Aftertouch C12"
+
+		Symbol:      b1
+		Name:        Byte 1
+		Minimum:     128.000000
+		Maximum:     255.000000
+		Default:     176.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      b2
+		Name:        Byte 2
+		Minimum:     0.000000
+		Maximum:     127.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      b3
+		Name:        Byte 3
+		Minimum:     0.000000
+		Maximum:     127.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      trigger
+		Name:        Send
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#trigger
+		             http://lv2plug.in/ns/lv2core#toggled
+		             http://lv2plug.in/ns/lv2core#integer
+
+</pre></body></html>

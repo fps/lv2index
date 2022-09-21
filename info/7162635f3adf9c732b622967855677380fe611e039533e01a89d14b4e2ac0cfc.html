@@ -1,0 +1,2089 @@
+<html><head></head><body><pre>
+https://github.com/paynebc/tunefish
+
+	Name:              Tunefish4
+	Class:             Instrument Plugin
+	Author:            Brain Control
+	Has latency:       yes, reported by port 2
+	Bundle:            file:///run/current-system/sw/lib/lv2/Tunefish4.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/Tunefish4.lv2/Tunefish4.so
+	UIs:
+		https://github.com/paynebc/tunefish#ExternalUI
+			Class:  http://kxstudio.sf.net/ns/lv2ext/external-ui#Widget
+			Binary: file:///run/current-system/sw/lib/lv2/Tunefish4.lv2/Tunefish4.so
+			Bundle: file:///run/current-system/sw/lib/lv2/Tunefish4.lv2/
+		https://github.com/paynebc/tunefish#ParentUI
+			Class:  http://lv2plug.in/ns/extensions/ui#X11UI
+			Binary: file:///run/current-system/sw/lib/lv2/Tunefish4.lv2/Tunefish4.so
+			Bundle: file:///run/current-system/sw/lib/lv2/Tunefish4.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/Tunefish4.lv2/Tunefish4.ttl
+	                   file:///run/current-system/sw/lib/lv2/Tunefish4.lv2/manifest.ttl
+	Required Features: http://lv2plug.in/ns/ext/urid#map
+	                   http://lv2plug.in/ns/ext/buf-size#boundedBlockLength
+	Extension Data:    http://lv2plug.in/ns/ext/options#interface
+	                   http://kxstudio.sf.net/ns/lv2ext/programs#Interface
+	                   http://lv2plug.in/ns/ext/state#interface
+	Presets: 
+	         Plucked String
+	         DryBass
+	         EchoBass
+	         Saaaaw
+	         Weirdthing
+	         Softstrings
+	         Clap
+	         Fuzzystring
+	         Distant Strings
+	         Hihat
+	         Plucked
+	         Snare
+	         Bellstring
+	         Hihat Closed
+	         Basedrum
+	         Bell
+	         Sawbass
+	         Saw
+	         Tom Low
+	         Tom Mid
+	         Tom High
+	         Crystal
+	         Strings 1
+	         Basedrum 2
+	         Snare 2
+	         Deep bass
+	         Distorted bass
+	         Acid Bass Morph 1
+	         Acid Bass Morph 2
+	         Acid Bass Morph 3
+	         Acid Bass Morph 4
+	         Bass 3 - Sweel
+	         Bass 6 Wobble 1
+	         Bass 6 Wobble 2
+	         Bass 6 Wobble 3
+	         INIT 162
+	         Metal rods
+	         Cymbal 3
+	         Snare 1
+	         Snare 2
+	         Snare 3
+	         Toms 1
+	         Toms 2
+	         Toms 3
+	         Toms 4
+	         Toms 5
+	         Toms 6
+	         FX Bachlein
+	         FX Bark
+	         FX Horses
+	         FX Reso things
+	         FX Uhr
+	         Glass Pad  
+	         Guitar
+	         Hihat 
+	         Kick 1
+	         Noise Gated
+	         Oioi Bass 1
+	         Oioi Bass 2
+	         Pad 1 
+	         Pad 2
+	         Pad 3
+	         Pad Glass
+	         Pad Tremolo
+	         Pad Vib 
+	         Piano - Arp
+	         Trance Bass
+	         Softorgan
+	         Hollow Flute
+	         Brainsaw
+	         Saxy1
+	         English Horn
+	         Lions Roar
+	         Raw hamonics1
+	         Raw hamonics2
+	         Raw hamonics3
+	         Cello1
+	         Pad Vib 
+	         Hamoinca1
+	         Horn lead1
+	         Odd Synt bass1
+	         Odd Synt bass2
+	         Odd Synt bass3
+	         Bass fagot
+	         Sharp organ
+	         Hard guitar
+	         Puff organ
+	         Rough Guitar
+	         Mellow Guitar
+	         Petri Recorder
+	         Buzz Lead
+	         Blob!
+	         INIT 92
+	         INIT 93
+	         INIT 94
+	         INIT 95
+	         INIT 96
+	         INIT 97
+	         INIT 98
+	         INIT 99
+	         INIT 999
+	         INIT 100
+	         INIT 101
+	         INIT 102
+	         INIT 103
+	         INIT 104
+	         INIT 105
+	         INIT 106
+	         INIT 107
+	         INIT 108
+	         INIT 109
+	         INIT 110
+	         INIT 111
+	         INIT 112
+	         INIT 113
+	         INIT 114
+	         INIT 115
+	         INIT 116
+	         INIT 117
+	         INIT 118
+	         INIT 119
+	         INIT 120
+	         INIT 121
+	         INIT 122
+	         INIT 123
+	         INIT 124
+	         INIT 125
+	         INIT 126
+	         INIT 127
+	         INIT 128
+	         INIT 129
+	         INIT 130
+	         INIT 131
+	         INIT 132
+	         INIT 133
+	         INIT 134
+	         INIT 135
+	         INIT 136
+	         INIT 137
+	         INIT 138
+	         INIT 139
+	         INIT 140
+	         INIT 141
+	         INIT 142
+	         INIT 143
+	         INIT 144
+	         INIT 145
+	         INIT 146
+	         INIT 147
+	         INIT 148
+	         INIT 149
+	         INIT 150
+	         INIT 151
+	         INIT 152
+	         INIT 153
+	         INIT 154
+	         INIT 155
+	         INIT 156
+	         INIT 157
+	         INIT 158
+	         INIT 159
+	         INIT 160
+	         INIT 161
+	         INIT 162
+	         INIT 163
+	         INIT 164
+	         INIT 165
+	         INIT 166
+	         INIT 167
+	         INIT 168
+	         INIT 169
+	         INIT 170
+	         INIT 171
+	         INIT 172
+	         INIT 173
+	         INIT 174
+	         INIT 175
+	         INIT 176
+	         INIT 177
+	         INIT 178
+	         INIT 179
+	         INIT 180
+	         INIT 181
+	         INIT 182
+	         INIT 183
+	         INIT 184
+	         INIT 185
+	         INIT 186
+	         INIT 187
+	         INIT 188
+	         INIT 189
+	         INIT 190
+	         INIT 191
+	         INIT 192
+	         INIT 193
+	         INIT 194
+	         INIT 195
+	         INIT 196
+	         INIT 197
+	         INIT 198
+	         INIT 199
+	         INIT 200
+	         INIT 201
+	         INIT 202
+	         INIT 203
+	         INIT 204
+	         INIT 205
+	         INIT 206
+	         INIT 207
+	         INIT 208
+	         INIT 209
+	         INIT 210
+	         INIT 211
+	         INIT 212
+	         INIT 213
+	         INIT 214
+	         INIT 215
+	         INIT 216
+	         INIT 217
+	         INIT 218
+	         INIT 219
+	         INIT 220
+	         INIT 221
+	         INIT 222
+	         INIT 223
+	         INIT 224
+	         INIT 225
+	         INIT 226
+	         INIT 227
+	         INIT 228
+	         INIT 229
+	         INIT 230
+	         INIT 231
+	         INIT 232
+	         INIT 233
+	         INIT 234
+	         INIT 235
+	         INIT 236
+	         INIT 237
+	         INIT 238
+	         INIT 239
+	         INIT 240
+	         INIT 241
+	         INIT 242
+	         INIT 243
+	         INIT 244
+	         INIT 245
+	         INIT 246
+	         INIT 247
+	         INIT 248
+	         INIT 249
+	         INIT 250
+	         INIT 251
+	         INIT 252
+	         INIT 253
+	         INIT 254
+	         INIT 255
+	         INIT 256
+	         INIT 257
+	         INIT 258
+	         INIT 259
+	         INIT 260
+	         INIT 261
+	         INIT 262
+	         INIT 263
+	         INIT 264
+	         INIT 265
+	         INIT 266
+	         INIT 267
+	         INIT 268
+	         INIT 269
+	         INIT 270
+	         INIT 271
+	         INIT 272
+	         INIT 273
+	         INIT 274
+	         INIT 275
+	         INIT 276
+	         INIT 277
+	         INIT 278
+	         INIT 279
+	         INIT 280
+	         INIT 281
+	         INIT 282
+	         INIT 283
+	         INIT 284
+	         INIT 285
+	         INIT 286
+	         INIT 287
+	         INIT 288
+	         INIT 289
+	         INIT 290
+	         INIT 291
+	         INIT 292
+	         INIT 293
+	         INIT 294
+	         INIT 295
+	         INIT 296
+	         INIT 297
+	         INIT 298
+	         INIT 299
+	         INIT 300
+	         INIT 301
+	         INIT 302
+	         INIT 303
+	         INIT 304
+	         INIT 305
+	         INIT 306
+	         INIT 307
+	         INIT 308
+	         INIT 309
+	         INIT 310
+	         INIT 311
+	         INIT 312
+	         INIT 313
+	         INIT 314
+	         INIT 315
+	         INIT 316
+	         INIT 317
+	         INIT 318
+	         INIT 319
+	         INIT 320
+	         INIT 321
+	         INIT 322
+	         INIT 323
+	         INIT 324
+	         INIT 325
+	         INIT 326
+	         INIT 327
+	         INIT 328
+	         INIT 329
+	         INIT 330
+	         INIT 331
+	         INIT 332
+	         INIT 333
+	         INIT 334
+	         INIT 335
+	         INIT 336
+	         INIT 337
+	         INIT 338
+	         INIT 339
+	         INIT 340
+	         INIT 341
+	         INIT 342
+	         INIT 343
+	         INIT 344
+	         INIT 345
+	         INIT 346
+	         INIT 347
+	         INIT 348
+	         INIT 349
+	         INIT 350
+	         INIT 351
+	         INIT 352
+	         INIT 353
+	         INIT 354
+	         INIT 355
+	         INIT 356
+	         INIT 357
+	         INIT 358
+	         INIT 359
+	         INIT 360
+	         INIT 361
+	         INIT 362
+	         INIT 363
+	         INIT 364
+	         INIT 365
+	         INIT 366
+	         INIT 367
+	         INIT 368
+	         INIT 369
+	         INIT 370
+	         INIT 371
+	         INIT 372
+	         INIT 373
+	         INIT 374
+	         INIT 375
+	         INIT 376
+	         INIT 377
+	         INIT 378
+	         INIT 379
+	         INIT 380
+	         INIT 381
+	         INIT 382
+	         INIT 383
+	         INIT 384
+	         INIT 385
+	         INIT 386
+	         INIT 387
+	         INIT 388
+	         INIT 389
+	         INIT 390
+	         INIT 391
+	         INIT 392
+	         INIT 393
+	         INIT 394
+	         INIT 395
+	         INIT 396
+	         INIT 397
+	         INIT 398
+	         INIT 399
+	         INIT 400
+	         INIT 401
+	         INIT 402
+	         INIT 403
+	         INIT 404
+	         INIT 405
+	         INIT 406
+	         INIT 407
+	         INIT 408
+	         INIT 409
+	         INIT 410
+	         INIT 411
+	         INIT 412
+	         INIT 413
+	         INIT 414
+	         INIT 415
+	         INIT 416
+	         INIT 417
+	         INIT 418
+	         INIT 419
+	         INIT 420
+	         INIT 421
+	         INIT 422
+	         INIT 423
+	         INIT 424
+	         INIT 425
+	         INIT 426
+	         INIT 427
+	         INIT 428
+	         INIT 429
+	         INIT 430
+	         INIT 431
+	         INIT 432
+	         INIT 433
+	         INIT 434
+	         INIT 435
+	         INIT 436
+	         INIT 437
+	         INIT 438
+	         INIT 439
+	         INIT 440
+	         INIT 441
+	         INIT 442
+	         INIT 443
+	         INIT 444
+	         INIT 445
+	         INIT 446
+	         INIT 447
+	         INIT 448
+	         INIT 449
+	         INIT 450
+	         INIT 451
+	         INIT 452
+	         INIT 453
+	         INIT 454
+	         INIT 455
+	         INIT 456
+	         INIT 457
+	         INIT 458
+	         INIT 459
+	         INIT 460
+	         INIT 461
+	         INIT 462
+	         INIT 463
+	         INIT 464
+	         INIT 465
+	         INIT 466
+	         INIT 467
+	         INIT 468
+	         INIT 469
+	         INIT 470
+	         INIT 471
+	         INIT 472
+	         INIT 473
+	         INIT 474
+	         INIT 475
+	         INIT 476
+	         INIT 477
+	         INIT 478
+	         INIT 479
+	         INIT 480
+	         INIT 481
+	         INIT 482
+	         INIT 483
+	         INIT 484
+	         INIT 485
+	         INIT 486
+	         INIT 487
+	         INIT 488
+	         INIT 489
+	         INIT 490
+	         INIT 491
+	         INIT 492
+	         INIT 493
+	         INIT 494
+	         INIT 495
+	         INIT 496
+	         INIT 497
+	         INIT 498
+	         INIT 499
+	         INIT 500
+	         INIT 501
+	         INIT 502
+	         INIT 503
+	         INIT 504
+	         INIT 505
+	         INIT 506
+	         INIT 507
+	         INIT 508
+	         INIT 509
+	         INIT 510
+	         INIT 511
+	         INIT 512
+	         INIT 513
+	         INIT 514
+	         INIT 515
+	         INIT 516
+	         INIT 517
+	         INIT 518
+	         INIT 519
+	         INIT 520
+	         INIT 521
+	         INIT 522
+	         INIT 523
+	         INIT 524
+	         INIT 525
+	         INIT 526
+	         INIT 527
+	         INIT 528
+	         INIT 529
+	         INIT 530
+	         INIT 531
+	         INIT 532
+	         INIT 533
+	         INIT 534
+	         INIT 535
+	         INIT 536
+	         INIT 537
+	         INIT 538
+	         INIT 539
+	         INIT 540
+	         INIT 541
+	         INIT 542
+	         INIT 543
+	         INIT 544
+	         INIT 545
+	         INIT 546
+	         INIT 547
+	         INIT 548
+	         INIT 549
+	         INIT 550
+	         INIT 551
+	         INIT 552
+	         INIT 553
+	         INIT 554
+	         INIT 555
+	         INIT 556
+	         INIT 557
+	         INIT 558
+	         INIT 559
+	         INIT 560
+	         INIT 561
+	         INIT 562
+	         INIT 563
+	         INIT 564
+	         INIT 565
+	         INIT 566
+	         INIT 567
+	         INIT 568
+	         INIT 569
+	         INIT 570
+	         INIT 571
+	         INIT 572
+	         INIT 573
+	         INIT 574
+	         INIT 575
+	         INIT 576
+	         INIT 577
+	         INIT 578
+	         INIT 579
+	         INIT 580
+	         INIT 581
+	         INIT 582
+	         INIT 583
+	         INIT 584
+	         INIT 585
+	         INIT 586
+	         INIT 587
+	         INIT 588
+	         INIT 589
+	         INIT 590
+	         INIT 591
+	         INIT 592
+	         INIT 593
+	         INIT 594
+	         INIT 595
+	         INIT 596
+	         INIT 597
+	         INIT 598
+	         INIT 599
+	         INIT 600
+	         INIT 601
+	         INIT 602
+	         INIT 603
+	         INIT 604
+	         INIT 605
+	         INIT 606
+	         INIT 607
+	         INIT 608
+	         INIT 609
+	         INIT 610
+	         INIT 611
+	         INIT 612
+	         INIT 613
+	         INIT 614
+	         INIT 615
+	         INIT 616
+	         INIT 617
+	         INIT 618
+	         INIT 619
+	         INIT 620
+	         INIT 621
+	         INIT 622
+	         INIT 623
+	         INIT 624
+	         INIT 625
+	         INIT 626
+	         INIT 627
+	         INIT 628
+	         INIT 629
+	         INIT 630
+	         INIT 631
+	         INIT 632
+	         INIT 633
+	         INIT 634
+	         INIT 635
+	         INIT 636
+	         INIT 637
+	         INIT 638
+	         INIT 639
+	         INIT 640
+	         INIT 641
+	         INIT 642
+	         INIT 643
+	         INIT 644
+	         INIT 645
+	         INIT 646
+	         INIT 647
+	         INIT 648
+	         INIT 649
+	         INIT 650
+	         INIT 651
+	         INIT 652
+	         INIT 653
+	         INIT 654
+	         INIT 655
+	         INIT 656
+	         INIT 657
+	         INIT 658
+	         INIT 659
+	         INIT 660
+	         INIT 661
+	         INIT 662
+	         INIT 663
+	         INIT 664
+	         INIT 665
+	         INIT 666
+	         INIT 667
+	         INIT 668
+	         INIT 669
+	         INIT 670
+	         INIT 671
+	         INIT 672
+	         INIT 673
+	         INIT 674
+	         INIT 675
+	         INIT 676
+	         INIT 677
+	         INIT 678
+	         INIT 679
+	         INIT 680
+	         INIT 681
+	         INIT 682
+	         INIT 683
+	         INIT 684
+	         INIT 685
+	         INIT 686
+	         INIT 687
+	         INIT 688
+	         INIT 689
+	         INIT 690
+	         INIT 691
+	         INIT 692
+	         INIT 693
+	         INIT 694
+	         INIT 695
+	         INIT 696
+	         INIT 697
+	         INIT 698
+	         INIT 699
+	         INIT 700
+	         INIT 701
+	         INIT 702
+	         INIT 703
+	         INIT 704
+	         INIT 705
+	         INIT 706
+	         INIT 707
+	         INIT 708
+	         INIT 709
+	         INIT 710
+	         INIT 711
+	         INIT 712
+	         INIT 713
+	         INIT 714
+	         INIT 715
+	         INIT 716
+	         INIT 717
+	         INIT 718
+	         INIT 719
+	         INIT 720
+	         INIT 721
+	         INIT 722
+	         INIT 723
+	         INIT 724
+	         INIT 725
+	         INIT 726
+	         INIT 727
+	         INIT 728
+	         INIT 729
+	         INIT 730
+	         INIT 731
+	         INIT 732
+	         INIT 733
+	         INIT 734
+	         INIT 735
+	         INIT 736
+	         INIT 737
+	         INIT 738
+	         INIT 739
+	         INIT 740
+	         INIT 741
+	         INIT 742
+	         INIT 743
+	         INIT 744
+	         INIT 745
+	         INIT 746
+	         INIT 747
+	         INIT 748
+	         INIT 749
+	         INIT 750
+	         INIT 751
+	         INIT 752
+	         INIT 753
+	         INIT 754
+	         INIT 755
+	         INIT 756
+	         INIT 757
+	         INIT 758
+	         INIT 759
+	         INIT 760
+	         INIT 761
+	         INIT 762
+	         INIT 763
+	         INIT 764
+	         INIT 765
+	         INIT 766
+	         INIT 767
+	         INIT 768
+	         INIT 769
+	         INIT 770
+	         INIT 771
+	         INIT 772
+	         INIT 773
+	         INIT 774
+	         INIT 775
+	         INIT 776
+	         INIT 777
+	         INIT 778
+	         INIT 779
+	         INIT 780
+	         INIT 781
+	         INIT 782
+	         INIT 783
+	         INIT 784
+	         INIT 785
+	         INIT 786
+	         INIT 787
+	         INIT 788
+	         INIT 789
+	         INIT 790
+	         INIT 791
+	         INIT 792
+	         INIT 793
+	         INIT 794
+	         INIT 795
+	         INIT 796
+	         INIT 797
+	         INIT 798
+	         INIT 799
+	         INIT 800
+	         INIT 801
+	         INIT 802
+	         INIT 803
+	         INIT 804
+	         INIT 805
+	         INIT 806
+	         INIT 807
+	         INIT 808
+	         INIT 809
+	         INIT 810
+	         INIT 811
+	         INIT 812
+	         INIT 813
+	         INIT 814
+	         INIT 815
+	         INIT 816
+	         INIT 817
+	         INIT 818
+	         INIT 819
+	         INIT 820
+	         INIT 821
+	         INIT 822
+	         INIT 823
+	         INIT 824
+	         INIT 825
+	         INIT 826
+	         INIT 827
+	         INIT 828
+	         INIT 829
+	         INIT 830
+	         INIT 831
+	         INIT 832
+	         INIT 833
+	         INIT 834
+	         INIT 835
+	         INIT 836
+	         INIT 837
+	         INIT 838
+	         INIT 839
+	         INIT 840
+	         INIT 841
+	         INIT 842
+	         INIT 843
+	         INIT 844
+	         INIT 845
+	         INIT 846
+	         INIT 847
+	         INIT 848
+	         INIT 849
+	         INIT 850
+	         INIT 851
+	         INIT 852
+	         INIT 853
+	         INIT 854
+	         INIT 855
+	         INIT 856
+	         INIT 857
+	         INIT 858
+	         INIT 859
+	         INIT 860
+	         INIT 861
+	         INIT 862
+	         INIT 863
+	         INIT 864
+	         INIT 865
+	         INIT 866
+	         INIT 867
+	         INIT 868
+	         INIT 869
+	         INIT 870
+	         INIT 871
+	         INIT 872
+	         INIT 873
+	         INIT 874
+	         INIT 875
+	         INIT 876
+	         INIT 877
+	         INIT 878
+	         INIT 879
+	         INIT 880
+	         INIT 881
+	         INIT 882
+	         INIT 883
+	         INIT 884
+	         INIT 885
+	         INIT 886
+	         INIT 887
+	         INIT 888
+	         INIT 889
+	         INIT 890
+	         INIT 891
+	         INIT 892
+	         INIT 893
+	         INIT 894
+	         INIT 895
+	         INIT 896
+	         INIT 897
+	         INIT 898
+	         INIT 899
+	         INIT 900
+	         INIT 901
+	         INIT 902
+	         INIT 903
+	         INIT 904
+	         INIT 905
+	         INIT 906
+	         INIT 907
+	         INIT 908
+	         INIT 909
+	         INIT 910
+	         INIT 911
+	         INIT 912
+	         INIT 913
+	         INIT 914
+	         INIT 915
+	         INIT 916
+	         INIT 917
+	         INIT 918
+	         INIT 919
+	         INIT 920
+	         INIT 921
+	         INIT 922
+	         INIT 923
+	         INIT 924
+	         INIT 925
+	         INIT 926
+	         INIT 927
+	         INIT 928
+	         INIT 929
+	         INIT 930
+	         INIT 931
+	         INIT 932
+	         INIT 933
+	         INIT 934
+	         INIT 935
+	         INIT 936
+	         INIT 937
+	         INIT 938
+	         INIT 939
+	         INIT 940
+	         INIT 941
+	         INIT 942
+	         INIT 943
+	         INIT 944
+	         INIT 945
+	         INIT 946
+	         INIT 947
+	         INIT 948
+	         INIT 949
+	         INIT 950
+	         INIT 951
+	         INIT 952
+	         INIT 953
+	         INIT 954
+	         INIT 955
+	         INIT 956
+	         INIT 957
+	         INIT 958
+	         INIT 959
+	         INIT 960
+	         INIT 961
+	         INIT 962
+	         INIT 963
+	         INIT 964
+	         INIT 965
+	         INIT 966
+	         INIT 967
+	         INIT 968
+	         INIT 969
+	         INIT 970
+	         INIT 971
+	         INIT 972
+	         INIT 973
+	         INIT 974
+	         INIT 975
+	         INIT 976
+	         INIT 977
+	         INIT 978
+	         INIT 979
+	         INIT 980
+	         INIT 981
+	         INIT 982
+	         INIT 983
+	         INIT 984
+	         INIT 985
+	         INIT 986
+	         INIT 987
+	         INIT 988
+	         INIT 989
+	         INIT 990
+	         INIT 991
+	         INIT 992
+	         INIT 993
+	         INIT 994
+	         INIT 995
+	         INIT 996
+	         INIT 997
+	         INIT 998
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/ext/atom#AtomPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lv2_events_in
+		Name:        Events Input
+		Designation: http://lv2plug.in/ns/lv2core#control
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lv2_freewheel
+		Name:        Freewheel
+		Designation: http://lv2plug.in/ns/lv2core#freeWheeling
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#toggled
+		             http://lv2plug.in/ns/ext/port-props#notOnGUI
+
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      lv2_latency
+		Name:        Latency
+		Designation: http://lv2plug.in/ns/lv2core#latency
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#reportsLatency
+
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lv2_audio_in_1
+		Name:        Audio Input 1
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lv2_audio_in_2
+		Name:        Audio Input 2
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      lv2_audio_out_1
+		Name:        Audio Output 1
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      lv2_audio_out_2
+		Name:        Audio Output 2
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gain
+		Name:        Gain
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.373737
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      genbandw
+		Name:        GenBandw
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.959596
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      genharmn
+		Name:        GenHarmn
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.959596
+
+	Port 10:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gendamp
+		Name:        GenDamp
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.090909
+
+	Port 11:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      genmod
+		Name:        GenMod
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 12:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      genvol
+		Name:        GenVol
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+
+	Port 13:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      genpan
+		Name:        GenPan
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 14:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      genslop
+		Name:        GenSlop
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 15:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      genoct
+		Name:        GenOct
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 16:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      genglid
+		Name:        GenGlid
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 17:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      getdetn
+		Name:        GetDetn
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.200000
+
+	Port 18:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      genfreq
+		Name:        GenFreq
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 19:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      genpoly
+		Name:        GenPoly
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+
+	Port 20:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gendriv
+		Name:        GenDriv
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.101010
+
+	Port 21:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      genunis
+		Name:        GenUnis
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+
+	Port 22:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      gensprd
+		Name:        GenSprd
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.484848
+
+	Port 23:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      genscale
+		Name:        GenScale
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 24:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      noiseon
+		Name:        NoiseOn
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 25:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      noisefreq
+		Name:        NoiseFreq
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 26:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      noisebw
+		Name:        NoiseBw
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+
+	Port 27:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      fltlpon
+		Name:        FltLPOn
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 28:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      fltlpcut
+		Name:        FltLPCut
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.100000
+
+	Port 29:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      fltlpres
+		Name:        FltLPRes
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.100000
+
+	Port 30:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      flthpon
+		Name:        FltHPOn
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 31:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      flthpcut
+		Name:        FltHPCut
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 32:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      flthpres
+		Name:        FltHPRes
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 33:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env1att
+		Name:        Env1Att
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 34:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env1dec
+		Name:        Env1Dec
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 35:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env1sus
+		Name:        Env1Sus
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 36:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env1rel
+		Name:        Env1Rel
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.200000
+
+	Port 37:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env1slp
+		Name:        Env1Slp
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 38:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env2att
+		Name:        Env2Att
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 39:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env2dec
+		Name:        Env2Dec
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 40:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env2sus
+		Name:        Env2Sus
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 41:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env2rel
+		Name:        Env2Rel
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.200000
+
+	Port 42:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      env2slp
+		Name:        Env2Slp
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 43:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lfo1rate
+		Name:        Lfo1Rate
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 44:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lfo1dep
+		Name:        Lfo1Dep
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 45:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lfo1shp
+		Name:        Lfo1Shp
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 46:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lfo1sync
+		Name:        Lfo1Sync
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 47:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lfo2rate
+		Name:        Lfo2Rate
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 48:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lfo2dep
+		Name:        Lfo2Dep
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 49:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lfo2shp
+		Name:        Lfo2Shp
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 50:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      lfo2sync
+		Name:        Lfo2Sync
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 51:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      mm1source
+		Name:        Mm1Source
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.214286
+
+	Port 52:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      mm1mod
+		Name:        Mm1Mod
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 53:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      mm1target
+		Name:        Mm1Target
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.128205
+
+	Port 54:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      mm2source
+		Name:        Mm2Source
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 55:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      mm2mod
+		Name:        Mm2Mod
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 56:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      mm2target
+		Name:        Mm2Target
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 57:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      mm3source
+		Name:        Mm3Source
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 58:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      mm3mod
+		Name:        Mm3Mod
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 59:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      mm3target
+		Name:        Mm3Target
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 60:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      mm4source
+		Name:        Mm4Source
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 61:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      mm4mod
+		Name:        Mm4Mod
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 62:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      mm4target
+		Name:        Mm4Target
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 63:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      mm5source
+		Name:        Mm5Source
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 64:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      mm5mod
+		Name:        Mm5Mod
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 65:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      mm5target
+		Name:        Mm5Target
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 66:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      mm6source
+		Name:        Mm6Source
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 67:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      mm6mod
+		Name:        Mm6Mod
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 68:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      mm6target
+		Name:        Mm6Target
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 69:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      mm7source
+		Name:        Mm7Source
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 70:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      mm7mod
+		Name:        Mm7Mod
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 71:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      mm7target
+		Name:        Mm7Target
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 72:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      mm8source
+		Name:        Mm8Source
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 73:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      mm8mod
+		Name:        Mm8Mod
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 74:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      mm8target
+		Name:        Mm8Target
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 75:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      mm9source
+		Name:        Mm9Source
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 76:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      mm9mod
+		Name:        Mm9Mod
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 77:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      mm9target
+		Name:        Mm9Target
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 78:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      mm10sourc
+		Name:        Mm10Sourc
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 79:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      mm10mod
+		Name:        Mm10Mod
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 80:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      mm10targe
+		Name:        Mm10Targe
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 81:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      effect1
+		Name:        Effect1
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.200000
+
+	Port 82:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      effect2
+		Name:        Effect2
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 83:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      effect3
+		Name:        Effect3
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 84:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      effect4
+		Name:        Effect4
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 85:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      effect5
+		Name:        Effect5
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 86:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      effect6
+		Name:        Effect6
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 87:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      effect7
+		Name:        Effect7
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 88:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      effect8
+		Name:        Effect8
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 89:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      effect9
+		Name:        Effect9
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 90:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      effect10
+		Name:        Effect10
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 91:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      distamnt
+		Name:        DistAmnt
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.200000
+
+	Port 92:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      chrsrate
+		Name:        ChrsRate
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.200000
+
+	Port 93:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      chrsdep
+		Name:        ChrsDep
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.200000
+
+	Port 94:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      delayl
+		Name:        DelayL
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.353535
+
+	Port 95:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      delayr
+		Name:        DelayR
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.323232
+
+	Port 96:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      delaydc
+		Name:        DelayDc
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.525253
+
+	Port 97:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      revroom
+		Name:        RevRoom
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.200000
+
+	Port 98:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      revdamp
+		Name:        RevDamp
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.200000
+
+	Port 99:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      revwet
+		Name:        RevWet
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 100:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      revwidth
+		Name:        RevWidth
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 101:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      flanglfo
+		Name:        FlangLfo
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.200000
+
+	Port 102:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      flangfreq
+		Name:        FlangFreq
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.200000
+
+	Port 103:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      flangamp
+		Name:        FlangAmp
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.200000
+
+	Port 104:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      flangwet
+		Name:        FlangWet
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 105:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      chrsgain
+		Name:        ChrsGain
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+
+	Port 106:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      frmttype
+		Name:        FrmtType
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 107:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      frmtwet
+		Name:        FrmtWet
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+
+	Port 108:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      eqlow
+		Name:        EqLow
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 109:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      eqmid
+		Name:        EqMid
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 110:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      eqhigh
+		Name:        EqHigh
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 111:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      oscpwup
+		Name:        OscPWup
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 112:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      oscpwdw
+		Name:        OscPWdw
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 113:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      fltbpon
+		Name:        FltBPOn
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 114:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      fltbpcut
+		Name:        FltBPCut
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 115:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      fltbpq
+		Name:        FltBPQ
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 116:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      fltnton
+		Name:        FltNTOn
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 117:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      fltntcut
+		Name:        FltNTCut
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 118:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      fltntq
+		Name:        FltNTQ
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+</pre></body></html>

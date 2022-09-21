@@ -1,0 +1,252 @@
+<html><head></head><body><pre>
+http://gareus.org/oss/lv2/fat1#scales
+
+	Name:              x42-Autotune (scales)
+	Class:             Pitch Shifter Plugin
+	Author:            Robin Gareus
+	Author Email:      mailto:robin@gareus.org
+	Author Homepage:   http://gareus.org/
+	Has latency:       yes, reported by port 17
+	Bundle:            file:///run/current-system/sw/lib/lv2/fat1.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/fat1.lv2/fat1.so
+	UIs:
+		http://gareus.org/oss/lv2/fat1#ui_gl
+			Class:  http://lv2plug.in/ns/extensions/ui#X11UI
+			Binary: file:///run/current-system/sw/lib/lv2/fat1.lv2/fat1UI_gl.so
+			Bundle: file:///run/current-system/sw/lib/lv2/fat1.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/fat1.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/fat1.lv2/fat1.ttl
+	Required Features: http://lv2plug.in/ns/ext/urid#map
+	Optional Features: http://lv2plug.in/ns/ext/log#log
+	                   http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+	         Live
+	         Slightly Corrected
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/ext/atom#AtomPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      midiin
+		Name:        MIDI In
+		Properties:  http://lv2plug.in/ns/lv2core#isSideChain
+
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in
+		Name:        Input
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out
+		Name:        Output
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			2 = "Manual"
+			1 = "MIDI"
+			0 = "Auto"
+
+		Symbol:      mode
+		Name:        Mode
+		Minimum:     0.000000
+		Maximum:     2.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#enumeration
+
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			2 = "02"
+			3 = "03"
+			0 = "Any"
+			1 = "01"
+			4 = "04"
+			5 = "05"
+			6 = "06"
+			7 = "07"
+			8 = "08"
+			9 = "09"
+			10 = "10"
+			11 = "11"
+			12 = "12"
+			13 = "13"
+			14 = "14"
+			15 = "15"
+			16 = "16"
+
+		Symbol:      channelf
+		Name:        Filter Channel
+		Minimum:     0.000000
+		Maximum:     16.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      tuning
+		Name:        Tuning
+		Minimum:     400.000000
+		Maximum:     480.000000
+		Default:     440.000000
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      bias
+		Name:        Bias
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			0.1 = "Med"
+			0.5 = "Slow"
+			0.02 = "Fast"
+
+		Symbol:      filter
+		Name:        Filter
+		Minimum:     0.020000
+		Maximum:     0.500000
+		Default:     0.100000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      corr
+		Name:        Correction
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     1.000000
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      offset
+		Name:        Offset
+		Minimum:     -2.000000
+		Maximum:     2.000000
+		Default:     0.000000
+
+	Port 10:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      bendrange
+		Name:        Pitch Bend Range
+		Minimum:     0.000000
+		Maximum:     7.000000
+		Default:     2.000000
+
+	Port 11:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      fastmode
+		Name:        Fast Correction
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#toggled
+
+
+	Port 12:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Scale Points:
+			2 = "Db Major"
+			11 = "Bb Major"
+			1 = "C Major"
+			14 = "Db Minor"
+			0 = "Chromatic"
+			12 = "B Major"
+			16 = "Eb Minor"
+			15 = "D Minor"
+			3 = "D Major"
+			13 = "C Minor"
+			10 = "A Major"
+			9 = "Ab Major"
+			7 = "F# Major"
+			8 = "G Major"
+			6 = "F Major"
+			4 = "Eb Major"
+			5 = "E Major"
+			17 = "E Minor"
+			18 = "F Minor"
+			19 = "F# Minor"
+			20 = "G Minor"
+			21 = "Ab Minor"
+			22 = "A Minor"
+			23 = "Bb Minor"
+			24 = "B Minor"
+
+		Symbol:      scale
+		Name:        Scale
+		Minimum:     0.000000
+		Maximum:     24.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/lv2core#enumeration
+		             http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 13:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      nmask
+		Name:        Note Mask
+		Minimum:     0.000000
+		Maximum:     4096.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 14:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      nset
+		Name:        Note Set
+		Minimum:     0.000000
+		Maximum:     4096.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 15:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      bend
+		Name:        Pitch Bend
+		Minimum:     -1.000000
+		Maximum:     1.000000
+
+	Port 16:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      error
+		Name:        Pitch Error
+		Minimum:     -1.000000
+		Maximum:     1.000000
+
+	Port 17:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      latency
+		Name:        latency
+		Minimum:     0.000000
+		Maximum:     4096.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+		             http://lv2plug.in/ns/lv2core#reportsLatency
+
+</pre></body></html>

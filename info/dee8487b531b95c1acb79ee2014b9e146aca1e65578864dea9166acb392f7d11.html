@@ -1,0 +1,61 @@
+<html><head></head><body><pre>
+http://gareus.org/oss/lv2/sisco#Stereo
+
+	Name:              Simple Scope (Stereo)
+	Class:             Analyser Plugin
+	Author:            Robin Gareus
+	Author Email:      mailto:robin@gareus.org
+	Author Homepage:   http://gareus.org/
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/sisco.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/sisco.lv2/sisco.so
+	UIs:
+		http://gareus.org/oss/lv2/sisco#ui_gl
+			Class:  http://lv2plug.in/ns/extensions/ui#X11UI
+			Binary: file:///run/current-system/sw/lib/lv2/sisco.lv2/siscoUI_gl.so
+			Bundle: file:///run/current-system/sw/lib/lv2/sisco.lv2/
+	Data URIs:         file:///run/current-system/sw/lib/lv2/sisco.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/sisco.lv2/sisco.ttl
+	Required Features: http://lv2plug.in/ns/ext/urid#map
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Extension Data:    http://lv2plug.in/ns/ext/state#interface
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/ext/atom#AtomPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      control
+		Name:        Control
+		Designation: http://lv2plug.in/ns/lv2core#control
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/ext/atom#AtomPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      notify
+		Name:        Notify
+		Designation: http://lv2plug.in/ns/lv2core#control
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in1
+		Name:        InL
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out1
+		Name:        OutL
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      in2
+		Name:        InR
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      out2
+		Name:        OutR
+</pre></body></html>

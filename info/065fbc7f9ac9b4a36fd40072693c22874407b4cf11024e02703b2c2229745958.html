@@ -1,0 +1,50 @@
+<html><head></head><body><pre>
+https://hannesbraun.net/ns/lv2/airwindows/slew
+
+	Name:              Slew
+	Class:             Prijekt
+	Author:            Hannes Braun
+	Author Homepage:   https://hannesbraun.net/
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/Airwindows.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/Airwindows.lv2/Slew.so
+	Data URIs:         file:///run/current-system/sw/lib/lv2/Airwindows.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/Airwindows.lv2/Slew.ttl
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      inL
+		Name:        In L
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      inR
+		Name:        In R
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      outL
+		Name:        Out L
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      outR
+		Name:        Out R
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      clamping
+		Name:        Clamping
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#hasStrictBounds
+
+</pre></body></html>

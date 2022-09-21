@@ -1,0 +1,221 @@
+<html><head></head><body><pre>
+http://drobilla.net/plugins/mda/DX10
+
+	Name:              MDA DX10
+	Class:             Instrument Plugin
+	Author:            David Robillard
+	Author Email:      mailto:d@drobilla.net
+	Author Homepage:   http://drobilla.net/
+	Has latency:       no
+	Bundle:            file:///run/current-system/sw/lib/lv2/mda.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/mda.lv2/DX10.so
+	Data URIs:         file:///run/current-system/sw/lib/lv2/mda.lv2/manifest.ttl
+	                   file:///run/current-system/sw/lib/lv2/mda.lv2/DX10.ttl
+	Required Features: http://lv2plug.in/ns/ext/urid#map
+	Optional Features: http://lv2plug.in/ns/lv2core#hardRTCapable
+	Presets: 
+	         Jazz Guitar
+	         Koto
+	         Log Drum
+	         Reed 1
+	         Reed 2
+	         Scratch
+	         Sine Bass
+	         Sitar
+	         Soft Chimes
+	         Space Pad
+	         Square Bass
+	         Steel Drum
+	         Syn Tom
+	         Thick Bass
+	         Tinkle
+	         Trumpet
+	         Upright Bass 1
+	         Upright Bass 2
+	         Violin
+	         E.Bass
+	         Funk Clav
+	         Fuzzy E.Piano
+	         Harmonics
+	         Harp
+	         Harpsichord
+	         Horn
+	         Jazz E.Piano
+	         Chunky Bass
+	         Bright E.Piano
+	         Chiff Organ
+	         E.Piano Pad
+	         Clunk Bass
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      attack
+		Name:        Attack
+		Group:       http://drobilla.net/plugins/mda/DX10/env
+		Designation: http://lv2plug.in/ns/ext/parameters#attack
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      decay
+		Name:        Decay
+		Group:       http://drobilla.net/plugins/mda/DX10/env
+		Designation: http://lv2plug.in/ns/ext/parameters#decay
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.650000
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      release
+		Name:        Release
+		Group:       http://drobilla.net/plugins/mda/DX10/env
+		Designation: http://lv2plug.in/ns/ext/parameters#release
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.441000
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      coarse
+		Name:        Coarse
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.842000
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      fine
+		Name:        Fine
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.329000
+
+	Port 5:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      mod_init
+		Name:        Mod Init
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.230000
+
+	Port 6:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      mod_dec
+		Name:        Mod Dec
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.800000
+
+	Port 7:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      mod_sus
+		Name:        Mod Sus
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.050000
+
+	Port 8:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      mod_rel
+		Name:        Mod Rel
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.800000
+
+	Port 9:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      mod_vel
+		Name:        Mod Vel
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.900000
+
+	Port 10:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      vibrato
+		Name:        Vibrato
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 11:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      octave
+		Name:        Octave
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 12:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      finetune
+		Name:        FineTune
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.500000
+
+	Port 13:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      waveform
+		Name:        Waveform
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.447000
+
+	Port 14:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      mod_thru
+		Name:        Mod Thru
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.000000
+
+	Port 15:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      lfo_rate
+		Name:        LFO Rate
+		Minimum:     0.000000
+		Maximum:     1.000000
+		Default:     0.414000
+
+	Port 16:
+		Type:        http://lv2plug.in/ns/lv2core#OutputPort
+		             http://lv2plug.in/ns/lv2core#AudioPort
+		Symbol:      left_out
+		Name:        Left Out
+		Group:       http://drobilla.net/plugins/mda/mainOut
+		Designation: http://lv2plug.in/ns/ext/port-groups#left
+
+	Port 17:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      right_out
+		Name:        Right Out
+		Group:       http://drobilla.net/plugins/mda/mainOut
+		Designation: http://lv2plug.in/ns/ext/port-groups#right
+
+	Port 18:
+		Type:        http://lv2plug.in/ns/ext/atom#AtomPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      event_in
+		Name:        Event In
+</pre></body></html>

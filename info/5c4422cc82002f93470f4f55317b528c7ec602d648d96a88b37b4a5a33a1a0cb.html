@@ -1,0 +1,57 @@
+<html><head></head><body><pre>
+http://plugin.org.uk/swh-plugins/amPitchshift
+
+	Name:              AM pitchshifter
+	Class:             Pitch Shifter Plugin
+	Author:            Steve Harris
+	Author Email:      mailto:steve@plugin.org.uk
+	Author Homepage:   http://plugin.org.uk/
+	Has latency:       yes, reported by port 4
+	Bundle:            file:///run/current-system/sw/lib/lv2/am_pitchshift-swh.lv2/
+	Binary:            file:///run/current-system/sw/lib/lv2/am_pitchshift-swh.lv2/plugin-Linux.so
+	Data URIs:         file:///run/current-system/sw/lib/lv2/am_pitchshift-swh.lv2/plugin.ttl
+	                   file:///run/current-system/sw/lib/lv2/am_pitchshift-swh.lv2/manifest.ttl
+	Presets: 
+
+	Port 0:
+		Type:        http://lv2plug.in/ns/lv2core#InputPort
+		             http://lv2plug.in/ns/lv2core#ControlPort
+		Symbol:      pitch
+		Name:        Pitch shift
+		Minimum:     0.250000
+		Maximum:     4.000000
+		Default:     1.000000
+		Properties:  http://lv2plug.in/ns/ext/port-props#logarithmic
+
+
+	Port 1:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      size
+		Name:        Buffer size
+		Minimum:     1.000000
+		Maximum:     7.000000
+		Default:     4.000000
+		Properties:  http://lv2plug.in/ns/lv2core#integer
+
+
+	Port 2:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#InputPort
+		Symbol:      input
+		Name:        Input
+
+	Port 3:
+		Type:        http://lv2plug.in/ns/lv2core#AudioPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      output
+		Name:        Output
+
+	Port 4:
+		Type:        http://lv2plug.in/ns/lv2core#ControlPort
+		             http://lv2plug.in/ns/lv2core#OutputPort
+		Symbol:      latency
+		Name:        latency
+		Properties:  http://lv2plug.in/ns/lv2core#reportsLatency
+
+</pre></body></html>
