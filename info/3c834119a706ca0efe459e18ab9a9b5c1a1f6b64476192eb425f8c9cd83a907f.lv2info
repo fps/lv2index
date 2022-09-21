@@ -1,3 +1,4 @@
+<html><head></head><body><pre>
 http://drobilla.net/plugins/mda/TestTone
 
 	Name:              MDA TestTone
@@ -128,3 +129,4 @@ http://drobilla.net/plugins/mda/TestTone
 		Name:        Right Out
 		Group:       http://drobilla.net/plugins/mda/mainOut
 		Designation: http://lv2plug.in/ns/ext/port-groups#right
+</pre></body></html>

@@ -1,3 +1,4 @@
+<html><head></head><body><pre>
 http://gareus.org/oss/lv2/controlfilter#exp
 
 	Name:              Control Port Exponential
@@ -38,3 +39,4 @@ http://gareus.org/oss/lv2/controlfilter#exp
 		Minimum:     -10.000000
 		Maximum:     10.000000
 		Default:     2.718282
+</pre></body></html>

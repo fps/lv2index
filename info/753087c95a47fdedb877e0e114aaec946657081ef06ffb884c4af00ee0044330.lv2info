@@ -1,3 +1,4 @@
+<html><head></head><body><pre>
 http://calf.sourceforge.net/plugins/SidechainGate
 
 	Name:              Calf Sidechain Gate
@@ -403,3 +404,4 @@ http://calf.sourceforge.net/plugins/SidechainGate
 		Name:        Events
 		Properties:  http://lv2plug.in/ns/lv2core#connectionOptional
 
+</pre></body></html>

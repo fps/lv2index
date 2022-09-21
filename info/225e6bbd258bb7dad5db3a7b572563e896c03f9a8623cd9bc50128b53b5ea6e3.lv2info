@@ -1,3 +1,4 @@
+<html><head></head><body><pre>
 http://eq10q.sourceforge.net/matrix_ms2lr
 
 	Name:              MS2LR
@@ -145,3 +146,4 @@ http://eq10q.sourceforge.net/matrix_ms2lr
 		             http://lv2plug.in/ns/lv2core#OutputPort
 		Symbol:      vu_outr
 		Name:        Out VU R
+</pre></body></html>

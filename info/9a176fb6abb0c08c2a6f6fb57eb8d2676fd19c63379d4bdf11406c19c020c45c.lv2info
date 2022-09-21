@@ -1,3 +1,4 @@
+<html><head></head><body><pre>
 http://calf.sourceforge.net/plugins/TapeSimulator
 
 	Name:              Calf Tape Simulator
@@ -274,3 +275,4 @@ http://calf.sourceforge.net/plugins/TapeSimulator
 		Name:        Events
 		Properties:  http://lv2plug.in/ns/lv2core#connectionOptional
 
+</pre></body></html>

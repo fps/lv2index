@@ -1,3 +1,4 @@
+<html><head></head><body><pre>
 file:///run/current-system/sw/lib/lv2/MonoEffect.ingen/MonoEffect.ttl
 
 	Name:              Ingen Mono Effect Template
@@ -42,3 +43,4 @@ file:///run/current-system/sw/lib/lv2/MonoEffect.ingen/MonoEffect.ttl
 		Symbol:      audio_out
 		Name:        Audio Out
 		Designation: http://lv2plug.in/ns/ext/port-groups#center
+</pre></body></html>

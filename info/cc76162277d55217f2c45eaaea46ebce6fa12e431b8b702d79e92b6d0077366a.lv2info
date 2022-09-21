@@ -1,3 +1,4 @@
+<html><head></head><body><pre>
 http://calf.sourceforge.net/plugins/Monosynth
 
 	Name:              Calf Monosynth
@@ -747,3 +748,4 @@ http://calf.sourceforge.net/plugins/Monosynth
 		Name:        Events
 		Properties:  http://lv2plug.in/ns/lv2core#connectionOptional
 
+</pre></body></html>

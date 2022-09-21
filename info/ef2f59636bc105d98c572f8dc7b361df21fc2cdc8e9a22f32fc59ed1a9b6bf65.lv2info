@@ -1,3 +1,4 @@
+<html><head></head><body><pre>
 http://calf.sourceforge.net/plugins/Flanger
 
 	Name:              Calf Flanger
@@ -295,3 +296,4 @@ http://calf.sourceforge.net/plugins/Flanger
 		Name:        Events
 		Properties:  http://lv2plug.in/ns/lv2core#connectionOptional
 
+</pre></body></html>

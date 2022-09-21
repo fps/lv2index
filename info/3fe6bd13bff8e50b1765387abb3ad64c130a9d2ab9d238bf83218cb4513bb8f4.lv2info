@@ -1,3 +1,4 @@
+<html><head></head><body><pre>
 http://calf.sourceforge.net/plugins/Exciter
 
 	Name:              Calf Exciter
@@ -234,3 +235,4 @@ http://calf.sourceforge.net/plugins/Exciter
 		Name:        Events
 		Properties:  http://lv2plug.in/ns/lv2core#connectionOptional
 
+</pre></body></html>

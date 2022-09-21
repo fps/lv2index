@@ -1,3 +1,4 @@
+<html><head></head><body><pre>
 http://eq10q.sourceforge.net/gate_stereo
 
 	Name:              GT10QS
@@ -167,3 +168,4 @@ http://eq10q.sourceforge.net/gate_stereo
 		             http://lv2plug.in/ns/lv2core#InputPort
 		Symbol:      inputR
 		Name:        InputR
+</pre></body></html>

@@ -1,3 +1,4 @@
+<html><head></head><body><pre>
 file:///run/current-system/sw/lib/lv2/StereoEffect.ingen/StereoEffect.ttl
 
 	Name:              Ingen Stereo Effect Template
@@ -56,3 +57,4 @@ file:///run/current-system/sw/lib/lv2/StereoEffect.ingen/StereoEffect.ttl
 		Symbol:      right_out
 		Name:        Right Out
 		Designation: http://lv2plug.in/ns/ext/port-groups#right
+</pre></body></html>

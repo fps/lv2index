@@ -1,3 +1,4 @@
+<html><head></head><body><pre>
 http://gareus.org/oss/lv2/balance
 
 	Name:              Stereo Balance Control
@@ -159,3 +160,4 @@ http://gareus.org/oss/lv2/balance
 		Symbol:      notify
 		Name:        plugin to UI communication
 		Designation: http://lv2plug.in/ns/lv2core#control
+</pre></body></html>

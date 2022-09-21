@@ -1,3 +1,4 @@
+<html><head></head><body><pre>
 http://drobilla.net/plugins/mda/Dither
 
 	Name:              MDA Dither
@@ -97,3 +98,4 @@ http://drobilla.net/plugins/mda/Dither
 		Name:        Right Out
 		Group:       http://drobilla.net/plugins/mda/mainOut
 		Designation: http://lv2plug.in/ns/ext/port-groups#right
+</pre></body></html>

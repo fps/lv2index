@@ -1,3 +1,4 @@
+<html><head></head><body><pre>
 http://eq10q.sourceforge.net/matrix_lr2ms
 
 	Name:              LR2MS
@@ -145,3 +146,4 @@ http://eq10q.sourceforge.net/matrix_lr2ms
 		             http://lv2plug.in/ns/lv2core#OutputPort
 		Symbol:      vu_outs
 		Name:        Out VU S
+</pre></body></html>

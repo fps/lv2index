@@ -1,3 +1,4 @@
+<html><head></head><body><pre>
 file:///run/current-system/sw/lib/lv2/StereoInstrument.ingen/StereoInstrument.ttl
 
 	Name:              Ingen Stereo Instrument Template
@@ -42,3 +43,4 @@ file:///run/current-system/sw/lib/lv2/StereoInstrument.ingen/StereoInstrument.tt
 		Symbol:      right_out
 		Name:        Right Out
 		Designation: http://lv2plug.in/ns/ext/port-groups#right
+</pre></body></html>

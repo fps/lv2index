@@ -1,3 +1,4 @@
+<html><head></head><body><pre>
 file:///run/current-system/sw/lib/lv2/MonoInstrument.ingen/MonoInstrument.ttl
 
 	Name:              Ingen Mono Instrument Template
@@ -35,3 +36,4 @@ file:///run/current-system/sw/lib/lv2/MonoInstrument.ingen/MonoInstrument.ttl
 		Symbol:      audio_out
 		Name:        Audio Out
 		Designation: http://lv2plug.in/ns/ext/port-groups#center
+</pre></body></html>

@@ -1,3 +1,4 @@
+<html><head></head><body><pre>
 http://eq10q.sourceforge.net/eq/eq10qs
 
 	Name:              EQ10Q Stereo
@@ -629,3 +630,4 @@ http://eq10q.sourceforge.net/eq/eq10qs
 		Default:     0.000000
 		Properties:  http://lv2plug.in/ns/lv2core#toggled
 
+</pre></body></html>

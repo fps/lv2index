@@ -1,3 +1,4 @@
+<html><head></head><body><pre>
 http://calf.sourceforge.net/plugins/MultiChorus
 
 	Name:              Calf Multi Chorus
@@ -333,3 +334,4 @@ http://calf.sourceforge.net/plugins/MultiChorus
 		Name:        Events
 		Properties:  http://lv2plug.in/ns/lv2core#connectionOptional
 
+</pre></body></html>

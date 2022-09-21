@@ -1,3 +1,4 @@
+<html><head></head><body><pre>
 http://calf.sourceforge.net/plugins/HaasEnhancer
 
 	Name:              Calf Haas Stereo Enhancer
@@ -335,3 +336,4 @@ http://calf.sourceforge.net/plugins/HaasEnhancer
 		Name:        Events
 		Properties:  http://lv2plug.in/ns/lv2core#connectionOptional
 
+</pre></body></html>

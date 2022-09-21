@@ -1,3 +1,4 @@
+<html><head></head><body><pre>
 http://calf.sourceforge.net/plugins/RingModulator
 
 	Name:              Calf Ring Modulator
@@ -515,3 +516,4 @@ http://calf.sourceforge.net/plugins/RingModulator
 		Name:        Events
 		Properties:  http://lv2plug.in/ns/lv2core#connectionOptional
 
+</pre></body></html>

@@ -1,3 +1,4 @@
+<html><head></head><body><pre>
 http://drobilla.net/plugins/mda/DX10
 
 	Name:              MDA DX10
@@ -217,3 +218,4 @@ http://drobilla.net/plugins/mda/DX10
 		             http://lv2plug.in/ns/lv2core#InputPort
 		Symbol:      event_in
 		Name:        Event In
+</pre></body></html>

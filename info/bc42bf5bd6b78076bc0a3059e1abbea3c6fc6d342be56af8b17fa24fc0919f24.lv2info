@@ -1,3 +1,4 @@
+<html><head></head><body><pre>
 http://calf.sourceforge.net/plugins/SidechainLimiter
 
 	Name:              Calf Sidechain Limiter
@@ -667,3 +668,4 @@ http://calf.sourceforge.net/plugins/SidechainLimiter
 		Name:        Events
 		Properties:  http://lv2plug.in/ns/lv2core#connectionOptional
 
+</pre></body></html>
